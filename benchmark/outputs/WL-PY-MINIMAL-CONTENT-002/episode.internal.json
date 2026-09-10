@@ -1,0 +1,76 @@
+{
+  "id": "WL-PY-MINIMAL-CONTENT-002",
+  "task": "static_viewpoint_change",
+  "layout": "cafe_rect_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "emerald-green cardigan",
+      "appearance": "a woman in a emerald-green cardigan",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "navy-blue button-up shirt",
+      "appearance": "a man in a navy-blue button-up shirt",
+      "seat": "window_right",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "burgundy sweater",
+      "appearance": "a woman in a burgundy sweater",
+      "seat": "table_left_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "A begins narrating a story. B asks for context. C confirms a detail.",
+      "events": [],
+      "camera": "establish_front",
+      "prompt": {
+        "content": "A woman in an emerald-green cardigan begins narrating a story, a man in a navy-blue button-up shirt asks for context, and a woman in a burgundy sweater confirms a detail.",
+        "viewpoint": "Wide view from the aisle-side corner, looking diagonally across the rectangular table. The full table and all three seats are visible."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "B asks a question about the event. A explains what occurred.",
+      "events": [],
+      "camera": "partial_window_pair",
+      "prompt": {
+        "content": "The man in a navy-blue button-up shirt asks a question about the event, and the woman in an emerald-green cardigan explains what occurred.",
+        "viewpoint": "Medium close view of the two people in the window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "A tells the resolution. B replies.",
+      "events": [],
+      "camera": "probe_right_end",
+      "prompt": {
+        "content": "The woman in an emerald-green cardigan tells the resolution, and the man in a navy-blue button-up shirt replies.",
+        "viewpoint": "Wide view from the counter end, looking along the full table toward the floor plant. Both window-side seats and the plant-end seat are visible."
+      }
+    }
+  ]
+}

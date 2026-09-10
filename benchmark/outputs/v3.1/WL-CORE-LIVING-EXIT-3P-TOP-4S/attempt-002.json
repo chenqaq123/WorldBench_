@@ -1,0 +1,213 @@
+[
+  {
+    "stage": "source_abstraction",
+    "model": "gemini-3.7-flash",
+    "schema_name": "story_skeleton",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the real source ID exactly."
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the supplied archetype exactly."
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A faithful abstraction of the supplied excerpt's interaction."
+        },
+        "interaction_arc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A concise ordered narrative progression, not divided into shots."
+        }
+      },
+      "required": [
+        "source_id",
+        "archetype",
+        "premise",
+        "interaction_arc"
+      ],
+      "additionalProperties": false
+    },
+    "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 4 shots.",
+    "input_value": {
+      "source": {
+        "id": "pride_evening",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "year": 1813,
+        "url": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+        "locator": "Chapter III: returning from the assembly",
+        "start_text": "They found Mr. Bennet still up",
+        "scenes": [
+          "living room"
+        ],
+        "topic_terms": [
+          "dance",
+          "evening",
+          "ball"
+        ],
+        "excerpt": "They found Mr. Bennet still up. With a book, he was regardless of time; and on the present occasion he had a good deal of curiosity as to the event of an evening which had raised such splendid expectations. He had rather hoped that all his wife’s views on the stranger would be disappointed; but he soon found that he had a very different story to hear. “Oh, my dear Mr. Bennet,” as she entered the room, “we have had a most delightful evening, a most excellent ball. I wish you had been there. Jane was so admired, nothing could be like it. Everybody said how well she looked; and Mr. Bingley thought her quite beautiful, and danced with her twice. Only think of that , my dear: he {17} actually danced with her twice; and she was the only creature in the room that he asked a second time. First of all, he asked Miss Lucas. I was so vexed to see him stand up with her; but, however, he did not admire her at all; indeed, nobody can, you know; and he seemed quite struck with Jane as she was going down the dance. So he inquired who she was, and got introduced, and asked her for the two next. Then, the two third he danced with Miss King, and the two fourth with Maria Lucas, and the two fifth with Jane again, and the two sixth with Lizzy, and the Boulanger ——” “If he had had any compassion for me ,” cried her husband impatiently, “he would not have danced half so much! For God’s sake, say no more of his partners. O that he had sprained his ancle in the first dance!” “Oh, my dear,” continued Mrs. Bennet, “I am quite delighted with him. He is",
+        "excerpt_sha256": "17d1b96a396fc3ef5c465c0d350068ef9e4cd080f1edcc4ba5731a2fe0fec89d",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "living-room conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      }
+    },
+    "temperature": 0.5,
+    "output": {
+      "source_id": "pride_evening",
+      "archetype": "living-room conversation",
+      "premise": "One person returns to give an enthusiastic account of a social ball and dance partners to a seated companion who wants to avoid hearing every detail.",
+      "interaction_arc": "A seated listener is joined by a returning companion who launches into an elaborate report of the evening. The speaker catalogues the partners and events from the dance floor, while the listener expresses impatience at the exhaustive recap and requests an end to the list. The speaker brushes aside the objection to continue sharing praise."
+    },
+    "response_metadata": {
+      "stage": "source_abstraction",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-d2241d52d98a4e40902989522227909e",
+      "usage": {
+        "prompt_tokens": 951,
+        "completion_tokens": 436,
+        "total_tokens": 1387,
+        "prompt_tokens_details": {
+          "text_tokens": 951
+        },
+        "completion_tokens_details": {
+          "text_tokens": 113,
+          "reasoning_tokens": 323
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "subject_casting",
+    "model": "gemini-3.7-flash",
+    "schema_name": "subject_casting",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "woman",
+                  "man"
+                ]
+              },
+              "clothing": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A clothing color and garment, without an article."
+              }
+            },
+            "required": [
+              "id",
+              "gender",
+              "clothing"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "subjects"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "pride_evening",
+        "archetype": "living-room conversation",
+        "premise": "One person returns to give an enthusiastic account of a social ball and dance partners to a seated companion who wants to avoid hearing every detail.",
+        "interaction_arc": "A seated listener is joined by a returning companion who launches into an elaborate report of the evening. The speaker catalogues the partners and events from the dance floor, while the listener expresses impatience at the exhaustive recap and requests an end to the list. The speaker brushes aside the objection to continue sharing praise."
+      },
+      "scene": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing an armchair near the bookcase end.",
+      "subject_ids": [
+        "A",
+        "B",
+        "C"
+      ],
+      "casting_contract": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "B",
+          "gender": "woman",
+          "clothing": "purple shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "red shirt"
+        }
+      ]
+    },
+    "temperature": 0.5,
+    "output": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "B",
+          "gender": "woman",
+          "clothing": "purple shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "red shirt"
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "subject_casting",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-7ba5cfe0d35341a0bed52f338e9ffb5d",
+      "usage": {
+        "prompt_tokens": 702,
+        "completion_tokens": 149,
+        "total_tokens": 851,
+        "prompt_tokens_details": {
+          "text_tokens": 702
+        },
+        "completion_tokens_details": {
+          "text_tokens": 43,
+          "reasoning_tokens": 106
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  }
+]

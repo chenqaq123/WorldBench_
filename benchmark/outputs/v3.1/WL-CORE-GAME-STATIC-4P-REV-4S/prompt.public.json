@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-GAME-STATIC-4P-REV-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A man in an orange shirt sits in the shelf-side aisle seat and calls the meeting to order to review the weekly club contributions, a woman in a white shirt sits in the doorway-side aisle seat, a man in a blue shirt sits in the shelf-side window seat, and a woman in a yellow shirt sits in the doorway-side window seat.",
+      "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and both aisle-side seats and the shelving unit in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in an orange shirt asks about the first report, and the woman in a white shirt explains the summary.",
+      "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in an orange shirt notes the remaining project goals.",
+      "viewpoint": "Close-up from the window side, centered on the person at the shelf-side aisle seat."
+    },
+    {
+      "index": 4,
+      "content": "The man in an orange shirt presents the final result, the woman in a white shirt agrees with the findings, and the man in a blue shirt confirms the club schedule.",
+      "viewpoint": "Reverse wide shot of the game table."
+    }
+  ]
+}

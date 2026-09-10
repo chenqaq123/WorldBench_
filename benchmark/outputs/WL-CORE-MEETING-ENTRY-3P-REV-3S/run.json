@@ -1,0 +1,277 @@
+{
+  "source": {
+    "archetype": "meeting-room discussion",
+    "material": "2 people begin a conversation in a meeting room while the door-side window seat is empty. One additional person arrives, takes the door-side window seat, and joins the exchange. The person at the screen-end seat does not leave or move."
+  },
+  "config": {
+    "task": "person_entry",
+    "scene": "meeting room",
+    "layout": "meeting_room_table_3_v1",
+    "viewpoint_mode": "reverse_axis",
+    "subject_count": 3,
+    "shot_count": 3
+  },
+  "case_signature": {
+    "task_type": "person_entry",
+    "scene": "meeting room",
+    "viewpoint_mode": "reverse_axis",
+    "subject_count": 3,
+    "shot_count": 3
+  },
+  "models": {
+    "source_abstraction": "google/gemini-3.7-flash",
+    "subject_casting": "google/gemini-3.7-flash",
+    "story_planning": "google/gemini-3.7-flash",
+    "prompt_rendering": "google/gemini-3.7-flash",
+    "prompt_audit": "openai/gpt-5.6-luna"
+  },
+  "stage_outputs": {
+    "source_abstraction": {
+      "archetype": "meeting-room discussion",
+      "premise": "Two seated individuals confer in a shared room before a third participant arrives to join the ongoing exchange.",
+      "interaction_arc": "Two seated figures converse across a table. A third person enters the space, walks over to an unoccupied chair, and sits down. All three figures then continue the collaborative discussion together while remaining in their seats."
+    },
+    "subject_casting": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "navy blazer"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "mustard sweater"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "emerald blouse"
+        }
+      ]
+    },
+    "story_planning": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A asks about the preliminary agenda.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject B enters and takes his established seat. Subject B asks for the revenue update.",
+          "events": [
+            {
+              "subject": "B",
+              "action": "enter"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "beat": "Subject A answers.",
+          "events": []
+        }
+      ]
+    },
+    "prompt_rendering": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A woman in a navy blazer sits at the screen-side window seat and asks about the preliminary agenda, while a woman in a emerald blouse sits at the screen-end seat."
+        },
+        {
+          "index": 2,
+          "content": "A man in a mustard sweater enters, takes the door-side window seat, and asks for the revenue update, while a woman in a navy blazer sits at the screen-side window seat."
+        },
+        {
+          "index": 3,
+          "content": "A woman in a navy blazer answers."
+        }
+      ]
+    },
+    "prompt_audit": [
+      {
+        "round": 1,
+        "passed": true,
+        "issues": []
+      }
+    ]
+  },
+  "trace": [
+    {
+      "stage": "source_abstraction",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788263099-GgSF9KitKghYtsZxCmaQ",
+      "usage": {
+        "prompt_tokens": 169,
+        "completion_tokens": 501,
+        "total_tokens": 670,
+        "cost": 0.0020055,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0020055,
+          "upstream_inference_prompt_cost": 0.00012675,
+          "upstream_inference_completions_cost": 0.00187875
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 424,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "subject_casting",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788263107-J8ZF9UJPwmowRDPmpFxw",
+      "usage": {
+        "prompt_tokens": 360,
+        "completion_tokens": 390,
+        "total_tokens": 750,
+        "cost": 0.0017325,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0017325,
+          "upstream_inference_prompt_cost": 0.00027,
+          "upstream_inference_completions_cost": 0.0014625
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 316,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788263110-E9fx50VTEGQPo1mLmhps",
+      "usage": {
+        "prompt_tokens": 767,
+        "completion_tokens": 1142,
+        "total_tokens": 1909,
+        "cost": 0.00485775,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00485775,
+          "upstream_inference_prompt_cost": 0.00057525,
+          "upstream_inference_completions_cost": 0.0042825
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 998,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788263115-KZLuEpTEay94O9gMOV5f",
+      "usage": {
+        "prompt_tokens": 924,
+        "completion_tokens": 1816,
+        "total_tokens": 2740,
+        "cost": 0.007503,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.007503,
+          "upstream_inference_prompt_cost": 0.000693,
+          "upstream_inference_completions_cost": 0.00681
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1664,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788263122-ZpEwZBIVoxRkjC3pYZ0Z",
+      "usage": {
+        "prompt_tokens": 974,
+        "completion_tokens": 937,
+        "total_tokens": 1911,
+        "cost": 0.00424425,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00424425,
+          "upstream_inference_prompt_cost": 0.0007305,
+          "upstream_inference_completions_cost": 0.00351375
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1788263127-t7psE3sBbXSNCooMQPBO",
+      "usage": {
+        "prompt_tokens": 2006,
+        "completion_tokens": 404,
+        "total_tokens": 2410,
+        "cost": 0.00098615,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2003,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00098615,
+          "upstream_inference_prompt_cost": 0.00050135,
+          "upstream_inference_completions_cost": 0.0004848
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 385,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  ]
+}

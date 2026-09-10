@@ -1,0 +1,102 @@
+{
+  "id": "WL-PY-DISTINCT-OVERHEAD-5S-016",
+  "task": "static_viewpoint_change",
+  "layout": "cafe_rect_table_3_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "mustard sweater",
+      "appearance": "a woman in a mustard sweater",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "navy button-up shirt",
+      "appearance": "a man in a navy button-up shirt",
+      "seat": "window_right",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "burgundy cardigan",
+      "appearance": "a woman in a burgundy cardigan",
+      "seat": "table_left_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A begins recounting an incident.",
+      "events": [],
+      "camera": "establish_counter_end",
+      "prompt": {
+        "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other. A woman in a mustard sweater sits in the plant-side window seat and begins recounting an incident, while a man in a navy button-up shirt sits in the counter-side window seat and a woman in a burgundy cardigan sits in the plant-end seat.",
+        "viewpoint": "Wide establishing shot from the counter end, looking lengthwise along the rectangular table toward the floor plant, with the full table and all three seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A describes the mistake.",
+      "events": [],
+      "camera": "partial_window_pair",
+      "prompt": {
+        "content": "The woman in the mustard sweater describes the mistake to the man in the navy button-up shirt.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A continues the account.",
+      "events": [],
+      "camera": "partial_window_left",
+      "prompt": {
+        "content": "The woman in the mustard sweater continues the account.",
+        "viewpoint": "Close-up from the aisle side, centered on the person in the plant-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "B"
+      ],
+      "beat": "Subject B asks about the outcome.",
+      "events": [],
+      "camera": "partial_window_right",
+      "prompt": {
+        "content": "The man in the navy button-up shirt asks about the outcome.",
+        "viewpoint": "Close-up from the aisle side, centered on the person in the counter-side window seat."
+      }
+    },
+    {
+      "index": 5,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A delivers the conclusion.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The woman in the mustard sweater delivers the conclusion to the man in the navy button-up shirt.",
+        "viewpoint": "Top-down wide shot from directly above the rectangular table, centered on the tabletop, with the full table, the plant-end seat, and both window-side seats in frame."
+      }
+    }
+  ]
+}

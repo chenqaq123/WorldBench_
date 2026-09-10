@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-GAME-SWAP-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side. A woman in a purple shirt sits at the shelf-side window seat and claims she can solve the riddle about meaning, a woman in a red shirt sits at the doorway-side window seat, and a man in a green shirt sits at the shelf-end seat.",
+      "viewpoint": "Wide establishing shot from the doorway end, looking lengthwise along the game table toward the shelving unit, with both window-side seats and the shelf-end seat in frame."
+    },
+    {
+      "index": 2,
+      "content": "A woman in a purple shirt and a woman in a red shirt exchange the shelf-side window seat and the doorway-side window seat; the latter asks if saying what one means follows the same rule as meaning what one says, and the former replies that it does.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A woman in a purple shirt explains the rule of the riddle.",
+      "viewpoint": "Top-down wide shot from directly above the game table, centered on the tabletop, with both window-side seats and the shelf-end seat in frame."
+    }
+  ]
+}

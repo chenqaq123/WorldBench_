@@ -1,0 +1,86 @@
+{
+  "id": "WL-CORE-LIVING-STATIC-4P-REV-3S",
+  "task": "static_viewpoint_change",
+  "layout": "living_room_seating_4_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "navy sweater",
+      "appearance": "a woman in a navy sweater",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "mustard cardigan",
+      "appearance": "a man in a mustard cardigan",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "emerald blouse",
+      "appearance": "a woman in a emerald blouse",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "charcoal hoodie",
+      "appearance": "a man in a charcoal hoodie",
+      "seat": "doorway_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A tells a story about an everyday error.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in a navy sweater sits in the bookcase-side sofa seat and tells a story about an everyday error, while a man in a mustard cardigan sits in the doorway-side sofa seat, a woman in an emerald blouse sits in the bookcase-side armchair, and a man in a charcoal hoodie sits in the doorway-side armchair.",
+        "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and both armchairs in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks for clarification about the outcome.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in the mustard cardigan asks the woman in the navy sweater for clarification about the outcome.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A answers with the resolution.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in the navy sweater answers the man in the mustard cardigan and the woman in the emerald blouse with the resolution.",
+        "viewpoint": "Reverse wide shot from the bookcase side, looking across the coffee table toward the doorway, with both sofa seats and both armchairs in frame."
+      }
+    }
+  ]
+}

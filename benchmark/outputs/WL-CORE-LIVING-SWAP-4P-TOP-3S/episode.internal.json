@@ -1,0 +1,91 @@
+{
+  "id": "WL-CORE-LIVING-SWAP-4P-TOP-3S",
+  "task": "position_swap",
+  "layout": "living_room_seating_4_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "teal cardigan",
+      "appearance": "a woman in a teal cardigan",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "mustard sweater",
+      "appearance": "a man in a mustard sweater",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "burgundy blouse",
+      "appearance": "a woman in a burgundy blouse",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "charcoal blazer",
+      "appearance": "a man in a charcoal blazer",
+      "seat": "doorway_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A speaks.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in a teal cardigan sits on the bookcase-side sofa seat and speaks, a man in a mustard sweater sits on the doorway-side sofa seat, a woman in a burgundy blouse sits on the bookcase-side armchair, and a man in a charcoal blazer sits on the doorway-side armchair.",
+        "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and both armchairs in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A swaps seats with Subject B. Subject A asks. Subject B answers.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in the teal cardigan on the bookcase-side sofa seat swaps seats with the man in the mustard sweater on the doorway-side sofa seat, then asks as he answers.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "C",
+        "D"
+      ],
+      "beat": "Subject C asks. Subject D answers.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The woman in the burgundy blouse asks, and the man in the charcoal blazer answers.",
+        "viewpoint": "Top-down wide shot from directly above the coffee table, centered on the seating arrangement, with both sofa seats and both armchairs in frame."
+      }
+    }
+  ]
+}

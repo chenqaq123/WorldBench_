@@ -1,0 +1,91 @@
+{
+  "id": "WL-CORE-GAME-SWAP-4P-REV-3S",
+  "task": "position_swap",
+  "layout": "board_game_table_4_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "emerald sweater",
+      "appearance": "a woman in a emerald sweater",
+      "seat": "window_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "mustard hoodie",
+      "appearance": "a man in a mustard hoodie",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "navy cardigan",
+      "appearance": "a woman in a navy cardigan",
+      "seat": "aisle_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "burgundy polo",
+      "appearance": "a man in a burgundy polo",
+      "seat": "aisle_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks to start the round.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side. A woman in an emerald sweater sits in the shelf-side window seat and asks to start the round, a man in a mustard hoodie sits in the doorway-side window seat, a woman in a navy cardigan sits in the shelf-side aisle seat, and a man in a burgundy polo sits in the doorway-side aisle seat.",
+        "viewpoint": "Wide establishing shot from the doorway end, looking lengthwise along the game table toward the shelving unit, with both window-side seats and both aisle-side seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A swaps seats with Subject B. Subject A asks about the score. Subject B answers.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in an emerald sweater in the shelf-side window seat swaps seats with the man in a mustard hoodie in the doorway-side window seat. She asks about the score, and he answers.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "C",
+        "D"
+      ],
+      "beat": "Subject C asks about the turn. Subject D replies.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in a navy cardigan asks about the turn, and the man in a burgundy polo replies.",
+        "viewpoint": "Reverse wide shot from the shelving-unit end, looking lengthwise along the game table toward the doorway, with both window-side seats and both aisle-side seats in frame."
+      }
+    }
+  ]
+}

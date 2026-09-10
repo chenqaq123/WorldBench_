@@ -1,0 +1,86 @@
+{
+  "id": "WL-CORE-DINING-STATIC-4P-TOP-3S",
+  "task": "static_viewpoint_change",
+  "layout": "dining_room_table_4_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "window_sideboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "window_patio",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "aisle_sideboard",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "aisle_patio",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks to share breakfast with the neighbor.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side. A woman in a red shirt sits in the sideboard-side window seat and asks to share breakfast with the neighbor, while a woman in a green shirt sits in the patio-side window seat, a man in an orange shirt sits in the sideboard-side aisle seat, and a woman in a white shirt sits in the patio-side aisle seat.",
+        "viewpoint": "Wide establishing shot from the patio-door end, looking lengthwise along the dining table toward the sideboard, with both window-side seats and both aisle-side seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A explains the neighbor's need, and Subject B agrees to give up the meal.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a red shirt explains the neighbor's need, and the woman in a green shirt agrees to give up the meal.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject C asks what to pack, Subject B offers to gather the dishes, and Subject A agrees.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in an orange shirt asks what to pack, the woman in a green shirt offers to gather the dishes, and the woman in a red shirt agrees.",
+        "viewpoint": "Top-down wide shot from directly above the dining table, centered on the tabletop, with both window-side seats and both aisle-side seats in frame."
+      }
+    }
+  ]
+}

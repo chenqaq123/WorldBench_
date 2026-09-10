@@ -1,0 +1,89 @@
+{
+  "id": "WL-CORE-LIVING-STATIC-3P-REV-4S",
+  "task": "static_viewpoint_change",
+  "layout": "living_room_seating_3_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A recounts the dances from the evening ball.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing an armchair near the bookcase end. A woman in an orange shirt sits in the doorway-side sofa seat and recounts the dances from the evening ball, a man in a white shirt sits in the bookcase-side sofa seat, and a woman in a blue shirt sits in the bookcase-side armchair.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair and the bookcase in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks to skip the list of dance partners, but Subject A explains the success of the evening.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a white shirt asks to skip the list of dance partners, but the woman in an orange shirt explains the success of the evening.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A lists the remaining dance partners from the ball.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The woman in an orange shirt lists the remaining dance partners from the ball.",
+        "viewpoint": "Close-up from the coffee-table side, centered on the person at the doorway-side sofa seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B objects to hearing more details, but Subject A continues recounting the evening dances.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in a white shirt objects to hearing more details, but the woman in an orange shirt continues recounting the evening dances.",
+        "viewpoint": "Reverse wide shot of the coffee table."
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "WL-CORE-KITCHEN-SWAP-3P-TOP-3S",
+  "task": "position_swap",
+  "layout": "kitchen_island_3_overhead_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "guest_sink",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "guest_fridge",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "sink_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A asks about managing the morning housekeeping chores.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a kitchen, a rectangular island stands between a sink counter and a refrigerator, with a window along one side and an aisle along the opposite side. A woman in a red shirt sits on the sink-side window stool and asks about managing the morning housekeeping chores, a woman in a green shirt sits on the refrigerator-side window stool, and a man in an orange shirt sits on the sink-end stool.",
+        "viewpoint": "Wide establishing shot from just beside the refrigerator end, looking along the kitchen island toward the sink counter, with both window-side stools and the sink-end stool and the sink counter in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B explains the plan to prepare breakfast independently.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a red shirt and the woman in a green shirt exchange seats, and the latter explains the plan to prepare breakfast independently.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side stools."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks about dividing the remaining domestic work.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The woman in a red shirt asks about dividing the remaining domestic work.",
+        "viewpoint": "Top-down wide shot directly above the kitchen island."
+      }
+    }
+  ]
+}

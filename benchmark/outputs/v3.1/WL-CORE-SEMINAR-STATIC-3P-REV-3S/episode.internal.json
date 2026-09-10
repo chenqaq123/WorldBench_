@@ -1,0 +1,76 @@
+{
+  "id": "WL-CORE-SEMINAR-STATIC-3P-REV-3S",
+  "task": "static_viewpoint_change",
+  "layout": "seminar_room_table_3_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "yellow shirt",
+      "appearance": "a man in a yellow shirt",
+      "seat": "window_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "purple shirt",
+      "appearance": "a woman in a purple shirt",
+      "seat": "pinboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A asks whether basic creative skills are enough to be considered accomplished.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A woman in a blue shirt sits in the pinboard-side window seat and asks whether basic creative skills are enough to be considered accomplished, while a man in a yellow shirt sits in the entrance-side window seat and a woman in a purple shirt sits in the pinboard-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B argues that true accomplishment requires rigorous artistic and intellectual mastery.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a yellow shirt argues to the woman in a blue shirt that true accomplishment requires rigorous artistic and intellectual mastery.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A replies that setting such high standards makes accomplishment nearly impossible.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in a blue shirt replies to the man in a yellow shirt that setting such high standards makes accomplishment nearly impossible.",
+        "viewpoint": "Reverse wide shot of the worktable."
+      }
+    }
+  ]
+}

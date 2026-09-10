@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-LIVING-SWAP-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing an armchair near the bookcase end. A woman in a white shirt sits at the bookcase-side sofa seat and asks about the dinner invitation, a woman in a blue shirt sits at the doorway-side sofa seat, and a man in a yellow shirt sits at the bookcase-side armchair.",
+      "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair and the bookcase in frame."
+    },
+    {
+      "index": 2,
+      "content": "A woman in a white shirt and a woman in a blue shirt exchange seats, whereupon the latter asks about the missing refreshments and the former answers.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "A woman in a white shirt explains the dinner plan.",
+      "viewpoint": "Top-down wide shot directly above the coffee table."
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "source": {
+    "archetype": "café conversation",
+    "material": "Three friends share a café table. One recounts taking the wrong bus. Another asks what happened next, and the storyteller answers. The third person remains part of the gathering without leaving or changing seats."
+  },
+  "config": {
+    "task": "static_viewpoint_change",
+    "scene": "café",
+    "layout": "cafe_rect_table_3_overhead_v1",
+    "viewpoint_mode": "overhead",
+    "subject_count": 3,
+    "shot_count": 5
+  },
+  "case_signature": {
+    "task_type": "static_viewpoint_change",
+    "scene": "café",
+    "viewpoint_mode": "overhead",
+    "subject_count": 3,
+    "shot_count": 5
+  },
+  "models": {
+    "source_abstraction": "google/gemini-3.7-flash",
+    "subject_casting": "google/gemini-3.7-flash",
+    "story_planning": "google/gemini-3.7-flash",
+    "prompt_rendering": "google/gemini-3.7-flash",
+    "prompt_audit": "openai/gpt-5.6-luna"
+  },
+  "stage_outputs": {
+    "source_abstraction": {
+      "archetype": "café conversation",
+      "premise": "Three companions sit together while one shares a personal narrative about a recent mistake.",
+      "interaction_arc": "A seated individual begins recounting an incident to two companions. One companion interjects with a question about the outcome. The storyteller delivers the conclusion of the account while all three maintain their positions at the table."
+    },
+    "subject_casting": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "mustard sweater"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "navy button-up shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "burgundy cardigan"
+        }
+      ]
+    },
+    "story_planning": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A begins recounting an incident.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject A describes the mistake.",
+          "events": []
+        },
+        {
+          "index": 3,
+          "beat": "Subject A continues the account.",
+          "events": []
+        },
+        {
+          "index": 4,
+          "beat": "Subject B asks about the outcome.",
+          "events": []
+        },
+        {
+          "index": 5,
+          "beat": "Subject A delivers the conclusion.",
+          "events": []
+        }
+      ]
+    },
+    "prompt_rendering": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other. A woman in a mustard sweater sits in the plant-side window seat and begins recounting an incident, while a man in a navy button-up shirt sits in the counter-side window seat and a woman in a burgundy cardigan sits in the plant-end seat."
+        },
+        {
+          "index": 2,
+          "content": "The woman in the mustard sweater describes the mistake to the man in the navy button-up shirt."
+        },
+        {
+          "index": 3,
+          "content": "The woman in the mustard sweater continues the account."
+        },
+        {
+          "index": 4,
+          "content": "The man in the navy button-up shirt asks about the outcome."
+        },
+        {
+          "index": 5,
+          "content": "The woman in the mustard sweater delivers the conclusion to the man in the navy button-up shirt."
+        }
+      ]
+    },
+    "prompt_audit": [
+      {
+        "round": 1,
+        "passed": true,
+        "issues": []
+      }
+    ]
+  },
+  "trace": [
+    {
+      "stage": "source_abstraction",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788244267-Bg5geSyKaakEiWyJ9Tyd",
+      "usage": {
+        "prompt_tokens": 137,
+        "completion_tokens": 379,
+        "total_tokens": 516,
+        "cost": 0.001524,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001524,
+          "upstream_inference_prompt_cost": 0.00010275,
+          "upstream_inference_completions_cost": 0.00142125
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 307,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "subject_casting",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788244275-eJXpZ1e2sjfT3bfLSUT3",
+      "usage": {
+        "prompt_tokens": 333,
+        "completion_tokens": 364,
+        "total_tokens": 697,
+        "cost": 0.00161475,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00161475,
+          "upstream_inference_prompt_cost": 0.00024975,
+          "upstream_inference_completions_cost": 0.001365
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 345,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788244279-5bGKol93fjMmQYewhWAc",
+      "usage": {
+        "prompt_tokens": 665,
+        "completion_tokens": 1571,
+        "total_tokens": 2236,
+        "cost": 0.00639,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00639,
+          "upstream_inference_prompt_cost": 0.00049875,
+          "upstream_inference_completions_cost": 0.00589125
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1481,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788244287-ya6cPIjY5VCFFRxqIT1j",
+      "usage": {
+        "prompt_tokens": 990,
+        "completion_tokens": 1519,
+        "total_tokens": 2509,
+        "cost": 0.00643875,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00643875,
+          "upstream_inference_prompt_cost": 0.0007425,
+          "upstream_inference_completions_cost": 0.00569625
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1310,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788244292-gJKguY9muppN9XhfggPU",
+      "usage": {
+        "prompt_tokens": 1042,
+        "completion_tokens": 1349,
+        "total_tokens": 2391,
+        "cost": 0.00584025,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00584025,
+          "upstream_inference_prompt_cost": 0.0007815,
+          "upstream_inference_completions_cost": 0.00505875
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1164,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1788244296-k7wE1uE1tfoC55EYGDQQ",
+      "usage": {
+        "prompt_tokens": 2318,
+        "completion_tokens": 306,
+        "total_tokens": 2624,
+        "cost": 0.00094655,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2315,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00094655,
+          "upstream_inference_prompt_cost": 0.00057935,
+          "upstream_inference_completions_cost": 0.0003672
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 287,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  ]
+}

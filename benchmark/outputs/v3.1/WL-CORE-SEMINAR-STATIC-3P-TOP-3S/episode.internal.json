@@ -1,0 +1,76 @@
+{
+  "id": "WL-CORE-SEMINAR-STATIC-3P-TOP-3S",
+  "task": "static_viewpoint_change",
+  "layout": "seminar_room_table_3_overhead_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "yellow shirt",
+      "appearance": "a man in a yellow shirt",
+      "seat": "window_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "purple shirt",
+      "appearance": "a woman in a purple shirt",
+      "seat": "pinboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A asks what standard defines genuine personal accomplishment.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A woman in a blue shirt sits at the pinboard-side window seat and asks what standard defines genuine personal accomplishment, while a man in a yellow shirt sits at the entrance-side window seat, and a woman in a purple shirt sits at the pinboard-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B argues that basic practical skills qualify as accomplishment, and Subject A counters that true accomplishment demands higher intellectual standards.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a yellow shirt argues that basic practical skills qualify as accomplishment, and the woman in a blue shirt counters that true accomplishment demands higher intellectual standards.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks how many people can satisfy such strict requirements, and Subject A answers that very few can.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in a yellow shirt asks how many people can satisfy such strict requirements, and the woman in a blue shirt answers that very few can.",
+        "viewpoint": "Top-down wide shot directly above the worktable."
+      }
+    }
+  ]
+}

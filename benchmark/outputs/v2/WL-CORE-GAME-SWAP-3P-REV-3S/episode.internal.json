@@ -1,0 +1,81 @@
+{
+  "id": "WL-CORE-GAME-SWAP-3P-REV-3S",
+  "task": "position_swap",
+  "layout": "board_game_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "purple shirt",
+      "appearance": "a woman in a purple shirt",
+      "seat": "window_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "shelf_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A claims she can solve any riddle.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side. A woman in a purple shirt in the shelf-side window seat claims she can solve any riddle, with a woman in a red shirt in the doorway-side window seat and a man in a green shirt in the shelf-end seat.",
+        "viewpoint": "Wide establishing shot from the doorway end, looking lengthwise along the game table toward the shelving unit, with both window-side seats and the shelf-end seat in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B asks Subject A whether saying what one means is the same rule as meaning what one says.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a red shirt in the doorway-side window seat exchanges seats with the woman in a purple shirt in the shelf-side window seat and asks whether saying what one means is the same rule as meaning what one says.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A answers that the meaning is the same.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in a purple shirt answers that the meaning is the same.",
+        "viewpoint": "Reverse wide shot from the shelving-unit end, looking lengthwise along the game table toward the doorway, with both window-side seats and the shelf-end seat in frame."
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-LIVING-EXIT-4P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A man in an orange shirt in the bookcase-side sofa seat recounts the dance sequence from the ball, with a woman in a white shirt in the doorway-side sofa seat, a man in a blue shirt in the bookcase-side armchair, and a man in a yellow shirt in the doorway-side armchair.",
+      "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and both armchairs in frame."
+    },
+    {
+      "index": 2,
+      "content": "A woman in a white shirt leaves the doorway-side sofa seat and exits the venue. A man in an orange shirt asks if the report was too long.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "A man in an orange shirt asks about the remaining dance partners, and a man in a yellow shirt answers.",
+      "viewpoint": "Top-down wide shot from directly above the coffee table, centered on the seating arrangement, with both sofa seats and both armchairs in frame."
+    }
+  ]
+}

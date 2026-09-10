@@ -1,0 +1,91 @@
+{
+  "id": "WL-CORE-KITCHEN-SWAP-4P-TOP-3S",
+  "task": "position_swap",
+  "layout": "kitchen_island_4_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "mustard sweater",
+      "appearance": "a woman in a mustard sweater",
+      "seat": "guest_sink",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "navy blazer",
+      "appearance": "a man in a navy blazer",
+      "seat": "guest_fridge",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "emerald blouse",
+      "appearance": "a woman in a emerald blouse",
+      "seat": "cook_sink",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "charcoal hoodie",
+      "appearance": "a man in a charcoal hoodie",
+      "seat": "cook_fridge",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks about the recipe.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a kitchen, a long rectangular island stands between the refrigerator wall and the sink area, with stools arranged along its sides. A woman in a mustard sweater sits at the sink-side guest stool and asks about the recipe, a man in a navy blazer sits at the refrigerator-side guest stool, a woman in an emerald blouse sits at the sink-side cook stool, and a man in a charcoal hoodie sits at the refrigerator-side cook stool.",
+        "viewpoint": "Wide establishing shot from the refrigerator end, looking lengthwise along the kitchen island toward the sink area, with both guest-side stools and both cook-side stools in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A swaps seats with Subject B. Subject A asks for an ingredient. Subject B answers.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in the mustard sweater at the sink-side guest stool swaps seats with the man in the navy blazer at the refrigerator-side guest stool, then asks for an ingredient, and he answers.",
+        "viewpoint": "Medium two-shot from the cook side, centered on the two adjacent guest-side stools."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "C",
+        "D"
+      ],
+      "beat": "Subject C asks a question. Subject D replies.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The woman in the emerald blouse asks a question, and the man in the charcoal hoodie replies.",
+        "viewpoint": "Top-down wide shot from directly above the kitchen island, centered on the worktop, with both guest-side stools and both cook-side stools in frame."
+      }
+    }
+  ]
+}

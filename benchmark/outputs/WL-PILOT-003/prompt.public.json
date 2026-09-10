@@ -1,0 +1,20 @@
+{
+  "id": "WL-PILOT-003",
+  "shots": [
+    {
+      "index": 1,
+      "content": "In a quiet café seating area with one rectangular wooden table beside a window, an open aisle in front, and no other people nearby, a woman wearing a mustard yellow cardigan with curly auburn hair secured by a tortoiseshell clip sits in the left seat along the window side of the table, gesturing expressively with one hand as she narrates an amusing incident. Beside her, a man in a forest green knit sweater wearing thin round metal-framed spectacles sits in the right seat along the window side of the table, leaning forward with an attentive grin, while a woman in a navy blue blazer wearing a small silver pendant necklace sits in the seat at the far left end of the table, resting both hands around a ceramic teacup and listening quietly.",
+      "viewpoint": "Wide establishing view from the open aisle in front-right of the rectangular table, looking diagonally across the full tabletop and including both window-side seats and the seat at the far left end."
+    },
+    {
+      "index": 2,
+      "content": "The man in the forest green knit sweater wearing thin round metal-framed spectacles chuckles warmly and raises an eyebrow in response, prompting the woman in the mustard yellow cardigan with curly auburn hair held by a tortoiseshell clip to laugh softly and shake her head in amusement.",
+      "viewpoint": "Tight medium two-shot centered on the pair seated along the window side of the rectangular table, viewed from the front-right aisle and cropped before either short end of the table enters the frame."
+    },
+    {
+      "index": 3,
+      "content": "The woman wearing the mustard yellow cardigan picks up a paper napkin to dab the table corner, while the man in the forest green knit sweater wearing thin round metal-framed spectacles nods in agreement and takes a sip from his mug.",
+      "viewpoint": "Wide view from the open aisle beside the right end of the rectangular table, looking diagonally across the entire tabletop toward the far left end, with both window-side seats and the far-left end seat inside the frame."
+    }
+  ]
+}

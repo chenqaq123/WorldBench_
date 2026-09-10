@@ -1,0 +1,70 @@
+{
+  "id": "WL-PILOT-004",
+  "task": "persistence",
+  "layout": "cafe_rect_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "appearance": "wearing a mustard yellow knit sweater and tortoiseshell round glasses",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "appearance": "wearing an emerald green denim jacket and a silver braided headband",
+      "seat": "window_right",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "appearance": "wearing a navy blue wool vest with hair styled in a high braided bun",
+      "seat": "table_left_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "A sets down a warm ceramic mug on the wooden table, while B adjusts a silver ring on her finger and C leans comfortably back in her chair with an attentive smile.",
+      "events": [],
+      "camera": "establish_front",
+      "prompt": {
+        "content": "In a quiet café seating area with one rectangular wooden table running parallel to a window, a tall floor plant stands directly behind the table's plant-side short end while the café counter lies beyond the opposite short end and an open aisle runs along the side opposite the window. Sitting in the window-side seat nearest the tall floor plant, a person wearing a mustard yellow knit sweater and tortoiseshell round glasses sets down a warm ceramic mug on the wooden table. Beside her in the window-side seat nearest the café counter, a companion wearing an emerald green denim jacket and a silver braided headband adjusts a silver ring on her finger. Seated at the short-end seat directly in front of the tall floor plant, a third person wearing a navy blue wool vest with hair styled in a high braided bun leans comfortably back in her chair with an attentive smile.",
+        "viewpoint": "Static wide shot with a 28mm lens. Place the camera in the open aisle at the counter-side corner of the rectangular table, 1.6 meters high with a slight downward angle, aimed diagonally at the table center. Keep the entire tabletop, both window-side seats, the plant-end seat, the tall floor plant, and the counter-side short end fully inside the frame without cropping any seat."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "A gestures expressively with both hands while recounting an everyday mishap, prompting B to rest her chin in her palm and laugh softly.",
+      "events": [],
+      "camera": "partial_window_pair",
+      "prompt": {
+        "content": "The person wearing the mustard yellow knit sweater and tortoiseshell round glasses gestures expressively with both hands while recounting an everyday mishap, prompting the companion wearing the emerald green denim jacket and silver braided headband to rest her chin in her palm and laugh softly.",
+        "viewpoint": "Static tight medium two-shot with a 70mm lens. Place the camera in the open aisle directly opposite the two window-side seats at seated eye level, aimed horizontally at that pair. Set the frame edges just outside the pair's outer shoulders; include only the two window-side seats and crop out both short ends of the table and the plant-end seat."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "A pauses to take a sip from the warm mug while B rests her forearms on the table surface, nodding in calm amusement.",
+      "events": [],
+      "camera": "probe_right_end",
+      "prompt": {
+        "content": "The person wearing the mustard yellow knit sweater and tortoiseshell round glasses pauses to take a sip from the warm mug, while the companion wearing the emerald green denim jacket and silver braided headband rests her forearms on the table surface, nodding in calm amusement.",
+        "viewpoint": "Static wide shot with a 28mm lens. Place the camera in the open aisle just beyond the counter-side short end of the rectangular table, 1.7 meters high with a slight downward angle, and aim the optical axis along the table toward the tall floor plant. Keep the entire tabletop from the near counter-side end to the far plant-side end, both window-side seats, and the plant-end seat fully inside the frame; do not crop or obscure the plant-end seat."
+      }
+    }
+  ]
+}

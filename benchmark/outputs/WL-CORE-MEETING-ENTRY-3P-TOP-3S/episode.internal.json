@@ -1,0 +1,79 @@
+{
+  "id": "WL-CORE-MEETING-ENTRY-3P-TOP-3S",
+  "task": "person_entry",
+  "layout": "meeting_room_table_3_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "navy blazer",
+      "appearance": "a man in a navy blazer",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "emerald blouse",
+      "appearance": "a woman in a emerald blouse",
+      "seat": "window_door",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "mustard sweater",
+      "appearance": "a man in a mustard sweater",
+      "seat": "screen_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A introduces the project milestones.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A man in a navy blazer occupies the screen-side window seat and introduces the project milestones, while a man in a mustard sweater sits at the screen-end seat.",
+        "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and the screen-end seat in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes her seat. Subject B asks for an update. Subject A answers.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in an emerald blouse enters and takes the door-side window seat, asking for an update, and the man in a navy blazer answers.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A clarifies the schedule.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in a navy blazer clarifies the schedule.",
+        "viewpoint": "Top-down wide shot from directly above the conference table, centered on the tabletop, with both window-side seats and the screen-end seat in frame."
+      }
+    }
+  ]
+}

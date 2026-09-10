@@ -1,0 +1,90 @@
+{
+  "id": "WL-CORE-LIVING-EXIT-4P-TOP-3S",
+  "task": "person_exit",
+  "layout": "living_room_seating_4_overhead_r3_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "doorway_chair",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "yellow shirt",
+      "appearance": "a man in a yellow shirt",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A mentions the dinner invitation for the visit.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing two armchairs along the opposite side. A man in an orange shirt sits in the doorway-side armchair and mentions the dinner invitation for the visit, a woman in a white shirt sits in the bookcase-side armchair, a man in a blue shirt sits in the bookcase-side sofa seat, and a man in a yellow shirt sits in the doorway-side sofa seat.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and both armchairs and the bookcase in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves the established seat and exits the scene. Subject A asks about the missing refreshments.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a white shirt leaves her seat and exits the living room, while the man in an orange shirt asks about the missing refreshments.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two armchairs."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D asks about the missing refreshments, and Subject A apologizes.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in a yellow shirt asks about the missing refreshments, and the man in an orange shirt apologizes.",
+        "viewpoint": "Top-down wide shot directly above the coffee table."
+      }
+    }
+  ]
+}

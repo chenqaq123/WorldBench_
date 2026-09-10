@@ -1,0 +1,89 @@
+{
+  "id": "WL-CORE-KITCHEN-STATIC-3P-TOP-4S",
+  "task": "static_viewpoint_change",
+  "layout": "kitchen_island_3_overhead_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "purple shirt",
+      "appearance": "a man in a purple shirt",
+      "seat": "guest_fridge",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "guest_sink",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "sink_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A asks about the proper way to prepare vegetables for the stew recipe.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a kitchen, a rectangular island stands between a sink counter and a refrigerator, with a window along one side and an aisle along the opposite side. A man in a purple shirt sits at the refrigerator-side window stool and asks about the proper way to prepare vegetables for the stew recipe, while a man in a red shirt sits at the sink-side window stool and a woman in a green shirt sits at the sink-end stool.",
+        "viewpoint": "Wide establishing shot from just beside the refrigerator end, looking along the kitchen island toward the sink counter, with both window-side stools and the sink-end stool and the sink counter in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B explains that peeling wastes too much ingredient and insists that scraping is better.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a red shirt explains to the man in a purple shirt that peeling wastes too much ingredient and insists that scraping is better.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side stools."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A argues that scraping is too tedious.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The man in a purple shirt argues that scraping is too tedious.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the refrigerator-side window stool."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B replies that scraping preserves the best part of the ingredient.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in a red shirt replies to the man in a purple shirt that scraping preserves the best part of the ingredient.",
+        "viewpoint": "Top-down wide shot directly above the kitchen island."
+      }
+    }
+  ]
+}

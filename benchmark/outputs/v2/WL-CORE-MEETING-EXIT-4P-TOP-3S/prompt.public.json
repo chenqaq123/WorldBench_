@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-MEETING-EXIT-4P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A woman in a green shirt sits in the screen-side window seat and proposes taking a restorative holiday, while a man in an orange shirt sits in the door-side window seat, a man in a white shirt sits in the screen-side walkway seat, and a woman in a blue shirt sits in the door-side walkway seat.",
+      "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in an orange shirt leaves the door-side window seat and exits the venue, while the woman in a green shirt asks about taking a sea voyage.",
+      "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a green shirt asks about planning a river trip instead, and the woman in a blue shirt replies that a river trip is the best choice.",
+      "viewpoint": "Top-down wide shot from directly above the conference table, centered on the tabletop, with both window-side seats and both walkway-side seats in frame."
+    }
+  ]
+}

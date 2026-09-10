@@ -1,0 +1,225 @@
+[
+  {
+    "stage": "source_abstraction",
+    "model": "gemini-3.7-flash",
+    "schema_name": "story_skeleton",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the real source ID exactly."
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the supplied archetype exactly."
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A faithful abstraction of the supplied excerpt's interaction."
+        },
+        "interaction_arc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A concise ordered narrative progression, not divided into shots."
+        }
+      },
+      "required": [
+        "source_id",
+        "archetype",
+        "premise",
+        "interaction_arc"
+      ],
+      "additionalProperties": false
+    },
+    "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 4 shots.",
+    "input_value": {
+      "source": {
+        "id": "earnest_tea",
+        "title": "The Importance of Being Earnest",
+        "author": "Oscar Wilde",
+        "year": 1895,
+        "url": "https://www.gutenberg.org/files/844/844-h/844-h.htm",
+        "locator": "Act II: the tea-table disagreement",
+        "start_text": "Shall I lay tea here as usual",
+        "scenes": [
+          "dining room"
+        ],
+        "topic_terms": [
+          "tea",
+          "preference",
+          "politeness"
+        ],
+        "excerpt": "Shall I lay tea here as usual, Miss? CECILY. [Sternly, in a calm voice.] Yes, as usual. [ Merriman begins to clear table and lay cloth. A long pause. Cecily and Gwendolen glare at each other.] GWENDOLEN. Are there many interesting walks in the vicinity, Miss Cardew? CECILY. Oh! yes! a great many. From the top of one of the hills quite close one can see five counties. GWENDOLEN. Five counties! I don’t think I should like that; I hate crowds. CECILY. [Sweetly.] I suppose that is why you live in town? [ Gwendolen bites her lip, and beats her foot nervously with her parasol.] GWENDOLEN. [Looking round.] Quite a well-kept garden this is, Miss Cardew. CECILY. So glad you like it, Miss Fairfax. GWENDOLEN. I had no idea there were any flowers in the country. CECILY. Oh, flowers are as common here, Miss Fairfax, as people are in London. GWENDOLEN. Personally I cannot understand how anybody manages to exist in the country, if anybody who is anybody does. The country always bores me to death. CECILY. Ah! This is what the newspapers call agricultural depression, is it not? I believe the aristocracy are suffering very much from it just at present. It is almost an epidemic amongst them, I have been told. May I offer you some tea, Miss Fairfax? GWENDOLEN. [With elaborate politeness.] Thank you. [Aside.] Detestable girl! But I require tea! CECILY. [Sweetly.] Sugar? GWENDOLEN. [Superciliously.] No, thank you. Sugar is not fashionable any more. [ Cecily looks angrily at her, takes up the tongs and puts four lumps of sugar into the cup.] CECILY. [Severely.] Cake or bread and butter? GWENDOLEN. [In a bored manner.] Bread and butter, please. Cake is rarely seen at the best houses nowadays. CECILY. [Cuts a very large slice of cake,",
+        "excerpt_sha256": "69ef0b1182cb991e34e939097e9ede9111d8a8bea679adac2730193a274c0e8e",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "shared-meal conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      }
+    },
+    "temperature": 0.5,
+    "output": {
+      "source_id": "earnest_tea",
+      "archetype": "shared-meal conversation",
+      "premise": "Two seated companions maintain formal politeness while debating their contrasting lifestyle preferences during afternoon tea service.",
+      "interaction_arc": "A thinly veiled disagreement about urban and rural lifestyles leads into tea service, where one person asks about personal preferences and intentionally serves the opposite of each requested choice."
+    },
+    "response_metadata": {
+      "stage": "source_abstraction",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-22af8fe60f674a12b3e17677af21d5de",
+      "usage": {
+        "prompt_tokens": 1028,
+        "completion_tokens": 508,
+        "total_tokens": 1536,
+        "prompt_tokens_details": {
+          "text_tokens": 1028
+        },
+        "completion_tokens_details": {
+          "text_tokens": 76,
+          "reasoning_tokens": 432
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "subject_casting",
+    "model": "gemini-3.7-flash",
+    "schema_name": "subject_casting",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "woman",
+                  "man"
+                ]
+              },
+              "clothing": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A clothing color and garment, without an article."
+              }
+            },
+            "required": [
+              "id",
+              "gender",
+              "clothing"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "subjects"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C, D in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "earnest_tea",
+        "archetype": "shared-meal conversation",
+        "premise": "Two seated companions maintain formal politeness while debating their contrasting lifestyle preferences during afternoon tea service.",
+        "interaction_arc": "A thinly veiled disagreement about urban and rural lifestyles leads into tea service, where one person asks about personal preferences and intentionally serves the opposite of each requested choice."
+      },
+      "scene": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window.",
+      "subject_ids": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "casting_contract": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "B",
+          "gender": "woman",
+          "clothing": "purple shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "red shirt"
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "green shirt"
+        }
+      ]
+    },
+    "temperature": 0.5,
+    "output": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "B",
+          "gender": "woman",
+          "clothing": "purple shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "red shirt"
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "green shirt"
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "subject_casting",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-11dc640e46aa4f1c9bce5f172d9ef443",
+      "usage": {
+        "prompt_tokens": 687,
+        "completion_tokens": 179,
+        "total_tokens": 866,
+        "prompt_tokens_details": {
+          "text_tokens": 687
+        },
+        "completion_tokens_details": {
+          "text_tokens": 80,
+          "reasoning_tokens": 99
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  }
+]

@@ -1,0 +1,349 @@
+{
+  "stage": "prompt_audit",
+  "model": "gemini-3.7-flash",
+  "schema_name": "prompt_audit",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "passed": {
+        "type": "boolean"
+      },
+      "issues": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "stage": {
+              "type": "string",
+              "enum": [
+                "story",
+                "camera",
+                "prompt"
+              ]
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "description": "One concise blocking issue."
+            }
+          },
+          "required": [
+            "stage",
+            "message"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "passed",
+      "issues"
+    ],
+    "additionalProperties": false
+  },
+  "system": "You are the strict final auditor for a controlled world-state benchmark. The supplied layout and camera presets are construction contracts, not proof of actual video compliance. For every shot, compare mentioned, expected_visible, probe, Content, and Viewpoint. Content must clearly describe exactly the subjects in mentioned and no others. Subject identity must use only the approved gender and clothing-color anchors; reject invented hair, stable facial features, age, or accessory details. Each identity anchor may appear only once per shot. Shot 1 must begin with layout.public_intro before any subject is introduced. This exact short scene sentence has already passed deterministic validation; do not remove or expand it. Shot 1 seat-label presence, exact wording, and compactness have already passed a deterministic validator. The public labels are the natural-language values in layout.seats, not internal keys such as window_left. Do not report an issue merely because these required seat labels appear. Report a seat issue only when Content clearly pairs a subject with a different subject's supplied seat. Every subject in Shot 1's mentioned array must be introduced once with an identity anchor and seat; these required introductions are not a redundant audience list and must never be rejected merely because only Subject A acts. In an opening introduction, sits/seated/is at a named seat ESTABLISHES a required location; it is not decorative posture and is allowed for EVERY initially present subject. Entry's enters-and-sits sentence is also a required state event, never decoration. Reject repeated anchors or actual audience lists added after those required introductions. Content must contain only plot-relevant actions; reject decorative posture, gaze, expressions, hand gestures, prop handling, and adverbs. Physical cooking, serving or cleaning must not be introduced; people may discuss these topics while seated. Do not accept final wording that initiates an unplanned physical task or implies the speaker is alone. Only the opening wide states its origin and layout. The final wide uses a standard reverse or top-down instruction without any seat inventory or required orientation landmarks. Naming the interaction area itself (table, coffee table, kitchen island) is explicitly allowed and necessary; it is NOT a forbidden landmark. For example, 'Reverse wide shot of the coffee table.' and 'Top-down wide shot directly above the kitchen island.' are allowed. Reject required shelf/window/seat-coverage lists, not the name of the filmed interaction area. Intermediate partial views need only a short focal framing phrase; do not demand lens, height, angle, or crop parameters. Compare the story to source.excerpt and skeleton: retain a recognizable topic or interaction, but allow the documented task adaptation and new human cast. Reject source-attribution claims invented by the writer. Every frozen event must be explicit. Updates name the participating identities, never compact seat labels or landmarks. Entry takes the unique empty place established in Shot 1; Exit leaves the seat and venue; Swap exchanges the named subjects' seats. Naming both people followed by 'exchange seats' or 'swap seats' fully specifies the swap. Do NOT require restating either person's original or destination position. A subject in probe must not be named, described, counted, or indirectly mentioned in final Content. Read probe_expectations for its required final presence and seat. The score checks count and positions for ALL occupants in the final wide, not just unmentioned probes. Mentioned subjects may act without repeating their seat. An absent probe correctly does not appear in expected_visible; do not treat that as an inconsistency. The final Viewpoint must cover every probe subject's established or expected seat. This deliberate omission is the benchmark test, not an error. Reject duration, timestamp, frame-rate, resolution, or generation language. If passed is true, issues must be empty. Classify a broken story beat as story, an ambiguous or inconsistent template/view as camera, and public wording as prompt. Actual opening screenshots, not prescribed identity-to-seat assignments, will supply the evaluation reference. Check narrative continuity against the skeleton: ordinary adaptation is allowed, but changing its discussion into an unrelated topic is not. A shared generic keyword alone does not establish source fidelity. Assign every speech act to the intended subject in the approved beat. After two people of the same gender have been introduced in a shot, do not start a new speaking clause with an unqualified he/she. Bind the action directly to its identity or restructure the sentence. The former/the latter are allowed when exactly two people were named in that order. In an entry shot, the newcomer uniquely refers to the person introduced by the required arrival sentence, not an additional person. Do not repeat identity anchors to resolve a pronoun. Bound possessives such as 'a man in a blue shirt leaves his seat' are clear and allowed.",
+  "input_value": {
+    "source": {
+      "id": "holmes_arrival",
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "year": 1892,
+      "url": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+      "locator": "The Red-Headed League: opening consultation",
+      "start_text": "I had called upon my friend, Mr. Sherlock Holmes",
+      "scenes": [
+        "meeting room"
+      ],
+      "topic_terms": [
+        "case",
+        "account",
+        "consultation"
+      ],
+      "excerpt": "I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair. With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me. “You could not possibly have come at a better time, my dear Watson,” he said cordially. “I was afraid that you were engaged.” “So I am. Very much so.” “Then I can wait in the next room.” “Not at all. This gentleman, Mr. Wilson, has been my partner and helper in many of my most successful cases, and I have no doubt that he will be of the utmost use to me in yours also.” The stout gentleman half rose from his chair and gave a bob of greeting, with a quick little questioning glance from his small fat-encircled eyes. “Try the settee,” said Holmes, relapsing into his armchair and putting his fingertips together, as was his custom when in judicial moods. “I know, my dear Watson, that you share my love of all that is bizarre and outside the conventions and humdrum routine of everyday life. You have shown your relish for it by the enthusiasm which has prompted you to chronicle, and, if you will excuse my saying so, somewhat to embellish so many of my own little adventures.” “Your cases have indeed been of the greatest interest to me,” I observed. “You will remember that I remarked the other day, just before we went into the very simple problem presented by Miss Mary Sutherland, that for strange effects and extraordinary combinations we must go to life itself, which is always far more daring than any effort of the",
+      "excerpt_sha256": "2708a11e855bc90a879421ce30c23bf92ac0e24f326dc901a28f5fb45f326a5d",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+      "archetype": "meeting-room discussion",
+      "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+    },
+    "skeleton": {
+      "source_id": "holmes_arrival",
+      "archetype": "meeting-room discussion",
+      "premise": "An arriving associate interrupts an ongoing consultation regarding an unusual case, but is invited to stay and participate as a collaborator.",
+      "interaction_arc": "A newcomer hesitates upon finding an active inquiry in progress, the lead investigator insists the arrival join to assist with the investigation, and the participants settle in to hear the client present the account."
+    },
+    "layout": {
+      "id": "meeting_room_table_4_overhead_r1_v3_1",
+      "scene_type": "meeting room",
+      "archetype": "meeting-room discussion",
+      "story_venue": "a meeting room",
+      "scene": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+      "public_intro": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+      "seats": {
+        "window_door": "the door-side window seat",
+        "window_screen": "the screen-side window seat",
+        "walkway_screen": "the screen-side walkway seat",
+        "walkway_door": "the door-side walkway seat"
+      },
+      "seat_order": [
+        "window_door",
+        "window_screen",
+        "walkway_screen",
+        "walkway_door"
+      ],
+      "cameras": {
+        "establish": {
+          "framing": "wide",
+          "view_direction": "door_to_screen",
+          "public_view": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame.",
+          "visible_seats": [
+            "window_screen",
+            "window_door",
+            "walkway_screen",
+            "walkway_door"
+          ]
+        },
+        "partial_pair": {
+          "framing": "two_shot",
+          "public_view": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats.",
+          "visible_seats": [
+            "window_door",
+            "window_screen"
+          ]
+        },
+        "partial_first": {
+          "framing": "close_up",
+          "public_view": "Close-up from the walkway side, centered on the person at the door-side window seat.",
+          "visible_seats": [
+            "window_door"
+          ]
+        },
+        "partial_second": {
+          "framing": "close_up",
+          "public_view": "Close-up from the walkway side, centered on the person at the screen-side window seat.",
+          "visible_seats": [
+            "window_screen"
+          ]
+        },
+        "probe_reverse": {
+          "framing": "wide",
+          "view_direction": "screen_to_door",
+          "public_view": "Reverse wide shot of the conference table.",
+          "visible_seats": [
+            "window_screen",
+            "window_door",
+            "walkway_screen",
+            "walkway_door"
+          ]
+        },
+        "probe_overhead": {
+          "framing": "wide",
+          "view_direction": "overhead",
+          "public_view": "Top-down wide shot directly above the conference table.",
+          "visible_seats": [
+            "window_screen",
+            "window_door",
+            "walkway_screen",
+            "walkway_door"
+          ]
+        }
+      },
+      "grammar": {
+        "opening_camera": "establish",
+        "partial_cameras": [
+          "partial_pair",
+          "partial_first",
+          "partial_second"
+        ],
+        "probe_camera": "probe_overhead",
+        "probe_focus_seats": [
+          "window_door",
+          "window_screen"
+        ]
+      },
+      "version": "3.1"
+    },
+    "episode": {
+      "id": "WL-CORE-MEETING-SWAP-4P-TOP-3S",
+      "task": "position_swap",
+      "layout": "meeting_room_table_4_overhead_r1_v3_1",
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "purple shirt",
+          "appearance": "a man in a purple shirt",
+          "seat": "window_door",
+          "initially_present": true
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "red shirt",
+          "appearance": "a man in a red shirt",
+          "seat": "window_screen",
+          "initially_present": true
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "green shirt",
+          "appearance": "a woman in a green shirt",
+          "seat": "walkway_screen",
+          "initially_present": true
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "orange shirt",
+          "appearance": "a man in an orange shirt",
+          "seat": "walkway_door",
+          "initially_present": true
+        }
+      ],
+      "shots": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "beat": "Subject A asks about the details of the consultation.",
+          "events": [],
+          "camera": "establish",
+          "prompt": {
+            "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in a purple shirt sits in the door-side window seat and asks about the consultation, a man in a red shirt sits in the screen-side window seat, a woman in a green shirt sits in the screen-side walkway seat, and a man in an orange shirt sits in the door-side walkway seat.",
+            "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame."
+          }
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "beat": "Subject A and Subject B exchange their established seats. Subject B asks Subject A to assist with the case.",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ],
+          "camera": "partial_pair",
+          "prompt": {
+            "content": "A man in a purple shirt and a man in a red shirt exchange seats, and the latter asks the former to assist with the case.",
+            "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+          }
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "A"
+          ],
+          "beat": "Subject A agrees to help review the inquiry.",
+          "events": [],
+          "camera": "probe_overhead",
+          "prompt": {
+            "content": "A man in a purple shirt agrees to help review the inquiry.",
+            "viewpoint": "Top-down wide shot directly above the conference table."
+          }
+        }
+      ]
+    },
+    "derived_contracts": [
+      {
+        "index": 1,
+        "mentioned": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "expected_visible": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "probe": [],
+        "probe_expectations": [],
+        "camera": "establish",
+        "required_content_prefix": null
+      },
+      {
+        "index": 2,
+        "mentioned": [
+          "A",
+          "B"
+        ],
+        "expected_visible": [
+          "A",
+          "B"
+        ],
+        "probe": [],
+        "probe_expectations": [],
+        "camera": "partial_pair",
+        "required_content_prefix": null
+      },
+      {
+        "index": 3,
+        "mentioned": [
+          "A"
+        ],
+        "expected_visible": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "probe": [
+          "B",
+          "C",
+          "D"
+        ],
+        "probe_expectations": [
+          {
+            "subject": "B",
+            "present": true,
+            "seat": "window_door"
+          },
+          {
+            "subject": "C",
+            "present": true,
+            "seat": "walkway_screen"
+          },
+          {
+            "subject": "D",
+            "present": true,
+            "seat": "walkway_door"
+          }
+        ],
+        "camera": "probe_overhead",
+        "required_content_prefix": null
+      }
+    ],
+    "public_prompt": {
+      "id": "WL-CORE-MEETING-SWAP-4P-TOP-3S",
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in a purple shirt sits in the door-side window seat and asks about the consultation, a man in a red shirt sits in the screen-side window seat, a woman in a green shirt sits in the screen-side walkway seat, and a man in an orange shirt sits in the door-side walkway seat.",
+          "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame."
+        },
+        {
+          "index": 2,
+          "content": "A man in a purple shirt and a man in a red shirt exchange seats, and the latter asks the former to assist with the case.",
+          "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+        },
+        {
+          "index": 3,
+          "content": "A man in a purple shirt agrees to help review the inquiry.",
+          "viewpoint": "Top-down wide shot directly above the conference table."
+        }
+      ]
+    }
+  },
+  "temperature": null
+}

@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-DINING-SWAP-4P-TOP-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window. A man in a green shirt sits in the sideboard-side window seat and asks about tea preferences, a woman in an orange shirt sits in the patio-side window seat, a woman in a white shirt sits in the sideboard-side aisle seat, and a man in a blue shirt sits in the patio-side aisle seat.",
+      "viewpoint": "Wide establishing shot from just beside the patio doors end, looking along the dining table toward the sideboard, with both window-side seats and both aisle-side seats and the sideboard in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in a green shirt and a woman in an orange shirt exchange seats, and she states a preference for plain tea.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A woman in an orange shirt criticizes adding sugar to tea.",
+      "viewpoint": "Close-up from the aisle side, centered on the person at the sideboard-side window seat."
+    },
+    {
+      "index": 4,
+      "content": "A man in a green shirt replies with a defense of formal tea etiquette.",
+      "viewpoint": "Top-down wide shot directly above the dining table."
+    }
+  ]
+}

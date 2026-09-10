@@ -1,0 +1,89 @@
+{
+  "id": "WL-CORE-DINING-STATIC-3P-REV-4S",
+  "task": "static_viewpoint_change",
+  "layout": "dining_room_table_3_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "window_patio",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "window_sideboard",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "yellow shirt",
+      "appearance": "a woman in a yellow shirt",
+      "seat": "sideboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A asks about preferences for the afternoon tea service.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window. A man in a white shirt sits at the patio-side window seat and asks about tea preferences, while a man in a blue shirt sits at the sideboard-side window seat and a woman in a yellow shirt sits at the sideboard-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the patio doors end, looking along the dining table toward the sideboard, with both window-side seats and the sideboard-end seat and the sideboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B states a strict preference against sugar, and Subject A questions the choice.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a blue shirt states a preference against sugar, and the man in a white shirt questions the choice.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A argues that sugar should always be added to afternoon tea.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The man in a white shirt argues that sugar should be added to afternoon tea.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the patio-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B repeats the refusal, and Subject A insists on preparing it with sugar anyway.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in a blue shirt repeats the refusal, and the man in a white shirt insists that sugar must be added.",
+        "viewpoint": "Reverse wide shot of the dining table."
+      }
+    }
+  ]
+}

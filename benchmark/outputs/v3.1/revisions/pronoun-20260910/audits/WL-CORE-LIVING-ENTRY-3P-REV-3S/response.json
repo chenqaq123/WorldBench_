@@ -1,0 +1,24 @@
+{
+  "output": {
+    "passed": true,
+    "issues": []
+  },
+  "trace": [
+    {
+      "stage": "prompt_audit",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-c534eb3f79cc4bbdbcefd384eee5b097",
+      "usage": {
+        "prompt_tokens": 3566,
+        "completion_tokens": 578,
+        "total_tokens": 4144,
+        "completion_tokens_details": {
+          "reasoning_tokens": 562
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  ]
+}

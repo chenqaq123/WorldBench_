@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-KITCHEN-STATIC-4P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a kitchen, a rectangular island stands between a sink counter and a refrigerator, with a window along one side and an aisle along the opposite side. A woman in a white shirt sits on the refrigerator-side window stool and asks about managing the morning breakfast housekeeping. A woman in a blue shirt sits on the sink-side window stool, a man in a yellow shirt sits on the sink-side aisle stool, and a man in a purple shirt sits on the refrigerator-side aisle stool.",
+      "viewpoint": "Wide establishing shot from just beside the refrigerator end, looking along the kitchen island toward the sink counter, with both window-side stools and both aisle-side stools and the sink counter in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in the white shirt asks how to organize the tasks, and the woman in the blue shirt answers that dividing the cooking is best.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side stools."
+    },
+    {
+      "index": 3,
+      "content": "The man in the yellow shirt explains a plan for sharing the duties to the woman in the blue shirt, and the woman in the white shirt agrees.",
+      "viewpoint": "Reverse wide shot of the kitchen island."
+    }
+  ]
+}

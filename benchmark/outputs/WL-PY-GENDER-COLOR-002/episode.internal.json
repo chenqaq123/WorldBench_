@@ -1,0 +1,76 @@
+{
+  "id": "WL-PY-GENDER-COLOR-002",
+  "task": "static_viewpoint_change",
+  "layout": "cafe_rect_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "emerald-green cardigan",
+      "appearance": "a woman in a emerald-green cardigan",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "navy-blue hoodie",
+      "appearance": "a man in a navy-blue hoodie",
+      "seat": "window_right",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "crimson-red blouse",
+      "appearance": "a woman in a crimson-red blouse",
+      "seat": "table_left_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "A gestures animatedly with her hands while describing her morning mishap, prompting B to lean forward over his warm mug with an intrigued smile as C listens quietly, resting her chin on her hand with an amused expression.",
+      "events": [],
+      "camera": "establish_front",
+      "prompt": {
+        "content": "In a quiet café, a woman in an emerald-green cardigan sits at the window-side seat nearest the tall floor plant, gesturing animatedly with her hands while describing her morning mishap. A man in a navy-blue hoodie sits at the window-side seat nearest the café counter, leaning forward over his warm mug with an intrigued smile, as a woman in a crimson-red blouse sits at the short-end seat directly in front of the tall floor plant, listening quietly while resting her chin on her hand with an amused expression.",
+        "viewpoint": "Wide view from the aisle-side corner, looking diagonally across the rectangular table. The full table and all three seats are visible."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "A shakes her head with an exaggerated sigh and taps her fingers lightly against the wooden table, while B chuckles softly and nods along in sympathetic agreement.",
+      "events": [],
+      "camera": "partial_window_pair",
+      "prompt": {
+        "content": "The woman in the emerald-green cardigan shakes her head with an exaggerated sigh and taps her fingers lightly against the wooden table, while the man in the navy-blue hoodie chuckles softly and nods along in sympathetic agreement.",
+        "viewpoint": "Medium close view of the two people in the window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "B offers an encouraging smile while gesturing toward his mug, prompting A to break into relieved laughter as she relaxes in her seat.",
+      "events": [],
+      "camera": "probe_right_end",
+      "prompt": {
+        "content": "The man in the navy-blue hoodie offers an encouraging smile while gesturing toward his mug, prompting the woman in the emerald-green cardigan to break into relieved laughter as she relaxes in her seat.",
+        "viewpoint": "Wide view from the counter end, looking along the full table toward the floor plant. Both window-side seats and the plant-end seat are visible."
+      }
+    }
+  ]
+}

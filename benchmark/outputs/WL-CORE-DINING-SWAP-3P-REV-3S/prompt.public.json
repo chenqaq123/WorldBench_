@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-DINING-SWAP-3P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side. A woman in a navy blazer sits at the sideboard-side window seat and begins the discussion, a man in a mustard sweater sits at the patio-side window seat, and a woman in an emerald blouse sits at the sideboard-end seat.",
+      "viewpoint": "Wide establishing shot from the patio-door end, looking lengthwise along the dining table toward the sideboard, with both window-side seats and the sideboard-end seat in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in a navy blazer at the sideboard-side window seat swaps seats with the man in a mustard sweater at the patio-side window seat, then asks a question as he answers.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in an emerald blouse replies.",
+      "viewpoint": "Reverse wide shot from the sideboard end, looking lengthwise along the dining table toward the patio doors, with both window-side seats and the sideboard-end seat in frame."
+    }
+  ]
+}

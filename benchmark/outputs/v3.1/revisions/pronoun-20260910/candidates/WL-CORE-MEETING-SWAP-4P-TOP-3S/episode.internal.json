@@ -1,0 +1,90 @@
+{
+  "id": "WL-CORE-MEETING-SWAP-4P-TOP-3S",
+  "task": "position_swap",
+  "layout": "meeting_room_table_4_overhead_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "purple shirt",
+      "appearance": "a man in a purple shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "walkway_screen",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "walkway_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks about the details of the consultation.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in a purple shirt sits in the door-side window seat and asks about the consultation, a man in a red shirt sits in the screen-side window seat, a woman in a green shirt sits in the screen-side walkway seat, and a man in an orange shirt sits in the door-side walkway seat.",
+        "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B asks Subject A to assist with the case.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in a purple shirt and a man in a red shirt exchange seats, and the latter asks the former to assist with the case.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A agrees to help review the inquiry.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "A man in a purple shirt agrees to help review the inquiry.",
+        "viewpoint": "Top-down wide shot directly above the conference table."
+      }
+    }
+  ]
+}

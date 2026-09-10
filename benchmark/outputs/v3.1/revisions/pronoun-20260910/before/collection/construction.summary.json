@@ -1,0 +1,193 @@
+{
+  "completed_at": "2026-09-10T18:43:37.673258+08:00",
+  "benchmark": "WorldLine",
+  "version": "3.1",
+  "case_count": 112,
+  "existing_cases_preserved": 16,
+  "new_cases_completed": 96,
+  "existing_files_sha256_verified": 100,
+  "changed_existing_files": [],
+  "new_cases_by_provider": {
+    "vapi": 96
+  },
+  "new_cases_returned_models_by_stage": {
+    "source_abstraction": {
+      "gemini-3.7-flash": 96
+    },
+    "subject_casting": {
+      "gemini-3.7-flash": 96
+    },
+    "story_planning": {
+      "gemini-3.7-flash": 96
+    },
+    "prompt_rendering": {
+      "gemini-3.7-flash": 96
+    },
+    "prompt_audit": {
+      "gemini-3.7-flash": 97
+    },
+    "prompt_repair": {
+      "gemini-3.7-flash": 1
+    }
+  },
+  "reused_stage_records_in_new_runs": 16,
+  "unique_signatures": 112,
+  "unique_public_prompts": 112,
+  "distributions": {
+    "task": {
+      "person_entry": 28,
+      "person_exit": 28,
+      "position_swap": 28,
+      "static_viewpoint_change": 28
+    },
+    "scene": {
+      "café": 16,
+      "dining room": 16,
+      "game room": 16,
+      "kitchen": 16,
+      "living room": 16,
+      "meeting room": 16,
+      "seminar room": 16
+    },
+    "subject_count": {
+      "3": 56,
+      "4": 56
+    },
+    "viewpoint_mode": {
+      "overhead": 56,
+      "reverse_axis": 56
+    },
+    "shot_count": {
+      "3": 56,
+      "4": 56
+    }
+  },
+  "source_counts": {
+    "alice_seats": 8,
+    "alice_riddle": 8,
+    "women_breakfast": 8,
+    "earnest_tea": 8,
+    "women_club": 8,
+    "alice_rules": 8,
+    "women_housekeeping": 8,
+    "boat_stew": 8,
+    "earnest_visit": 8,
+    "pride_evening": 8,
+    "boat_holiday": 8,
+    "holmes_arrival": 8,
+    "holmes_account": 8,
+    "pride_skills": 8
+  },
+  "validation_errors": [],
+  "targeted_offline_tests_passed": 24,
+  "test_commands": [
+    "python3 -m unittest discover -s tests -p 'test_prompt_*.py' -v",
+    "python3 -m unittest discover -s tests -p 'test_core_v3.py' -v"
+  ],
+  "exports_sha256": {
+    "prompts.md": "8ffa05390b8e5c68dac3df21f030139f3ae7bc6ba99b2255f749fc494ac0d698",
+    "public_prompts.json": "ea67dc541f75c035439398666f09d96aa2a0922a2b50fe91445d9f1c5cf8b4a1"
+  },
+  "new_case_ids": [
+    "WL-CORE-CAFE-ENTRY-3P-REV-4S",
+    "WL-CORE-CAFE-ENTRY-4P-REV-3S",
+    "WL-CORE-CAFE-ENTRY-4P-TOP-3S",
+    "WL-CORE-CAFE-EXIT-3P-REV-3S",
+    "WL-CORE-CAFE-EXIT-3P-TOP-3S",
+    "WL-CORE-CAFE-EXIT-4P-REV-4S",
+    "WL-CORE-CAFE-EXIT-4P-TOP-4S",
+    "WL-CORE-CAFE-STATIC-3P-REV-3S",
+    "WL-CORE-CAFE-STATIC-3P-TOP-3S",
+    "WL-CORE-CAFE-STATIC-4P-REV-4S",
+    "WL-CORE-CAFE-STATIC-4P-TOP-4S",
+    "WL-CORE-CAFE-SWAP-3P-REV-4S",
+    "WL-CORE-CAFE-SWAP-4P-REV-3S",
+    "WL-CORE-CAFE-SWAP-4P-TOP-3S",
+    "WL-CORE-DINING-ENTRY-3P-TOP-3S",
+    "WL-CORE-DINING-ENTRY-4P-REV-4S",
+    "WL-CORE-DINING-ENTRY-4P-TOP-4S",
+    "WL-CORE-DINING-EXIT-3P-REV-4S",
+    "WL-CORE-DINING-EXIT-3P-TOP-4S",
+    "WL-CORE-DINING-EXIT-4P-TOP-3S",
+    "WL-CORE-DINING-STATIC-3P-TOP-4S",
+    "WL-CORE-DINING-STATIC-4P-REV-3S",
+    "WL-CORE-DINING-STATIC-4P-TOP-3S",
+    "WL-CORE-DINING-SWAP-3P-REV-3S",
+    "WL-CORE-DINING-SWAP-3P-TOP-3S",
+    "WL-CORE-DINING-SWAP-4P-REV-4S",
+    "WL-CORE-DINING-SWAP-4P-TOP-4S",
+    "WL-CORE-GAME-ENTRY-3P-REV-4S",
+    "WL-CORE-GAME-ENTRY-3P-TOP-4S",
+    "WL-CORE-GAME-ENTRY-4P-REV-3S",
+    "WL-CORE-GAME-EXIT-3P-REV-3S",
+    "WL-CORE-GAME-EXIT-3P-TOP-3S",
+    "WL-CORE-GAME-EXIT-4P-REV-4S",
+    "WL-CORE-GAME-EXIT-4P-TOP-4S",
+    "WL-CORE-GAME-STATIC-3P-REV-3S",
+    "WL-CORE-GAME-STATIC-3P-TOP-3S",
+    "WL-CORE-GAME-STATIC-4P-REV-4S",
+    "WL-CORE-GAME-STATIC-4P-TOP-4S",
+    "WL-CORE-GAME-SWAP-3P-REV-4S",
+    "WL-CORE-GAME-SWAP-3P-TOP-4S",
+    "WL-CORE-GAME-SWAP-4P-REV-3S",
+    "WL-CORE-KITCHEN-ENTRY-3P-REV-3S",
+    "WL-CORE-KITCHEN-ENTRY-3P-TOP-3S",
+    "WL-CORE-KITCHEN-ENTRY-4P-TOP-4S",
+    "WL-CORE-KITCHEN-EXIT-3P-REV-4S",
+    "WL-CORE-KITCHEN-EXIT-3P-TOP-4S",
+    "WL-CORE-KITCHEN-EXIT-4P-REV-3S",
+    "WL-CORE-KITCHEN-EXIT-4P-TOP-3S",
+    "WL-CORE-KITCHEN-STATIC-3P-REV-4S",
+    "WL-CORE-KITCHEN-STATIC-3P-TOP-4S",
+    "WL-CORE-KITCHEN-STATIC-4P-TOP-3S",
+    "WL-CORE-KITCHEN-SWAP-3P-TOP-3S",
+    "WL-CORE-KITCHEN-SWAP-4P-REV-4S",
+    "WL-CORE-KITCHEN-SWAP-4P-TOP-4S",
+    "WL-CORE-LIVING-ENTRY-3P-REV-3S",
+    "WL-CORE-LIVING-ENTRY-3P-TOP-3S",
+    "WL-CORE-LIVING-ENTRY-4P-REV-4S",
+    "WL-CORE-LIVING-ENTRY-4P-TOP-4S",
+    "WL-CORE-LIVING-EXIT-3P-TOP-4S",
+    "WL-CORE-LIVING-EXIT-4P-REV-3S",
+    "WL-CORE-LIVING-EXIT-4P-TOP-3S",
+    "WL-CORE-LIVING-STATIC-3P-REV-4S",
+    "WL-CORE-LIVING-STATIC-3P-TOP-4S",
+    "WL-CORE-LIVING-STATIC-4P-REV-3S",
+    "WL-CORE-LIVING-STATIC-4P-TOP-3S",
+    "WL-CORE-LIVING-SWAP-3P-REV-3S",
+    "WL-CORE-LIVING-SWAP-3P-TOP-3S",
+    "WL-CORE-LIVING-SWAP-4P-TOP-4S",
+    "WL-CORE-MEETING-ENTRY-3P-REV-4S",
+    "WL-CORE-MEETING-ENTRY-3P-TOP-4S",
+    "WL-CORE-MEETING-ENTRY-4P-REV-3S",
+    "WL-CORE-MEETING-ENTRY-4P-TOP-3S",
+    "WL-CORE-MEETING-EXIT-3P-REV-3S",
+    "WL-CORE-MEETING-EXIT-4P-REV-4S",
+    "WL-CORE-MEETING-EXIT-4P-TOP-4S",
+    "WL-CORE-MEETING-STATIC-3P-REV-3S",
+    "WL-CORE-MEETING-STATIC-4P-REV-4S",
+    "WL-CORE-MEETING-STATIC-4P-TOP-4S",
+    "WL-CORE-MEETING-SWAP-3P-REV-4S",
+    "WL-CORE-MEETING-SWAP-3P-TOP-4S",
+    "WL-CORE-MEETING-SWAP-4P-REV-3S",
+    "WL-CORE-MEETING-SWAP-4P-TOP-3S",
+    "WL-CORE-SEMINAR-ENTRY-3P-REV-4S",
+    "WL-CORE-SEMINAR-ENTRY-3P-TOP-4S",
+    "WL-CORE-SEMINAR-ENTRY-4P-REV-3S",
+    "WL-CORE-SEMINAR-ENTRY-4P-TOP-3S",
+    "WL-CORE-SEMINAR-EXIT-3P-REV-3S",
+    "WL-CORE-SEMINAR-EXIT-3P-TOP-3S",
+    "WL-CORE-SEMINAR-EXIT-4P-REV-4S",
+    "WL-CORE-SEMINAR-STATIC-3P-REV-3S",
+    "WL-CORE-SEMINAR-STATIC-3P-TOP-3S",
+    "WL-CORE-SEMINAR-STATIC-4P-REV-4S",
+    "WL-CORE-SEMINAR-SWAP-3P-REV-4S",
+    "WL-CORE-SEMINAR-SWAP-3P-TOP-4S",
+    "WL-CORE-SEMINAR-SWAP-4P-REV-3S",
+    "WL-CORE-SEMINAR-SWAP-4P-TOP-3S"
+  ],
+  "human_review_complete": false,
+  "release_ready": false,
+  "new_video_generation": false,
+  "new_video_evaluation": false
+}

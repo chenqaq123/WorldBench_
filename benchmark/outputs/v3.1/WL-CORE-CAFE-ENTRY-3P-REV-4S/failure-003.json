@@ -1,0 +1,3 @@
+{
+  "error": "VAPI 400: {\"error\":{\"message\":\"Invalid schema for response_format 'story_beats': In context=('properties', 'shots', 'items', 'properties', 'events', 'items'), 'required' is required to be supplied and to be an array including every key in properties. Missing 'with_subject'.（traceid: 4b4bdea417e9d318ac2d9b46b6290243） (request id: 2026091016424456415534399194176)\",\"type\":\"v_api_biz_error\",\"param\":\"text.format.schema\",\"code\":\"invalid_json_schema\"}}"
+}

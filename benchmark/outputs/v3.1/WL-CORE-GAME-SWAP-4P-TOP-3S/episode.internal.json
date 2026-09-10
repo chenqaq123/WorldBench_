@@ -1,0 +1,90 @@
+{
+  "id": "WL-CORE-GAME-SWAP-4P-TOP-3S",
+  "task": "position_swap",
+  "layout": "board_game_table_4_overhead_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "window_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "yellow shirt",
+      "appearance": "a woman in a yellow shirt",
+      "seat": "aisle_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "purple shirt",
+      "appearance": "a man in a purple shirt",
+      "seat": "aisle_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A claims he can solve the riddle.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A man in a white shirt sits at the doorway-side window seat and claims he can solve the riddle, a man in a blue shirt sits at the shelf-side window seat, a woman in a yellow shirt sits at the shelf-side aisle seat, and a man in a purple shirt sits at the doorway-side aisle seat.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and both aisle-side seats and the shelving unit in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B disputes the wording rule, and Subject A explains his answer.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in a white shirt and a man in a blue shirt exchange seats as the latter disputes the wording rule and the former explains his answer.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks about the rule for the riddle timer.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "A man in a white shirt asks about the rule for the riddle timer.",
+        "viewpoint": "Top-down wide shot directly above the game table."
+      }
+    }
+  ]
+}

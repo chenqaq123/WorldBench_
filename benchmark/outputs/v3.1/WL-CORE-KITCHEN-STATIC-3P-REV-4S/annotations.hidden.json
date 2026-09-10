@@ -1,0 +1,130 @@
+{
+  "version": "3.1",
+  "episode_id": "WL-CORE-KITCHEN-STATIC-3P-REV-4S",
+  "source_id": "boat_stew",
+  "layout": {
+    "id": "kitchen_island_3_r1_v3_1",
+    "scene_type": "kitchen",
+    "archetype": "kitchen conversation",
+    "story_venue": "a kitchen",
+    "scene": "Inside a kitchen, a rectangular island stands between a sink counter and a refrigerator, with a window along one side and an aisle along the opposite side.",
+    "public_intro": "Inside a kitchen, a rectangular island stands between a sink counter and a refrigerator, with a window along one side and an aisle along the opposite side.",
+    "seats": {
+      "guest_fridge": "the refrigerator-side window stool",
+      "guest_sink": "the sink-side window stool",
+      "sink_end": "the sink-end stool"
+    },
+    "seat_order": [
+      "guest_fridge",
+      "guest_sink",
+      "sink_end"
+    ],
+    "cameras": {
+      "establish": {
+        "framing": "wide",
+        "view_direction": "refrigerator_to_sink",
+        "public_view": "Wide establishing shot from just beside the refrigerator end, looking along the kitchen island toward the sink counter, with both window-side stools and the sink-end stool and the sink counter in frame.",
+        "visible_seats": [
+          "guest_sink",
+          "guest_fridge",
+          "sink_end"
+        ]
+      },
+      "partial_pair": {
+        "framing": "two_shot",
+        "public_view": "Medium two-shot from the aisle side, centered on the two adjacent window-side stools.",
+        "visible_seats": [
+          "guest_fridge",
+          "guest_sink"
+        ]
+      },
+      "partial_first": {
+        "framing": "close_up",
+        "public_view": "Close-up from the aisle side, centered on the person at the refrigerator-side window stool.",
+        "visible_seats": [
+          "guest_fridge"
+        ]
+      },
+      "partial_second": {
+        "framing": "close_up",
+        "public_view": "Close-up from the aisle side, centered on the person at the sink-side window stool.",
+        "visible_seats": [
+          "guest_sink"
+        ]
+      },
+      "probe_reverse": {
+        "framing": "wide",
+        "view_direction": "sink_to_refrigerator",
+        "public_view": "Reverse wide shot of the kitchen island.",
+        "visible_seats": [
+          "guest_sink",
+          "guest_fridge",
+          "sink_end"
+        ]
+      },
+      "probe_overhead": {
+        "framing": "wide",
+        "view_direction": "overhead",
+        "public_view": "Top-down wide shot directly above the kitchen island.",
+        "visible_seats": [
+          "guest_sink",
+          "guest_fridge",
+          "sink_end"
+        ]
+      }
+    },
+    "grammar": {
+      "opening_camera": "establish",
+      "partial_cameras": [
+        "partial_pair",
+        "partial_first",
+        "partial_second"
+      ],
+      "probe_camera": "probe_reverse",
+      "probe_focus_seats": [
+        "guest_fridge",
+        "guest_sink"
+      ]
+    },
+    "version": "3.1"
+  },
+  "layout_sha256": "2f03a8941401220a9c99a352d276944cff6bdcf067518e763da45fd213d5ccd7",
+  "identity_anchor_shots": {
+    "A": 1,
+    "B": 1,
+    "C": 1
+  },
+  "observations": [
+    {
+      "shot": 1,
+      "scored": false,
+      "camera": "establish",
+      "expected_count": 3,
+      "expected_occupants": {
+        "guest_sink": "B",
+        "guest_fridge": "A",
+        "sink_end": "C"
+      },
+      "unmentioned_probes": []
+    },
+    {
+      "shot": 4,
+      "scored": true,
+      "camera": "probe_reverse",
+      "expected_count": 3,
+      "expected_occupants": {
+        "guest_sink": "B",
+        "guest_fridge": "A",
+        "sink_end": "C"
+      },
+      "unmentioned_probes": [
+        {
+          "subject": "C",
+          "present": true,
+          "seat": "sink_end"
+        }
+      ]
+    }
+  ],
+  "evaluation_reference": "observed_opening_plus_requested_updates"
+}

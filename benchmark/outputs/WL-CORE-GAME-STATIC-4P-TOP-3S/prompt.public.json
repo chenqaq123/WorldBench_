@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-GAME-STATIC-4P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side. A woman in a navy cardigan sits in the shelf-side window seat and tells an anecdote, while a man in a mustard sweater occupies the doorway-side window seat, a woman in a emerald blouse occupies the shelf-side aisle seat, and a man in a burgundy hoodie occupies the doorway-side aisle seat.",
+      "viewpoint": "Wide establishing shot from the doorway end, looking lengthwise along the game table toward the shelving unit, with both window-side seats and both aisle-side seats in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in a mustard sweater asks the woman in a navy cardigan for details.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a navy cardigan concludes the anecdote for the man in a mustard sweater and the woman in a emerald blouse.",
+      "viewpoint": "Top-down wide shot from directly above the game table, centered on the tabletop, with both window-side seats and both aisle-side seats in frame."
+    }
+  ]
+}

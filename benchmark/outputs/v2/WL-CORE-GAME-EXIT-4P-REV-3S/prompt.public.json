@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-GAME-EXIT-4P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side. A woman in a yellow shirt sits at the shelf-side window seat and calls the club meeting to order, presenting an opening reading. A man in a purple shirt sits at the doorway-side window seat, a man in a red shirt sits at the shelf-side aisle seat, and a woman in a green shirt sits at the doorway-side aisle seat.",
+      "viewpoint": "Wide establishing shot from the doorway end, looking lengthwise along the game table toward the shelving unit, with both window-side seats and both aisle-side seats in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in a purple shirt leaves the doorway-side window seat and exits the game room. The woman in a yellow shirt asks if the schedule should continue.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a green shirt tells the woman in a yellow shirt that the club reading should proceed.",
+      "viewpoint": "Reverse wide shot from the shelving-unit end, looking lengthwise along the game table toward the doorway, with both window-side seats and both aisle-side seats in frame."
+    }
+  ]
+}

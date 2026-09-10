@@ -1,0 +1,143 @@
+{
+  "version": "3.1",
+  "episode_id": "WL-CORE-CAFE-ENTRY-4P-REV-3S",
+  "source_id": "alice_riddle",
+  "layout": {
+    "id": "cafe_rect_table_4_r1_v3_1",
+    "scene_type": "café",
+    "archetype": "café conversation",
+    "story_venue": "a café seating area",
+    "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+    "public_intro": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+    "seats": {
+      "window_right": "the counter-side window seat",
+      "window_left": "the plant-side window seat",
+      "aisle_left": "the plant-side aisle seat",
+      "aisle_right": "the counter-side aisle seat"
+    },
+    "seat_order": [
+      "window_right",
+      "window_left",
+      "aisle_left",
+      "aisle_right"
+    ],
+    "cameras": {
+      "establish": {
+        "framing": "wide",
+        "view_direction": "counter_to_plant",
+        "public_view": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and both aisle-side seats and the floor plant in frame.",
+        "visible_seats": [
+          "window_left",
+          "window_right",
+          "aisle_left",
+          "aisle_right"
+        ]
+      },
+      "partial_pair": {
+        "framing": "two_shot",
+        "public_view": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats.",
+        "visible_seats": [
+          "window_right",
+          "window_left"
+        ]
+      },
+      "partial_first": {
+        "framing": "close_up",
+        "public_view": "Close-up from the aisle side, centered on the person at the counter-side window seat.",
+        "visible_seats": [
+          "window_right"
+        ]
+      },
+      "partial_second": {
+        "framing": "close_up",
+        "public_view": "Close-up from the aisle side, centered on the person at the plant-side window seat.",
+        "visible_seats": [
+          "window_left"
+        ]
+      },
+      "probe_reverse": {
+        "framing": "wide",
+        "view_direction": "plant_to_counter",
+        "public_view": "Reverse wide shot of the rectangular table.",
+        "visible_seats": [
+          "window_left",
+          "window_right",
+          "aisle_left",
+          "aisle_right"
+        ]
+      },
+      "probe_overhead": {
+        "framing": "wide",
+        "view_direction": "overhead",
+        "public_view": "Top-down wide shot directly above the rectangular table.",
+        "visible_seats": [
+          "window_left",
+          "window_right",
+          "aisle_left",
+          "aisle_right"
+        ]
+      }
+    },
+    "grammar": {
+      "opening_camera": "establish",
+      "partial_cameras": [
+        "partial_pair",
+        "partial_first",
+        "partial_second"
+      ],
+      "probe_camera": "probe_reverse",
+      "probe_focus_seats": [
+        "window_right",
+        "window_left"
+      ]
+    },
+    "version": "3.1"
+  },
+  "layout_sha256": "593dea8e2805a11b987a3d64d5c9940cd27c370c0b91385ac984de107cf92f94",
+  "identity_anchor_shots": {
+    "A": 1,
+    "B": 2,
+    "C": 1,
+    "D": 1
+  },
+  "observations": [
+    {
+      "shot": 1,
+      "scored": false,
+      "camera": "establish",
+      "expected_count": 3,
+      "expected_occupants": {
+        "window_left": null,
+        "window_right": "A",
+        "aisle_left": "C",
+        "aisle_right": "D"
+      },
+      "unmentioned_probes": []
+    },
+    {
+      "shot": 3,
+      "scored": true,
+      "camera": "probe_reverse",
+      "expected_count": 4,
+      "expected_occupants": {
+        "window_left": "B",
+        "window_right": "A",
+        "aisle_left": "C",
+        "aisle_right": "D"
+      },
+      "unmentioned_probes": [
+        {
+          "subject": "B",
+          "present": true,
+          "seat": "window_left"
+        },
+        {
+          "subject": "C",
+          "present": true,
+          "seat": "aisle_left"
+        }
+      ]
+    }
+  ],
+  "evaluation_reference": "observed_opening_plus_requested_updates"
+}

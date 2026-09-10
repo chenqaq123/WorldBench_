@@ -1,0 +1,94 @@
+{
+  "id": "WL-CORE-MEETING-SWAP-3P-REV-4S",
+  "task": "position_swap",
+  "layout": "meeting_room_table_3_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "screen_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A explains the need for a restful holiday to recover from fatigue.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in an orange shirt sits in the door-side window seat and explains the need for a restful holiday, a woman in a white shirt sits in the screen-side window seat, and a man in a blue shirt sits in the screen-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and the screen-end seat and the presentation screen in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B suggests taking a quiet country retreat.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in an orange shirt and a woman in a white shirt exchange seats, and she suggests taking a quiet country retreat.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "B"
+      ],
+      "beat": "Subject B asks whether a boat trip would be more exciting.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "A woman in a white shirt asks whether a boat trip would be more exciting.",
+        "viewpoint": "Close-up from the walkway side, centered on the person at the door-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A argues against a boat trip because of travel discomfort.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A man in an orange shirt argues against a boat trip because of travel discomfort.",
+        "viewpoint": "Reverse wide shot of the conference table."
+      }
+    }
+  ]
+}

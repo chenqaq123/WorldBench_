@@ -1,0 +1,253 @@
+{
+  "source": {
+    "archetype": "kitchen conversation",
+    "material": "3 people begin a conversation in a kitchen while the refrigerator-side guest stool is empty. One additional person arrives, takes the refrigerator-side guest stool, and joins the exchange. The person at the sink-side cook stool does not leave or move."
+  },
+  "config": {
+    "task": "person_entry",
+    "scene": "kitchen",
+    "layout": "kitchen_island_4_overhead_v1",
+    "viewpoint_mode": "overhead",
+    "subject_count": 4,
+    "shot_count": 3
+  },
+  "case_signature": {
+    "task_type": "person_entry",
+    "scene": "kitchen",
+    "viewpoint_mode": "overhead",
+    "subject_count": 4,
+    "shot_count": 3
+  },
+  "models": {
+    "source_abstraction": "google/gemini-3.7-flash",
+    "subject_casting": "google/gemini-3.7-flash",
+    "story_planning": "google/gemini-3.7-flash",
+    "prompt_rendering": "google/gemini-3.7-flash",
+    "prompt_audit": "openai/gpt-5.6-luna"
+  },
+  "stage_outputs": {
+    "source_abstraction": {
+      "archetype": "kitchen conversation",
+      "premise": "A seated gathering in a shared space incorporates a new arrival into their discussion.",
+      "interaction_arc": "A group converses together while leaving an open seat. Another person enters the space, sits down in the available spot, and joins the ongoing discussion without disrupting the existing seating arrangement."
+    },
+    "subject_casting": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "navy blazer"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "olive sweater"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "mustard blouse"
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "burgundy hoodie"
+        }
+      ]
+    },
+    "story_planning": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A introduces the renovation topic.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject B enters and takes the established seat. Subject B asks about the schedule, and Subject A replies.",
+          "events": [
+            {
+              "subject": "B",
+              "action": "enter"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "beat": "Subject D asks for clarification, and Subject A answers.",
+          "events": []
+        }
+      ]
+    },
+    "prompt_rendering": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a kitchen, a long rectangular island stands between the refrigerator wall and the sink area, with stools arranged along its sides. A woman in a navy blazer sits at the sink-side guest stool and introduces the renovation topic, while a woman in a mustard blouse sits at the sink-side cook stool, and a man in a burgundy hoodie sits at the refrigerator-side cook stool."
+        },
+        {
+          "index": 2,
+          "content": "A man in an olive sweater enters, sits at the refrigerator-side guest stool, and asks about the schedule, and a woman in a navy blazer replies."
+        },
+        {
+          "index": 3,
+          "content": "A man in a burgundy hoodie asks for clarification, and a woman in a navy blazer answers."
+        }
+      ]
+    },
+    "prompt_audit": [
+      {
+        "round": 1,
+        "passed": true,
+        "issues": []
+      }
+    ]
+  },
+  "trace": [
+    {
+      "stage": "source_abstraction",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788264657-g1XJYCRdrP5iMPt3c1tq",
+      "usage": {
+        "prompt_tokens": 167,
+        "completion_tokens": 618,
+        "total_tokens": 785,
+        "cost": 0.00244275,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00244275,
+          "upstream_inference_prompt_cost": 0.00012525,
+          "upstream_inference_completions_cost": 0.0023175
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 551,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "subject_casting",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788264661-NT0Q6YfUsagDhI7H4Mxa",
+      "usage": {
+        "prompt_tokens": 354,
+        "completion_tokens": 354,
+        "total_tokens": 708,
+        "cost": 0.001593,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001593,
+          "upstream_inference_prompt_cost": 0.0002655,
+          "upstream_inference_completions_cost": 0.0013275
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 288,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788264665-ODSQk5z1UZFc4KQ9HPlA",
+      "usage": {
+        "prompt_tokens": 870,
+        "completion_tokens": 579,
+        "total_tokens": 1449,
+        "cost": 0.00282375,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00282375,
+          "upstream_inference_prompt_cost": 0.0006525,
+          "upstream_inference_completions_cost": 0.00217125
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 425,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788264668-mnBmeT1eVDffqN9qFi1A",
+      "usage": {
+        "prompt_tokens": 1049,
+        "completion_tokens": 917,
+        "total_tokens": 1966,
+        "cost": 0.0042255,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0042255,
+          "upstream_inference_prompt_cost": 0.00078675,
+          "upstream_inference_completions_cost": 0.00343875
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 744,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1788264673-l07dAMyJ0OX9zt0n5bWZ",
+      "usage": {
+        "prompt_tokens": 2277,
+        "completion_tokens": 301,
+        "total_tokens": 2578,
+        "cost": 0.0009303,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2274,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0009303,
+          "upstream_inference_prompt_cost": 0.0005691,
+          "upstream_inference_completions_cost": 0.0003612
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 282,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  ]
+}

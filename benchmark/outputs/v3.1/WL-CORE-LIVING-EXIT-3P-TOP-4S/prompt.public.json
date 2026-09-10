@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-LIVING-EXIT-3P-TOP-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing an armchair near the bookcase end. A man in a yellow shirt sits in the doorway-side sofa seat recounting dance partners from the ball, while a woman in a purple shirt sits in the bookcase-side sofa seat and a woman in a red shirt sits in the bookcase-side armchair.",
+      "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair and the bookcase in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in a purple shirt leaves her seat and exits the venue. The man in a yellow shirt asks if the full recap of the dance can still be finished.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in a yellow shirt explains why the evening ball was a success.",
+      "viewpoint": "Close-up from the coffee-table side, centered on the person at the doorway-side sofa seat."
+    },
+    {
+      "index": 4,
+      "content": "The man in a yellow shirt lists the remaining dances from the evening.",
+      "viewpoint": "Top-down wide shot directly above the coffee table."
+    }
+  ]
+}

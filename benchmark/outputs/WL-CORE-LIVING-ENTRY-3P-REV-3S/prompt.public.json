@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-LIVING-ENTRY-3P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in a navy cardigan sits on the bookcase-side sofa seat and asks a question, while a woman in an olive blazer sits on the bookcase-side armchair.",
+      "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in a mustard sweater enters, takes the doorway-side sofa seat, and answers while a woman in a navy cardigan asks.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "A woman in a navy cardigan replies.",
+      "viewpoint": "Reverse wide shot from the bookcase side, looking across the coffee table toward the doorway, with both sofa seats and the bookcase-side armchair in frame."
+    }
+  ]
+}

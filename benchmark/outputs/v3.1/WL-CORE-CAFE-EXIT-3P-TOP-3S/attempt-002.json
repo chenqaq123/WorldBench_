@@ -1,0 +1,212 @@
+[
+  {
+    "stage": "source_abstraction",
+    "model": "gemini-3.7-flash",
+    "schema_name": "story_skeleton",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the real source ID exactly."
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the supplied archetype exactly."
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A faithful abstraction of the supplied excerpt's interaction."
+        },
+        "interaction_arc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A concise ordered narrative progression, not divided into shots."
+        }
+      },
+      "required": [
+        "source_id",
+        "archetype",
+        "premise",
+        "interaction_arc"
+      ],
+      "additionalProperties": false
+    },
+    "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 3 shots.",
+    "input_value": {
+      "source": {
+        "id": "alice_riddle",
+        "title": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
+        "year": 1865,
+        "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+        "locator": "Chapter VII: A Mad Tea-Party",
+        "start_text": "Why is a raven like a writing-desk?",
+        "scenes": [
+          "café"
+        ],
+        "topic_terms": [
+          "riddle",
+          "answer"
+        ],
+        "excerpt": "Why is a raven like a writing-desk?” “Come, we shall have some fun now!” thought Alice. “I’m glad they’ve begun asking riddles.—I believe I can guess that,” she added aloud. “Do you mean that you think you can find out the answer to it?” said the March Hare. “Exactly so,” said Alice. “Then you should say what you mean,” the March Hare went on. “I do,” Alice hastily replied; “at least—at least I mean what I say—that’s the same thing, you know.” “Not the same thing a bit!” said the Hatter. “You might just as well say that ‘I see what I eat’ is the same thing as ‘I eat what I see’!” “You might just as well say,” added the March Hare, “that ‘I like what I get’ is the same thing as ‘I get what I like’!” “You might just as well say,” added the Dormouse, who seemed to be talking in his sleep, “that ‘I breathe when I sleep’ is the same thing as ‘I sleep when I breathe’!” “It is the same thing with you,” said the Hatter, and here the conversation dropped, and the party sat silent for a minute, while Alice thought over all she could remember about ravens and writing-desks, which wasn’t much. The Hatter was the first to break the silence. “What day of the month is it?” he said, turning to Alice: he had taken his watch out of his pocket, and was looking at it uneasily, shaking it every now and then, and holding it to his ear. Alice considered a little, and then said “The fourth.” “Two days wrong!” sighed the Hatter. “I told you butter wouldn’t suit the works!” he added looking angrily at the March Hare. “It was the best butter,” the March Hare meekly replied. “Yes,",
+        "excerpt_sha256": "09582399fa8154e4a03e79b69e2dc8d0ae07c7fd4c4ea24e00b38289e7d4b4e0",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "café conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      }
+    },
+    "temperature": 0.5,
+    "output": {
+      "source_id": "alice_riddle",
+      "archetype": "café conversation",
+      "premise": "A group gathers over a puzzling riddle, which devolves into a dispute over linguistic precision when one participant claims they can deduce the answer.",
+      "interaction_arc": "One participant poses a riddle, prompting a second to state they can solve it. The other members challenge whether stating one can find an answer equates to meaning what one says. The group trades contradictory examples to refute the equivalence, resulting in a contemplative pause before the discussion pivots abruptly to an unrelated matter."
+    },
+    "response_metadata": {
+      "stage": "source_abstraction",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-45c92f7c59264c9db6838781ffbd08ab",
+      "usage": {
+        "prompt_tokens": 1037,
+        "completion_tokens": 483,
+        "total_tokens": 1520,
+        "prompt_tokens_details": {
+          "text_tokens": 1037
+        },
+        "completion_tokens_details": {
+          "text_tokens": 128,
+          "reasoning_tokens": 355
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "subject_casting",
+    "model": "gemini-3.7-flash",
+    "schema_name": "subject_casting",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "woman",
+                  "man"
+                ]
+              },
+              "clothing": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A clothing color and garment, without an article."
+              }
+            },
+            "required": [
+              "id",
+              "gender",
+              "clothing"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "subjects"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "alice_riddle",
+        "archetype": "café conversation",
+        "premise": "A group gathers over a puzzling riddle, which devolves into a dispute over linguistic precision when one participant claims they can deduce the answer.",
+        "interaction_arc": "One participant poses a riddle, prompting a second to state they can solve it. The other members challenge whether stating one can find an answer equates to meaning what one says. The group trades contradictory examples to refute the equivalence, resulting in a contemplative pause before the discussion pivots abruptly to an unrelated matter."
+      },
+      "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+      "subject_ids": [
+        "A",
+        "B",
+        "C"
+      ],
+      "casting_contract": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "white shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "blue shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "yellow shirt"
+        }
+      ]
+    },
+    "temperature": 0.5,
+    "output": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "white shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "blue shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "yellow shirt"
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "subject_casting",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-46efdf73f1954e12acfcb11891dea26d",
+      "usage": {
+        "prompt_tokens": 700,
+        "completion_tokens": 243,
+        "total_tokens": 943,
+        "prompt_tokens_details": {
+          "text_tokens": 700
+        },
+        "completion_tokens_details": {
+          "text_tokens": 106,
+          "reasoning_tokens": 137
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  }
+]

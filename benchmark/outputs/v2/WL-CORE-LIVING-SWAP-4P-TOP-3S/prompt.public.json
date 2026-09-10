@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-LIVING-SWAP-4P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A man in a red shirt sits in the bookcase-side sofa seat and asks about dinner refreshments. A man in a green shirt sits in the doorway-side sofa seat. A woman in an orange shirt sits in the bookcase-side armchair, and a woman in a white shirt sits in the doorway-side armchair.",
+      "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and both armchairs in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in the red shirt in the bookcase-side sofa seat swaps seats with the man in the green shirt in the doorway-side sofa seat, who asks about the missing food while the former replies that the kitchen is unprepared.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in the red shirt apologizes for the dinner delay.",
+      "viewpoint": "Top-down wide shot from directly above the coffee table, centered on the seating arrangement, with both sofa seats and both armchairs in frame."
+    }
+  ]
+}

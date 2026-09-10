@@ -1,0 +1,79 @@
+{
+  "id": "WL-CORE-CAFE-ENTRY-3P-TOP-3S",
+  "task": "person_entry",
+  "layout": "cafe_rect_table_3_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "burgundy sweater",
+      "appearance": "a woman in a burgundy sweater",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "teal jacket",
+      "appearance": "a man in a teal jacket",
+      "seat": "window_right",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "mustard cardigan",
+      "appearance": "a woman in a mustard cardigan",
+      "seat": "table_left_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A asks a question.",
+      "events": [],
+      "camera": "establish_counter_end",
+      "prompt": {
+        "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other. A woman in a burgundy sweater sits at the plant-side window seat and asks a question. A woman in a mustard cardigan sits at the plant-end seat.",
+        "viewpoint": "Wide establishing shot from the counter end, looking lengthwise along the rectangular table toward the floor plant, with the full table and all three seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters. Subject B answers.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_window_pair",
+      "prompt": {
+        "content": "A man in a teal jacket enters the counter-side window seat and answers. A woman in a burgundy sweater sits at the plant-side window seat.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A replies.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "A woman in a burgundy sweater at the plant-side window seat replies.",
+        "viewpoint": "Top-down wide shot from directly above the rectangular table, centered on the tabletop, with the full table, the plant-end seat, and both window-side seats in frame."
+      }
+    }
+  ]
+}

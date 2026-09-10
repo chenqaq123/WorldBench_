@@ -1,0 +1,208 @@
+[
+  {
+    "stage": "source_abstraction",
+    "model": "gpt-5.6-sol",
+    "schema_name": "story_skeleton",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the real source ID exactly."
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the supplied archetype exactly."
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A faithful abstraction of the supplied excerpt's interaction."
+        },
+        "interaction_arc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A concise ordered narrative progression, not divided into shots."
+        }
+      },
+      "required": [
+        "source_id",
+        "archetype",
+        "premise",
+        "interaction_arc"
+      ],
+      "additionalProperties": false
+    },
+    "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 4 shots.",
+    "input_value": {
+      "source": {
+        "id": "alice_seats",
+        "title": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
+        "year": 1865,
+        "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+        "locator": "Chapter VII: A Mad Tea-Party",
+        "start_text": "I want a clean cup",
+        "scenes": [
+          "café"
+        ],
+        "topic_terms": [
+          "story",
+          "interruption"
+        ],
+        "excerpt": "I want a clean cup,” interrupted the Hatter: “let’s all move one place on.” He moved on as he spoke, and the Dormouse followed him: the March Hare moved into the Dormouse’s place, and Alice rather unwillingly took the place of the March Hare. The Hatter was the only one who got any advantage from the change: and Alice was a good deal worse off than before, as the March Hare had just upset the milk-jug into his plate. Alice did not wish to offend the Dormouse again, so she began very cautiously: “But I don’t understand. Where did they draw the treacle from?” “You can draw water out of a water-well,” said the Hatter; “so I should think you could draw treacle out of a treacle-well—eh, stupid?” “But they were in the well,” Alice said to the Dormouse, not choosing to notice this last remark. “Of course they were,” said the Dormouse; “—well in.” This answer so confused poor Alice, that she let the Dormouse go on for some time without interrupting it. “They were learning to draw,” the Dormouse went on, yawning and rubbing its eyes, for it was getting very sleepy; “and they drew all manner of things—everything that begins with an M—” “Why with an M?” said Alice. “Why not?” said the March Hare. Alice was silent. The Dormouse had closed its eyes by this time, and was going off into a doze; but, on being pinched by the Hatter, it woke up again with a little shriek, and went on: “—that begins with an M, such as mouse-traps, and the moon, and memory, and muchness—you know you say things are “much of a muchness”—did you ever see such a thing as a drawing of a muchness?” “Really, now you ask me,” said Alice, very much",
+        "excerpt_sha256": "03864b20f160924c99acf3c61ff9b5082addcd9eecd79d079621b6495213f4a5",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "café conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      }
+    },
+    "temperature": 0.5,
+    "reused": true,
+    "output": {
+      "archetype": "café conversation",
+      "interaction_arc": "A request causes everyone to change places, leaving one participant worse off. That participant cautiously returns to the story, questioning how treacle could be drawn from a well and why the lesson concerns things beginning with one letter; the others answer with wordplay, dismissal, and interruption until the questioner falls silent.",
+      "premise": "During a café conversation, a seating change disrupts a story about drawing treacle from a well. One participant seeks a logical explanation, while the others respond with puns and arbitrary reasoning about what can be drawn and why examples begin with a particular letter.",
+      "source_id": "alice_seats"
+    },
+    "response_metadata": {
+      "stage": "source_abstraction",
+      "request_model": "gpt-5.6-sol",
+      "response_model": "gpt-5.6-sol",
+      "response_id": "chatcmpl-228951c9-7232-475e-b8e4-829bf38e7c6c",
+      "usage": {
+        "prompt_tokens": 856,
+        "completion_tokens": 143,
+        "total_tokens": 999,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "subject_casting",
+    "model": "gpt-5.6-sol",
+    "schema_name": "subject_casting",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "woman",
+                  "man"
+                ]
+              },
+              "clothing": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A clothing color and garment, without an article."
+              }
+            },
+            "required": [
+              "id",
+              "gender",
+              "clothing"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "subjects"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+    "input_value": {
+      "skeleton": {
+        "archetype": "café conversation",
+        "interaction_arc": "A request causes everyone to change places, leaving one participant worse off. That participant cautiously returns to the story, questioning how treacle could be drawn from a well and why the lesson concerns things beginning with one letter; the others answer with wordplay, dismissal, and interruption until the questioner falls silent.",
+        "premise": "During a café conversation, a seating change disrupts a story about drawing treacle from a well. One participant seeks a logical explanation, while the others respond with puns and arbitrary reasoning about what can be drawn and why examples begin with a particular letter.",
+        "source_id": "alice_seats"
+      },
+      "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+      "subject_ids": [
+        "A",
+        "B",
+        "C"
+      ],
+      "casting_contract": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "purple shirt"
+        },
+        {
+          "id": "C",
+          "gender": "man",
+          "clothing": "red shirt"
+        }
+      ]
+    },
+    "temperature": 0.5,
+    "reused": true,
+    "output": {
+      "subjects": [
+        {
+          "clothing": "yellow shirt",
+          "gender": "woman",
+          "id": "A"
+        },
+        {
+          "clothing": "purple shirt",
+          "gender": "man",
+          "id": "B"
+        },
+        {
+          "clothing": "red shirt",
+          "gender": "man",
+          "id": "C"
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "subject_casting",
+      "request_model": "gpt-5.6-sol",
+      "response_model": "gpt-5.6-sol",
+      "response_id": "chatcmpl-cfd57848-86a3-4688-b7eb-c22885e940c9",
+      "usage": {
+        "prompt_tokens": 633,
+        "completion_tokens": 56,
+        "total_tokens": 689,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  }
+]

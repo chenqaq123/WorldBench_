@@ -1,0 +1,103 @@
+{
+  "id": "WL-CORE-KITCHEN-SWAP-4P-REV-4S",
+  "task": "position_swap",
+  "layout": "kitchen_island_4_r2_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "cook_sink",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "yellow shirt",
+      "appearance": "a man in a yellow shirt",
+      "seat": "cook_fridge",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "purple shirt",
+      "appearance": "a woman in a purple shirt",
+      "seat": "guest_sink",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "guest_fridge",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A proposes peeling the root vegetables for the stew recipe.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a kitchen, a rectangular island stands between a sink counter and a refrigerator, with a window along one side and an aisle along the opposite side. A woman in a blue shirt sits on the sink-side aisle stool and proposes peeling root vegetables for the stew recipe, a man in a yellow shirt sits on the refrigerator-side aisle stool, a woman in a purple shirt sits on the sink-side window stool, and a woman in a red shirt sits on the refrigerator-side window stool.",
+        "viewpoint": "Wide establishing shot from just beside the refrigerator end, looking along the kitchen island toward the sink counter, with both window-side stools and both aisle-side stools and the sink counter in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B criticizes the method because peeling wastes too much of the vegetable.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a blue shirt and the man in a yellow shirt exchange seats, and he criticizes peeling because it wastes too much of the vegetable.",
+        "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side stools."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "B"
+      ],
+      "beat": "Subject B explains that scraping the root vegetables preserves more ingredients for the stew.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The man in a yellow shirt explains that scraping root vegetables preserves more ingredients for the stew.",
+        "viewpoint": "Close-up from the window side, centered on the person at the sink-side aisle stool."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A replies that scraping takes too much time for the stew recipe.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in a blue shirt replies that scraping takes too much time for the stew recipe.",
+        "viewpoint": "Reverse wide shot of the kitchen island."
+      }
+    }
+  ]
+}

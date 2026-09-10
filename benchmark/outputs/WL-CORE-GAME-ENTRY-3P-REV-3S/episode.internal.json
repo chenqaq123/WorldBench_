@@ -1,0 +1,79 @@
+{
+  "id": "WL-CORE-GAME-ENTRY-3P-REV-3S",
+  "task": "person_entry",
+  "layout": "board_game_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "teal sweater",
+      "appearance": "a woman in a teal sweater",
+      "seat": "window_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "maroon hoodie",
+      "appearance": "a man in a maroon hoodie",
+      "seat": "window_door",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "mustard cardigan",
+      "appearance": "a woman in a mustard cardigan",
+      "seat": "shelf_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A explains the starting rules.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side. A woman in a teal sweater sits at the shelf-side window seat and explains the starting rules, while a woman in a mustard cardigan sits at the shelf-end seat.",
+        "viewpoint": "Wide establishing shot from the doorway end, looking lengthwise along the game table toward the shelving unit, with both window-side seats and the shelf-end seat in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters. Subject A asks a question.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in a maroon hoodie enters and sits at the doorway-side window seat. A woman in a teal sweater asks a question.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A replies.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A woman in a teal sweater replies.",
+        "viewpoint": "Reverse wide shot from the shelving-unit end, looking lengthwise along the game table toward the doorway, with both window-side seats and the shelf-end seat in frame."
+      }
+    }
+  ]
+}

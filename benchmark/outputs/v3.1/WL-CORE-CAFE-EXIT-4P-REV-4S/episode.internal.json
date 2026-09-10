@@ -1,0 +1,103 @@
+{
+  "id": "WL-CORE-CAFE-EXIT-4P-REV-4S",
+  "task": "person_exit",
+  "layout": "cafe_rect_table_4_r2_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "aisle_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "aisle_right",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "window_right",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks for clarification about the puzzling story.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a red shirt sits in the plant-side aisle seat and asks for clarification about a story, a woman in a green shirt sits in the counter-side aisle seat, a man in an orange shirt sits in the plant-side window seat, and a man in a white shirt sits in the counter-side window seat.",
+        "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and both aisle-side seats and the floor plant in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves the established seat and exits the scene. Subject A asks for clarification about the story.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in a green shirt leaves her seat and exits the venue, while a woman in a red shirt asks for clarification about the story.",
+        "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks about an unexplained detail in the story.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "A woman in a red shirt asks about an unexplained detail in the story.",
+        "viewpoint": "Close-up from the window side, centered on the person at the plant-side aisle seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject A asks about the story, and Subject D replies with a counter-question.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A woman in a red shirt asks about the story, and a man in a white shirt replies with a counter-question.",
+        "viewpoint": "Reverse wide shot of the rectangular table."
+      }
+    }
+  ]
+}

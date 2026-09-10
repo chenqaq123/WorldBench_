@@ -1,0 +1,140 @@
+{
+  "source": {
+    "archetype": "café conversation",
+    "material": "Three adult friends share a café table. One recounts a small everyday mishap while another responds. The third person remains part of the gathering without leaving or changing seats."
+  },
+  "skeleton": {
+    "archetype": "café conversation",
+    "premise": "Three colleagues unwind at a shared table where a minor personal anecdote prompts an exchange between two while the third remains an attentive bystander.",
+    "beats": [
+      "One person recounts a brief, minor misadventure to the others seated at the table.",
+      "A second person reacts and engages in dialogue about the incident.",
+      "The third person quietly listens and observes, maintaining their place in the group dynamic without speaking."
+    ]
+  },
+  "audits": [
+    {
+      "round": 1,
+      "passed": true,
+      "issues": []
+    }
+  ],
+  "trace": [
+    {
+      "stage": "source_abstraction",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1787321127-rxCAtoc3KnetNr3ID8VL",
+      "usage": {
+        "prompt_tokens": 97,
+        "completion_tokens": 477,
+        "total_tokens": 574,
+        "cost": 0.0018615,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0018615,
+          "upstream_inference_prompt_cost": 0.00007275,
+          "upstream_inference_completions_cost": 0.00178875
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 390,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1787321131-dvBCdl4aSoLfB8larQzz",
+      "usage": {
+        "prompt_tokens": 393,
+        "completion_tokens": 692,
+        "total_tokens": 1085,
+        "cost": 0.00288975,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00288975,
+          "upstream_inference_prompt_cost": 0.00029475,
+          "upstream_inference_completions_cost": 0.002595
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 527,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1787321136-huFUDNdP69GcPT7Z8EBS",
+      "usage": {
+        "prompt_tokens": 631,
+        "completion_tokens": 1169,
+        "total_tokens": 1800,
+        "cost": 0.004857,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.004857,
+          "upstream_inference_prompt_cost": 0.00047325,
+          "upstream_inference_completions_cost": 0.00438375
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 924,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1787321140-ifG6SOwCl2vaTg91S9C9",
+      "usage": {
+        "prompt_tokens": 1922,
+        "completion_tokens": 312,
+        "total_tokens": 2234,
+        "cost": 0.00085475,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1919,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00085475,
+          "upstream_inference_prompt_cost": 0.00048035,
+          "upstream_inference_completions_cost": 0.0003744
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 293,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1291 @@
+{
+  "version": "3.1",
+  "source": {
+    "id": "holmes_arrival",
+    "title": "The Adventures of Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "year": 1892,
+    "url": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+    "locator": "The Red-Headed League: opening consultation",
+    "start_text": "I had called upon my friend, Mr. Sherlock Holmes",
+    "scenes": [
+      "meeting room"
+    ],
+    "topic_terms": [
+      "case",
+      "account",
+      "consultation"
+    ],
+    "excerpt": "I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair. With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me. “You could not possibly have come at a better time, my dear Watson,” he said cordially. “I was afraid that you were engaged.” “So I am. Very much so.” “Then I can wait in the next room.” “Not at all. This gentleman, Mr. Wilson, has been my partner and helper in many of my most successful cases, and I have no doubt that he will be of the utmost use to me in yours also.” The stout gentleman half rose from his chair and gave a bob of greeting, with a quick little questioning glance from his small fat-encircled eyes. “Try the settee,” said Holmes, relapsing into his armchair and putting his fingertips together, as was his custom when in judicial moods. “I know, my dear Watson, that you share my love of all that is bizarre and outside the conventions and humdrum routine of everyday life. You have shown your relish for it by the enthusiasm which has prompted you to chronicle, and, if you will excuse my saying so, somewhat to embellish so many of my own little adventures.” “Your cases have indeed been of the greatest interest to me,” I observed. “You will remember that I remarked the other day, just before we went into the very simple problem presented by Miss Mary Sutherland, that for strange effects and extraordinary combinations we must go to life itself, which is always far more daring than any effort of the",
+    "excerpt_sha256": "2708a11e855bc90a879421ce30c23bf92ac0e24f326dc901a28f5fb45f326a5d",
+    "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+    "archetype": "meeting-room discussion",
+    "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+  },
+  "config": {
+    "task": "person_entry",
+    "scene": "meeting room",
+    "layout": "meeting_room_table_4_overhead_r3_v3_1",
+    "viewpoint_mode": "overhead",
+    "subject_count": 4,
+    "shot_count": 3,
+    "dataset_version": "3.1"
+  },
+  "case_signature": {
+    "task_type": "person_entry",
+    "scene": "meeting room",
+    "viewpoint_mode": "overhead",
+    "subject_count": 4,
+    "shot_count": 3
+  },
+  "models": {
+    "source_abstraction": "gemini-3.7-flash",
+    "subject_casting": "gemini-3.7-flash",
+    "story_planning": "gemini-3.7-flash",
+    "prompt_rendering": "gemini-3.7-flash",
+    "prompt_audit": "gemini-3.7-flash"
+  },
+  "provider": "vapi",
+  "stage_outputs": {
+    "source_abstraction": {
+      "source_id": "holmes_arrival",
+      "archetype": "meeting-room discussion",
+      "premise": "An arrival interrupts an ongoing consultation about an unusual case, but the host insists that the newcomer stay and join the discussion of the visitor's account.",
+      "interaction_arc": "An ongoing consultation is interrupted by a newcomer who offers to step aside. The host urges the newcomer to stay and assist with the case. The visitor acknowledges the introduction, and the host prepares the group to review the unusual matter together."
+    },
+    "subject_casting": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "white shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "blue shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "purple shirt"
+        }
+      ]
+    },
+    "story_planning": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A begins the discussion about the unusual case.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject B enters and takes the empty place. Subject B offers to leave, but Subject A asks Subject B to stay and assist with the case.",
+          "events": [
+            {
+              "subject": "B",
+              "action": "enter"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "beat": "Subject A asks Subject D to proceed with the account, and Subject D answers with the details of the case.",
+          "events": []
+        }
+      ]
+    },
+    "prompt_rendering": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in a white shirt sits in the door-side walkway seat and begins the discussion about the unusual case. A woman in a yellow shirt sits in the screen-side window seat. A man in a purple shirt sits in the door-side window seat. There is one empty place."
+        },
+        {
+          "index": 2,
+          "content": "A man in a blue shirt enters and sits in the empty place. He offers to leave, but a man in a white shirt asks him to stay and assist with the case."
+        },
+        {
+          "index": 3,
+          "content": "A man in a white shirt asks a man in a purple shirt to proceed with the account, and he answers with the details of the case."
+        }
+      ]
+    },
+    "prompt_audit": [
+      {
+        "round": 1,
+        "passed": true,
+        "issues": []
+      }
+    ]
+  },
+  "trace": [
+    {
+      "stage": "source_abstraction",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-40aac1dc93ee4f37bce926b52a65cdef",
+      "usage": {
+        "prompt_tokens": 750,
+        "completion_tokens": 484,
+        "total_tokens": 1234,
+        "prompt_tokens_details": {
+          "text_tokens": 750
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 365
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    },
+    {
+      "stage": "subject_casting",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-269ba47beb674c9c80ced31eb826916a",
+      "usage": {
+        "prompt_tokens": 716,
+        "completion_tokens": 232,
+        "total_tokens": 948,
+        "prompt_tokens_details": {
+          "text_tokens": 716
+        },
+        "completion_tokens_details": {
+          "text_tokens": 56,
+          "reasoning_tokens": 176
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    },
+    {
+      "stage": "story_planning",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-05384a1924284c77bd15461bee4a21bd",
+      "usage": {
+        "prompt_tokens": 1583,
+        "completion_tokens": 733,
+        "total_tokens": 2316,
+        "prompt_tokens_details": {
+          "text_tokens": 1583
+        },
+        "completion_tokens_details": {
+          "text_tokens": 105,
+          "reasoning_tokens": 628
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-fb35a4479c7a4623844aebf36bb8daaf",
+      "usage": {
+        "prompt_tokens": 1667,
+        "completion_tokens": 2105,
+        "total_tokens": 3772,
+        "prompt_tokens_details": {
+          "text_tokens": 1515
+        },
+        "completion_tokens_details": {
+          "text_tokens": 157,
+          "reasoning_tokens": 1933
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    },
+    {
+      "stage": "prompt_audit",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-c0a49b55026548b29c5b7b01c68d224f",
+      "usage": {
+        "prompt_tokens": 4104,
+        "completion_tokens": 4661,
+        "total_tokens": 8765,
+        "prompt_tokens_details": {
+          "text_tokens": 3731
+        },
+        "completion_tokens_details": {
+          "text_tokens": 10,
+          "reasoning_tokens": 4650
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  ],
+  "request_journal": [
+    {
+      "stage": "source_abstraction",
+      "model": "gemini-3.7-flash",
+      "schema_name": "story_skeleton",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Copy the real source ID exactly."
+          },
+          "archetype": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Copy the supplied archetype exactly."
+          },
+          "premise": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A faithful abstraction of the supplied excerpt's interaction."
+          },
+          "interaction_arc": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A concise ordered narrative progression, not divided into shots."
+          }
+        },
+        "required": [
+          "source_id",
+          "archetype",
+          "premise",
+          "interaction_arc"
+        ],
+        "additionalProperties": false
+      },
+      "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 3 shots.",
+      "input_value": {
+        "source": {
+          "id": "holmes_arrival",
+          "title": "The Adventures of Sherlock Holmes",
+          "author": "Arthur Conan Doyle",
+          "year": 1892,
+          "url": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+          "locator": "The Red-Headed League: opening consultation",
+          "start_text": "I had called upon my friend, Mr. Sherlock Holmes",
+          "scenes": [
+            "meeting room"
+          ],
+          "topic_terms": [
+            "case",
+            "account",
+            "consultation"
+          ],
+          "excerpt": "I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair. With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me. “You could not possibly have come at a better time, my dear Watson,” he said cordially. “I was afraid that you were engaged.” “So I am. Very much so.” “Then I can wait in the next room.” “Not at all. This gentleman, Mr. Wilson, has been my partner and helper in many of my most successful cases, and I have no doubt that he will be of the utmost use to me in yours also.” The stout gentleman half rose from his chair and gave a bob of greeting, with a quick little questioning glance from his small fat-encircled eyes. “Try the settee,” said Holmes, relapsing into his armchair and putting his fingertips together, as was his custom when in judicial moods. “I know, my dear Watson, that you share my love of all that is bizarre and outside the conventions and humdrum routine of everyday life. You have shown your relish for it by the enthusiasm which has prompted you to chronicle, and, if you will excuse my saying so, somewhat to embellish so many of my own little adventures.” “Your cases have indeed been of the greatest interest to me,” I observed. “You will remember that I remarked the other day, just before we went into the very simple problem presented by Miss Mary Sutherland, that for strange effects and extraordinary combinations we must go to life itself, which is always far more daring than any effort of the",
+          "excerpt_sha256": "2708a11e855bc90a879421ce30c23bf92ac0e24f326dc901a28f5fb45f326a5d",
+          "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+          "archetype": "meeting-room discussion",
+          "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+        }
+      },
+      "temperature": 0.5,
+      "output": {
+        "source_id": "holmes_arrival",
+        "archetype": "meeting-room discussion",
+        "premise": "An arrival interrupts an ongoing consultation about an unusual case, but the host insists that the newcomer stay and join the discussion of the visitor's account.",
+        "interaction_arc": "An ongoing consultation is interrupted by a newcomer who offers to step aside. The host urges the newcomer to stay and assist with the case. The visitor acknowledges the introduction, and the host prepares the group to review the unusual matter together."
+      },
+      "response_metadata": {
+        "stage": "source_abstraction",
+        "request_model": "gemini-3.7-flash",
+        "response_model": "gemini-3.7-flash",
+        "response_id": "chatcmpl-40aac1dc93ee4f37bce926b52a65cdef",
+        "usage": {
+          "prompt_tokens": 750,
+          "completion_tokens": 484,
+          "total_tokens": 1234,
+          "prompt_tokens_details": {
+            "text_tokens": 750
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 365
+          }
+        },
+        "provider": "vapi",
+        "endpoint": "https://api.gpt.ge/v1/chat/completions"
+      }
+    },
+    {
+      "stage": "subject_casting",
+      "model": "gemini-3.7-flash",
+      "schema_name": "subject_casting",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                  ]
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "woman",
+                    "man"
+                  ]
+                },
+                "clothing": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "A clothing color and garment, without an article."
+                }
+              },
+              "required": [
+                "id",
+                "gender",
+                "clothing"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 4,
+            "maxItems": 4
+          }
+        },
+        "required": [
+          "subjects"
+        ],
+        "additionalProperties": false
+      },
+      "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C, D in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+      "input_value": {
+        "skeleton": {
+          "source_id": "holmes_arrival",
+          "archetype": "meeting-room discussion",
+          "premise": "An arrival interrupts an ongoing consultation about an unusual case, but the host insists that the newcomer stay and join the discussion of the visitor's account.",
+          "interaction_arc": "An ongoing consultation is interrupted by a newcomer who offers to step aside. The host urges the newcomer to stay and assist with the case. The visitor acknowledges the introduction, and the host prepares the group to review the unusual matter together."
+        },
+        "scene": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+        "subject_ids": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "casting_contract": [
+          {
+            "id": "A",
+            "gender": "man",
+            "clothing": "white shirt"
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "blue shirt"
+          },
+          {
+            "id": "C",
+            "gender": "woman",
+            "clothing": "yellow shirt"
+          },
+          {
+            "id": "D",
+            "gender": "man",
+            "clothing": "purple shirt"
+          }
+        ]
+      },
+      "temperature": 0.5,
+      "output": {
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "man",
+            "clothing": "white shirt"
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "blue shirt"
+          },
+          {
+            "id": "C",
+            "gender": "woman",
+            "clothing": "yellow shirt"
+          },
+          {
+            "id": "D",
+            "gender": "man",
+            "clothing": "purple shirt"
+          }
+        ]
+      },
+      "response_metadata": {
+        "stage": "subject_casting",
+        "request_model": "gemini-3.7-flash",
+        "response_model": "gemini-3.7-flash",
+        "response_id": "chatcmpl-269ba47beb674c9c80ced31eb826916a",
+        "usage": {
+          "prompt_tokens": 716,
+          "completion_tokens": 232,
+          "total_tokens": 948,
+          "prompt_tokens_details": {
+            "text_tokens": 716
+          },
+          "completion_tokens_details": {
+            "text_tokens": 56,
+            "reasoning_tokens": 176
+          }
+        },
+        "provider": "vapi",
+        "endpoint": "https://api.gpt.ge/v1/chat/completions"
+      }
+    },
+    {
+      "stage": "story_planning",
+      "model": "gemini-3.7-flash",
+      "schema_name": "story_beats",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "shots": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 3
+                },
+                "beat": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Story actions performed only by mentioned subjects."
+                },
+                "events": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "subject": {
+                            "type": "string",
+                            "enum": [
+                              "A",
+                              "B",
+                              "C",
+                              "D"
+                            ]
+                          },
+                          "action": {
+                            "type": "string",
+                            "enum": [
+                              "enter",
+                              "exit"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "subject",
+                          "action"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "subject": {
+                            "type": "string",
+                            "enum": [
+                              "A",
+                              "B",
+                              "C",
+                              "D"
+                            ]
+                          },
+                          "action": {
+                            "type": "string",
+                            "enum": [
+                              "swap"
+                            ]
+                          },
+                          "with_subject": {
+                            "type": "string",
+                            "enum": [
+                              "A",
+                              "B",
+                              "C",
+                              "D"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "subject",
+                          "action",
+                          "with_subject"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "index",
+                "beat",
+                "events"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 3,
+            "maxItems": 3
+          }
+        },
+        "required": [
+          "shots"
+        ],
+        "additionalProperties": false
+      },
+      "system": "You plan story-world beats for a controlled multi-shot world-state benchmark. Return exactly 3 ordered shots. The supplied casting, layout, seats, camera plan, and per-shot mention contracts are fixed and cannot be changed. Every beat may assign actions only to the subjects listed in that shot's mentioned array. Never refer to another subject, even indirectly as a third person, listener, group, or everyone. Copy every supplied events array exactly. Events are frozen: enter means the named subject enters and takes that subject's established seat; exit means the named subject leaves that seat and exits; swap means the two named subjects exchange their established seats. State each supplied event explicitly in that shot's beat and invent no other entry, exit, or seat change. When a shot has a non-empty events array, begin its beat with that event and explicitly name every event subject before adding any conversational action. Follow the supplied task_rules literally. When task_rules supplies required_event_prefix, copy that prefix verbatim at the beginning of Shot 2; do not paraphrase, shorten, or replace it. Use the supplied skeleton as the narrative basis. Preserve its concrete topic, disagreement or question; do not flatten everything into an unspecified conversation. Adapt the real interaction to the frozen task; remove original events not in the contracts. All additional actions must be conversational. Adapt cooking or food delivery in the source to discussion OF that plan, never starting the work, deciding to deliver food or asking to continue chopping. Prefer asks about the recipe / explains the plan / discusses sharing breakfast. Keep the PUBLIC story at the level of an ordinary topic such as a riddle, a dinner invitation, a holiday plan or breakfast chores. These are examples, not interchangeable topics: choose the closest ordinary equivalent of the supplied skeleton and keep it consistent across shots. A question about a puzzling story stays about that story's puzzle; do not turn it into an unrelated holiday trip. Preserve the concrete question or disagreement, not merely a generic keyword such as story or conversation. Do not retell fictional specifics, fantastical objects or distinctive comparisons. Do not use analysis jargon such as premise, narrative structure or physical logic. State changes added for the experiment are adaptations, not source facts. Each beat must contain only plot-relevant actions in plain verbs such as tells, asks, answers, or replies. Do not add posture, gaze, facial expressions, hand gestures, prop handling, or decorative adverbs. Do not list the other contracted subjects again merely as the audience or recipients of an action. In Shot 1, only Subject A performs a plot action; do not mention the other subjects in that beat, because the renderer will still establish their identities and seats from the mention contract. Keep the remaining exchange to a direct question, answer, or reply without explanatory qualifiers. Beats contain no appearance redesign, camera, framing, duration, timestamp, or generation language.",
+      "input_value": {
+        "skeleton": {
+          "source_id": "holmes_arrival",
+          "archetype": "meeting-room discussion",
+          "premise": "An arrival interrupts an ongoing consultation about an unusual case, but the host insists that the newcomer stay and join the discussion of the visitor's account.",
+          "interaction_arc": "An ongoing consultation is interrupted by a newcomer who offers to step aside. The host urges the newcomer to stay and assist with the case. The visitor acknowledges the introduction, and the host prepares the group to review the unusual matter together."
+        },
+        "casting": {
+          "subjects": [
+            {
+              "id": "A",
+              "gender": "man",
+              "clothing": "white shirt"
+            },
+            {
+              "id": "B",
+              "gender": "man",
+              "clothing": "blue shirt"
+            },
+            {
+              "id": "C",
+              "gender": "woman",
+              "clothing": "yellow shirt"
+            },
+            {
+              "id": "D",
+              "gender": "man",
+              "clothing": "purple shirt"
+            }
+          ]
+        },
+        "source_topic_terms": [
+          "case",
+          "account",
+          "consultation"
+        ],
+        "layout": {
+          "scene": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+          "public_intro": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+          "seats": {
+            "walkway_door": "the door-side walkway seat",
+            "walkway_screen": "the screen-side walkway seat",
+            "window_screen": "the screen-side window seat",
+            "window_door": "the door-side window seat"
+          }
+        },
+        "shot_contracts": [
+          {
+            "index": 1,
+            "mentioned": [
+              "A",
+              "C",
+              "D"
+            ],
+            "camera": "establish",
+            "events": []
+          },
+          {
+            "index": 2,
+            "mentioned": [
+              "A",
+              "B"
+            ],
+            "camera": "partial_pair",
+            "events": [
+              {
+                "subject": "B",
+                "action": "enter"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "mentioned": [
+              "A",
+              "D"
+            ],
+            "camera": "probe_overhead",
+            "events": []
+          }
+        ],
+        "task_rules": {
+          "opening": "Shot 1 is one concise sentence beginning with 'Subject A'. It must not contain any of these tokens: Subject B, Subject C, Subject D.",
+          "event_shot": "Shot 2 begins by expressing its supplied event and naming every event subject.",
+          "final": "The final beat names only subjects in its mentioned array and does not restate any probe subject or final state.",
+          "required_event_prefix": "Subject B enters and takes the empty place."
+        }
+      },
+      "temperature": 0.2,
+      "output": {
+        "shots": [
+          {
+            "index": 1,
+            "beat": "Subject A begins the discussion about the unusual case.",
+            "events": []
+          },
+          {
+            "index": 2,
+            "beat": "Subject B enters and takes the empty place. Subject B offers to leave, but Subject A asks Subject B to stay and assist with the case.",
+            "events": [
+              {
+                "subject": "B",
+                "action": "enter"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "beat": "Subject A asks Subject D to proceed with the account, and Subject D answers with the details of the case.",
+            "events": []
+          }
+        ]
+      },
+      "response_metadata": {
+        "stage": "story_planning",
+        "request_model": "gemini-3.7-flash",
+        "response_model": "gemini-3.7-flash",
+        "response_id": "chatcmpl-05384a1924284c77bd15461bee4a21bd",
+        "usage": {
+          "prompt_tokens": 1583,
+          "completion_tokens": 733,
+          "total_tokens": 2316,
+          "prompt_tokens_details": {
+            "text_tokens": 1583
+          },
+          "completion_tokens_details": {
+            "text_tokens": 105,
+            "reasoning_tokens": 628
+          }
+        },
+        "provider": "vapi",
+        "endpoint": "https://api.gpt.ge/v1/chat/completions"
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "model": "gemini-3.7-flash",
+      "schema_name": "content_prompt",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "shots": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 3
+                },
+                "content": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Only story-world content, with no camera or duration language."
+                }
+              },
+              "required": [
+                "index",
+                "content"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 3,
+            "maxItems": 3
+          }
+        },
+        "required": [
+          "shots"
+        ],
+        "additionalProperties": false
+      },
+      "system": "You write only the Content field for exactly 3 approved benchmark shots. Camera Viewpoint text is supplied deterministically elsewhere. For each shot, mention every subject in its mentioned array using that subject's gender and clothing color, and mention no other subject. Use the shortest natural wording that preserves the required facts, not cinematic prose. Keep the topic to a short familiar label such as a riddle or dinner invitation, not the original literary particulars. Do not retell a story within the story or add analysis jargon such as premise. State each contracted subject's identity anchor exactly once per shot. Begin Shot 1 with the supplied public_intro verbatim as a short standalone scene introduction. Only after that sentence, introduce the subjects. Then combine each identity, named seat, and any approved action within the same introduction; never repeat an identity to state that person's action. Subjects without an approved Shot 1 action receive only identity and seat; do not invent actions for them. Use the supplied compact seat labels without expanding them into landmarks. The scene introduction supplies only the venue; do not add any other background description or repeat geometry already expressed by the fixed Viewpoint. Later shots describe only the contracted subjects and their approved plot-relevant action. Never add posture, gaze, expressions, hand gestures, prop handling, or decorative adverbs. Never invent hair, stable facial features, age, or accessory details. Render each supplied event explicitly and concisely. When derived_contracts gives a non-null required_content_prefix, copy it verbatim at the beginning of that Content. This sentence establishes both entering and sitting; use pronouns if that subject has another action instead of repeating the anchor. For exit, state that the subject leaves their seat and exits the venue. For swap, name the two identities and say they exchange seats. Updates must NOT repeat any landmark or named-seat label: refer to the subjects' actual original places. Entry takes the unique empty place. Do not add people, state changes, seat changes, camera language, or facts not present in the plan. The final shot must not repeat any seat assignment or state answer, even for its mentioned subject. It deliberately omits every subject listed in probe, whether that subject is expected present or absent. Never name, describe, count, or indirectly refer to an omitted probe subject. Do not say everyone or all three remain present. Never include durations, timestamps, frame rate, resolution, or generation parameters. In Shot 1 add 'There is one empty place.' Do not introduce the arriving subject yet.",
+      "input_value": {
+        "source_topic_terms": [
+          "case",
+          "account",
+          "consultation"
+        ],
+        "layout": {
+          "scene": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+          "public_intro": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+          "seats": {
+            "walkway_door": "the door-side walkway seat",
+            "walkway_screen": "the screen-side walkway seat",
+            "window_screen": "the screen-side window seat",
+            "window_door": "the door-side window seat"
+          }
+        },
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "man",
+            "clothing": "white shirt",
+            "appearance": "a man in a white shirt",
+            "seat": "walkway_door",
+            "initially_present": true
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "blue shirt",
+            "appearance": "a man in a blue shirt",
+            "seat": "walkway_screen",
+            "initially_present": false
+          },
+          {
+            "id": "C",
+            "gender": "woman",
+            "clothing": "yellow shirt",
+            "appearance": "a woman in a yellow shirt",
+            "seat": "window_screen",
+            "initially_present": true
+          },
+          {
+            "id": "D",
+            "gender": "man",
+            "clothing": "purple shirt",
+            "appearance": "a man in a purple shirt",
+            "seat": "window_door",
+            "initially_present": true
+          }
+        ],
+        "shots": [
+          {
+            "index": 1,
+            "mentioned": [
+              "A",
+              "C",
+              "D"
+            ],
+            "beat": "Subject A begins the discussion about the unusual case.",
+            "events": [],
+            "camera": "establish"
+          },
+          {
+            "index": 2,
+            "mentioned": [
+              "A",
+              "B"
+            ],
+            "beat": "Subject B enters and takes the empty place. Subject B offers to leave, but Subject A asks Subject B to stay and assist with the case.",
+            "events": [
+              {
+                "subject": "B",
+                "action": "enter"
+              }
+            ],
+            "camera": "partial_pair"
+          },
+          {
+            "index": 3,
+            "mentioned": [
+              "A",
+              "D"
+            ],
+            "beat": "Subject A asks Subject D to proceed with the account, and Subject D answers with the details of the case.",
+            "events": [],
+            "camera": "probe_overhead"
+          }
+        ],
+        "derived_contracts": [
+          {
+            "index": 1,
+            "mentioned": [
+              "A",
+              "C",
+              "D"
+            ],
+            "expected_visible": [
+              "A",
+              "C",
+              "D"
+            ],
+            "probe": [],
+            "probe_expectations": [],
+            "camera": "establish",
+            "required_content_prefix": null
+          },
+          {
+            "index": 2,
+            "mentioned": [
+              "A",
+              "B"
+            ],
+            "expected_visible": [
+              "A",
+              "B"
+            ],
+            "probe": [],
+            "probe_expectations": [],
+            "camera": "partial_pair",
+            "required_content_prefix": "A man in a blue shirt enters and sits in the empty place."
+          },
+          {
+            "index": 3,
+            "mentioned": [
+              "A",
+              "D"
+            ],
+            "expected_visible": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "probe": [
+              "B",
+              "C"
+            ],
+            "probe_expectations": [
+              {
+                "subject": "B",
+                "present": true,
+                "seat": "walkway_screen"
+              },
+              {
+                "subject": "C",
+                "present": true,
+                "seat": "window_screen"
+              }
+            ],
+            "camera": "probe_overhead",
+            "required_content_prefix": null
+          }
+        ]
+      },
+      "temperature": 0.3,
+      "output": {
+        "shots": [
+          {
+            "index": 1,
+            "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in a white shirt sits in the door-side walkway seat and begins the discussion about the unusual case. A woman in a yellow shirt sits in the screen-side window seat. A man in a purple shirt sits in the door-side window seat. There is one empty place."
+          },
+          {
+            "index": 2,
+            "content": "A man in a blue shirt enters and sits in the empty place. He offers to leave, but a man in a white shirt asks him to stay and assist with the case."
+          },
+          {
+            "index": 3,
+            "content": "A man in a white shirt asks a man in a purple shirt to proceed with the account, and he answers with the details of the case."
+          }
+        ]
+      },
+      "response_metadata": {
+        "stage": "prompt_rendering",
+        "request_model": "gemini-3.7-flash",
+        "response_model": "gemini-3.7-flash",
+        "response_id": "chatcmpl-fb35a4479c7a4623844aebf36bb8daaf",
+        "usage": {
+          "prompt_tokens": 1667,
+          "completion_tokens": 2105,
+          "total_tokens": 3772,
+          "prompt_tokens_details": {
+            "text_tokens": 1515
+          },
+          "completion_tokens_details": {
+            "text_tokens": 157,
+            "reasoning_tokens": 1933
+          }
+        },
+        "provider": "vapi",
+        "endpoint": "https://api.gpt.ge/v1/chat/completions"
+      }
+    },
+    {
+      "stage": "prompt_audit",
+      "model": "gemini-3.7-flash",
+      "schema_name": "prompt_audit",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "passed": {
+            "type": "boolean"
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "stage": {
+                  "type": "string",
+                  "enum": [
+                    "story",
+                    "camera",
+                    "prompt"
+                  ]
+                },
+                "message": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "One concise blocking issue."
+                }
+              },
+              "required": [
+                "stage",
+                "message"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "passed",
+          "issues"
+        ],
+        "additionalProperties": false
+      },
+      "system": "You are the strict final auditor for a controlled world-state benchmark. The supplied layout and camera presets are construction contracts, not proof of actual video compliance. For every shot, compare mentioned, expected_visible, probe, Content, and Viewpoint. Content must clearly describe exactly the subjects in mentioned and no others. Subject identity must use only the approved gender and clothing-color anchors; reject invented hair, stable facial features, age, or accessory details. Each identity anchor may appear only once per shot. Shot 1 must begin with layout.public_intro before any subject is introduced. This exact short scene sentence has already passed deterministic validation; do not remove or expand it. Shot 1 seat-label presence, exact wording, and compactness have already passed a deterministic validator. The public labels are the natural-language values in layout.seats, not internal keys such as window_left. Do not report an issue merely because these required seat labels appear. Report a seat issue only when Content clearly pairs a subject with a different subject's supplied seat. Every subject in Shot 1's mentioned array must be introduced once with an identity anchor and seat; these required introductions are not a redundant audience list and must never be rejected merely because only Subject A acts. In an opening introduction, sits/seated/is at a named seat ESTABLISHES a required location; it is not decorative posture and is allowed for EVERY initially present subject. Entry's enters-and-sits sentence is also a required state event, never decoration. Reject repeated anchors or actual audience lists added after those required introductions. Content must contain only plot-relevant actions; reject decorative posture, gaze, expressions, hand gestures, prop handling, and adverbs. Physical cooking, serving or cleaning must not be introduced; people may discuss these topics while seated. Do not accept final wording that initiates an unplanned physical task or implies the speaker is alone. Only the opening wide states its origin and layout. The final wide uses a standard reverse or top-down instruction without any seat inventory or required orientation landmarks. Naming the interaction area itself (table, coffee table, kitchen island) is explicitly allowed and necessary; it is NOT a forbidden landmark. For example, 'Reverse wide shot of the coffee table.' and 'Top-down wide shot directly above the kitchen island.' are allowed. Reject required shelf/window/seat-coverage lists, not the name of the filmed interaction area. Intermediate partial views need only a short focal framing phrase; do not demand lens, height, angle, or crop parameters. Compare the story to source.excerpt and skeleton: retain a recognizable topic or interaction, but allow the documented task adaptation and new human cast. Reject source-attribution claims invented by the writer. Every frozen event must be explicit. Updates name the participating identities, never compact seat labels or landmarks. Entry takes the unique empty place established in Shot 1; Exit leaves the seat and venue; Swap exchanges the named subjects' seats. Naming both people followed by 'exchange seats' or 'swap seats' fully specifies the swap. Do NOT require restating either person's original or destination position. A subject in probe must not be named, described, counted, or indirectly mentioned in final Content. Read probe_expectations for its required final presence and seat. The score checks count and positions for ALL occupants in the final wide, not just unmentioned probes. Mentioned subjects may act without repeating their seat. An absent probe correctly does not appear in expected_visible; do not treat that as an inconsistency. The final Viewpoint must cover every probe subject's established or expected seat. This deliberate omission is the benchmark test, not an error. Reject duration, timestamp, frame-rate, resolution, or generation language. If passed is true, issues must be empty. Classify a broken story beat as story, an ambiguous or inconsistent template/view as camera, and public wording as prompt. Actual opening screenshots, not prescribed identity-to-seat assignments, will supply the evaluation reference. Check narrative continuity against the skeleton: ordinary adaptation is allowed, but changing its discussion into an unrelated topic is not. A shared generic keyword alone does not establish source fidelity.",
+      "input_value": {
+        "source": {
+          "id": "holmes_arrival",
+          "title": "The Adventures of Sherlock Holmes",
+          "author": "Arthur Conan Doyle",
+          "year": 1892,
+          "url": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+          "locator": "The Red-Headed League: opening consultation",
+          "start_text": "I had called upon my friend, Mr. Sherlock Holmes",
+          "scenes": [
+            "meeting room"
+          ],
+          "topic_terms": [
+            "case",
+            "account",
+            "consultation"
+          ],
+          "excerpt": "I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair. With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me. “You could not possibly have come at a better time, my dear Watson,” he said cordially. “I was afraid that you were engaged.” “So I am. Very much so.” “Then I can wait in the next room.” “Not at all. This gentleman, Mr. Wilson, has been my partner and helper in many of my most successful cases, and I have no doubt that he will be of the utmost use to me in yours also.” The stout gentleman half rose from his chair and gave a bob of greeting, with a quick little questioning glance from his small fat-encircled eyes. “Try the settee,” said Holmes, relapsing into his armchair and putting his fingertips together, as was his custom when in judicial moods. “I know, my dear Watson, that you share my love of all that is bizarre and outside the conventions and humdrum routine of everyday life. You have shown your relish for it by the enthusiasm which has prompted you to chronicle, and, if you will excuse my saying so, somewhat to embellish so many of my own little adventures.” “Your cases have indeed been of the greatest interest to me,” I observed. “You will remember that I remarked the other day, just before we went into the very simple problem presented by Miss Mary Sutherland, that for strange effects and extraordinary combinations we must go to life itself, which is always far more daring than any effort of the",
+          "excerpt_sha256": "2708a11e855bc90a879421ce30c23bf92ac0e24f326dc901a28f5fb45f326a5d",
+          "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+          "archetype": "meeting-room discussion",
+          "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+        },
+        "skeleton": {
+          "source_id": "holmes_arrival",
+          "archetype": "meeting-room discussion",
+          "premise": "An arrival interrupts an ongoing consultation about an unusual case, but the host insists that the newcomer stay and join the discussion of the visitor's account.",
+          "interaction_arc": "An ongoing consultation is interrupted by a newcomer who offers to step aside. The host urges the newcomer to stay and assist with the case. The visitor acknowledges the introduction, and the host prepares the group to review the unusual matter together."
+        },
+        "layout": {
+          "id": "meeting_room_table_4_overhead_r3_v3_1",
+          "scene_type": "meeting room",
+          "archetype": "meeting-room discussion",
+          "story_venue": "a meeting room",
+          "scene": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+          "public_intro": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+          "seats": {
+            "walkway_door": "the door-side walkway seat",
+            "walkway_screen": "the screen-side walkway seat",
+            "window_screen": "the screen-side window seat",
+            "window_door": "the door-side window seat"
+          },
+          "seat_order": [
+            "walkway_door",
+            "walkway_screen",
+            "window_screen",
+            "window_door"
+          ],
+          "cameras": {
+            "establish": {
+              "framing": "wide",
+              "view_direction": "door_to_screen",
+              "public_view": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame.",
+              "visible_seats": [
+                "window_screen",
+                "window_door",
+                "walkway_screen",
+                "walkway_door"
+              ]
+            },
+            "partial_pair": {
+              "framing": "two_shot",
+              "public_view": "Medium two-shot from the window side, centered on the two adjacent walkway-side seats.",
+              "visible_seats": [
+                "walkway_door",
+                "walkway_screen"
+              ]
+            },
+            "partial_first": {
+              "framing": "close_up",
+              "public_view": "Close-up from the window side, centered on the person at the door-side walkway seat.",
+              "visible_seats": [
+                "walkway_door"
+              ]
+            },
+            "partial_second": {
+              "framing": "close_up",
+              "public_view": "Close-up from the window side, centered on the person at the screen-side walkway seat.",
+              "visible_seats": [
+                "walkway_screen"
+              ]
+            },
+            "probe_reverse": {
+              "framing": "wide",
+              "view_direction": "screen_to_door",
+              "public_view": "Reverse wide shot of the conference table.",
+              "visible_seats": [
+                "window_screen",
+                "window_door",
+                "walkway_screen",
+                "walkway_door"
+              ]
+            },
+            "probe_overhead": {
+              "framing": "wide",
+              "view_direction": "overhead",
+              "public_view": "Top-down wide shot directly above the conference table.",
+              "visible_seats": [
+                "window_screen",
+                "window_door",
+                "walkway_screen",
+                "walkway_door"
+              ]
+            }
+          },
+          "grammar": {
+            "opening_camera": "establish",
+            "partial_cameras": [
+              "partial_pair",
+              "partial_first",
+              "partial_second"
+            ],
+            "probe_camera": "probe_overhead",
+            "probe_focus_seats": [
+              "walkway_door",
+              "walkway_screen"
+            ]
+          },
+          "version": "3.1"
+        },
+        "episode": {
+          "id": "WL-CORE-MEETING-ENTRY-4P-TOP-3S",
+          "task": "person_entry",
+          "layout": "meeting_room_table_4_overhead_r3_v3_1",
+          "subjects": [
+            {
+              "id": "A",
+              "gender": "man",
+              "clothing": "white shirt",
+              "appearance": "a man in a white shirt",
+              "seat": "walkway_door",
+              "initially_present": true
+            },
+            {
+              "id": "B",
+              "gender": "man",
+              "clothing": "blue shirt",
+              "appearance": "a man in a blue shirt",
+              "seat": "walkway_screen",
+              "initially_present": false
+            },
+            {
+              "id": "C",
+              "gender": "woman",
+              "clothing": "yellow shirt",
+              "appearance": "a woman in a yellow shirt",
+              "seat": "window_screen",
+              "initially_present": true
+            },
+            {
+              "id": "D",
+              "gender": "man",
+              "clothing": "purple shirt",
+              "appearance": "a man in a purple shirt",
+              "seat": "window_door",
+              "initially_present": true
+            }
+          ],
+          "shots": [
+            {
+              "index": 1,
+              "mentioned": [
+                "A",
+                "C",
+                "D"
+              ],
+              "beat": "Subject A begins the discussion about the unusual case.",
+              "events": [],
+              "camera": "establish",
+              "prompt": {
+                "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in a white shirt sits in the door-side walkway seat and begins the discussion about the unusual case. A woman in a yellow shirt sits in the screen-side window seat. A man in a purple shirt sits in the door-side window seat. There is one empty place.",
+                "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame."
+              }
+            },
+            {
+              "index": 2,
+              "mentioned": [
+                "A",
+                "B"
+              ],
+              "beat": "Subject B enters and takes the empty place. Subject B offers to leave, but Subject A asks Subject B to stay and assist with the case.",
+              "events": [
+                {
+                  "subject": "B",
+                  "action": "enter"
+                }
+              ],
+              "camera": "partial_pair",
+              "prompt": {
+                "content": "A man in a blue shirt enters and sits in the empty place. He offers to leave, but a man in a white shirt asks him to stay and assist with the case.",
+                "viewpoint": "Medium two-shot from the window side, centered on the two adjacent walkway-side seats."
+              }
+            },
+            {
+              "index": 3,
+              "mentioned": [
+                "A",
+                "D"
+              ],
+              "beat": "Subject A asks Subject D to proceed with the account, and Subject D answers with the details of the case.",
+              "events": [],
+              "camera": "probe_overhead",
+              "prompt": {
+                "content": "A man in a white shirt asks a man in a purple shirt to proceed with the account, and he answers with the details of the case.",
+                "viewpoint": "Top-down wide shot directly above the conference table."
+              }
+            }
+          ]
+        },
+        "derived_contracts": [
+          {
+            "index": 1,
+            "mentioned": [
+              "A",
+              "C",
+              "D"
+            ],
+            "expected_visible": [
+              "A",
+              "C",
+              "D"
+            ],
+            "probe": [],
+            "probe_expectations": [],
+            "camera": "establish",
+            "required_content_prefix": null
+          },
+          {
+            "index": 2,
+            "mentioned": [
+              "A",
+              "B"
+            ],
+            "expected_visible": [
+              "A",
+              "B"
+            ],
+            "probe": [],
+            "probe_expectations": [],
+            "camera": "partial_pair",
+            "required_content_prefix": "A man in a blue shirt enters and sits in the empty place."
+          },
+          {
+            "index": 3,
+            "mentioned": [
+              "A",
+              "D"
+            ],
+            "expected_visible": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "probe": [
+              "B",
+              "C"
+            ],
+            "probe_expectations": [
+              {
+                "subject": "B",
+                "present": true,
+                "seat": "walkway_screen"
+              },
+              {
+                "subject": "C",
+                "present": true,
+                "seat": "window_screen"
+              }
+            ],
+            "camera": "probe_overhead",
+            "required_content_prefix": null
+          }
+        ],
+        "public_prompt": {
+          "id": "WL-CORE-MEETING-ENTRY-4P-TOP-3S",
+          "shots": [
+            {
+              "index": 1,
+              "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in a white shirt sits in the door-side walkway seat and begins the discussion about the unusual case. A woman in a yellow shirt sits in the screen-side window seat. A man in a purple shirt sits in the door-side window seat. There is one empty place.",
+              "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame."
+            },
+            {
+              "index": 2,
+              "content": "A man in a blue shirt enters and sits in the empty place. He offers to leave, but a man in a white shirt asks him to stay and assist with the case.",
+              "viewpoint": "Medium two-shot from the window side, centered on the two adjacent walkway-side seats."
+            },
+            {
+              "index": 3,
+              "content": "A man in a white shirt asks a man in a purple shirt to proceed with the account, and he answers with the details of the case.",
+              "viewpoint": "Top-down wide shot directly above the conference table."
+            }
+          ]
+        }
+      },
+      "temperature": null,
+      "output": {
+        "passed": true,
+        "issues": []
+      },
+      "response_metadata": {
+        "stage": "prompt_audit",
+        "request_model": "gemini-3.7-flash",
+        "response_model": "gemini-3.7-flash",
+        "response_id": "chatcmpl-c0a49b55026548b29c5b7b01c68d224f",
+        "usage": {
+          "prompt_tokens": 4104,
+          "completion_tokens": 4661,
+          "total_tokens": 8765,
+          "prompt_tokens_details": {
+            "text_tokens": 3731
+          },
+          "completion_tokens_details": {
+            "text_tokens": 10,
+            "reasoning_tokens": 4650
+          }
+        },
+        "provider": "vapi",
+        "endpoint": "https://api.gpt.ge/v1/chat/completions"
+      }
+    }
+  ]
+}

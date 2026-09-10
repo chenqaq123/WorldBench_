@@ -1,0 +1,103 @@
+{
+  "id": "WL-CORE-DINING-SWAP-4P-TOP-4S",
+  "task": "position_swap",
+  "layout": "dining_room_table_4_overhead_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "window_sideboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "window_patio",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "aisle_sideboard",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "aisle_patio",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks about tea preferences.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window. A man in a green shirt sits in the sideboard-side window seat and asks about tea preferences, a woman in an orange shirt sits in the patio-side window seat, a woman in a white shirt sits in the sideboard-side aisle seat, and a man in a blue shirt sits in the patio-side aisle seat.",
+        "viewpoint": "Wide establishing shot from just beside the patio doors end, looking along the dining table toward the sideboard, with both window-side seats and both aisle-side seats and the sideboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B states a preference for plain tea.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in a green shirt and a woman in an orange shirt exchange seats, and she states a preference for plain tea.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "B"
+      ],
+      "beat": "Subject B criticizes adding sugar to tea.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "A woman in an orange shirt criticizes adding sugar to tea.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the sideboard-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A replies with a defense of formal tea etiquette.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "A man in a green shirt replies with a defense of formal tea etiquette.",
+        "viewpoint": "Top-down wide shot directly above the dining table."
+      }
+    }
+  ]
+}

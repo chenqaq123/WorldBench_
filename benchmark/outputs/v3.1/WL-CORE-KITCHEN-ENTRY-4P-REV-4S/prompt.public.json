@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-KITCHEN-ENTRY-4P-REV-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a kitchen, a rectangular island stands between a sink counter and a refrigerator, with a window along one side and an aisle along the opposite side. A man in a green shirt sits on the sink-side window stool proposing a stew recipe, a woman in a white shirt sits on the sink-side aisle stool, and a woman in a blue shirt sits on the refrigerator-side aisle stool. There is one empty place.",
+      "viewpoint": "Wide establishing shot from just beside the refrigerator end, looking along the kitchen island toward the sink counter, with both window-side stools and both aisle-side stools and the sink counter in frame."
+    },
+    {
+      "index": 2,
+      "content": "A woman in an orange shirt enters and sits in the empty place. She asks about the vegetable peeling technique for the stew, and a man in a green shirt argues for scraping instead.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side stools."
+    },
+    {
+      "index": 3,
+      "content": "A man in a green shirt explains why scraping ingredients saves more of the vegetables.",
+      "viewpoint": "Close-up from the aisle side, centered on the person at the sink-side window stool."
+    },
+    {
+      "index": 4,
+      "content": "A woman in a blue shirt argues that scraping takes too much effort, and a man in a green shirt replies.",
+      "viewpoint": "Reverse wide shot of the kitchen island."
+    }
+  ]
+}

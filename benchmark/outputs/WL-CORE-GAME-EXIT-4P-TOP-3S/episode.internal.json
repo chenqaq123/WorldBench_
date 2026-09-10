@@ -1,0 +1,90 @@
+{
+  "id": "WL-CORE-GAME-EXIT-4P-TOP-3S",
+  "task": "person_exit",
+  "layout": "board_game_table_4_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "navy sweater",
+      "appearance": "a woman in a navy sweater",
+      "seat": "window_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "olive hoodie",
+      "appearance": "a man in a olive hoodie",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "burgundy cardigan",
+      "appearance": "a woman in a burgundy cardigan",
+      "seat": "aisle_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "mustard shirt",
+      "appearance": "a man in a mustard shirt",
+      "seat": "aisle_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks a question.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side. A woman in a navy sweater sits at the shelf-side window seat and asks a question. A man in an olive hoodie occupies the doorway-side window seat, a woman in a burgundy cardigan occupies the shelf-side aisle seat, and a man in a mustard shirt occupies the doorway-side aisle seat.",
+        "viewpoint": "Wide establishing shot from the doorway end, looking lengthwise along the game table toward the shelving unit, with both window-side seats and both aisle-side seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves that seat and exits. Subject A speaks.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in the olive hoodie leaves the doorway-side window seat and exits the venue. The woman in the navy sweater speaks.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D answers. Subject A replies.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in the mustard shirt answers. The woman in the navy sweater replies.",
+        "viewpoint": "Top-down wide shot from directly above the game table, centered on the tabletop, with both window-side seats and both aisle-side seats in frame."
+      }
+    }
+  ]
+}

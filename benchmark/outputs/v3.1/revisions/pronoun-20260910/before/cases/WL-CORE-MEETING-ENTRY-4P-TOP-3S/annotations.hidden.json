@@ -1,0 +1,143 @@
+{
+  "version": "3.1",
+  "episode_id": "WL-CORE-MEETING-ENTRY-4P-TOP-3S",
+  "source_id": "holmes_arrival",
+  "layout": {
+    "id": "meeting_room_table_4_overhead_r3_v3_1",
+    "scene_type": "meeting room",
+    "archetype": "meeting-room discussion",
+    "story_venue": "a meeting room",
+    "scene": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+    "public_intro": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window.",
+    "seats": {
+      "walkway_door": "the door-side walkway seat",
+      "walkway_screen": "the screen-side walkway seat",
+      "window_screen": "the screen-side window seat",
+      "window_door": "the door-side window seat"
+    },
+    "seat_order": [
+      "walkway_door",
+      "walkway_screen",
+      "window_screen",
+      "window_door"
+    ],
+    "cameras": {
+      "establish": {
+        "framing": "wide",
+        "view_direction": "door_to_screen",
+        "public_view": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame.",
+        "visible_seats": [
+          "window_screen",
+          "window_door",
+          "walkway_screen",
+          "walkway_door"
+        ]
+      },
+      "partial_pair": {
+        "framing": "two_shot",
+        "public_view": "Medium two-shot from the window side, centered on the two adjacent walkway-side seats.",
+        "visible_seats": [
+          "walkway_door",
+          "walkway_screen"
+        ]
+      },
+      "partial_first": {
+        "framing": "close_up",
+        "public_view": "Close-up from the window side, centered on the person at the door-side walkway seat.",
+        "visible_seats": [
+          "walkway_door"
+        ]
+      },
+      "partial_second": {
+        "framing": "close_up",
+        "public_view": "Close-up from the window side, centered on the person at the screen-side walkway seat.",
+        "visible_seats": [
+          "walkway_screen"
+        ]
+      },
+      "probe_reverse": {
+        "framing": "wide",
+        "view_direction": "screen_to_door",
+        "public_view": "Reverse wide shot of the conference table.",
+        "visible_seats": [
+          "window_screen",
+          "window_door",
+          "walkway_screen",
+          "walkway_door"
+        ]
+      },
+      "probe_overhead": {
+        "framing": "wide",
+        "view_direction": "overhead",
+        "public_view": "Top-down wide shot directly above the conference table.",
+        "visible_seats": [
+          "window_screen",
+          "window_door",
+          "walkway_screen",
+          "walkway_door"
+        ]
+      }
+    },
+    "grammar": {
+      "opening_camera": "establish",
+      "partial_cameras": [
+        "partial_pair",
+        "partial_first",
+        "partial_second"
+      ],
+      "probe_camera": "probe_overhead",
+      "probe_focus_seats": [
+        "walkway_door",
+        "walkway_screen"
+      ]
+    },
+    "version": "3.1"
+  },
+  "layout_sha256": "4c8943a33b3efe17258ab2c225b4fac35ccd1c5513dfc1851e2df06c3822d5b9",
+  "identity_anchor_shots": {
+    "A": 1,
+    "B": 2,
+    "C": 1,
+    "D": 1
+  },
+  "observations": [
+    {
+      "shot": 1,
+      "scored": false,
+      "camera": "establish",
+      "expected_count": 3,
+      "expected_occupants": {
+        "window_screen": "C",
+        "window_door": "D",
+        "walkway_screen": null,
+        "walkway_door": "A"
+      },
+      "unmentioned_probes": []
+    },
+    {
+      "shot": 3,
+      "scored": true,
+      "camera": "probe_overhead",
+      "expected_count": 4,
+      "expected_occupants": {
+        "window_screen": "C",
+        "window_door": "D",
+        "walkway_screen": "B",
+        "walkway_door": "A"
+      },
+      "unmentioned_probes": [
+        {
+          "subject": "B",
+          "present": true,
+          "seat": "walkway_screen"
+        },
+        {
+          "subject": "C",
+          "present": true,
+          "seat": "window_screen"
+        }
+      ]
+    }
+  ],
+  "evaluation_reference": "observed_opening_plus_requested_updates"
+}

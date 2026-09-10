@@ -1,0 +1,357 @@
+{
+  "stage": "prompt_audit",
+  "model": "gemini-3.7-flash",
+  "schema_name": "prompt_audit",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "passed": {
+        "type": "boolean"
+      },
+      "issues": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "stage": {
+              "type": "string",
+              "enum": [
+                "story",
+                "camera",
+                "prompt"
+              ]
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "description": "One concise blocking issue."
+            }
+          },
+          "required": [
+            "stage",
+            "message"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "passed",
+      "issues"
+    ],
+    "additionalProperties": false
+  },
+  "system": "You are the strict final auditor for a controlled world-state benchmark. The supplied layout and camera presets are construction contracts, not proof of actual video compliance. For every shot, compare mentioned, expected_visible, probe, Content, and Viewpoint. Content must clearly describe exactly the subjects in mentioned and no others. Subject identity must use only the approved gender and clothing-color anchors; reject invented hair, stable facial features, age, or accessory details. Each identity anchor may appear only once per shot. Shot 1 must begin with layout.public_intro before any subject is introduced. This exact short scene sentence has already passed deterministic validation; do not remove or expand it. Shot 1 seat-label presence, exact wording, and compactness have already passed a deterministic validator. The public labels are the natural-language values in layout.seats, not internal keys such as window_left. Do not report an issue merely because these required seat labels appear. Report a seat issue only when Content clearly pairs a subject with a different subject's supplied seat. Every subject in Shot 1's mentioned array must be introduced once with an identity anchor and seat; these required introductions are not a redundant audience list and must never be rejected merely because only Subject A acts. In an opening introduction, sits/seated/is at a named seat ESTABLISHES a required location; it is not decorative posture and is allowed for EVERY initially present subject. Entry's enters-and-sits sentence is also a required state event, never decoration. Reject repeated anchors or actual audience lists added after those required introductions. Content must contain only plot-relevant actions; reject decorative posture, gaze, expressions, hand gestures, prop handling, and adverbs. Physical cooking, serving or cleaning must not be introduced; people may discuss these topics while seated. Do not accept final wording that initiates an unplanned physical task or implies the speaker is alone. Only the opening wide states its origin and layout. The final wide uses a standard reverse or top-down instruction without any seat inventory or required orientation landmarks. Naming the interaction area itself (table, coffee table, kitchen island) is explicitly allowed and necessary; it is NOT a forbidden landmark. For example, 'Reverse wide shot of the coffee table.' and 'Top-down wide shot directly above the kitchen island.' are allowed. Reject required shelf/window/seat-coverage lists, not the name of the filmed interaction area. Intermediate partial views need only a short focal framing phrase; do not demand lens, height, angle, or crop parameters. Compare the story to source.excerpt and skeleton: retain a recognizable topic or interaction, but allow the documented task adaptation and new human cast. Reject source-attribution claims invented by the writer. Every frozen event must be explicit. Updates name the participating identities, never compact seat labels or landmarks. Entry takes the unique empty place established in Shot 1; Exit leaves the seat and venue; Swap exchanges the named subjects' seats. Naming both people followed by 'exchange seats' or 'swap seats' fully specifies the swap. Do NOT require restating either person's original or destination position. A subject in probe must not be named, described, counted, or indirectly mentioned in final Content. Read probe_expectations for its required final presence and seat. The score checks count and positions for ALL occupants in the final wide, not just unmentioned probes. Mentioned subjects may act without repeating their seat. An absent probe correctly does not appear in expected_visible; do not treat that as an inconsistency. The final Viewpoint must cover every probe subject's established or expected seat. This deliberate omission is the benchmark test, not an error. Reject duration, timestamp, frame-rate, resolution, or generation language. If passed is true, issues must be empty. Classify a broken story beat as story, an ambiguous or inconsistent template/view as camera, and public wording as prompt. Actual opening screenshots, not prescribed identity-to-seat assignments, will supply the evaluation reference. Check narrative continuity against the skeleton: ordinary adaptation is allowed, but changing its discussion into an unrelated topic is not. A shared generic keyword alone does not establish source fidelity. Assign every speech act to the intended subject in the approved beat. After two people of the same gender have been introduced in a shot, do not start a new speaking clause with an unqualified he/she. Bind the action directly to its identity or restructure the sentence. The former/the latter are allowed when exactly two people were named in that order. In an entry shot, the newcomer uniquely refers to the person introduced by the required arrival sentence, not an additional person. Do not repeat identity anchors to resolve a pronoun. Bound possessives such as 'a man in a blue shirt leaves his seat' are clear and allowed.",
+  "input_value": {
+    "source": {
+      "id": "women_club",
+      "title": "Little Women",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "url": "https://www.gutenberg.org/files/514/514-h/514-h.htm",
+      "locator": "Chapter X: The P.C. and P.O.",
+      "start_text": "With a few interruptions, they had kept this up for a year",
+      "scenes": [
+        "game room"
+      ],
+      "topic_terms": [
+        "club",
+        "member",
+        "meeting"
+      ],
+      "excerpt": "With a few interruptions, they had kept this up for a year, and met every Saturday evening in the big garret, on which occasions the ceremonies were as follows: Three chairs were arranged in a row before a table on which was a lamp, also four white badges, with a big ‘P.C.’ in different colors on each, and the weekly newspaper called, The Pickwick Portfolio, to which all contributed something, while Jo, who reveled in pens and ink, was the editor. At seven o’clock, the four members ascended to the clubroom, tied their badges round their heads, and took their seats with great solemnity. Meg, as the eldest, was Samuel Pickwick, Jo, being of a literary turn, Augustus Snodgrass, Beth, because she was round and rosy, Tracy Tupman, and Amy, who was always trying to do what she couldn’t, was Nathaniel Winkle. Pickwick, the president, read the paper, which was filled with original tales, poetry, local news, funny advertisements, and hints, in which they good-naturedly reminded each other of their faults and short comings. On one occasion, Mr. Pickwick put on a pair of spectacles without any glass, rapped upon the table, hemmed, and having stared hard at Mr. Snodgrass, who was tilting back in his chair, till he arranged himself properly, began to read: “THE PICKWICK PORTFOLIO” MAY 20, 18— POET’S CORNER ANNIVERSARY ODE Again we meet to celebrate With badge and solemn rite, Our fifty-second anniversary, In Pickwick Hall, tonight. We all are here in perfect health, None gone from our small band: Again we see each well-known face, And press each friendly hand. Our Pickwick, always at his post, With reverence we greet, As, spectacles on nose, he reads Our well-filled weekly sheet. Although he suffers from a cold, We joy to hear him speak, For words",
+      "excerpt_sha256": "37351dab17c2dca3e264d7394cd8dde6653ae8233538c8e772141c9e7e78c067",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+      "archetype": "board-game conversation",
+      "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+    },
+    "skeleton": {
+      "source_id": "women_club",
+      "archetype": "board-game conversation",
+      "premise": "Members assemble for a scheduled club meeting to hear a presentation of their shared creative contributions.",
+      "interaction_arc": "The members gather and take their positions for the meeting. The leader calls the session to order, prompts an inattentive member to sit properly, and commences reading the group's collective writings."
+    },
+    "layout": {
+      "id": "board_game_table_3_overhead_r1_v3_1",
+      "scene_type": "game room",
+      "archetype": "board-game conversation",
+      "story_venue": "a game room",
+      "scene": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+      "public_intro": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+      "seats": {
+        "window_door": "the doorway-side window seat",
+        "window_shelf": "the shelf-side window seat",
+        "shelf_end": "the shelf-end seat"
+      },
+      "seat_order": [
+        "window_door",
+        "window_shelf",
+        "shelf_end"
+      ],
+      "cameras": {
+        "establish": {
+          "framing": "wide",
+          "view_direction": "doorway_to_shelf",
+          "public_view": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and the shelf-end seat and the shelving unit in frame.",
+          "visible_seats": [
+            "window_shelf",
+            "window_door",
+            "shelf_end"
+          ]
+        },
+        "partial_pair": {
+          "framing": "two_shot",
+          "public_view": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats.",
+          "visible_seats": [
+            "window_door",
+            "window_shelf"
+          ]
+        },
+        "partial_first": {
+          "framing": "close_up",
+          "public_view": "Close-up from the aisle side, centered on the person at the doorway-side window seat.",
+          "visible_seats": [
+            "window_door"
+          ]
+        },
+        "partial_second": {
+          "framing": "close_up",
+          "public_view": "Close-up from the aisle side, centered on the person at the shelf-side window seat.",
+          "visible_seats": [
+            "window_shelf"
+          ]
+        },
+        "probe_reverse": {
+          "framing": "wide",
+          "view_direction": "shelf_to_doorway",
+          "public_view": "Reverse wide shot of the game table.",
+          "visible_seats": [
+            "window_shelf",
+            "window_door",
+            "shelf_end"
+          ]
+        },
+        "probe_overhead": {
+          "framing": "wide",
+          "view_direction": "overhead",
+          "public_view": "Top-down wide shot directly above the game table.",
+          "visible_seats": [
+            "window_shelf",
+            "window_door",
+            "shelf_end"
+          ]
+        }
+      },
+      "grammar": {
+        "opening_camera": "establish",
+        "partial_cameras": [
+          "partial_pair",
+          "partial_first",
+          "partial_second"
+        ],
+        "probe_camera": "probe_overhead",
+        "probe_focus_seats": [
+          "window_door",
+          "window_shelf"
+        ]
+      },
+      "version": "3.1"
+    },
+    "episode": {
+      "id": "WL-CORE-GAME-SWAP-3P-TOP-4S",
+      "task": "position_swap",
+      "layout": "board_game_table_3_overhead_r1_v3_1",
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "purple shirt",
+          "appearance": "a woman in a purple shirt",
+          "seat": "window_door",
+          "initially_present": true
+        },
+        {
+          "id": "B",
+          "gender": "woman",
+          "clothing": "red shirt",
+          "appearance": "a woman in a red shirt",
+          "seat": "window_shelf",
+          "initially_present": true
+        },
+        {
+          "id": "C",
+          "gender": "man",
+          "clothing": "green shirt",
+          "appearance": "a man in a green shirt",
+          "seat": "shelf_end",
+          "initially_present": true
+        }
+      ],
+      "shots": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "beat": "Subject A calls the scheduled club meeting to order.",
+          "events": [],
+          "camera": "establish",
+          "prompt": {
+            "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A woman in a purple shirt sits at the doorway-side window seat and calls the club meeting to order, a woman in a red shirt sits at the shelf-side window seat, and a man in a green shirt sits at the shelf-end seat.",
+            "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and the shelf-end seat and the shelving unit in frame."
+          }
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "beat": "Subject A and Subject B exchange their established seats. Subject A asks about the presentation of the creative contributions.",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ],
+          "camera": "partial_pair",
+          "prompt": {
+            "content": "A woman in a purple shirt and a woman in a red shirt exchange seats, and the former asks about the presentation of the creative contributions.",
+            "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+          }
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "beat": "Subject B reads the collective writings.",
+          "events": [],
+          "camera": "partial_first",
+          "prompt": {
+            "content": "A woman in a red shirt reads the collective writings.",
+            "viewpoint": "Close-up from the aisle side, centered on the person at the doorway-side window seat."
+          }
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "beat": "Subject A discusses the club presentation.",
+          "events": [],
+          "camera": "probe_overhead",
+          "prompt": {
+            "content": "A woman in a purple shirt discusses the club presentation.",
+            "viewpoint": "Top-down wide shot directly above the game table."
+          }
+        }
+      ]
+    },
+    "derived_contracts": [
+      {
+        "index": 1,
+        "mentioned": [
+          "A",
+          "B",
+          "C"
+        ],
+        "expected_visible": [
+          "A",
+          "B",
+          "C"
+        ],
+        "probe": [],
+        "probe_expectations": [],
+        "camera": "establish",
+        "required_content_prefix": null
+      },
+      {
+        "index": 2,
+        "mentioned": [
+          "A",
+          "B"
+        ],
+        "expected_visible": [
+          "A",
+          "B"
+        ],
+        "probe": [],
+        "probe_expectations": [],
+        "camera": "partial_pair",
+        "required_content_prefix": null
+      },
+      {
+        "index": 3,
+        "mentioned": [
+          "B"
+        ],
+        "expected_visible": [
+          "B"
+        ],
+        "probe": [],
+        "probe_expectations": [],
+        "camera": "partial_first",
+        "required_content_prefix": null
+      },
+      {
+        "index": 4,
+        "mentioned": [
+          "A"
+        ],
+        "expected_visible": [
+          "A",
+          "B",
+          "C"
+        ],
+        "probe": [
+          "B",
+          "C"
+        ],
+        "probe_expectations": [
+          {
+            "subject": "B",
+            "present": true,
+            "seat": "window_door"
+          },
+          {
+            "subject": "C",
+            "present": true,
+            "seat": "shelf_end"
+          }
+        ],
+        "camera": "probe_overhead",
+        "required_content_prefix": null
+      }
+    ],
+    "public_prompt": {
+      "id": "WL-CORE-GAME-SWAP-3P-TOP-4S",
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A woman in a purple shirt sits at the doorway-side window seat and calls the club meeting to order, a woman in a red shirt sits at the shelf-side window seat, and a man in a green shirt sits at the shelf-end seat.",
+          "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and the shelf-end seat and the shelving unit in frame."
+        },
+        {
+          "index": 2,
+          "content": "A woman in a purple shirt and a woman in a red shirt exchange seats, and the former asks about the presentation of the creative contributions.",
+          "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+        },
+        {
+          "index": 3,
+          "content": "A woman in a red shirt reads the collective writings.",
+          "viewpoint": "Close-up from the aisle side, centered on the person at the doorway-side window seat."
+        },
+        {
+          "index": 4,
+          "content": "A woman in a purple shirt discusses the club presentation.",
+          "viewpoint": "Top-down wide shot directly above the game table."
+        }
+      ]
+    }
+  },
+  "temperature": null
+}

@@ -1,0 +1,11 @@
+Shot 1
+Content: Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other. A woman in an emerald blouse sits in the plant-side window seat narrating an unexpected mistake, while a man in a mustard cardigan sits in the counter-side window seat and a woman in a navy hoodie sits in the plant-end seat.
+Viewpoint: Wide view from the counter end, looking lengthwise along the rectangular table toward the floor plant. The full table and all three seats are visible.
+
+Shot 2
+Content: The man in the mustard cardigan asks the woman in the emerald blouse about the outcome.
+Viewpoint: Medium close view from the aisle side, framing only the two people in the window-side seats.
+
+Shot 3
+Content: The woman in the emerald blouse concludes the explanation to the man in the mustard cardigan.
+Viewpoint: Wide view from behind the plant-end seat, looking lengthwise along the table toward the café counter. The plant-end seat and both window-side seats are visible.

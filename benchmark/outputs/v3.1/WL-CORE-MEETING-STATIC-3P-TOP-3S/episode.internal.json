@@ -1,0 +1,76 @@
+{
+  "id": "WL-CORE-MEETING-STATIC-3P-TOP-3S",
+  "task": "static_viewpoint_change",
+  "layout": "meeting_room_table_3_overhead_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "screen_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A introduces the puzzling consultation case.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in a green shirt sits at the screen-side window seat and introduces the puzzling consultation case, while a woman in an orange shirt sits at the door-side window seat and a woman in a white shirt sits at the screen-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and the screen-end seat and the presentation screen in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks if help is needed to review the account. Subject A replies that their joint inquiry is necessary.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in an orange shirt asks if help is needed to review the account, and the man in a green shirt replies that their joint inquiry is necessary.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A asks how to begin examining the case evidence. Subject B answers that they should review the timeline first.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in a green shirt asks how to begin examining the case evidence, and the woman in an orange shirt answers that they should review the timeline first.",
+        "viewpoint": "Top-down wide shot directly above the conference table."
+      }
+    }
+  ]
+}

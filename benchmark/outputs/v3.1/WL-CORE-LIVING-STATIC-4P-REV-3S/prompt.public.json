@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-LIVING-STATIC-4P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing two armchairs along the opposite side. A woman in a purple shirt sits in the doorway-side sofa seat and asks about the dinner invitation plans. A woman in a red shirt sits in the bookcase-side sofa seat, a man in a green shirt sits in the bookcase-side armchair, and a man in an orange shirt sits in the doorway-side armchair.",
+      "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and both armchairs and the bookcase in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in a purple shirt asks about the missing dessert order, and the woman in a red shirt explains the delivery delay.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in a green shirt asks about the mutual acquaintance attending the visit, the woman in a red shirt replies with the guest schedule, and the woman in a purple shirt confirms the arrival time.",
+      "viewpoint": "Reverse wide shot of the coffee table."
+    }
+  ]
+}

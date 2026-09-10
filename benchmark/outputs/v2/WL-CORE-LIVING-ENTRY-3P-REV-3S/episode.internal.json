@@ -1,0 +1,79 @@
+{
+  "id": "WL-CORE-LIVING-ENTRY-3P-REV-3S",
+  "task": "person_entry",
+  "layout": "living_room_seating_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "sofa_doorway",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A announces the dinner plans for the visit.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in a red shirt sits in the bookcase-side sofa seat and announces the dinner plans for the visit, while a man in an orange shirt sits in the bookcase-side armchair.",
+        "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the established seat. Subject A asks if the dinner invitations were sent, and Subject B answers that the invitations were delivered.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in a green shirt enters and sits in the doorway-side sofa seat. She answers that the invitations were delivered when a woman in a red shirt asks if the dinner invitations were sent.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A confirms that the meal will be served shortly.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A woman in a red shirt confirms that the meal will be served shortly.",
+        "viewpoint": "Reverse wide shot from the bookcase side, looking across the coffee table toward the doorway, with both sofa seats and the bookcase-side armchair in frame."
+      }
+    }
+  ]
+}

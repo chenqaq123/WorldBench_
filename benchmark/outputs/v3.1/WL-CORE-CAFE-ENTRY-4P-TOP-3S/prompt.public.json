@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-CAFE-ENTRY-4P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in an orange shirt sits in the counter-side window seat and poses a riddle. A woman in a blue shirt sits in the plant-side aisle seat. A woman in a yellow shirt sits in the counter-side aisle seat. There is one empty place.",
+      "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and both aisle-side seats and the floor plant in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in a white shirt enters and sits in the empty place. He asks whether knowing an answer is the same as saying what one means, and a woman in an orange shirt replies.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A woman in a yellow shirt asks about the inaccurate clock, and a woman in an orange shirt answers.",
+      "viewpoint": "Top-down wide shot directly above the rectangular table."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "WL-PY-SELECTIVE-VIEW-001",
+  "task": "static_viewpoint_change",
+  "layout": "cafe_rect_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "appearance": "emerald green knitted sweater with a high messy bun",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "appearance": "mustard yellow button-down shirt with round tortoiseshell eyeglasses",
+      "seat": "window_right",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "appearance": "charcoal grey denim jacket with short silver-streaked curls",
+      "seat": "table_left_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "A begins recounting an everyday mix-up with animated hand gestures, while B rests both hands on the table smiling with amusement, and C leans back with a relaxed, cheerful expression.",
+      "events": [],
+      "camera": "establish_front",
+      "prompt": {
+        "content": "In a quiet café seating area, the person in the emerald green knitted sweater with a high messy bun sits in the window-side seat nearest the tall floor plant, recounting an everyday mix-up with animated hand gestures. In the window-side seat nearest the café counter, the person in the mustard yellow button-down shirt with round tortoiseshell eyeglasses rests both hands on the table smiling with amusement, while the person in the charcoal grey denim jacket with short silver-streaked curls occupies the short-end seat directly in front of the tall floor plant, leaning back with a relaxed, cheerful expression.",
+        "viewpoint": "Wide view from the aisle-side corner, looking diagonally across the rectangular table. The full table and all three seats are visible."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "B leans forward with an inquisitive grin to ask a teasing question, prompting A to raise both hands in humorous surrender.",
+      "events": [],
+      "camera": "partial_window_pair",
+      "prompt": {
+        "content": "The person in the mustard yellow button-down shirt leans forward with an inquisitive grin to ask a teasing question, prompting the person in the emerald green knitted sweater to raise both hands in humorous surrender.",
+        "viewpoint": "Medium close view of the two people in the window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "A delivers the final comedic detail of the blunder with an open smile, while B chuckles and shakes their head in delight.",
+      "events": [],
+      "camera": "probe_right_end",
+      "prompt": {
+        "content": "The person in the emerald green knitted sweater delivers the final comedic detail of the blunder with an open smile, while the person in the mustard yellow button-down shirt chuckles and shakes their head in delight.",
+        "viewpoint": "Wide view from the counter end, looking along the full table toward the floor plant. Both window-side seats and the plant-end seat are visible."
+      }
+    }
+  ]
+}

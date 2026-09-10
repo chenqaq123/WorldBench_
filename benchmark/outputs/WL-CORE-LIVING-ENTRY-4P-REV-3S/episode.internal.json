@@ -1,0 +1,89 @@
+{
+  "id": "WL-CORE-LIVING-ENTRY-4P-REV-3S",
+  "task": "person_entry",
+  "layout": "living_room_seating_4_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "mustard sweater",
+      "appearance": "a woman in a mustard sweater",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "navy hoodie",
+      "appearance": "a man in a navy hoodie",
+      "seat": "sofa_doorway",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "emerald blouse",
+      "appearance": "a woman in a emerald blouse",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "burgundy cardigan",
+      "appearance": "a man in a burgundy cardigan",
+      "seat": "doorway_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A speaks.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in a mustard sweater sits at the bookcase-side sofa seat and speaks, a woman in a emerald blouse sits at the bookcase-side armchair, and a man in a burgundy cardigan sits at the doorway-side armchair.",
+        "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and both armchairs in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes a seat. Subject B asks a question, and Subject A answers.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in a navy hoodie enters, sits at the doorway-side sofa seat, and asks a question, and a woman in a mustard sweater answers.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D asks a question, and Subject A replies.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A man in a burgundy cardigan asks a question, and a woman in a mustard sweater replies.",
+        "viewpoint": "Reverse wide shot from the bookcase side, looking across the coffee table toward the doorway, with both sofa seats and both armchairs in frame."
+      }
+    }
+  ]
+}

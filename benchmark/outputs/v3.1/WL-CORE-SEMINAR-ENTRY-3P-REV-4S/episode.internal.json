@@ -1,0 +1,92 @@
+{
+  "id": "WL-CORE-SEMINAR-ENTRY-3P-REV-4S",
+  "task": "person_entry",
+  "layout": "seminar_room_table_3_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "window_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "window_pinboard",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "pinboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A explains that every detail of the account must be examined.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. There is one empty place. A man in an orange shirt sits at the entrance-side window seat and explains that every detail of the account must be examined. A man in a blue shirt sits at the pinboard-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the empty place. Subject A asks to restart the account from the beginning.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in a white shirt enters and sits in the empty place. A man in an orange shirt asks to restart the account from the beginning.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks to review all the evidence.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "A man in an orange shirt asks to review all the evidence.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the entrance-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks to evaluate the narrative.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A man in an orange shirt asks to evaluate the narrative.",
+        "viewpoint": "Reverse wide shot of the worktable."
+      }
+    }
+  ]
+}

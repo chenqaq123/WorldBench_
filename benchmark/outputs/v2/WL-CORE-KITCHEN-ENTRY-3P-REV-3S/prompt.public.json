@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-KITCHEN-ENTRY-3P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a kitchen, a long rectangular island stands between the refrigerator wall and the sink area, with stools arranged along its sides. A man in a blue shirt sits on the sink-side guest stool and proposes preparing breakfast this morning, while a man in a purple shirt sits on the sink-end stool.",
+      "viewpoint": "Wide establishing shot from the refrigerator end, looking lengthwise along the kitchen island toward the sink area, with both guest-side stools and the sink-end stool in frame."
+    },
+    {
+      "index": 2,
+      "content": "A woman in a yellow shirt enters and sits on the refrigerator-side guest stool. She asks about the housekeeping chores, and a man in a blue shirt replies that the cooking is simple.",
+      "viewpoint": "Medium two-shot from the cook side, centered on the two adjacent guest-side stools."
+    },
+    {
+      "index": 3,
+      "content": "A man in a blue shirt admits that preparing the meal is far more demanding than expected.",
+      "viewpoint": "Reverse wide shot from the sink end, looking lengthwise along the kitchen island toward the refrigerator wall, with both guest-side stools and the sink-end stool in frame."
+    }
+  ]
+}

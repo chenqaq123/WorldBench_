@@ -1,0 +1,103 @@
+{
+  "id": "WL-CORE-LIVING-SWAP-4P-REV-4S",
+  "task": "position_swap",
+  "layout": "living_room_seating_4_r2_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "doorway_chair",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A recounts the list of dance partners from the evening ball.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing two armchairs along the opposite side. A man in a red shirt sits in the bookcase-side armchair and recounts dance partners from the evening ball, a man in a green shirt sits in the doorway-side armchair, a woman in an orange shirt sits in the bookcase-side sofa seat, and a woman in a white shirt sits in the doorway-side sofa seat.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and both armchairs and the bookcase in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject A describes each partner in detail while Subject B urges an end to the report.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in a red shirt and a man in a green shirt exchange seats.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two armchairs."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "B"
+      ],
+      "beat": "Subject B asks to stop reviewing every single dance from the evening.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "A man in a green shirt asks to stop reviewing the evening dances.",
+        "viewpoint": "Close-up from the coffee-table side, centered on the person at the bookcase-side armchair."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A insists on finishing the account of the ball.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A man in a red shirt insists on finishing the account of the ball.",
+        "viewpoint": "Reverse wide shot of the coffee table."
+      }
+    }
+  ]
+}

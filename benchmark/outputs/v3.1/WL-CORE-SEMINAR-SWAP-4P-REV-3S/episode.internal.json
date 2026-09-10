@@ -1,0 +1,90 @@
+{
+  "id": "WL-CORE-SEMINAR-SWAP-4P-REV-3S",
+  "task": "position_swap",
+  "layout": "seminar_room_table_4_r3_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "aisle_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "aisle_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "yellow shirt",
+      "appearance": "a woman in a yellow shirt",
+      "seat": "window_entrance",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A remarks that commonplace skills are frequently mistaken for true accomplishment.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A woman in an orange shirt sits in the entrance-side aisle seat and remarks that commonplace skills are frequently mistaken for true accomplishment, a man in a white shirt sits in the pinboard-side aisle seat, a woman in a blue shirt sits in the pinboard-side window seat, and a woman in a yellow shirt sits in the entrance-side window seat.",
+        "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and both aisle-side seats and the pinboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B argues that genuine accomplishment requires a far higher standard.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in an orange shirt and a man in a white shirt exchange seats, and he argues that genuine accomplishment requires a far higher standard.",
+        "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks if such a standard is impossibly restrictive.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A woman in an orange shirt asks if such a standard is impossibly restrictive.",
+        "viewpoint": "Reverse wide shot of the worktable."
+      }
+    }
+  ]
+}

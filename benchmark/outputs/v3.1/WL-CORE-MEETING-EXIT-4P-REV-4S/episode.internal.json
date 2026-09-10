@@ -1,0 +1,103 @@
+{
+  "id": "WL-CORE-MEETING-EXIT-4P-REV-4S",
+  "task": "person_exit",
+  "layout": "meeting_room_table_4_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "walkway_screen",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "walkway_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A proposes planning a restful holiday trip.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A woman in a green shirt sits in the screen-side window seat and proposes planning a restful holiday trip, a man in an orange shirt sits in the door-side window seat, a man in a white shirt sits in the screen-side walkway seat, and a woman in a blue shirt sits in the door-side walkway seat.",
+        "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves the established seat and exits the scene. Subject A suggests a country retreat.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in an orange shirt leaves his seat and exits the venue. The woman in a green shirt suggests a country retreat.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A explains the need for quiet rest.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The woman in a green shirt explains the need for quiet rest.",
+        "viewpoint": "Close-up from the walkway side, centered on the person at the screen-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D replies that a sea voyage is preferable, but Subject A answers that short voyages are uncomfortable.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in a blue shirt replies that a sea voyage is preferable, but the woman in a green shirt answers that short voyages are uncomfortable.",
+        "viewpoint": "Reverse wide shot of the conference table."
+      }
+    }
+  ]
+}

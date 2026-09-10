@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-LIVING-SWAP-4P-TOP-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing two armchairs along the opposite side. A man in a red shirt sits in the bookcase-side armchair and recounts the dance partners and compliments from the ball. A man in a green shirt sits in the doorway-side armchair, a woman in an orange shirt sits in the bookcase-side sofa seat, and a woman in a white shirt sits in the doorway-side sofa seat.",
+      "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and both armchairs and the bookcase in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in the red shirt and the man in the green shirt exchange seats, and the latter asks to stop listing every dance partner.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two armchairs."
+    },
+    {
+      "index": 3,
+      "content": "The man in the green shirt complains about the exhaustive list of dance partners.",
+      "viewpoint": "Close-up from the coffee-table side, centered on the person at the bookcase-side armchair."
+    },
+    {
+      "index": 4,
+      "content": "The man in the red shirt describes another compliment received at the ball.",
+      "viewpoint": "Top-down wide shot directly above the coffee table."
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "WL-CORE-KITCHEN-ENTRY-4P-REV-3S",
+  "task": "person_entry",
+  "layout": "kitchen_island_4_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "guest_sink",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "guest_fridge",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "cook_sink",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "cook_fridge",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A announces that the breakfast chores need to be divided.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a kitchen, a long rectangular island stands between the refrigerator wall and the sink area, with stools arranged along its sides. A man in a green shirt sits on the sink-side guest stool and announces that the breakfast chores need to be divided, while a woman in a white shirt sits on the sink-side cook stool, and a woman in a blue shirt sits on the refrigerator-side cook stool.",
+        "viewpoint": "Wide establishing shot from the refrigerator end, looking lengthwise along the kitchen island toward the sink area, with both guest-side stools and both cook-side stools in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the established seat. Subject B asks how the morning housekeeping will be handled, and Subject A replies that breakfast will be easy to prepare.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in an orange shirt enters and sits on the refrigerator-side guest stool. She asks how the morning housekeeping will be handled, and a man in a green shirt replies that breakfast will be easy to prepare.",
+        "viewpoint": "Medium two-shot from the cook side, centered on the two adjacent guest-side stools."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D asks if all the breakfast tasks are finished, and Subject A admits that the work is more difficult than expected.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A woman in a blue shirt asks if all the breakfast tasks are finished, and a man in a green shirt admits that the work is more difficult than expected.",
+        "viewpoint": "Reverse wide shot from the sink end, looking lengthwise along the kitchen island toward the refrigerator wall, with both guest-side stools and both cook-side stools in frame."
+      }
+    }
+  ]
+}

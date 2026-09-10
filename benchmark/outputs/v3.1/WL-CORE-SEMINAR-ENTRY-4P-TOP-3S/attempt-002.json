@@ -1,0 +1,225 @@
+[
+  {
+    "stage": "source_abstraction",
+    "model": "gemini-3.7-flash",
+    "schema_name": "story_skeleton",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the real source ID exactly."
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the supplied archetype exactly."
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A faithful abstraction of the supplied excerpt's interaction."
+        },
+        "interaction_arc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A concise ordered narrative progression, not divided into shots."
+        }
+      },
+      "required": [
+        "source_id",
+        "archetype",
+        "premise",
+        "interaction_arc"
+      ],
+      "additionalProperties": false
+    },
+    "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 3 shots.",
+    "input_value": {
+      "source": {
+        "id": "pride_skills",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "year": 1813,
+        "url": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+        "locator": "Chapter VIII: discussing accomplishments",
+        "start_text": "It is amazing to me",
+        "scenes": [
+          "seminar room"
+        ],
+        "topic_terms": [
+          "skill",
+          "accomplishment",
+          "standard"
+        ],
+        "excerpt": "It is amazing to me,” said Bingley, “how young ladies can have patience to be so very accomplished as they all are.” “All young ladies accomplished! My dear Charles, what do you mean?” “Yes, all of them, I think. They all paint tables, cover screens, and net purses. I scarcely know any one who cannot do all this; and I am sure I never heard a young lady spoken of for the first time, without being informed that she was very accomplished.” “Your list of the common extent of accomplishments,” said Darcy, “has too much truth. The word is applied to many a woman who deserves it no otherwise than by netting a purse or covering a screen; but I am very far {51} from agreeing with you in your estimation of ladies in general. I cannot boast of knowing more than half-a-dozen in the whole range of my acquaintance that are really accomplished.” “Nor I, I am sure,” said Miss Bingley. “Then,” observed Elizabeth, “you must comprehend a great deal in your idea of an accomplished woman.” “Yes; I do comprehend a great deal in it.” “Oh, certainly,” cried his faithful assistant, “no one can be really esteemed accomplished who does not greatly surpass what is usually met with. A woman must have a thorough knowledge of music, singing, drawing, dancing, and the modern languages, to deserve the word; and, besides all this, she must possess a certain something in her air and manner of walking, the tone of her voice, her address and expressions, or the word will be but half deserved.” “All this she must possess,” added Darcy; “and to all she must yet add something more substantial in the improvement of her mind by extensive reading.” “I am no longer surprised at your knowing only six",
+        "excerpt_sha256": "b58b7d0c7689c1f01898b74cc9d08c295764e1c80e35582b78a7822ea98eb9fd",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "small-group discussion",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      }
+    },
+    "temperature": 0.5,
+    "output": {
+      "source_id": "pride_skills",
+      "archetype": "small-group discussion",
+      "premise": "A group debates the true standard of accomplishment, questioning whether common everyday skills qualify someone or if exceptional intellectual and cultural proficiencies are necessary.",
+      "interaction_arc": "One speaker asserts that widespread basic skills qualify individuals as accomplished. Another participant counters by proposing an extraordinarily demanding standard that encompasses extensive artistic and intellectual mastery. A listener then observes that such an exacting standard makes true qualification exceedingly rare."
+    },
+    "response_metadata": {
+      "stage": "source_abstraction",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-da6af3a1345247bfa3490573aa772d9b",
+      "usage": {
+        "prompt_tokens": 1004,
+        "completion_tokens": 492,
+        "total_tokens": 1496,
+        "prompt_tokens_details": {
+          "text_tokens": 1004
+        },
+        "completion_tokens_details": {
+          "text_tokens": 114,
+          "reasoning_tokens": 378
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "subject_casting",
+    "model": "gemini-3.7-flash",
+    "schema_name": "subject_casting",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "woman",
+                  "man"
+                ]
+              },
+              "clothing": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A clothing color and garment, without an article."
+              }
+            },
+            "required": [
+              "id",
+              "gender",
+              "clothing"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "subjects"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C, D in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "pride_skills",
+        "archetype": "small-group discussion",
+        "premise": "A group debates the true standard of accomplishment, questioning whether common everyday skills qualify someone or if exceptional intellectual and cultural proficiencies are necessary.",
+        "interaction_arc": "One speaker asserts that widespread basic skills qualify individuals as accomplished. Another participant counters by proposing an extraordinarily demanding standard that encompasses extensive artistic and intellectual mastery. A listener then observes that such an exacting standard makes true qualification exceedingly rare."
+      },
+      "scene": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window.",
+      "subject_ids": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "casting_contract": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "purple shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "red shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "green shirt"
+        },
+        {
+          "id": "D",
+          "gender": "woman",
+          "clothing": "orange shirt"
+        }
+      ]
+    },
+    "temperature": 0.5,
+    "output": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "purple shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "red shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "green shirt"
+        },
+        {
+          "id": "D",
+          "gender": "woman",
+          "clothing": "orange shirt"
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "subject_casting",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-6ca97d79afad4d49b5a9172a710c0a5a",
+      "usage": {
+        "prompt_tokens": 710,
+        "completion_tokens": 197,
+        "total_tokens": 907,
+        "prompt_tokens_details": {
+          "text_tokens": 710
+        },
+        "completion_tokens_details": {
+          "text_tokens": 56,
+          "reasoning_tokens": 141
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  }
+]

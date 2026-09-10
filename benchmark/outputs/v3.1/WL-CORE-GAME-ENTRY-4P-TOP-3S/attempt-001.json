@@ -1,0 +1,1079 @@
+[
+  {
+    "stage": "source_abstraction",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "story_skeleton",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the real source ID exactly."
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the supplied archetype exactly."
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A faithful abstraction of the supplied excerpt's interaction."
+        },
+        "interaction_arc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A concise ordered narrative progression, not divided into shots."
+        }
+      },
+      "required": [
+        "source_id",
+        "archetype",
+        "premise",
+        "interaction_arc"
+      ],
+      "additionalProperties": false
+    },
+    "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 3 shots.",
+    "input_value": {
+      "source": {
+        "id": "alice_rules",
+        "title": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
+        "year": 1865,
+        "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+        "locator": "Chapter VII: the meaning of a riddle",
+        "start_text": "Do you mean that you think you can find out the answer to it?",
+        "scenes": [
+          "game room"
+        ],
+        "topic_terms": [
+          "riddle",
+          "meaning",
+          "rule"
+        ],
+        "excerpt": "Do you mean that you think you can find out the answer to it?” said the March Hare. “Exactly so,” said Alice. “Then you should say what you mean,” the March Hare went on. “I do,” Alice hastily replied; “at least—at least I mean what I say—that’s the same thing, you know.” “Not the same thing a bit!” said the Hatter. “You might just as well say that ‘I see what I eat’ is the same thing as ‘I eat what I see’!” “You might just as well say,” added the March Hare, “that ‘I like what I get’ is the same thing as ‘I get what I like’!” “You might just as well say,” added the Dormouse, who seemed to be talking in his sleep, “that ‘I breathe when I sleep’ is the same thing as ‘I sleep when I breathe’!” “It is the same thing with you,” said the Hatter, and here the conversation dropped, and the party sat silent for a minute, while Alice thought over all she could remember about ravens and writing-desks, which wasn’t much. The Hatter was the first to break the silence. “What day of the month is it?” he said, turning to Alice: he had taken his watch out of his pocket, and was looking at it uneasily, shaking it every now and then, and holding it to his ear. Alice considered a little, and then said “The fourth.” “Two days wrong!” sighed the Hatter. “I told you butter wouldn’t suit the works!” he added looking angrily at the March Hare. “It was the best butter,” the March Hare meekly replied. “Yes, but some crumbs must have got in as well,” the Hatter grumbled: “you shouldn’t have put it in with the bread-knife.” The March Hare took the watch and looked at",
+        "excerpt_sha256": "96bfeffaf617e8878a617f3b9adbc196b0fb6944e6083b2698879bd48c18befe",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "board-game conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      }
+    },
+    "temperature": 0.5,
+    "output": {
+      "source_id": "alice_rules",
+      "archetype": "board-game conversation",
+      "premise": "A dispute arises among participants over whether phrase reversal preserves meaning during discussion of an unsolved riddle, followed by a disagreement over an inaccurate timepiece.",
+      "interaction_arc": "One participant claims the ability to solve a riddle and equates saying what is meant with meaning what is said. The others challenge the assertion with counter-examples showing how reversing phrasing alters the intended meaning. Following a pause in discussion, attention shifts to an inaccurate timepiece as one participant faults another for improperly servicing it."
+    },
+    "response_metadata": {
+      "stage": "source_abstraction",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846463-qKYhJ6dhvx9baPoPV2q3",
+      "usage": {
+        "prompt_tokens": 781,
+        "completion_tokens": 450,
+        "total_tokens": 1231,
+        "cost": 0.00227325,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00227325,
+          "upstream_inference_prompt_cost": 0.00058575,
+          "upstream_inference_completions_cost": 0.0016875
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 320,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "subject_casting",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "subject_casting",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "woman",
+                  "man"
+                ]
+              },
+              "clothing": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A clothing color and garment, without an article."
+              }
+            },
+            "required": [
+              "id",
+              "gender",
+              "clothing"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "subjects"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C, D in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "alice_rules",
+        "archetype": "board-game conversation",
+        "premise": "A dispute arises among participants over whether phrase reversal preserves meaning during discussion of an unsolved riddle, followed by a disagreement over an inaccurate timepiece.",
+        "interaction_arc": "One participant claims the ability to solve a riddle and equates saying what is meant with meaning what is said. The others challenge the assertion with counter-examples showing how reversing phrasing alters the intended meaning. Following a pause in discussion, attention shifts to an inaccurate timepiece as one participant faults another for improperly servicing it."
+      },
+      "scene": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+      "subject_ids": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "casting_contract": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "red shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "green shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "orange shirt"
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "white shirt"
+        }
+      ]
+    },
+    "temperature": 0.5,
+    "output": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "red shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "green shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "orange shirt"
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "white shirt"
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "subject_casting",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846466-mRLGWJrfJMI1Kf7bTECs",
+      "usage": {
+        "prompt_tokens": 526,
+        "completion_tokens": 204,
+        "total_tokens": 730,
+        "cost": 0.0011595,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011595,
+          "upstream_inference_prompt_cost": 0.0003945,
+          "upstream_inference_completions_cost": 0.000765
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "story_planning",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "story_beats",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3
+              },
+              "beat": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Story actions performed only by mentioned subjects."
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "subject": {
+                      "type": "string",
+                      "enum": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                      ]
+                    },
+                    "action": {
+                      "type": "string",
+                      "enum": [
+                        "enter",
+                        "exit",
+                        "swap"
+                      ]
+                    },
+                    "with_subject": {
+                      "type": "string",
+                      "enum": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "subject",
+                    "action"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "index",
+              "beat",
+              "events"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You plan story-world beats for a controlled multi-shot world-state benchmark. Return exactly 3 ordered shots. The supplied casting, layout, seats, camera plan, and per-shot mention contracts are fixed and cannot be changed. Every beat may assign actions only to the subjects listed in that shot's mentioned array. Never refer to another subject, even indirectly as a third person, listener, group, or everyone. Copy every supplied events array exactly. Events are frozen: enter means the named subject enters and takes that subject's established seat; exit means the named subject leaves that seat and exits; swap means the two named subjects exchange their established seats. State each supplied event explicitly in that shot's beat and invent no other entry, exit, or seat change. When a shot has a non-empty events array, begin its beat with that event and explicitly name every event subject before adding any conversational action. Follow the supplied task_rules literally. When task_rules supplies required_event_prefix, copy that prefix verbatim at the beginning of Shot 2; do not paraphrase, shorten, or replace it. Use the supplied skeleton as the narrative basis. Preserve its concrete topic, disagreement or question; do not flatten everything into an unspecified conversation. Adapt the real interaction to the frozen task; remove original events not in the contracts. All additional actions must be conversational. Adapt cooking or food delivery in the source to discussion OF that plan, never starting the work, deciding to deliver food or asking to continue chopping. Prefer asks about the recipe / explains the plan / discusses sharing breakfast. Keep the PUBLIC story at the level of an ordinary topic such as a riddle, a dinner invitation, a holiday plan or breakfast chores. These are examples, not interchangeable topics: choose the closest ordinary equivalent of the supplied skeleton and keep it consistent across shots. A question about a puzzling story stays about that story's puzzle; do not turn it into an unrelated holiday trip. Preserve the concrete question or disagreement, not merely a generic keyword such as story or conversation. Do not retell fictional specifics, fantastical objects or distinctive comparisons. Do not use analysis jargon such as premise, narrative structure or physical logic. State changes added for the experiment are adaptations, not source facts. Each beat must contain only plot-relevant actions in plain verbs such as tells, asks, answers, or replies. Do not add posture, gaze, facial expressions, hand gestures, prop handling, or decorative adverbs. Do not list the other contracted subjects again merely as the audience or recipients of an action. In Shot 1, only Subject A performs a plot action; do not mention the other subjects in that beat, because the renderer will still establish their identities and seats from the mention contract. Keep the remaining exchange to a direct question, answer, or reply without explanatory qualifiers. Beats contain no appearance redesign, camera, framing, duration, timestamp, or generation language.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "alice_rules",
+        "archetype": "board-game conversation",
+        "premise": "A dispute arises among participants over whether phrase reversal preserves meaning during discussion of an unsolved riddle, followed by a disagreement over an inaccurate timepiece.",
+        "interaction_arc": "One participant claims the ability to solve a riddle and equates saying what is meant with meaning what is said. The others challenge the assertion with counter-examples showing how reversing phrasing alters the intended meaning. Following a pause in discussion, attention shifts to an inaccurate timepiece as one participant faults another for improperly servicing it."
+      },
+      "casting": {
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "man",
+            "clothing": "red shirt"
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "green shirt"
+          },
+          {
+            "id": "C",
+            "gender": "woman",
+            "clothing": "orange shirt"
+          },
+          {
+            "id": "D",
+            "gender": "man",
+            "clothing": "white shirt"
+          }
+        ]
+      },
+      "source_topic_terms": [
+        "riddle",
+        "meaning",
+        "rule"
+      ],
+      "layout": {
+        "scene": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+        "seats": {
+          "aisle_door": "the doorway-side aisle seat",
+          "aisle_shelf": "the shelf-side aisle seat",
+          "window_shelf": "the shelf-side window seat",
+          "window_door": "the doorway-side window seat"
+        }
+      },
+      "shot_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "C",
+            "D"
+          ],
+          "camera": "establish",
+          "events": []
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "camera": "partial_pair",
+          "events": [
+            {
+              "subject": "B",
+              "action": "enter"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "A",
+            "D"
+          ],
+          "camera": "probe_overhead",
+          "events": []
+        }
+      ],
+      "task_rules": {
+        "opening": "Shot 1 is one concise sentence beginning with 'Subject A'. It must not contain any of these tokens: Subject B, Subject C, Subject D.",
+        "event_shot": "Shot 2 begins by expressing its supplied event and naming every event subject.",
+        "final": "The final beat names only subjects in its mentioned array and does not restate any probe subject or final state.",
+        "required_event_prefix": "Subject B enters and takes the empty place."
+      }
+    },
+    "temperature": 0.2,
+    "output": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A explains the rule for solving the riddle.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject B enters and takes the empty place. Subject B asks about the meaning of the riddle, and Subject A replies.",
+          "events": [
+            {
+              "subject": "B",
+              "action": "enter"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "beat": "Subject D asks whether phrase reversal changes the meaning of the riddle, and Subject A answers.",
+          "events": []
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846468-ETB3qXRyWUypZAa4Pd2w",
+      "usage": {
+        "prompt_tokens": 1161,
+        "completion_tokens": 1124,
+        "total_tokens": 2285,
+        "cost": 0.00508575,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00508575,
+          "upstream_inference_prompt_cost": 0.00087075,
+          "upstream_inference_completions_cost": 0.004215
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1028,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "prompt_rendering",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "content_prompt",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3
+              },
+              "content": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Only story-world content, with no camera or duration language."
+              }
+            },
+            "required": [
+              "index",
+              "content"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You write only the Content field for exactly 3 approved benchmark shots. Camera Viewpoint text is supplied deterministically elsewhere. For each shot, mention every subject in its mentioned array using that subject's gender and clothing color, and mention no other subject. Use the shortest natural wording that preserves the required facts, not cinematic prose. Keep the topic to a short familiar label such as a riddle or dinner invitation, not the original literary particulars. Do not retell a story within the story or add analysis jargon such as premise. State each contracted subject's identity anchor exactly once per shot. Begin Shot 1 with the supplied public_intro verbatim as a short standalone scene introduction. Only after that sentence, introduce the subjects. Then combine each identity, named seat, and any approved action within the same introduction; never repeat an identity to state that person's action. Subjects without an approved Shot 1 action receive only identity and seat; do not invent actions for them. Use the supplied compact seat labels without expanding them into landmarks. The scene introduction supplies only the venue; do not add any other background description or repeat geometry already expressed by the fixed Viewpoint. Later shots describe only the contracted subjects and their approved plot-relevant action. Never add posture, gaze, expressions, hand gestures, prop handling, or decorative adverbs. Never invent hair, stable facial features, age, or accessory details. Render each supplied event explicitly and concisely. When derived_contracts gives a non-null required_content_prefix, copy it verbatim at the beginning of that Content. This sentence establishes both entering and sitting; use pronouns if that subject has another action instead of repeating the anchor. For exit, state that the subject leaves their seat and exits the venue. For swap, name the two identities and say they exchange seats. Updates must NOT repeat any landmark or named-seat label: refer to the subjects' actual original places. Entry takes the unique empty place. Do not add people, state changes, seat changes, camera language, or facts not present in the plan. The final shot must not repeat any seat assignment or state answer, even for its mentioned subject. It deliberately omits every subject listed in probe, whether that subject is expected present or absent. Never name, describe, count, or indirectly refer to an omitted probe subject. Do not say everyone or all three remain present. Never include durations, timestamps, frame rate, resolution, or generation parameters. In Shot 1 add 'There is one empty place.' Do not introduce the arriving subject yet.",
+    "input_value": {
+      "source_topic_terms": [
+        "riddle",
+        "meaning",
+        "rule"
+      ],
+      "layout": {
+        "scene": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+        "seats": {
+          "aisle_door": "the doorway-side aisle seat",
+          "aisle_shelf": "the shelf-side aisle seat",
+          "window_shelf": "the shelf-side window seat",
+          "window_door": "the doorway-side window seat"
+        }
+      },
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "man",
+          "clothing": "red shirt",
+          "appearance": "a man in a red shirt",
+          "seat": "aisle_door",
+          "initially_present": true
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "green shirt",
+          "appearance": "a man in a green shirt",
+          "seat": "aisle_shelf",
+          "initially_present": false
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "orange shirt",
+          "appearance": "a woman in an orange shirt",
+          "seat": "window_shelf",
+          "initially_present": true
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "white shirt",
+          "appearance": "a man in a white shirt",
+          "seat": "window_door",
+          "initially_present": true
+        }
+      ],
+      "shots": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "C",
+            "D"
+          ],
+          "beat": "Subject A explains the rule for solving the riddle.",
+          "events": [],
+          "camera": "establish"
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "beat": "Subject B enters and takes the empty place. Subject B asks about the meaning of the riddle, and Subject A replies.",
+          "events": [
+            {
+              "subject": "B",
+              "action": "enter"
+            }
+          ],
+          "camera": "partial_pair"
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "A",
+            "D"
+          ],
+          "beat": "Subject D asks whether phrase reversal changes the meaning of the riddle, and Subject A answers.",
+          "events": [],
+          "camera": "probe_overhead"
+        }
+      ],
+      "derived_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "C",
+            "D"
+          ],
+          "expected_visible": [
+            "A",
+            "C",
+            "D"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "establish",
+          "required_content_prefix": null
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_pair",
+          "required_content_prefix": "A man in a green shirt enters and sits in the empty place."
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "A",
+            "D"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "probe": [
+            "B",
+            "C"
+          ],
+          "probe_expectations": [
+            {
+              "subject": "B",
+              "present": true,
+              "seat": "aisle_shelf"
+            },
+            {
+              "subject": "C",
+              "present": true,
+              "seat": "window_shelf"
+            }
+          ],
+          "camera": "probe_overhead",
+          "required_content_prefix": null
+        }
+      ]
+    },
+    "temperature": 0.3,
+    "output": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A man in a red shirt sits in the doorway-side aisle seat and explains the rule for solving the riddle, a woman in an orange shirt sits in the shelf-side window seat, and a man in a white shirt sits in the doorway-side window seat. There is one empty place."
+        },
+        {
+          "index": 2,
+          "content": "A man in a green shirt enters and sits in the empty place. He asks about the meaning of the riddle, and a man in a red shirt replies."
+        },
+        {
+          "index": 3,
+          "content": "A man in a white shirt asks whether phrase reversal changes the meaning of the riddle, and a man in a red shirt answers."
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846472-3NdFDnwUMT0QyHHrXA4k",
+      "usage": {
+        "prompt_tokens": 1258,
+        "completion_tokens": 792,
+        "total_tokens": 2050,
+        "cost": 0.0039135,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0039135,
+          "upstream_inference_prompt_cost": 0.0009435,
+          "upstream_inference_completions_cost": 0.00297
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 629,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "prompt_audit",
+    "model": "openai/gpt-5.6-luna",
+    "schema_name": "prompt_audit",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "passed": {
+          "type": "boolean"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "story",
+                  "camera",
+                  "prompt"
+                ]
+              },
+              "message": {
+                "type": "string",
+                "minLength": 1,
+                "description": "One concise blocking issue."
+              }
+            },
+            "required": [
+              "stage",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "passed",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You are the strict final auditor for a controlled world-state benchmark. The supplied layout and camera presets are construction contracts, not proof of actual video compliance. For every shot, compare mentioned, expected_visible, probe, Content, and Viewpoint. Content must clearly describe exactly the subjects in mentioned and no others. Subject identity must use only the approved gender and clothing-color anchors; reject invented hair, stable facial features, age, or accessory details. Each identity anchor may appear only once per shot. Shot 1 must begin with layout.public_intro before any subject is introduced. This exact short scene sentence has already passed deterministic validation; do not remove or expand it. Shot 1 seat-label presence, exact wording, and compactness have already passed a deterministic validator. The public labels are the natural-language values in layout.seats, not internal keys such as window_left. Do not report an issue merely because these required seat labels appear. Report a seat issue only when Content clearly pairs a subject with a different subject's supplied seat. Every subject in Shot 1's mentioned array must be introduced once with an identity anchor and seat; these required introductions are not a redundant audience list and must never be rejected merely because only Subject A acts. In an opening introduction, sits/seated/is at a named seat ESTABLISHES a required location; it is not decorative posture and is allowed for EVERY initially present subject. Entry's enters-and-sits sentence is also a required state event, never decoration. Reject repeated anchors or actual audience lists added after those required introductions. Content must contain only plot-relevant actions; reject decorative posture, gaze, expressions, hand gestures, prop handling, and adverbs. Physical cooking, serving or cleaning must not be introduced; people may discuss these topics while seated. Do not accept final wording that initiates an unplanned physical task or implies the speaker is alone. Only the opening wide states its origin and layout. The final wide uses a standard reverse or top-down instruction without any seat inventory or required orientation landmarks. Naming the interaction area itself (table, coffee table, kitchen island) is explicitly allowed and necessary; it is NOT a forbidden landmark. For example, 'Reverse wide shot of the coffee table.' and 'Top-down wide shot directly above the kitchen island.' are allowed. Reject required shelf/window/seat-coverage lists, not the name of the filmed interaction area. Intermediate partial views need only a short focal framing phrase; do not demand lens, height, angle, or crop parameters. Compare the story to source.excerpt and skeleton: retain a recognizable topic or interaction, but allow the documented task adaptation and new human cast. Reject source-attribution claims invented by the writer. Every frozen event must be explicit. Updates use identities and their original places, never compact seat labels or landmarks. Entry takes the unique empty place established in Shot 1; Exit leaves the seat and venue; Swap exchanges the named subjects' seats. A subject in probe must not be named, described, counted, or indirectly mentioned in final Content. Read probe_expectations for its required final presence and seat. The score checks count and positions for ALL occupants in the final wide, not just unmentioned probes. Mentioned subjects may act without repeating their seat. An absent probe correctly does not appear in expected_visible; do not treat that as an inconsistency. The final Viewpoint must cover every probe subject's established or expected seat. This deliberate omission is the benchmark test, not an error. Reject duration, timestamp, frame-rate, resolution, or generation language. If passed is true, issues must be empty. Classify a broken story beat as story, an ambiguous or inconsistent template/view as camera, and public wording as prompt. Actual opening screenshots, not prescribed identity-to-seat assignments, will supply the evaluation reference. Check narrative continuity against the skeleton: ordinary adaptation is allowed, but changing its discussion into an unrelated topic is not. A shared generic keyword alone does not establish source fidelity.",
+    "input_value": {
+      "source": {
+        "id": "alice_rules",
+        "title": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
+        "year": 1865,
+        "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+        "locator": "Chapter VII: the meaning of a riddle",
+        "start_text": "Do you mean that you think you can find out the answer to it?",
+        "scenes": [
+          "game room"
+        ],
+        "topic_terms": [
+          "riddle",
+          "meaning",
+          "rule"
+        ],
+        "excerpt": "Do you mean that you think you can find out the answer to it?” said the March Hare. “Exactly so,” said Alice. “Then you should say what you mean,” the March Hare went on. “I do,” Alice hastily replied; “at least—at least I mean what I say—that’s the same thing, you know.” “Not the same thing a bit!” said the Hatter. “You might just as well say that ‘I see what I eat’ is the same thing as ‘I eat what I see’!” “You might just as well say,” added the March Hare, “that ‘I like what I get’ is the same thing as ‘I get what I like’!” “You might just as well say,” added the Dormouse, who seemed to be talking in his sleep, “that ‘I breathe when I sleep’ is the same thing as ‘I sleep when I breathe’!” “It is the same thing with you,” said the Hatter, and here the conversation dropped, and the party sat silent for a minute, while Alice thought over all she could remember about ravens and writing-desks, which wasn’t much. The Hatter was the first to break the silence. “What day of the month is it?” he said, turning to Alice: he had taken his watch out of his pocket, and was looking at it uneasily, shaking it every now and then, and holding it to his ear. Alice considered a little, and then said “The fourth.” “Two days wrong!” sighed the Hatter. “I told you butter wouldn’t suit the works!” he added looking angrily at the March Hare. “It was the best butter,” the March Hare meekly replied. “Yes, but some crumbs must have got in as well,” the Hatter grumbled: “you shouldn’t have put it in with the bread-knife.” The March Hare took the watch and looked at",
+        "excerpt_sha256": "96bfeffaf617e8878a617f3b9adbc196b0fb6944e6083b2698879bd48c18befe",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "board-game conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      },
+      "skeleton": {
+        "source_id": "alice_rules",
+        "archetype": "board-game conversation",
+        "premise": "A dispute arises among participants over whether phrase reversal preserves meaning during discussion of an unsolved riddle, followed by a disagreement over an inaccurate timepiece.",
+        "interaction_arc": "One participant claims the ability to solve a riddle and equates saying what is meant with meaning what is said. The others challenge the assertion with counter-examples showing how reversing phrasing alters the intended meaning. Following a pause in discussion, attention shifts to an inaccurate timepiece as one participant faults another for improperly servicing it."
+      },
+      "layout": {
+        "id": "board_game_table_4_overhead_r3_v3_1",
+        "scene_type": "game room",
+        "archetype": "board-game conversation",
+        "story_venue": "a game room",
+        "scene": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+        "seats": {
+          "aisle_door": "the doorway-side aisle seat",
+          "aisle_shelf": "the shelf-side aisle seat",
+          "window_shelf": "the shelf-side window seat",
+          "window_door": "the doorway-side window seat"
+        },
+        "seat_order": [
+          "aisle_door",
+          "aisle_shelf",
+          "window_shelf",
+          "window_door"
+        ],
+        "cameras": {
+          "establish": {
+            "framing": "wide",
+            "view_direction": "doorway_to_shelf",
+            "public_view": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and both aisle-side seats and the shelving unit in frame.",
+            "visible_seats": [
+              "window_shelf",
+              "window_door",
+              "aisle_shelf",
+              "aisle_door"
+            ]
+          },
+          "partial_pair": {
+            "framing": "two_shot",
+            "public_view": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats.",
+            "visible_seats": [
+              "aisle_door",
+              "aisle_shelf"
+            ]
+          },
+          "partial_first": {
+            "framing": "close_up",
+            "public_view": "Close-up from the window side, centered on the person at the doorway-side aisle seat.",
+            "visible_seats": [
+              "aisle_door"
+            ]
+          },
+          "partial_second": {
+            "framing": "close_up",
+            "public_view": "Close-up from the window side, centered on the person at the shelf-side aisle seat.",
+            "visible_seats": [
+              "aisle_shelf"
+            ]
+          },
+          "probe_reverse": {
+            "framing": "wide",
+            "view_direction": "shelf_to_doorway",
+            "public_view": "Reverse wide shot of the game table.",
+            "visible_seats": [
+              "window_shelf",
+              "window_door",
+              "aisle_shelf",
+              "aisle_door"
+            ]
+          },
+          "probe_overhead": {
+            "framing": "wide",
+            "view_direction": "overhead",
+            "public_view": "Top-down wide shot directly above the game table.",
+            "visible_seats": [
+              "window_shelf",
+              "window_door",
+              "aisle_shelf",
+              "aisle_door"
+            ]
+          }
+        },
+        "grammar": {
+          "opening_camera": "establish",
+          "partial_cameras": [
+            "partial_pair",
+            "partial_first",
+            "partial_second"
+          ],
+          "probe_camera": "probe_overhead",
+          "probe_focus_seats": [
+            "aisle_door",
+            "aisle_shelf"
+          ]
+        },
+        "version": "3.1"
+      },
+      "episode": {
+        "id": "WL-CORE-GAME-ENTRY-4P-TOP-3S",
+        "task": "person_entry",
+        "layout": "board_game_table_4_overhead_r3_v3_1",
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "man",
+            "clothing": "red shirt",
+            "appearance": "a man in a red shirt",
+            "seat": "aisle_door",
+            "initially_present": true
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "green shirt",
+            "appearance": "a man in a green shirt",
+            "seat": "aisle_shelf",
+            "initially_present": false
+          },
+          {
+            "id": "C",
+            "gender": "woman",
+            "clothing": "orange shirt",
+            "appearance": "a woman in an orange shirt",
+            "seat": "window_shelf",
+            "initially_present": true
+          },
+          {
+            "id": "D",
+            "gender": "man",
+            "clothing": "white shirt",
+            "appearance": "a man in a white shirt",
+            "seat": "window_door",
+            "initially_present": true
+          }
+        ],
+        "shots": [
+          {
+            "index": 1,
+            "mentioned": [
+              "A",
+              "C",
+              "D"
+            ],
+            "beat": "Subject A explains the rule for solving the riddle.",
+            "events": [],
+            "camera": "establish",
+            "prompt": {
+              "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A man in a red shirt sits in the doorway-side aisle seat and explains the rule for solving the riddle, a woman in an orange shirt sits in the shelf-side window seat, and a man in a white shirt sits in the doorway-side window seat. There is one empty place.",
+              "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and both aisle-side seats and the shelving unit in frame."
+            }
+          },
+          {
+            "index": 2,
+            "mentioned": [
+              "A",
+              "B"
+            ],
+            "beat": "Subject B enters and takes the empty place. Subject B asks about the meaning of the riddle, and Subject A replies.",
+            "events": [
+              {
+                "subject": "B",
+                "action": "enter"
+              }
+            ],
+            "camera": "partial_pair",
+            "prompt": {
+              "content": "A man in a green shirt enters and sits in the empty place. He asks about the meaning of the riddle, and a man in a red shirt replies.",
+              "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats."
+            }
+          },
+          {
+            "index": 3,
+            "mentioned": [
+              "A",
+              "D"
+            ],
+            "beat": "Subject D asks whether phrase reversal changes the meaning of the riddle, and Subject A answers.",
+            "events": [],
+            "camera": "probe_overhead",
+            "prompt": {
+              "content": "A man in a white shirt asks whether phrase reversal changes the meaning of the riddle, and a man in a red shirt answers.",
+              "viewpoint": "Top-down wide shot directly above the game table."
+            }
+          }
+        ]
+      },
+      "derived_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "C",
+            "D"
+          ],
+          "expected_visible": [
+            "A",
+            "C",
+            "D"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "establish",
+          "required_content_prefix": null
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_pair",
+          "required_content_prefix": "A man in a green shirt enters and sits in the empty place."
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "A",
+            "D"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "probe": [
+            "B",
+            "C"
+          ],
+          "probe_expectations": [
+            {
+              "subject": "B",
+              "present": true,
+              "seat": "aisle_shelf"
+            },
+            {
+              "subject": "C",
+              "present": true,
+              "seat": "window_shelf"
+            }
+          ],
+          "camera": "probe_overhead",
+          "required_content_prefix": null
+        }
+      ],
+      "public_prompt": {
+        "id": "WL-CORE-GAME-ENTRY-4P-TOP-3S",
+        "shots": [
+          {
+            "index": 1,
+            "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A man in a red shirt sits in the doorway-side aisle seat and explains the rule for solving the riddle, a woman in an orange shirt sits in the shelf-side window seat, and a man in a white shirt sits in the doorway-side window seat. There is one empty place.",
+            "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and both aisle-side seats and the shelving unit in frame."
+          },
+          {
+            "index": 2,
+            "content": "A man in a green shirt enters and sits in the empty place. He asks about the meaning of the riddle, and a man in a red shirt replies.",
+            "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats."
+          },
+          {
+            "index": 3,
+            "content": "A man in a white shirt asks whether phrase reversal changes the meaning of the riddle, and a man in a red shirt answers.",
+            "viewpoint": "Top-down wide shot directly above the game table."
+          }
+        ]
+      }
+    },
+    "temperature": null,
+    "output": {
+      "passed": true,
+      "issues": []
+    },
+    "response_metadata": {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1788846476-H4Kf3YfFpi4DqXZWhM6k",
+      "usage": {
+        "prompt_tokens": 3442,
+        "completion_tokens": 305,
+        "total_tokens": 3747,
+        "cost": 0.00122635,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3439,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00122635,
+          "upstream_inference_prompt_cost": 0.00086035,
+          "upstream_inference_completions_cost": 0.000366
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 286,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  }
+]

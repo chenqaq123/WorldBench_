@@ -1,0 +1,452 @@
+{
+  "stats": {
+    "old_16": {
+      "cases": 16,
+      "means": {
+        "total_words": 193.31,
+        "content_words": 127.81,
+        "content_without_intro_words": 99.56,
+        "later_shot_content_words": 52,
+        "later_per_shot_words": 21.23,
+        "final_content_words": 18.5,
+        "audit_rounds": 1.31,
+        "stage_records": 5.88
+      },
+      "audits": {
+        "3": 1,
+        "2": 3,
+        "1": 12
+      }
+    },
+    "new_96": {
+      "cases": 96,
+      "means": {
+        "total_words": 193.6,
+        "content_words": 128.08,
+        "content_without_intro_words": 99.62,
+        "later_shot_content_words": 51.31,
+        "later_per_shot_words": 20.93,
+        "final_content_words": 18.43,
+        "audit_rounds": 1.01,
+        "stage_records": 5.02
+      },
+      "audits": {
+        "1": 95,
+        "2": 1
+      }
+    },
+    "matched_new_16": {
+      "cases": 16,
+      "means": {
+        "total_words": 194.38,
+        "content_words": 128.88,
+        "content_without_intro_words": 100.62,
+        "later_shot_content_words": 52.44,
+        "later_per_shot_words": 21.44,
+        "final_content_words": 18.56,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "audits": {
+        "1": 16
+      }
+    }
+  },
+  "pairs": [
+    {
+      "old": "WL-CORE-CAFE-ENTRY-3P-TOP-4S",
+      "new": "WL-CORE-CAFE-ENTRY-3P-REV-4S",
+      "old_metrics": {
+        "total_words": 189,
+        "content_words": 113,
+        "content_without_intro_words": 82,
+        "later_shot_content_words": 50,
+        "later_per_shot_words": 16.666666666666668,
+        "final_content_words": 10,
+        "audit_rounds": 3,
+        "stage_records": 11
+      },
+      "new_metrics": {
+        "total_words": 190,
+        "content_words": 115,
+        "content_without_intro_words": 84,
+        "later_shot_content_words": 51,
+        "later_per_shot_words": 17,
+        "final_content_words": 12,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-CAFE-SWAP-3P-TOP-4S",
+      "new": "WL-CORE-CAFE-SWAP-3P-REV-4S",
+      "old_metrics": {
+        "total_words": 204,
+        "content_words": 128,
+        "content_without_intro_words": 97,
+        "later_shot_content_words": 54,
+        "later_per_shot_words": 18,
+        "final_content_words": 13,
+        "audit_rounds": 2,
+        "stage_records": 9
+      },
+      "new_metrics": {
+        "total_words": 190,
+        "content_words": 115,
+        "content_without_intro_words": 84,
+        "later_shot_content_words": 45,
+        "later_per_shot_words": 15,
+        "final_content_words": 12,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-DINING-ENTRY-3P-REV-3S",
+      "new": "WL-CORE-DINING-ENTRY-3P-TOP-3S",
+      "old_metrics": {
+        "total_words": 164,
+        "content_words": 107,
+        "content_without_intro_words": 80,
+        "later_shot_content_words": 43,
+        "later_per_shot_words": 21.5,
+        "final_content_words": 12,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 164,
+        "content_words": 106,
+        "content_without_intro_words": 79,
+        "later_shot_content_words": 43,
+        "later_per_shot_words": 21.5,
+        "final_content_words": 13,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-DINING-EXIT-4P-REV-3S",
+      "new": "WL-CORE-DINING-EXIT-4P-TOP-3S",
+      "old_metrics": {
+        "total_words": 187,
+        "content_words": 130,
+        "content_without_intro_words": 103,
+        "later_shot_content_words": 48,
+        "later_per_shot_words": 24,
+        "final_content_words": 22,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 187,
+        "content_words": 129,
+        "content_without_intro_words": 102,
+        "later_shot_content_words": 45,
+        "later_per_shot_words": 22.5,
+        "final_content_words": 18,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-DINING-STATIC-3P-REV-4S",
+      "new": "WL-CORE-DINING-STATIC-3P-TOP-4S",
+      "old_metrics": {
+        "total_words": 200,
+        "content_words": 127,
+        "content_without_intro_words": 100,
+        "later_shot_content_words": 58,
+        "later_per_shot_words": 19.333333333333332,
+        "final_content_words": 22,
+        "audit_rounds": 2,
+        "stage_records": 7
+      },
+      "new_metrics": {
+        "total_words": 202,
+        "content_words": 128,
+        "content_without_intro_words": 101,
+        "later_shot_content_words": 59,
+        "later_per_shot_words": 19.666666666666668,
+        "final_content_words": 21,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-GAME-ENTRY-4P-TOP-3S",
+      "new": "WL-CORE-GAME-ENTRY-4P-REV-3S",
+      "old_metrics": {
+        "total_words": 191,
+        "content_words": 132,
+        "content_without_intro_words": 103,
+        "later_shot_content_words": 53,
+        "later_per_shot_words": 26.5,
+        "final_content_words": 24,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 193,
+        "content_words": 135,
+        "content_without_intro_words": 106,
+        "later_shot_content_words": 57,
+        "later_per_shot_words": 28.5,
+        "final_content_words": 24,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-GAME-SWAP-4P-TOP-3S",
+      "new": "WL-CORE-GAME-SWAP-4P-REV-3S",
+      "old_metrics": {
+        "total_words": 186,
+        "content_words": 127,
+        "content_without_intro_words": 98,
+        "later_shot_content_words": 42,
+        "later_per_shot_words": 21,
+        "final_content_words": 14,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 193,
+        "content_words": 135,
+        "content_without_intro_words": 106,
+        "later_shot_content_words": 49,
+        "later_per_shot_words": 24.5,
+        "final_content_words": 15,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-KITCHEN-ENTRY-4P-REV-4S",
+      "new": "WL-CORE-KITCHEN-ENTRY-4P-TOP-4S",
+      "old_metrics": {
+        "total_words": 217,
+        "content_words": 143,
+        "content_without_intro_words": 116,
+        "later_shot_content_words": 70,
+        "later_per_shot_words": 23.333333333333332,
+        "final_content_words": 21,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 214,
+        "content_words": 139,
+        "content_without_intro_words": 112,
+        "later_shot_content_words": 64,
+        "later_per_shot_words": 21.333333333333332,
+        "final_content_words": 21,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-KITCHEN-STATIC-4P-REV-3S",
+      "new": "WL-CORE-KITCHEN-STATIC-4P-TOP-3S",
+      "old_metrics": {
+        "total_words": 196,
+        "content_words": 138,
+        "content_without_intro_words": 111,
+        "later_shot_content_words": 54,
+        "later_per_shot_words": 27,
+        "final_content_words": 28,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 206,
+        "content_words": 147,
+        "content_without_intro_words": 120,
+        "later_shot_content_words": 62,
+        "later_per_shot_words": 31,
+        "final_content_words": 37,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-KITCHEN-SWAP-3P-REV-3S",
+      "new": "WL-CORE-KITCHEN-SWAP-3P-TOP-3S",
+      "old_metrics": {
+        "total_words": 168,
+        "content_words": 110,
+        "content_without_intro_words": 83,
+        "later_shot_content_words": 41,
+        "later_per_shot_words": 20.5,
+        "final_content_words": 13,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 168,
+        "content_words": 109,
+        "content_without_intro_words": 82,
+        "later_shot_content_words": 38,
+        "later_per_shot_words": 19,
+        "final_content_words": 13,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-LIVING-EXIT-3P-REV-4S",
+      "new": "WL-CORE-LIVING-EXIT-3P-TOP-4S",
+      "old_metrics": {
+        "total_words": 204,
+        "content_words": 133,
+        "content_without_intro_words": 103,
+        "later_shot_content_words": 59,
+        "later_per_shot_words": 19.666666666666668,
+        "final_content_words": 13,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 203,
+        "content_words": 131,
+        "content_without_intro_words": 101,
+        "later_shot_content_words": 58,
+        "later_per_shot_words": 19.333333333333332,
+        "final_content_words": 13,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-LIVING-SWAP-4P-REV-4S",
+      "new": "WL-CORE-LIVING-SWAP-4P-TOP-4S",
+      "old_metrics": {
+        "total_words": 195,
+        "content_words": 127,
+        "content_without_intro_words": 97,
+        "later_shot_content_words": 42,
+        "later_per_shot_words": 14,
+        "final_content_words": 14,
+        "audit_rounds": 2,
+        "stage_records": 7
+      },
+      "new_metrics": {
+        "total_words": 208,
+        "content_words": 139,
+        "content_without_intro_words": 109,
+        "later_shot_content_words": 52,
+        "later_per_shot_words": 17.333333333333332,
+        "final_content_words": 13,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-MEETING-EXIT-3P-TOP-3S",
+      "new": "WL-CORE-MEETING-EXIT-3P-REV-3S",
+      "old_metrics": {
+        "total_words": 165,
+        "content_words": 105,
+        "content_without_intro_words": 76,
+        "later_shot_content_words": 35,
+        "later_per_shot_words": 17.5,
+        "final_content_words": 10,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 176,
+        "content_words": 117,
+        "content_without_intro_words": 88,
+        "later_shot_content_words": 45,
+        "later_per_shot_words": 22.5,
+        "final_content_words": 13,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-MEETING-STATIC-3P-TOP-3S",
+      "new": "WL-CORE-MEETING-STATIC-3P-REV-3S",
+      "old_metrics": {
+        "total_words": 190,
+        "content_words": 130,
+        "content_without_intro_words": 101,
+        "later_shot_content_words": 58,
+        "later_per_shot_words": 29,
+        "final_content_words": 29,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 172,
+        "content_words": 113,
+        "content_without_intro_words": 84,
+        "later_shot_content_words": 41,
+        "later_per_shot_words": 20.5,
+        "final_content_words": 20,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-SEMINAR-EXIT-4P-TOP-4S",
+      "new": "WL-CORE-SEMINAR-EXIT-4P-REV-4S",
+      "old_metrics": {
+        "total_words": 221,
+        "content_words": 150,
+        "content_without_intro_words": 124,
+        "later_shot_content_words": 63,
+        "later_per_shot_words": 21,
+        "final_content_words": 23,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 221,
+        "content_words": 151,
+        "content_without_intro_words": 125,
+        "later_shot_content_words": 61,
+        "later_per_shot_words": 20.333333333333332,
+        "final_content_words": 20,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    },
+    {
+      "old": "WL-CORE-SEMINAR-STATIC-4P-TOP-4S",
+      "new": "WL-CORE-SEMINAR-STATIC-4P-REV-4S",
+      "old_metrics": {
+        "total_words": 216,
+        "content_words": 145,
+        "content_without_intro_words": 119,
+        "later_shot_content_words": 62,
+        "later_per_shot_words": 20.666666666666668,
+        "final_content_words": 28,
+        "audit_rounds": 1,
+        "stage_records": 5
+      },
+      "new_metrics": {
+        "total_words": 223,
+        "content_words": 153,
+        "content_without_intro_words": 127,
+        "later_shot_content_words": 69,
+        "later_per_shot_words": 23,
+        "final_content_words": 32,
+        "audit_rounds": 1,
+        "stage_records": 5
+      }
+    }
+  ],
+  "review_type": "assistant text review; not blinded human scoring or video evaluation",
+  "coverage": {
+    "old_prompts_read": 16,
+    "new_prompts_read": 96,
+    "matched_pairs": 16
+  },
+  "scope": "Read-only comparison of prompt artifacts and audit records; no prompt edits or paid model calls.",
+  "conclusion": "Structural controls remain comparable. Some new prompts lose source-specific narrative details or contain ambiguous dialogue roles; this does not establish an overall video-quality regression.",
+  "audit_rate_caveat": "Round counts describe final successful run.json files only; prior failed attempts are excluded. Different auditors and nonrandom development selection prevent a causal quality comparison.",
+  "snapshot_public_prompts": "revisions/pronoun-20260910/before/collection/public_prompts.json",
+  "followup_revision": "revisions/pronoun-20260910/REPORT.md"
+}

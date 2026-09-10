@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-DINING-EXIT-3P-TOP-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window. A man in a purple shirt sits in the patio-side window seat and asks about preferred tea preparation, a man in a red shirt sits in the sideboard-side window seat, and a woman in a green shirt sits in the sideboard-end seat.",
+      "viewpoint": "Wide establishing shot from just beside the patio doors end, looking along the dining table toward the sideboard, with both window-side seats and the sideboard-end seat and the sideboard in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in a red shirt leaves his seat and exits the venue, while the man in a purple shirt questions the tea instructions.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in a purple shirt explains the tea recipe.",
+      "viewpoint": "Close-up from the aisle side, centered on the person at the patio-side window seat."
+    },
+    {
+      "index": 4,
+      "content": "The man in a purple shirt summarizes the tea serving plan.",
+      "viewpoint": "Top-down wide shot directly above the dining table."
+    }
+  ]
+}

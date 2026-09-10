@@ -1,0 +1,86 @@
+{
+  "id": "WL-CORE-MEETING-STATIC-4P-REV-3S",
+  "task": "static_viewpoint_change",
+  "layout": "meeting_room_table_4_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "yellow shirt",
+      "appearance": "a woman in a yellow shirt",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "purple shirt",
+      "appearance": "a man in a purple shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "walkway_screen",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "walkway_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A proposes planning a restful holiday trip to recover from work.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A woman in a yellow shirt sits in the screen-side window seat and proposes planning a restful holiday trip. A man in a purple shirt sits in the door-side window seat, a man in a red shirt sits in the screen-side walkway seat, and a woman in a green shirt sits in the door-side walkway seat.",
+        "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B suggests spending the holiday at a quiet country cottage, but Subject A objects that it would be too dull.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a purple shirt suggests spending the holiday at a quiet country cottage, but the woman in a yellow shirt objects that it would be too dull.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject C suggests taking a boat trip along the river, and Subject A agrees to the plan.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in a red shirt suggests taking a river boat trip to the man in a purple shirt, and the woman in a yellow shirt agrees to the plan.",
+        "viewpoint": "Reverse wide shot from the presentation-screen end, looking lengthwise along the conference table toward the glass door, with both window-side seats and both walkway-side seats in frame."
+      }
+    }
+  ]
+}

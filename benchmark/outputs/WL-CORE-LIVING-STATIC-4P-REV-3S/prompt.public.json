@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-LIVING-STATIC-4P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in a navy sweater sits in the bookcase-side sofa seat and tells a story about an everyday error, while a man in a mustard cardigan sits in the doorway-side sofa seat, a woman in an emerald blouse sits in the bookcase-side armchair, and a man in a charcoal hoodie sits in the doorway-side armchair.",
+      "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and both armchairs in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in the mustard cardigan asks the woman in the navy sweater for clarification about the outcome.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in the navy sweater answers the man in the mustard cardigan and the woman in the emerald blouse with the resolution.",
+      "viewpoint": "Reverse wide shot from the bookcase side, looking across the coffee table toward the doorway, with both sofa seats and both armchairs in frame."
+    }
+  ]
+}

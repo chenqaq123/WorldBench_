@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-MEETING-SWAP-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A woman in a navy blazer sits at the screen-side window seat and introduces the agenda, while a man in a mustard sweater sits at the door-side window seat and a woman in an emerald blouse sits at the screen-end seat.",
+      "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and the screen-end seat in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in a navy blazer at the screen-side window seat exchanges seats with the man in a mustard sweater at the door-side window seat, asking for clarification as he answers.",
+      "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in an emerald blouse summarizes the next steps.",
+      "viewpoint": "Top-down wide shot from directly above the conference table, centered on the tabletop, with both window-side seats and the screen-end seat in frame."
+    }
+  ]
+}

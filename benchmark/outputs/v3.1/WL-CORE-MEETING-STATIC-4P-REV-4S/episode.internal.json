@@ -1,0 +1,99 @@
+{
+  "id": "WL-CORE-MEETING-STATIC-4P-REV-4S",
+  "task": "static_viewpoint_change",
+  "layout": "meeting_room_table_4_r2_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "yellow shirt",
+      "appearance": "a woman in a yellow shirt",
+      "seat": "walkway_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "purple shirt",
+      "appearance": "a man in a purple shirt",
+      "seat": "walkway_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "window_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A proposes taking a restorative countryside holiday trip.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A woman in a yellow shirt sits in the screen-side walkway seat and proposes taking a restorative countryside holiday trip. A man in a purple shirt sits in the door-side walkway seat. A man in a red shirt sits in the screen-side window seat. A woman in a green shirt sits in the door-side window seat.",
+        "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B rejects the countryside plan and suggests a sea voyage, while Subject A asks about the potential travel difficulties.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in the purple shirt rejects the countryside plan and suggests a sea voyage, while the woman in the yellow shirt asks about potential travel difficulties.",
+        "viewpoint": "Medium two-shot from the window side, centered on the two adjacent walkway-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A details the drawbacks of a sea voyage.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The woman in the yellow shirt details the drawbacks of a sea voyage.",
+        "viewpoint": "Close-up from the window side, centered on the person at the screen-side walkway seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject C proposes a river holiday instead, and Subject A and Subject B discuss whether to choose it.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in the red shirt proposes a river holiday instead, and the woman in the yellow shirt and the man in the purple shirt discuss whether to choose it.",
+        "viewpoint": "Reverse wide shot of the conference table."
+      }
+    }
+  ]
+}

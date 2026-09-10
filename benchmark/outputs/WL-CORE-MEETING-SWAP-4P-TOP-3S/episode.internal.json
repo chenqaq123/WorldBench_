@@ -1,0 +1,91 @@
+{
+  "id": "WL-CORE-MEETING-SWAP-4P-TOP-3S",
+  "task": "position_swap",
+  "layout": "meeting_room_table_4_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "navy blazer",
+      "appearance": "a woman in a navy blazer",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "burgundy sweater",
+      "appearance": "a man in a burgundy sweater",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "olive blouse",
+      "appearance": "a woman in a olive blouse",
+      "seat": "walkway_screen",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "charcoal cardigan",
+      "appearance": "a man in a charcoal cardigan",
+      "seat": "walkway_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks a question.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A woman in a navy blazer sits at the screen-side window seat and asks a question, a man in a burgundy sweater sits at the door-side window seat, a woman in an olive blouse sits at the screen-side walkway seat, and a man in a charcoal cardigan sits at the door-side walkway seat.",
+        "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A swaps seats with Subject B. Subject A speaks, and Subject B replies.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in the navy blazer at the screen-side window seat swaps seats with the man in the burgundy sweater at the door-side window seat, then speaks, and he replies.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "C",
+        "D"
+      ],
+      "beat": "Subject C asks a question, and Subject D answers.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The woman in the olive blouse asks a question, and the man in the charcoal cardigan answers.",
+        "viewpoint": "Top-down wide shot from directly above the conference table, centered on the tabletop, with both window-side seats and both walkway-side seats in frame."
+      }
+    }
+  ]
+}

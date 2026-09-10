@@ -1,0 +1,80 @@
+{
+  "id": "WL-CORE-GAME-EXIT-3P-TOP-3S",
+  "task": "person_exit",
+  "layout": "board_game_table_3_overhead_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "window_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "shelf_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A explains the solution to the riddle.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A man in a green shirt sits in the shelf-side window seat and explains the solution to the riddle, a woman in an orange shirt sits in the doorway-side window seat, and a woman in a white shirt sits in the shelf-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and the shelf-end seat and the shelving unit in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves the established seat and exits the scene. Subject A asks about the meaning of the rule.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in an orange shirt leaves her seat and exits the venue, while the man in a green shirt asks about the meaning of the rule.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A clarifies the answer to the riddle.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in a green shirt clarifies the answer to the riddle.",
+        "viewpoint": "Top-down wide shot directly above the game table."
+      }
+    }
+  ]
+}

@@ -1,0 +1,985 @@
+[
+  {
+    "stage": "source_abstraction",
+    "model": "gemini-3.7-flash",
+    "schema_name": "story_skeleton",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the real source ID exactly."
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the supplied archetype exactly."
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A faithful abstraction of the supplied excerpt's interaction."
+        },
+        "interaction_arc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A concise ordered narrative progression, not divided into shots."
+        }
+      },
+      "required": [
+        "source_id",
+        "archetype",
+        "premise",
+        "interaction_arc"
+      ],
+      "additionalProperties": false
+    },
+    "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 3 shots.",
+    "input_value": {
+      "source": {
+        "id": "pride_skills",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "year": 1813,
+        "url": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+        "locator": "Chapter VIII: discussing accomplishments",
+        "start_text": "It is amazing to me",
+        "scenes": [
+          "seminar room"
+        ],
+        "topic_terms": [
+          "skill",
+          "accomplishment",
+          "standard"
+        ],
+        "excerpt": "It is amazing to me,” said Bingley, “how young ladies can have patience to be so very accomplished as they all are.” “All young ladies accomplished! My dear Charles, what do you mean?” “Yes, all of them, I think. They all paint tables, cover screens, and net purses. I scarcely know any one who cannot do all this; and I am sure I never heard a young lady spoken of for the first time, without being informed that she was very accomplished.” “Your list of the common extent of accomplishments,” said Darcy, “has too much truth. The word is applied to many a woman who deserves it no otherwise than by netting a purse or covering a screen; but I am very far {51} from agreeing with you in your estimation of ladies in general. I cannot boast of knowing more than half-a-dozen in the whole range of my acquaintance that are really accomplished.” “Nor I, I am sure,” said Miss Bingley. “Then,” observed Elizabeth, “you must comprehend a great deal in your idea of an accomplished woman.” “Yes; I do comprehend a great deal in it.” “Oh, certainly,” cried his faithful assistant, “no one can be really esteemed accomplished who does not greatly surpass what is usually met with. A woman must have a thorough knowledge of music, singing, drawing, dancing, and the modern languages, to deserve the word; and, besides all this, she must possess a certain something in her air and manner of walking, the tone of her voice, her address and expressions, or the word will be but half deserved.” “All this she must possess,” added Darcy; “and to all she must yet add something more substantial in the improvement of her mind by extensive reading.” “I am no longer surprised at your knowing only six",
+        "excerpt_sha256": "b58b7d0c7689c1f01898b74cc9d08c295764e1c80e35582b78a7822ea98eb9fd",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "small-group discussion",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      }
+    },
+    "temperature": 0.5,
+    "output": {
+      "source_id": "pride_skills",
+      "archetype": "small-group discussion",
+      "premise": "A group debates the true standard of accomplishment, questioning whether ordinary creative skills suffice or if true qualification requires exceptional artistic and intellectual mastery.",
+      "interaction_arc": "One participant claims that basic creative proficiencies are sufficient to be considered accomplished, but a peer disputes this by establishing a much narrower, rigorous standard. As further artistic, behavioral, and intellectual requirements are layered onto the definition, another participant notes how excessively demanding the criteria have become."
+    },
+    "response_metadata": {
+      "stage": "source_abstraction",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-822d06fa542e44b0b8fe3ab55855e3cd",
+      "usage": {
+        "prompt_tokens": 1004,
+        "completion_tokens": 699,
+        "total_tokens": 1703,
+        "prompt_tokens_details": {
+          "text_tokens": 1004
+        },
+        "completion_tokens_details": {
+          "text_tokens": 124,
+          "reasoning_tokens": 575
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "subject_casting",
+    "model": "gemini-3.7-flash",
+    "schema_name": "subject_casting",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "woman",
+                  "man"
+                ]
+              },
+              "clothing": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A clothing color and garment, without an article."
+              }
+            },
+            "required": [
+              "id",
+              "gender",
+              "clothing"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "subjects"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "pride_skills",
+        "archetype": "small-group discussion",
+        "premise": "A group debates the true standard of accomplishment, questioning whether ordinary creative skills suffice or if true qualification requires exceptional artistic and intellectual mastery.",
+        "interaction_arc": "One participant claims that basic creative proficiencies are sufficient to be considered accomplished, but a peer disputes this by establishing a much narrower, rigorous standard. As further artistic, behavioral, and intellectual requirements are layered onto the definition, another participant notes how excessively demanding the criteria have become."
+      },
+      "scene": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window.",
+      "subject_ids": [
+        "A",
+        "B",
+        "C"
+      ],
+      "casting_contract": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "blue shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "purple shirt"
+        }
+      ]
+    },
+    "temperature": 0.5,
+    "output": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "blue shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "purple shirt"
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "subject_casting",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-00e42ebef74c4728b75f5e63607fdc9f",
+      "usage": {
+        "prompt_tokens": 693,
+        "completion_tokens": 199,
+        "total_tokens": 892,
+        "prompt_tokens_details": {
+          "text_tokens": 693
+        },
+        "completion_tokens_details": {
+          "text_tokens": 43,
+          "reasoning_tokens": 156
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "story_planning",
+    "model": "gemini-3.7-flash",
+    "schema_name": "story_beats",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3
+              },
+              "beat": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Story actions performed only by mentioned subjects."
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "subject": {
+                          "type": "string",
+                          "enum": [
+                            "A",
+                            "B",
+                            "C"
+                          ]
+                        },
+                        "action": {
+                          "type": "string",
+                          "enum": [
+                            "enter",
+                            "exit"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "subject",
+                        "action"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "subject": {
+                          "type": "string",
+                          "enum": [
+                            "A",
+                            "B",
+                            "C"
+                          ]
+                        },
+                        "action": {
+                          "type": "string",
+                          "enum": [
+                            "swap"
+                          ]
+                        },
+                        "with_subject": {
+                          "type": "string",
+                          "enum": [
+                            "A",
+                            "B",
+                            "C"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "subject",
+                        "action",
+                        "with_subject"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "index",
+              "beat",
+              "events"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You plan story-world beats for a controlled multi-shot world-state benchmark. Return exactly 3 ordered shots. The supplied casting, layout, seats, camera plan, and per-shot mention contracts are fixed and cannot be changed. Every beat may assign actions only to the subjects listed in that shot's mentioned array. Never refer to another subject, even indirectly as a third person, listener, group, or everyone. Copy every supplied events array exactly. Events are frozen: enter means the named subject enters and takes that subject's established seat; exit means the named subject leaves that seat and exits; swap means the two named subjects exchange their established seats. State each supplied event explicitly in that shot's beat and invent no other entry, exit, or seat change. When a shot has a non-empty events array, begin its beat with that event and explicitly name every event subject before adding any conversational action. Follow the supplied task_rules literally. When task_rules supplies required_event_prefix, copy that prefix verbatim at the beginning of Shot 2; do not paraphrase, shorten, or replace it. Use the supplied skeleton as the narrative basis. Preserve its concrete topic, disagreement or question; do not flatten everything into an unspecified conversation. Adapt the real interaction to the frozen task; remove original events not in the contracts. All additional actions must be conversational. Adapt cooking or food delivery in the source to discussion OF that plan, never starting the work, deciding to deliver food or asking to continue chopping. Prefer asks about the recipe / explains the plan / discusses sharing breakfast. Keep the PUBLIC story at the level of an ordinary topic such as a riddle, a dinner invitation, a holiday plan or breakfast chores. These are examples, not interchangeable topics: choose the closest ordinary equivalent of the supplied skeleton and keep it consistent across shots. A question about a puzzling story stays about that story's puzzle; do not turn it into an unrelated holiday trip. Preserve the concrete question or disagreement, not merely a generic keyword such as story or conversation. Do not retell fictional specifics, fantastical objects or distinctive comparisons. Do not use analysis jargon such as premise, narrative structure or physical logic. State changes added for the experiment are adaptations, not source facts. Each beat must contain only plot-relevant actions in plain verbs such as tells, asks, answers, or replies. Do not add posture, gaze, facial expressions, hand gestures, prop handling, or decorative adverbs. Do not list the other contracted subjects again merely as the audience or recipients of an action. In Shot 1, only Subject A performs a plot action; do not mention the other subjects in that beat, because the renderer will still establish their identities and seats from the mention contract. Keep the remaining exchange to a direct question, answer, or reply without explanatory qualifiers. Beats contain no appearance redesign, camera, framing, duration, timestamp, or generation language.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "pride_skills",
+        "archetype": "small-group discussion",
+        "premise": "A group debates the true standard of accomplishment, questioning whether ordinary creative skills suffice or if true qualification requires exceptional artistic and intellectual mastery.",
+        "interaction_arc": "One participant claims that basic creative proficiencies are sufficient to be considered accomplished, but a peer disputes this by establishing a much narrower, rigorous standard. As further artistic, behavioral, and intellectual requirements are layered onto the definition, another participant notes how excessively demanding the criteria have become."
+      },
+      "casting": {
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "woman",
+            "clothing": "blue shirt"
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "yellow shirt"
+          },
+          {
+            "id": "C",
+            "gender": "woman",
+            "clothing": "purple shirt"
+          }
+        ]
+      },
+      "source_topic_terms": [
+        "skill",
+        "accomplishment",
+        "standard"
+      ],
+      "layout": {
+        "scene": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_pinboard": "the pinboard-side window seat",
+          "window_entrance": "the entrance-side window seat",
+          "pinboard_end": "the pinboard-end seat"
+        }
+      },
+      "shot_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "camera": "establish",
+          "events": []
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "camera": "partial_pair",
+          "events": []
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "camera": "probe_reverse",
+          "events": []
+        }
+      ],
+      "task_rules": {
+        "opening": "Shot 1 is one concise sentence beginning with 'Subject A'. It must not contain any of these tokens: Subject B, Subject C.",
+        "event_shot": "Shot 2 begins by expressing its supplied event and naming every event subject.",
+        "final": "The final beat names only subjects in its mentioned array and does not restate any probe subject or final state."
+      }
+    },
+    "temperature": 0.2,
+    "output": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A asks whether basic creative skills are enough to be considered accomplished.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject B argues that true accomplishment requires rigorous artistic and intellectual mastery.",
+          "events": []
+        },
+        {
+          "index": 3,
+          "beat": "Subject A replies that setting such high standards makes accomplishment nearly impossible.",
+          "events": []
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "story_planning",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-0f8a5155e2694a4a99d9fd73eda268b9",
+      "usage": {
+        "prompt_tokens": 1515,
+        "completion_tokens": 687,
+        "total_tokens": 2202,
+        "prompt_tokens_details": {
+          "text_tokens": 1515
+        },
+        "completion_tokens_details": {
+          "text_tokens": 88,
+          "reasoning_tokens": 599
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "prompt_rendering",
+    "model": "gemini-3.7-flash",
+    "schema_name": "content_prompt",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3
+              },
+              "content": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Only story-world content, with no camera or duration language."
+              }
+            },
+            "required": [
+              "index",
+              "content"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You write only the Content field for exactly 3 approved benchmark shots. Camera Viewpoint text is supplied deterministically elsewhere. For each shot, mention every subject in its mentioned array using that subject's gender and clothing color, and mention no other subject. Use the shortest natural wording that preserves the required facts, not cinematic prose. Keep the topic to a short familiar label such as a riddle or dinner invitation, not the original literary particulars. Do not retell a story within the story or add analysis jargon such as premise. State each contracted subject's identity anchor exactly once per shot. Begin Shot 1 with the supplied public_intro verbatim as a short standalone scene introduction. Only after that sentence, introduce the subjects. Then combine each identity, named seat, and any approved action within the same introduction; never repeat an identity to state that person's action. Subjects without an approved Shot 1 action receive only identity and seat; do not invent actions for them. Use the supplied compact seat labels without expanding them into landmarks. The scene introduction supplies only the venue; do not add any other background description or repeat geometry already expressed by the fixed Viewpoint. Later shots describe only the contracted subjects and their approved plot-relevant action. Never add posture, gaze, expressions, hand gestures, prop handling, or decorative adverbs. Never invent hair, stable facial features, age, or accessory details. Render each supplied event explicitly and concisely. When derived_contracts gives a non-null required_content_prefix, copy it verbatim at the beginning of that Content. This sentence establishes both entering and sitting; use pronouns if that subject has another action instead of repeating the anchor. For exit, state that the subject leaves their seat and exits the venue. For swap, name the two identities and say they exchange seats. Updates must NOT repeat any landmark or named-seat label: refer to the subjects' actual original places. Entry takes the unique empty place. Do not add people, state changes, seat changes, camera language, or facts not present in the plan. The final shot must not repeat any seat assignment or state answer, even for its mentioned subject. It deliberately omits every subject listed in probe, whether that subject is expected present or absent. Never name, describe, count, or indirectly refer to an omitted probe subject. Do not say everyone or all three remain present. Never include durations, timestamps, frame rate, resolution, or generation parameters.",
+    "input_value": {
+      "source_topic_terms": [
+        "skill",
+        "accomplishment",
+        "standard"
+      ],
+      "layout": {
+        "scene": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_pinboard": "the pinboard-side window seat",
+          "window_entrance": "the entrance-side window seat",
+          "pinboard_end": "the pinboard-end seat"
+        }
+      },
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "blue shirt",
+          "appearance": "a woman in a blue shirt",
+          "seat": "window_pinboard",
+          "initially_present": true
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "yellow shirt",
+          "appearance": "a man in a yellow shirt",
+          "seat": "window_entrance",
+          "initially_present": true
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "purple shirt",
+          "appearance": "a woman in a purple shirt",
+          "seat": "pinboard_end",
+          "initially_present": true
+        }
+      ],
+      "shots": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "beat": "Subject A asks whether basic creative skills are enough to be considered accomplished.",
+          "events": [],
+          "camera": "establish"
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "beat": "Subject B argues that true accomplishment requires rigorous artistic and intellectual mastery.",
+          "events": [],
+          "camera": "partial_pair"
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "beat": "Subject A replies that setting such high standards makes accomplishment nearly impossible.",
+          "events": [],
+          "camera": "probe_reverse"
+        }
+      ],
+      "derived_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "establish",
+          "required_content_prefix": null
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_pair",
+          "required_content_prefix": null
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [
+            "C"
+          ],
+          "probe_expectations": [
+            {
+              "subject": "C",
+              "present": true,
+              "seat": "pinboard_end"
+            }
+          ],
+          "camera": "probe_reverse",
+          "required_content_prefix": null
+        }
+      ]
+    },
+    "temperature": 0.3,
+    "output": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A woman in a blue shirt sits in the pinboard-side window seat and asks whether basic creative skills are enough to be considered accomplished, while a man in a yellow shirt sits in the entrance-side window seat and a woman in a purple shirt sits in the pinboard-end seat."
+        },
+        {
+          "index": 2,
+          "content": "The man in a yellow shirt argues to the woman in a blue shirt that true accomplishment requires rigorous artistic and intellectual mastery."
+        },
+        {
+          "index": 3,
+          "content": "The woman in a blue shirt replies to the man in a yellow shirt that setting such high standards makes accomplishment nearly impossible."
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "prompt_rendering",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-81ea6f19a46c4346bb9a6a318a89bbdc",
+      "usage": {
+        "prompt_tokens": 1285,
+        "completion_tokens": 1028,
+        "total_tokens": 2313,
+        "prompt_tokens_details": {
+          "text_tokens": 1285
+        },
+        "completion_tokens_details": {
+          "text_tokens": 211,
+          "reasoning_tokens": 817
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "prompt_audit",
+    "model": "gemini-3.7-flash",
+    "schema_name": "prompt_audit",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "passed": {
+          "type": "boolean"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "story",
+                  "camera",
+                  "prompt"
+                ]
+              },
+              "message": {
+                "type": "string",
+                "minLength": 1,
+                "description": "One concise blocking issue."
+              }
+            },
+            "required": [
+              "stage",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "passed",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You are the strict final auditor for a controlled world-state benchmark. The supplied layout and camera presets are construction contracts, not proof of actual video compliance. For every shot, compare mentioned, expected_visible, probe, Content, and Viewpoint. Content must clearly describe exactly the subjects in mentioned and no others. Subject identity must use only the approved gender and clothing-color anchors; reject invented hair, stable facial features, age, or accessory details. Each identity anchor may appear only once per shot. Shot 1 must begin with layout.public_intro before any subject is introduced. This exact short scene sentence has already passed deterministic validation; do not remove or expand it. Shot 1 seat-label presence, exact wording, and compactness have already passed a deterministic validator. The public labels are the natural-language values in layout.seats, not internal keys such as window_left. Do not report an issue merely because these required seat labels appear. Report a seat issue only when Content clearly pairs a subject with a different subject's supplied seat. Every subject in Shot 1's mentioned array must be introduced once with an identity anchor and seat; these required introductions are not a redundant audience list and must never be rejected merely because only Subject A acts. In an opening introduction, sits/seated/is at a named seat ESTABLISHES a required location; it is not decorative posture and is allowed for EVERY initially present subject. Entry's enters-and-sits sentence is also a required state event, never decoration. Reject repeated anchors or actual audience lists added after those required introductions. Content must contain only plot-relevant actions; reject decorative posture, gaze, expressions, hand gestures, prop handling, and adverbs. Physical cooking, serving or cleaning must not be introduced; people may discuss these topics while seated. Do not accept final wording that initiates an unplanned physical task or implies the speaker is alone. Only the opening wide states its origin and layout. The final wide uses a standard reverse or top-down instruction without any seat inventory or required orientation landmarks. Naming the interaction area itself (table, coffee table, kitchen island) is explicitly allowed and necessary; it is NOT a forbidden landmark. For example, 'Reverse wide shot of the coffee table.' and 'Top-down wide shot directly above the kitchen island.' are allowed. Reject required shelf/window/seat-coverage lists, not the name of the filmed interaction area. Intermediate partial views need only a short focal framing phrase; do not demand lens, height, angle, or crop parameters. Compare the story to source.excerpt and skeleton: retain a recognizable topic or interaction, but allow the documented task adaptation and new human cast. Reject source-attribution claims invented by the writer. Every frozen event must be explicit. Updates name the participating identities, never compact seat labels or landmarks. Entry takes the unique empty place established in Shot 1; Exit leaves the seat and venue; Swap exchanges the named subjects' seats. Naming both people followed by 'exchange seats' or 'swap seats' fully specifies the swap. Do NOT require restating either person's original or destination position. A subject in probe must not be named, described, counted, or indirectly mentioned in final Content. Read probe_expectations for its required final presence and seat. The score checks count and positions for ALL occupants in the final wide, not just unmentioned probes. Mentioned subjects may act without repeating their seat. An absent probe correctly does not appear in expected_visible; do not treat that as an inconsistency. The final Viewpoint must cover every probe subject's established or expected seat. This deliberate omission is the benchmark test, not an error. Reject duration, timestamp, frame-rate, resolution, or generation language. If passed is true, issues must be empty. Classify a broken story beat as story, an ambiguous or inconsistent template/view as camera, and public wording as prompt. Actual opening screenshots, not prescribed identity-to-seat assignments, will supply the evaluation reference. Check narrative continuity against the skeleton: ordinary adaptation is allowed, but changing its discussion into an unrelated topic is not. A shared generic keyword alone does not establish source fidelity.",
+    "input_value": {
+      "source": {
+        "id": "pride_skills",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "year": 1813,
+        "url": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+        "locator": "Chapter VIII: discussing accomplishments",
+        "start_text": "It is amazing to me",
+        "scenes": [
+          "seminar room"
+        ],
+        "topic_terms": [
+          "skill",
+          "accomplishment",
+          "standard"
+        ],
+        "excerpt": "It is amazing to me,” said Bingley, “how young ladies can have patience to be so very accomplished as they all are.” “All young ladies accomplished! My dear Charles, what do you mean?” “Yes, all of them, I think. They all paint tables, cover screens, and net purses. I scarcely know any one who cannot do all this; and I am sure I never heard a young lady spoken of for the first time, without being informed that she was very accomplished.” “Your list of the common extent of accomplishments,” said Darcy, “has too much truth. The word is applied to many a woman who deserves it no otherwise than by netting a purse or covering a screen; but I am very far {51} from agreeing with you in your estimation of ladies in general. I cannot boast of knowing more than half-a-dozen in the whole range of my acquaintance that are really accomplished.” “Nor I, I am sure,” said Miss Bingley. “Then,” observed Elizabeth, “you must comprehend a great deal in your idea of an accomplished woman.” “Yes; I do comprehend a great deal in it.” “Oh, certainly,” cried his faithful assistant, “no one can be really esteemed accomplished who does not greatly surpass what is usually met with. A woman must have a thorough knowledge of music, singing, drawing, dancing, and the modern languages, to deserve the word; and, besides all this, she must possess a certain something in her air and manner of walking, the tone of her voice, her address and expressions, or the word will be but half deserved.” “All this she must possess,” added Darcy; “and to all she must yet add something more substantial in the improvement of her mind by extensive reading.” “I am no longer surprised at your knowing only six",
+        "excerpt_sha256": "b58b7d0c7689c1f01898b74cc9d08c295764e1c80e35582b78a7822ea98eb9fd",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "small-group discussion",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      },
+      "skeleton": {
+        "source_id": "pride_skills",
+        "archetype": "small-group discussion",
+        "premise": "A group debates the true standard of accomplishment, questioning whether ordinary creative skills suffice or if true qualification requires exceptional artistic and intellectual mastery.",
+        "interaction_arc": "One participant claims that basic creative proficiencies are sufficient to be considered accomplished, but a peer disputes this by establishing a much narrower, rigorous standard. As further artistic, behavioral, and intellectual requirements are layered onto the definition, another participant notes how excessively demanding the criteria have become."
+      },
+      "layout": {
+        "id": "seminar_room_table_3_r0_v3_1",
+        "scene_type": "seminar room",
+        "archetype": "small-group discussion",
+        "story_venue": "a seminar room",
+        "scene": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_pinboard": "the pinboard-side window seat",
+          "window_entrance": "the entrance-side window seat",
+          "pinboard_end": "the pinboard-end seat"
+        },
+        "seat_order": [
+          "window_pinboard",
+          "window_entrance",
+          "pinboard_end"
+        ],
+        "cameras": {
+          "establish": {
+            "framing": "wide",
+            "view_direction": "entrance_to_pinboard",
+            "public_view": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame.",
+            "visible_seats": [
+              "window_pinboard",
+              "window_entrance",
+              "pinboard_end"
+            ]
+          },
+          "partial_pair": {
+            "framing": "two_shot",
+            "public_view": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats.",
+            "visible_seats": [
+              "window_pinboard",
+              "window_entrance"
+            ]
+          },
+          "partial_first": {
+            "framing": "close_up",
+            "public_view": "Close-up from the aisle side, centered on the person at the pinboard-side window seat.",
+            "visible_seats": [
+              "window_pinboard"
+            ]
+          },
+          "partial_second": {
+            "framing": "close_up",
+            "public_view": "Close-up from the aisle side, centered on the person at the entrance-side window seat.",
+            "visible_seats": [
+              "window_entrance"
+            ]
+          },
+          "probe_reverse": {
+            "framing": "wide",
+            "view_direction": "pinboard_to_entrance",
+            "public_view": "Reverse wide shot of the worktable.",
+            "visible_seats": [
+              "window_pinboard",
+              "window_entrance",
+              "pinboard_end"
+            ]
+          },
+          "probe_overhead": {
+            "framing": "wide",
+            "view_direction": "overhead",
+            "public_view": "Top-down wide shot directly above the worktable.",
+            "visible_seats": [
+              "window_pinboard",
+              "window_entrance",
+              "pinboard_end"
+            ]
+          }
+        },
+        "grammar": {
+          "opening_camera": "establish",
+          "partial_cameras": [
+            "partial_pair",
+            "partial_first",
+            "partial_second"
+          ],
+          "probe_camera": "probe_reverse",
+          "probe_focus_seats": [
+            "window_pinboard",
+            "window_entrance"
+          ]
+        },
+        "version": "3.1"
+      },
+      "episode": {
+        "id": "WL-CORE-SEMINAR-STATIC-3P-REV-3S",
+        "task": "static_viewpoint_change",
+        "layout": "seminar_room_table_3_r0_v3_1",
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "woman",
+            "clothing": "blue shirt",
+            "appearance": "a woman in a blue shirt",
+            "seat": "window_pinboard",
+            "initially_present": true
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "yellow shirt",
+            "appearance": "a man in a yellow shirt",
+            "seat": "window_entrance",
+            "initially_present": true
+          },
+          {
+            "id": "C",
+            "gender": "woman",
+            "clothing": "purple shirt",
+            "appearance": "a woman in a purple shirt",
+            "seat": "pinboard_end",
+            "initially_present": true
+          }
+        ],
+        "shots": [
+          {
+            "index": 1,
+            "mentioned": [
+              "A",
+              "B",
+              "C"
+            ],
+            "beat": "Subject A asks whether basic creative skills are enough to be considered accomplished.",
+            "events": [],
+            "camera": "establish",
+            "prompt": {
+              "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A woman in a blue shirt sits in the pinboard-side window seat and asks whether basic creative skills are enough to be considered accomplished, while a man in a yellow shirt sits in the entrance-side window seat and a woman in a purple shirt sits in the pinboard-end seat.",
+              "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame."
+            }
+          },
+          {
+            "index": 2,
+            "mentioned": [
+              "A",
+              "B"
+            ],
+            "beat": "Subject B argues that true accomplishment requires rigorous artistic and intellectual mastery.",
+            "events": [],
+            "camera": "partial_pair",
+            "prompt": {
+              "content": "The man in a yellow shirt argues to the woman in a blue shirt that true accomplishment requires rigorous artistic and intellectual mastery.",
+              "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+            }
+          },
+          {
+            "index": 3,
+            "mentioned": [
+              "A",
+              "B"
+            ],
+            "beat": "Subject A replies that setting such high standards makes accomplishment nearly impossible.",
+            "events": [],
+            "camera": "probe_reverse",
+            "prompt": {
+              "content": "The woman in a blue shirt replies to the man in a yellow shirt that setting such high standards makes accomplishment nearly impossible.",
+              "viewpoint": "Reverse wide shot of the worktable."
+            }
+          }
+        ]
+      },
+      "derived_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "establish",
+          "required_content_prefix": null
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_pair",
+          "required_content_prefix": null
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [
+            "C"
+          ],
+          "probe_expectations": [
+            {
+              "subject": "C",
+              "present": true,
+              "seat": "pinboard_end"
+            }
+          ],
+          "camera": "probe_reverse",
+          "required_content_prefix": null
+        }
+      ],
+      "public_prompt": {
+        "id": "WL-CORE-SEMINAR-STATIC-3P-REV-3S",
+        "shots": [
+          {
+            "index": 1,
+            "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A woman in a blue shirt sits in the pinboard-side window seat and asks whether basic creative skills are enough to be considered accomplished, while a man in a yellow shirt sits in the entrance-side window seat and a woman in a purple shirt sits in the pinboard-end seat.",
+            "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame."
+          },
+          {
+            "index": 2,
+            "content": "The man in a yellow shirt argues to the woman in a blue shirt that true accomplishment requires rigorous artistic and intellectual mastery.",
+            "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+          },
+          {
+            "index": 3,
+            "content": "The woman in a blue shirt replies to the man in a yellow shirt that setting such high standards makes accomplishment nearly impossible.",
+            "viewpoint": "Reverse wide shot of the worktable."
+          }
+        ]
+      }
+    },
+    "temperature": null,
+    "output": {
+      "passed": true,
+      "issues": []
+    },
+    "response_metadata": {
+      "stage": "prompt_audit",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-a20e773d319e4580abd3b3a96caa9b74",
+      "usage": {
+        "prompt_tokens": 3462,
+        "completion_tokens": 657,
+        "total_tokens": 4119,
+        "prompt_tokens_details": {
+          "text_tokens": 3462
+        },
+        "completion_tokens_details": {
+          "text_tokens": 16,
+          "reasoning_tokens": 641
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  }
+]

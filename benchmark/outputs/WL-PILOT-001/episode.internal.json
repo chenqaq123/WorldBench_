@@ -1,0 +1,83 @@
+{
+  "id": "WL-PILOT-001",
+  "task": "persistence",
+  "scene": "A warm corner booth inside a cozy café with a round wooden table, steaming ceramic coffee mugs, and a sunlit window in the background.",
+  "subjects": [
+    {
+      "id": "A",
+      "appearance": "An adult with curly auburn hair wearing a mustard-yellow knit cardigan.",
+      "position": "Seated at the center of the wooden booth table.",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "appearance": "An adult with short cropped dark hair wearing a charcoal gray crewneck sweater.",
+      "position": "Seated on the left side of the wooden booth table.",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "appearance": "An adult with braided black hair wearing an olive green collared shirt.",
+      "position": "Seated on the right side of the wooden booth table.",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "beat": "Subject A gestures animatedly with open palms while recounting an awkward mishap to the others at the table.",
+      "events": [],
+      "camera": {
+        "index": 1,
+        "framing": "wide",
+        "view": "Frontal wide shot looking directly into the corner booth across the round wooden table, capturing Subject B on the left, Subject A at the center, and Subject C on the right against the sunlit window.",
+        "visible": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "prompt": {
+        "content": "Inside a cozy café corner booth with a round wooden table, steaming ceramic coffee mugs, and a sunlit window, an adult with curly auburn hair wearing a mustard-yellow knit cardigan sits at the center gesturing animatedly with open palms while recounting an awkward mishap. Seated to the left is an adult with short cropped dark hair wearing a charcoal gray crewneck sweater, and seated to the right is an adult with braided black hair wearing an olive green collared shirt.",
+        "viewpoint": "Frontal wide shot looking directly into the corner booth across the round wooden table."
+      }
+    },
+    {
+      "index": 2,
+      "beat": "Subject B leans forward with an amused chuckle and interjects, prompting Subject A to laugh and elaborate further with wider hand motions.",
+      "events": [],
+      "camera": {
+        "index": 2,
+        "framing": "two_shot",
+        "view": "Medium two-shot framed from the right side of the table, focusing on Subject B leaning in from the left and Subject A reacting in the center, while Subject C remains out of frame.",
+        "visible": [
+          "A",
+          "B"
+        ]
+      },
+      "prompt": {
+        "content": "The adult with short cropped dark hair wearing the charcoal gray crewneck sweater leans forward with an amused chuckle and interjects, prompting the adult with curly auburn hair in the mustard-yellow knit cardigan to laugh and elaborate further with wider hand motions.",
+        "viewpoint": "Medium two-shot framed from the right side of the table."
+      }
+    },
+    {
+      "index": 3,
+      "beat": "Subject C softly smiles while cradling a ceramic mug, nodding quietly in amused agreement as the shared laughter subsides.",
+      "events": [],
+      "camera": {
+        "index": 3,
+        "framing": "wide",
+        "view": "Elevated wide shot positioned near the sunlit window looking downward across the booth, re-establishing all three subjects with Subject C prominent in the right foreground and Subjects A and B visible across the table.",
+        "visible": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "prompt": {
+        "content": "Shared laughter subsides around the booth into quiet smiles and nods over the steaming coffee mugs as the warm conversation continues at the table.",
+        "viewpoint": "Elevated wide shot positioned near the sunlit window looking downward across the booth."
+      }
+    }
+  ]
+}

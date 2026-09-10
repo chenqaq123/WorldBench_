@@ -1,0 +1,143 @@
+{
+  "version": "3.1",
+  "episode_id": "WL-CORE-DINING-ENTRY-4P-TOP-4S",
+  "source_id": "earnest_tea",
+  "layout": {
+    "id": "dining_room_table_4_overhead_r2_v3_1",
+    "scene_type": "dining room",
+    "archetype": "shared-meal conversation",
+    "story_venue": "a dining room",
+    "scene": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window.",
+    "public_intro": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window.",
+    "seats": {
+      "aisle_sideboard": "the sideboard-side aisle seat",
+      "aisle_patio": "the patio-side aisle seat",
+      "window_sideboard": "the sideboard-side window seat",
+      "window_patio": "the patio-side window seat"
+    },
+    "seat_order": [
+      "aisle_sideboard",
+      "aisle_patio",
+      "window_sideboard",
+      "window_patio"
+    ],
+    "cameras": {
+      "establish": {
+        "framing": "wide",
+        "view_direction": "patio_to_sideboard",
+        "public_view": "Wide establishing shot from just beside the patio doors end, looking along the dining table toward the sideboard, with both window-side seats and both aisle-side seats and the sideboard in frame.",
+        "visible_seats": [
+          "window_sideboard",
+          "window_patio",
+          "aisle_sideboard",
+          "aisle_patio"
+        ]
+      },
+      "partial_pair": {
+        "framing": "two_shot",
+        "public_view": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats.",
+        "visible_seats": [
+          "aisle_sideboard",
+          "aisle_patio"
+        ]
+      },
+      "partial_first": {
+        "framing": "close_up",
+        "public_view": "Close-up from the window side, centered on the person at the sideboard-side aisle seat.",
+        "visible_seats": [
+          "aisle_sideboard"
+        ]
+      },
+      "partial_second": {
+        "framing": "close_up",
+        "public_view": "Close-up from the window side, centered on the person at the patio-side aisle seat.",
+        "visible_seats": [
+          "aisle_patio"
+        ]
+      },
+      "probe_reverse": {
+        "framing": "wide",
+        "view_direction": "sideboard_to_patio",
+        "public_view": "Reverse wide shot of the dining table.",
+        "visible_seats": [
+          "window_sideboard",
+          "window_patio",
+          "aisle_sideboard",
+          "aisle_patio"
+        ]
+      },
+      "probe_overhead": {
+        "framing": "wide",
+        "view_direction": "overhead",
+        "public_view": "Top-down wide shot directly above the dining table.",
+        "visible_seats": [
+          "window_sideboard",
+          "window_patio",
+          "aisle_sideboard",
+          "aisle_patio"
+        ]
+      }
+    },
+    "grammar": {
+      "opening_camera": "establish",
+      "partial_cameras": [
+        "partial_pair",
+        "partial_first",
+        "partial_second"
+      ],
+      "probe_camera": "probe_overhead",
+      "probe_focus_seats": [
+        "aisle_sideboard",
+        "aisle_patio"
+      ]
+    },
+    "version": "3.1"
+  },
+  "layout_sha256": "e67c38b5f03429f9d7e461218b29f3949877c69db15d18ce49b05f98366231a4",
+  "identity_anchor_shots": {
+    "A": 1,
+    "B": 2,
+    "C": 1,
+    "D": 1
+  },
+  "observations": [
+    {
+      "shot": 1,
+      "scored": false,
+      "camera": "establish",
+      "expected_count": 3,
+      "expected_occupants": {
+        "window_sideboard": "C",
+        "window_patio": "D",
+        "aisle_sideboard": "A",
+        "aisle_patio": null
+      },
+      "unmentioned_probes": []
+    },
+    {
+      "shot": 4,
+      "scored": true,
+      "camera": "probe_overhead",
+      "expected_count": 4,
+      "expected_occupants": {
+        "window_sideboard": "C",
+        "window_patio": "D",
+        "aisle_sideboard": "A",
+        "aisle_patio": "B"
+      },
+      "unmentioned_probes": [
+        {
+          "subject": "B",
+          "present": true,
+          "seat": "aisle_patio"
+        },
+        {
+          "subject": "C",
+          "present": true,
+          "seat": "window_sideboard"
+        }
+      ]
+    }
+  ],
+  "evaluation_reference": "observed_opening_plus_requested_updates"
+}

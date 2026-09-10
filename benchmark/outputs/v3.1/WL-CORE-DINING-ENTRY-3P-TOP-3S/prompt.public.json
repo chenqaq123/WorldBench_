@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-DINING-ENTRY-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window. There is one empty place. A woman in a green shirt sits in the sideboard-side window seat and proposes sharing breakfast with a neighbor, while a man in a white shirt sits in the sideboard-end seat.",
+      "viewpoint": "Wide establishing shot from just beside the patio doors end, looking along the dining table toward the sideboard, with both window-side seats and the sideboard-end seat and the sideboard in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in an orange shirt enters and sits in the empty place. A woman in a green shirt explains the breakfast plan, and he agrees to share the food.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A woman in a green shirt confirms the plan to help the neighbor.",
+      "viewpoint": "Top-down wide shot directly above the dining table."
+    }
+  ]
+}

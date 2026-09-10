@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-SEMINAR-STATIC-3P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A woman in a blue shirt sits in the pinboard-side window seat and asks whether basic creative skills are enough to be considered accomplished, while a man in a yellow shirt sits in the entrance-side window seat and a woman in a purple shirt sits in the pinboard-end seat.",
+      "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in a yellow shirt argues to the woman in a blue shirt that true accomplishment requires rigorous artistic and intellectual mastery.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a blue shirt replies to the man in a yellow shirt that setting such high standards makes accomplishment nearly impossible.",
+      "viewpoint": "Reverse wide shot of the worktable."
+    }
+  ]
+}

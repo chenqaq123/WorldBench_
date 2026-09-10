@@ -1,0 +1,90 @@
+{
+  "id": "WL-CORE-LIVING-EXIT-4P-REV-3S",
+  "task": "person_exit",
+  "layout": "living_room_seating_4_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "yellow shirt",
+      "appearance": "a man in a yellow shirt",
+      "seat": "doorway_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A recounts the wonderful dance partners from the evening ball.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A man in an orange shirt sits on the bookcase-side sofa seat and describes the dance, a woman in a white shirt sits on the doorway-side sofa seat, a man in a blue shirt sits on the bookcase-side armchair, and a man in a yellow shirt sits on the doorway-side armchair.",
+        "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and both armchairs in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves the established seat and exits the scene. Subject A continues describing the ball.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a white shirt leaves the doorway-side sofa seat and exits the venue. The man in an orange shirt continues describing the dance.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D asks about the music at the ball. Subject A answers.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in a yellow shirt asks about the music at the dance, and the man in an orange shirt answers.",
+        "viewpoint": "Reverse wide shot from the bookcase side, looking across the coffee table toward the doorway, with both sofa seats and both armchairs in frame."
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-LIVING-SWAP-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in an emerald sweater sits in the bookcase-side sofa seat and asks a question, a man in a navy blazer sits in the doorway-side sofa seat, and a woman in a mustard cardigan sits in the bookcase-side armchair.",
+      "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in an emerald sweater in the bookcase-side sofa seat swaps seats with the man in a navy blazer in the doorway-side sofa seat, who answers.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a mustard cardigan replies.",
+      "viewpoint": "Top-down wide shot from directly above the coffee table, centered on the seating arrangement, with both sofa seats and the bookcase-side armchair in frame."
+    }
+  ]
+}

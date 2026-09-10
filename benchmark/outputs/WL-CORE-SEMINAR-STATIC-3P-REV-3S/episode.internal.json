@@ -1,0 +1,76 @@
+{
+  "id": "WL-CORE-SEMINAR-STATIC-3P-REV-3S",
+  "task": "static_viewpoint_change",
+  "layout": "seminar_room_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "navy blazer",
+      "appearance": "a woman in a navy blazer",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "olive sweater",
+      "appearance": "a man in a olive sweater",
+      "seat": "window_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "mustard cardigan",
+      "appearance": "a woman in a mustard cardigan",
+      "seat": "pinboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A tells an anecdote.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side. A woman in a navy blazer at the pinboard-side window seat tells an anecdote, a man in an olive sweater is at the entrance-side window seat, and a woman in a mustard cardigan is at the pinboard-end seat.",
+        "viewpoint": "Wide establishing shot from the entrance end, looking lengthwise along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks a question.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in an olive sweater asks the woman in a navy blazer a question.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A answers.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in a navy blazer answers the man in an olive sweater.",
+        "viewpoint": "Reverse wide shot from the pinboard end, looking lengthwise along the worktable toward the entrance, with both window-side seats and the pinboard-end seat in frame."
+      }
+    }
+  ]
+}

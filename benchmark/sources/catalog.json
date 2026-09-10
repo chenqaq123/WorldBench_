@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "retrieved_at": "2026-09-05T04:50:49.180683+00:00",
+  "sources": [
+    {
+      "id": "alice_riddle",
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "year": 1865,
+      "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+      "locator": "Chapter VII: A Mad Tea-Party",
+      "start_text": "Why is a raven like a writing-desk?",
+      "scenes": [
+        "café"
+      ],
+      "topic_terms": [
+        "riddle",
+        "answer"
+      ],
+      "excerpt": "Why is a raven like a writing-desk?” “Come, we shall have some fun now!” thought Alice. “I’m glad they’ve begun asking riddles.—I believe I can guess that,” she added aloud. “Do you mean that you think you can find out the answer to it?” said the March Hare. “Exactly so,” said Alice. “Then you should say what you mean,” the March Hare went on. “I do,” Alice hastily replied; “at least—at least I mean what I say—that’s the same thing, you know.” “Not the same thing a bit!” said the Hatter. “You might just as well say that ‘I see what I eat’ is the same thing as ‘I eat what I see’!” “You might just as well say,” added the March Hare, “that ‘I like what I get’ is the same thing as ‘I get what I like’!” “You might just as well say,” added the Dormouse, who seemed to be talking in his sleep, “that ‘I breathe when I sleep’ is the same thing as ‘I sleep when I breathe’!” “It is the same thing with you,” said the Hatter, and here the conversation dropped, and the party sat silent for a minute, while Alice thought over all she could remember about ravens and writing-desks, which wasn’t much. The Hatter was the first to break the silence. “What day of the month is it?” he said, turning to Alice: he had taken his watch out of his pocket, and was looking at it uneasily, shaking it every now and then, and holding it to his ear. Alice considered a little, and then said “The fourth.” “Two days wrong!” sighed the Hatter. “I told you butter wouldn’t suit the works!” he added looking angrily at the March Hare. “It was the best butter,” the March Hare meekly replied. “Yes,",
+      "excerpt_sha256": "09582399fa8154e4a03e79b69e2dc8d0ae07c7fd4c4ea24e00b38289e7d4b4e0",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "alice_seats",
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "year": 1865,
+      "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+      "locator": "Chapter VII: A Mad Tea-Party",
+      "start_text": "I want a clean cup",
+      "scenes": [
+        "café"
+      ],
+      "topic_terms": [
+        "story",
+        "interruption"
+      ],
+      "excerpt": "I want a clean cup,” interrupted the Hatter: “let’s all move one place on.” He moved on as he spoke, and the Dormouse followed him: the March Hare moved into the Dormouse’s place, and Alice rather unwillingly took the place of the March Hare. The Hatter was the only one who got any advantage from the change: and Alice was a good deal worse off than before, as the March Hare had just upset the milk-jug into his plate. Alice did not wish to offend the Dormouse again, so she began very cautiously: “But I don’t understand. Where did they draw the treacle from?” “You can draw water out of a water-well,” said the Hatter; “so I should think you could draw treacle out of a treacle-well—eh, stupid?” “But they were in the well,” Alice said to the Dormouse, not choosing to notice this last remark. “Of course they were,” said the Dormouse; “—well in.” This answer so confused poor Alice, that she let the Dormouse go on for some time without interrupting it. “They were learning to draw,” the Dormouse went on, yawning and rubbing its eyes, for it was getting very sleepy; “and they drew all manner of things—everything that begins with an M—” “Why with an M?” said Alice. “Why not?” said the March Hare. Alice was silent. The Dormouse had closed its eyes by this time, and was going off into a doze; but, on being pinched by the Hatter, it woke up again with a little shriek, and went on: “—that begins with an M, such as mouse-traps, and the moon, and memory, and muchness—you know you say things are “much of a muchness”—did you ever see such a thing as a drawing of a muchness?” “Really, now you ask me,” said Alice, very much",
+      "excerpt_sha256": "03864b20f160924c99acf3c61ff9b5082addcd9eecd79d079621b6495213f4a5",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "boat_holiday",
+      "title": "Three Men in a Boat",
+      "author": "Jerome K. Jerome",
+      "year": 1889,
+      "url": "https://www.gutenberg.org/files/308/308-h/308-h.htm",
+      "locator": "Chapter I: deciding on a holiday",
+      "start_text": "What we want is rest",
+      "scenes": [
+        "meeting room"
+      ],
+      "topic_terms": [
+        "holiday",
+        "river",
+        "trip"
+      ],
+      "excerpt": "What we want is rest,” said Harris. “Rest and a complete change,” said George. “The overstrain upon our brains has produced a general depression throughout the system. Change of scene, and absence of the necessity for thought, will restore the mental equilibrium.” George has a cousin, who is usually described in the charge-sheet as a medical student, so that he naturally has a somewhat family-physicianary way of putting things. I agreed with George, and suggested that we should seek out some retired and old-world spot, far from the madding crowd, and dream away a sunny week among its drowsy lanes—some half-forgotten nook, hidden away by the fairies, out of reach of the noisy world—some quaint-perched eyrie on the cliffs of Time, from whence the surging waves of the nineteenth century would sound far-off and faint. Harris said he thought it would be humpy. He said he knew the sort of place I meant; where everybody went to bed at eight o’clock, and you couldn’t get a Referee for love or money, and had to walk ten miles to get your baccy. “No,” said Harris, “if you want rest and change, you can’t beat a sea trip.” I objected to the sea trip strongly. A sea trip does you good when you are going to have a couple of months of it, but, for a week, it is wicked. You start on Monday with the idea implanted in your bosom that you are going to enjoy yourself. You wave an airy adieu to the boys on shore, light your biggest pipe, and swagger about the deck as if you were Captain Cook, Sir Francis Drake, and Christopher Columbus all rolled into one. On Tuesday, you wish you hadn’t come. On Wednesday, Thursday, and Friday, you wish you were dead. On Saturday,",
+      "excerpt_sha256": "d3674928dcc14877ed9b741c2af075f60a08fcf2a9e48f37c51866113e22db2b",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "holmes_arrival",
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "year": 1892,
+      "url": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+      "locator": "The Red-Headed League: opening consultation",
+      "start_text": "I had called upon my friend, Mr. Sherlock Holmes",
+      "scenes": [
+        "meeting room"
+      ],
+      "topic_terms": [
+        "case",
+        "account",
+        "consultation"
+      ],
+      "excerpt": "I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair. With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me. “You could not possibly have come at a better time, my dear Watson,” he said cordially. “I was afraid that you were engaged.” “So I am. Very much so.” “Then I can wait in the next room.” “Not at all. This gentleman, Mr. Wilson, has been my partner and helper in many of my most successful cases, and I have no doubt that he will be of the utmost use to me in yours also.” The stout gentleman half rose from his chair and gave a bob of greeting, with a quick little questioning glance from his small fat-encircled eyes. “Try the settee,” said Holmes, relapsing into his armchair and putting his fingertips together, as was his custom when in judicial moods. “I know, my dear Watson, that you share my love of all that is bizarre and outside the conventions and humdrum routine of everyday life. You have shown your relish for it by the enthusiasm which has prompted you to chronicle, and, if you will excuse my saying so, somewhat to embellish so many of my own little adventures.” “Your cases have indeed been of the greatest interest to me,” I observed. “You will remember that I remarked the other day, just before we went into the very simple problem presented by Miss Mary Sutherland, that for strange effects and extraordinary combinations we must go to life itself, which is always far more daring than any effort of the",
+      "excerpt_sha256": "2708a11e855bc90a879421ce30c23bf92ac0e24f326dc901a28f5fb45f326a5d",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "pride_evening",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "year": 1813,
+      "url": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+      "locator": "Chapter III: returning from the assembly",
+      "start_text": "They found Mr. Bennet still up",
+      "scenes": [
+        "living room"
+      ],
+      "topic_terms": [
+        "dance",
+        "evening",
+        "ball"
+      ],
+      "excerpt": "They found Mr. Bennet still up. With a book, he was regardless of time; and on the present occasion he had a good deal of curiosity as to the event of an evening which had raised such splendid expectations. He had rather hoped that all his wife’s views on the stranger would be disappointed; but he soon found that he had a very different story to hear. “Oh, my dear Mr. Bennet,” as she entered the room, “we have had a most delightful evening, a most excellent ball. I wish you had been there. Jane was so admired, nothing could be like it. Everybody said how well she looked; and Mr. Bingley thought her quite beautiful, and danced with her twice. Only think of that , my dear: he {17} actually danced with her twice; and she was the only creature in the room that he asked a second time. First of all, he asked Miss Lucas. I was so vexed to see him stand up with her; but, however, he did not admire her at all; indeed, nobody can, you know; and he seemed quite struck with Jane as she was going down the dance. So he inquired who she was, and got introduced, and asked her for the two next. Then, the two third he danced with Miss King, and the two fourth with Maria Lucas, and the two fifth with Jane again, and the two sixth with Lizzy, and the Boulanger ——” “If he had had any compassion for me ,” cried her husband impatiently, “he would not have danced half so much! For God’s sake, say no more of his partners. O that he had sprained his ancle in the first dance!” “Oh, my dear,” continued Mrs. Bennet, “I am quite delighted with him. He is",
+      "excerpt_sha256": "17d1b96a396fc3ef5c465c0d350068ef9e4cd080f1edcc4ba5731a2fe0fec89d",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "earnest_visit",
+      "title": "The Importance of Being Earnest",
+      "author": "Oscar Wilde",
+      "year": 1895,
+      "url": "https://www.gutenberg.org/files/844/844-h/844-h.htm",
+      "locator": "Act I: a family visit",
+      "start_text": "Good afternoon, dear Algernon",
+      "scenes": [
+        "living room"
+      ],
+      "topic_terms": [
+        "visit",
+        "invitation",
+        "dinner"
+      ],
+      "excerpt": "Good afternoon, dear Algernon, I hope you are behaving very well. ALGERNON. I’m feeling very well, Aunt Augusta. LADY BRACKNELL. That’s not quite the same thing. In fact the two things rarely go together. [Sees Jack and bows to him with icy coldness.] ALGERNON. [To Gwendolen .] Dear me, you are smart! GWENDOLEN. I am always smart! Am I not, Mr. Worthing? JACK. You’re quite perfect, Miss Fairfax. GWENDOLEN. Oh! I hope I am not that. It would leave no room for developments, and I intend to develop in many directions. [ Gwendolen and Jack sit down together in the corner.] LADY BRACKNELL. I’m sorry if we are a little late, Algernon, but I was obliged to call on dear Lady Harbury. I hadn’t been there since her poor husband’s death. I never saw a woman so altered; she looks quite twenty years younger. And now I’ll have a cup of tea, and one of those nice cucumber sandwiches you promised me. ALGERNON. Certainly, Aunt Augusta. [Goes over to tea-table.] LADY BRACKNELL. Won’t you come and sit here, Gwendolen? GWENDOLEN. Thanks, mamma, I’m quite comfortable where I am. ALGERNON. [Picking up empty plate in horror.] Good heavens! Lane! Why are there no cucumber sandwiches? I ordered them specially. LANE. [Gravely.] There were no cucumbers in the market this morning, sir. I went down twice. ALGERNON. No cucumbers! LANE. No, sir. Not even for ready money. ALGERNON. That will do, Lane, thank you. LANE. Thank you, sir. [Goes out.] ALGERNON. I am greatly distressed, Aunt Augusta, about there being no cucumbers, not even for ready money. LADY BRACKNELL. It really makes no matter, Algernon. I had some crumpets with Lady Harbury, who seems to me to be living entirely for pleasure now. ALGERNON. I hear her hair has turned quite gold",
+      "excerpt_sha256": "165f86478088a62666c334d2da4d03f7f9fede1e201e58a321d9883c3a2f4508",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "women_breakfast",
+      "title": "Little Women",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "url": "https://www.gutenberg.org/files/514/514-h/514-h.htm",
+      "locator": "Chapter II: A Merry Christmas",
+      "start_text": "Another bang of the street door",
+      "scenes": [
+        "dining room"
+      ],
+      "topic_terms": [
+        "breakfast",
+        "share",
+        "neighbor"
+      ],
+      "excerpt": "Another bang of the street door sent the basket under the sofa, and the girls to the table, eager for breakfast. “Merry Christmas, Marmee! Many of them! Thank you for our books. We read some, and mean to every day,” they all cried in chorus. “Merry Christmas, little daughters! I’m glad you began at once, and hope you will keep on. But I want to say one word before we sit down. Not far away from here lies a poor woman with a little newborn baby. Six children are huddled into one bed to keep from freezing, for they have no fire. There is nothing to eat over there, and the oldest boy came to tell me they were suffering hunger and cold. My girls, will you give them your breakfast as a Christmas present?” They were all unusually hungry, having waited nearly an hour, and for a minute no one spoke, only a minute, for Jo exclaimed impetuously, “I’m so glad you came before we began!” “May I go and help carry the things to the poor little children?” asked Beth eagerly. “I shall take the cream and the muffings,” added Amy, heroically giving up the article she most liked. Meg was already covering the buckwheats, and piling the bread into one big plate. “I thought you’d do it,” said Mrs. March, smiling as if satisfied. “You shall all go and help me, and when we come back we will have bread and milk for breakfast, and make it up at dinnertime.” They were soon ready, and the procession set out. Fortunately it was early, and they went through back streets, so few people saw them, and no one laughed at the queer party. A poor, bare, miserable room it was, with broken windows, no fire, ragged bedclothes, a",
+      "excerpt_sha256": "aef888bbe1131de44afb1d40a6ab6a47bd8112e65edb6225cf8f66f0f357d6d5",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "earnest_tea",
+      "title": "The Importance of Being Earnest",
+      "author": "Oscar Wilde",
+      "year": 1895,
+      "url": "https://www.gutenberg.org/files/844/844-h/844-h.htm",
+      "locator": "Act II: the tea-table disagreement",
+      "start_text": "Shall I lay tea here as usual",
+      "scenes": [
+        "dining room"
+      ],
+      "topic_terms": [
+        "tea",
+        "preference",
+        "politeness"
+      ],
+      "excerpt": "Shall I lay tea here as usual, Miss? CECILY. [Sternly, in a calm voice.] Yes, as usual. [ Merriman begins to clear table and lay cloth. A long pause. Cecily and Gwendolen glare at each other.] GWENDOLEN. Are there many interesting walks in the vicinity, Miss Cardew? CECILY. Oh! yes! a great many. From the top of one of the hills quite close one can see five counties. GWENDOLEN. Five counties! I don’t think I should like that; I hate crowds. CECILY. [Sweetly.] I suppose that is why you live in town? [ Gwendolen bites her lip, and beats her foot nervously with her parasol.] GWENDOLEN. [Looking round.] Quite a well-kept garden this is, Miss Cardew. CECILY. So glad you like it, Miss Fairfax. GWENDOLEN. I had no idea there were any flowers in the country. CECILY. Oh, flowers are as common here, Miss Fairfax, as people are in London. GWENDOLEN. Personally I cannot understand how anybody manages to exist in the country, if anybody who is anybody does. The country always bores me to death. CECILY. Ah! This is what the newspapers call agricultural depression, is it not? I believe the aristocracy are suffering very much from it just at present. It is almost an epidemic amongst them, I have been told. May I offer you some tea, Miss Fairfax? GWENDOLEN. [With elaborate politeness.] Thank you. [Aside.] Detestable girl! But I require tea! CECILY. [Sweetly.] Sugar? GWENDOLEN. [Superciliously.] No, thank you. Sugar is not fashionable any more. [ Cecily looks angrily at her, takes up the tongs and puts four lumps of sugar into the cup.] CECILY. [Severely.] Cake or bread and butter? GWENDOLEN. [In a bored manner.] Bread and butter, please. Cake is rarely seen at the best houses nowadays. CECILY. [Cuts a very large slice of cake,",
+      "excerpt_sha256": "69ef0b1182cb991e34e939097e9ede9111d8a8bea679adac2730193a274c0e8e",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "pride_skills",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "year": 1813,
+      "url": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+      "locator": "Chapter VIII: discussing accomplishments",
+      "start_text": "It is amazing to me",
+      "scenes": [
+        "seminar room"
+      ],
+      "topic_terms": [
+        "skill",
+        "accomplishment",
+        "standard"
+      ],
+      "excerpt": "It is amazing to me,” said Bingley, “how young ladies can have patience to be so very accomplished as they all are.” “All young ladies accomplished! My dear Charles, what do you mean?” “Yes, all of them, I think. They all paint tables, cover screens, and net purses. I scarcely know any one who cannot do all this; and I am sure I never heard a young lady spoken of for the first time, without being informed that she was very accomplished.” “Your list of the common extent of accomplishments,” said Darcy, “has too much truth. The word is applied to many a woman who deserves it no otherwise than by netting a purse or covering a screen; but I am very far {51} from agreeing with you in your estimation of ladies in general. I cannot boast of knowing more than half-a-dozen in the whole range of my acquaintance that are really accomplished.” “Nor I, I am sure,” said Miss Bingley. “Then,” observed Elizabeth, “you must comprehend a great deal in your idea of an accomplished woman.” “Yes; I do comprehend a great deal in it.” “Oh, certainly,” cried his faithful assistant, “no one can be really esteemed accomplished who does not greatly surpass what is usually met with. A woman must have a thorough knowledge of music, singing, drawing, dancing, and the modern languages, to deserve the word; and, besides all this, she must possess a certain something in her air and manner of walking, the tone of her voice, her address and expressions, or the word will be but half deserved.” “All this she must possess,” added Darcy; “and to all she must yet add something more substantial in the improvement of her mind by extensive reading.” “I am no longer surprised at your knowing only six",
+      "excerpt_sha256": "b58b7d0c7689c1f01898b74cc9d08c295764e1c80e35582b78a7822ea98eb9fd",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "holmes_account",
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "year": 1892,
+      "url": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+      "locator": "The Red-Headed League: requesting the account",
+      "start_text": "Perhaps, Mr. Wilson, you would have",
+      "scenes": [
+        "seminar room"
+      ],
+      "topic_terms": [
+        "account",
+        "detail",
+        "evidence"
+      ],
+      "excerpt": "Perhaps, Mr. Wilson, you would have the great kindness to recommence your narrative. I ask you not merely because my friend Dr. Watson has not heard the opening part but also because the peculiar nature of the story makes me anxious to have every possible detail from your lips. As a rule, when I have heard some slight indication of the course of events, I am able to guide myself by the thousands of other similar cases which occur to my memory. In the present instance I am forced to admit that the facts are, to the best of my belief, unique.” The portly client puffed out his chest with an appearance of some little pride and pulled a dirty and wrinkled newspaper from the inside pocket of his greatcoat. As he glanced down the advertisement column, with his head thrust forward and the paper flattened out upon his knee, I took a good look at the man and endeavoured, after the fashion of my companion, to read the indications which might be presented by his dress or appearance. I did not gain very much, however, by my inspection. Our visitor bore every mark of being an average commonplace British tradesman, obese, pompous, and slow. He wore rather baggy grey shepherd’s check trousers, a not over-clean black frock-coat, unbuttoned in the front, and a drab waistcoat with a heavy brassy Albert chain, and a square pierced bit of metal dangling down as an ornament. A frayed top-hat and a faded brown overcoat with a wrinkled velvet collar lay upon a chair beside him. Altogether, look as I would, there was nothing remarkable about the man save his blazing red head, and the expression of extreme chagrin and discontent upon his features. Sherlock Holmes’ quick eye took in my occupation, and",
+      "excerpt_sha256": "12042474650a64bb5d132a26e410d0eb0ed8c75de60fdee6666307147b6991a1",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "women_club",
+      "title": "Little Women",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "url": "https://www.gutenberg.org/files/514/514-h/514-h.htm",
+      "locator": "Chapter X: The P.C. and P.O.",
+      "start_text": "With a few interruptions, they had kept this up for a year",
+      "scenes": [
+        "game room"
+      ],
+      "topic_terms": [
+        "club",
+        "member",
+        "meeting"
+      ],
+      "excerpt": "With a few interruptions, they had kept this up for a year, and met every Saturday evening in the big garret, on which occasions the ceremonies were as follows: Three chairs were arranged in a row before a table on which was a lamp, also four white badges, with a big ‘P.C.’ in different colors on each, and the weekly newspaper called, The Pickwick Portfolio, to which all contributed something, while Jo, who reveled in pens and ink, was the editor. At seven o’clock, the four members ascended to the clubroom, tied their badges round their heads, and took their seats with great solemnity. Meg, as the eldest, was Samuel Pickwick, Jo, being of a literary turn, Augustus Snodgrass, Beth, because she was round and rosy, Tracy Tupman, and Amy, who was always trying to do what she couldn’t, was Nathaniel Winkle. Pickwick, the president, read the paper, which was filled with original tales, poetry, local news, funny advertisements, and hints, in which they good-naturedly reminded each other of their faults and short comings. On one occasion, Mr. Pickwick put on a pair of spectacles without any glass, rapped upon the table, hemmed, and having stared hard at Mr. Snodgrass, who was tilting back in his chair, till he arranged himself properly, began to read: “THE PICKWICK PORTFOLIO” MAY 20, 18— POET’S CORNER ANNIVERSARY ODE Again we meet to celebrate With badge and solemn rite, Our fifty-second anniversary, In Pickwick Hall, tonight. We all are here in perfect health, None gone from our small band: Again we see each well-known face, And press each friendly hand. Our Pickwick, always at his post, With reverence we greet, As, spectacles on nose, he reads Our well-filled weekly sheet. Although he suffers from a cold, We joy to hear him speak, For words",
+      "excerpt_sha256": "37351dab17c2dca3e264d7394cd8dde6653ae8233538c8e772141c9e7e78c067",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "alice_rules",
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "year": 1865,
+      "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+      "locator": "Chapter VII: the meaning of a riddle",
+      "start_text": "Do you mean that you think you can find out the answer to it?",
+      "scenes": [
+        "game room"
+      ],
+      "topic_terms": [
+        "riddle",
+        "meaning",
+        "rule"
+      ],
+      "excerpt": "Do you mean that you think you can find out the answer to it?” said the March Hare. “Exactly so,” said Alice. “Then you should say what you mean,” the March Hare went on. “I do,” Alice hastily replied; “at least—at least I mean what I say—that’s the same thing, you know.” “Not the same thing a bit!” said the Hatter. “You might just as well say that ‘I see what I eat’ is the same thing as ‘I eat what I see’!” “You might just as well say,” added the March Hare, “that ‘I like what I get’ is the same thing as ‘I get what I like’!” “You might just as well say,” added the Dormouse, who seemed to be talking in his sleep, “that ‘I breathe when I sleep’ is the same thing as ‘I sleep when I breathe’!” “It is the same thing with you,” said the Hatter, and here the conversation dropped, and the party sat silent for a minute, while Alice thought over all she could remember about ravens and writing-desks, which wasn’t much. The Hatter was the first to break the silence. “What day of the month is it?” he said, turning to Alice: he had taken his watch out of his pocket, and was looking at it uneasily, shaking it every now and then, and holding it to his ear. Alice considered a little, and then said “The fourth.” “Two days wrong!” sighed the Hatter. “I told you butter wouldn’t suit the works!” he added looking angrily at the March Hare. “It was the best butter,” the March Hare meekly replied. “Yes, but some crumbs must have got in as well,” the Hatter grumbled: “you shouldn’t have put it in with the bread-knife.” The March Hare took the watch and looked at",
+      "excerpt_sha256": "96bfeffaf617e8878a617f3b9adbc196b0fb6944e6083b2698879bd48c18befe",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "boat_stew",
+      "title": "Three Men in a Boat",
+      "author": "Jerome K. Jerome",
+      "year": 1889,
+      "url": "https://www.gutenberg.org/files/308/308-h/308-h.htm",
+      "locator": "Chapter XIV: planning an Irish stew",
+      "start_text": "It was still early when we got settled",
+      "scenes": [
+        "kitchen"
+      ],
+      "topic_terms": [
+        "stew",
+        "ingredient",
+        "recipe"
+      ],
+      "excerpt": "It was still early when we got settled, and George said that, as we had plenty of time, it would be a splendid opportunity to try a good, slap-up supper. He said he would show us what could be done up the river in the way of cooking, and suggested that, with the vegetables and the remains of the cold beef and general odds and ends, we should make an Irish stew. It seemed a fascinating idea. George gathered wood and made a fire, and Harris and I started to peel the potatoes. I should never have thought that peeling potatoes was such an undertaking. The job turned out to be the biggest thing of its kind that I had ever been in. We began cheerfully, one might almost say skittishly, but our light-heartedness was gone by the time the first potato was finished. The more we peeled, the more peel there seemed to be left on; by the time we had got all the peel off and all the eyes out, there was no potato left—at least none worth speaking of. George came and had a look at it—it was about the size of a pea-nut. He said: “Oh, that won’t do! You’re wasting them. You must scrape them.” So we scraped them, and that was harder work than peeling. They are such an extraordinary shape, potatoes—all bumps and warts and hollows. We worked steadily for five-and-twenty minutes, and did four potatoes. Then we struck. We said we should require the rest of the evening for scraping ourselves. I never saw such a thing as potato-scraping for making a fellow in a mess. It seemed difficult to believe that the potato-scrapings in which Harris and I stood, half smothered, could have come off four potatoes. It shows you what",
+      "excerpt_sha256": "643f7afb79bc3b2ed9f3e6ac877bcd3a01916346a3a17c9fcec1c2e641baae7e",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    },
+    {
+      "id": "women_housekeeping",
+      "title": "Little Women",
+      "author": "Louisa May Alcott",
+      "year": 1868,
+      "url": "https://www.gutenberg.org/files/514/514-h/514-h.htm",
+      "locator": "Chapter XI: Experiments",
+      "start_text": "When they got up on Saturday morning",
+      "scenes": [
+        "kitchen"
+      ],
+      "topic_terms": [
+        "breakfast",
+        "housekeeping",
+        "work"
+      ],
+      "excerpt": "When they got up on Saturday morning, there was no fire in the kitchen, no breakfast in the dining room, and no mother anywhere to be seen. “Mercy on us! What has happened?” cried Jo, staring about her in dismay. Meg ran upstairs and soon came back again, looking relieved but rather bewildered, and a little ashamed. “Mother isn’t sick, only very tired, and she says she is going to stay quietly in her room all day and let us do the best we can. It’s a very queer thing for her to do, she doesn’t act a bit like herself. But she says it has been a hard week for her, so we mustn’t grumble but take care of ourselves.” “That’s easy enough, and I like the idea, I’m aching for something to do, that is, some new amusement, you know,” added Jo quickly. In fact it was an immense relief to them all to have a little work, and they took hold with a will, but soon realized the truth of Hannah’s saying, “Housekeeping ain’t no joke.” There was plenty of food in the larder, and while Beth and Amy set the table, Meg and Jo got breakfast, wondering as they did why servants ever talked about hard work. “I shall take some up to Mother, though she said we were not to think of her, for she’d take care of herself,” said Meg, who presided and felt quite matronly behind the teapot. So a tray was fitted out before anyone began, and taken up with the cook’s compliments. The boiled tea was very bitter, the omelet scorched, and the biscuits speckled with saleratus, but Mrs. March received her repast with thanks and laughed heartily over it after Jo was gone. “Poor little souls, they will have a",
+      "excerpt_sha256": "4aa5669cbdab5ca5d5b530e608f6615045a7777a918c8c297e685266fb48d613",
+      "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used."
+    }
+  ]
+}

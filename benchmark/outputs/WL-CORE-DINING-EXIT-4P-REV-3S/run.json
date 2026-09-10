@@ -1,0 +1,282 @@
+{
+  "source": {
+    "archetype": "shared-meal conversation",
+    "material": "4 people begin a conversation in a dining room. The person at the patio-side window seat leaves that position and exits the venue. The person at the sideboard-side aisle seat remains in the original position as the exchange continues."
+  },
+  "config": {
+    "task": "person_exit",
+    "scene": "dining room",
+    "layout": "dining_room_table_4_v1",
+    "viewpoint_mode": "reverse_axis",
+    "subject_count": 4,
+    "shot_count": 3
+  },
+  "case_signature": {
+    "task_type": "person_exit",
+    "scene": "dining room",
+    "viewpoint_mode": "reverse_axis",
+    "subject_count": 4,
+    "shot_count": 3
+  },
+  "models": {
+    "source_abstraction": "google/gemini-3.7-flash",
+    "subject_casting": "google/gemini-3.7-flash",
+    "story_planning": "google/gemini-3.7-flash",
+    "prompt_rendering": "google/gemini-3.7-flash",
+    "prompt_audit": "openai/gpt-5.6-luna"
+  },
+  "stage_outputs": {
+    "source_abstraction": {
+      "archetype": "shared-meal conversation",
+      "premise": "A group gathers around a dining table for a shared meal, during which one member departs while the others continue their discussion.",
+      "interaction_arc": "Multiple individuals sit together engaging in conversation around a table, one participant rises and leaves the room, and the remaining seated individuals maintain their dialogue."
+    },
+    "subject_casting": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "navy cardigan"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "mustard sweater"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "burgundy blouse"
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "olive jacket"
+        }
+      ]
+    },
+    "story_planning": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A asks a question.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject B leaves his seat and exits. Subject A speaks.",
+          "events": [
+            {
+              "subject": "B",
+              "action": "exit"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "beat": "Subject A asks a question. Subject D answers.",
+          "events": []
+        }
+      ]
+    },
+    "prompt_rendering": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side. A woman in a navy cardigan sits at the sideboard-side window seat and asks a question, a man in a mustard sweater sits at the patio-side window seat, a woman in a burgundy blouse sits at the sideboard-side aisle seat, and a man in an olive jacket sits at the patio-side aisle seat."
+        },
+        {
+          "index": 2,
+          "content": "The man in a mustard sweater leaves the patio-side window seat and exits the venue. The woman in a navy cardigan speaks."
+        },
+        {
+          "index": 3,
+          "content": "The woman in a navy cardigan asks a question. The man in an olive jacket answers."
+        }
+      ]
+    },
+    "prompt_audit": [
+      {
+        "round": 1,
+        "passed": true,
+        "issues": []
+      }
+    ]
+  },
+  "trace": [
+    {
+      "stage": "source_abstraction",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256430-Ruszjel3F6Jgi9lThGvY",
+      "usage": {
+        "prompt_tokens": 164,
+        "completion_tokens": 412,
+        "total_tokens": 576,
+        "cost": 0.001668,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001668,
+          "upstream_inference_prompt_cost": 0.000123,
+          "upstream_inference_completions_cost": 0.001545
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 330,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "subject_casting",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256439-8e3RUg1ZGU7leZdUjawJ",
+      "usage": {
+        "prompt_tokens": 356,
+        "completion_tokens": 434,
+        "total_tokens": 790,
+        "cost": 0.0018945,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0018945,
+          "upstream_inference_prompt_cost": 0.000267,
+          "upstream_inference_completions_cost": 0.0016275
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 296,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256442-XEacRD9XvWDchGIagRlk",
+      "usage": {
+        "prompt_tokens": 805,
+        "completion_tokens": 1124,
+        "total_tokens": 1929,
+        "cost": 0.00481875,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00481875,
+          "upstream_inference_prompt_cost": 0.00060375,
+          "upstream_inference_completions_cost": 0.004215
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1052,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256447-e3VkF3Ql5fPgK83eQ13B",
+      "usage": {
+        "prompt_tokens": 1018,
+        "completion_tokens": 1378,
+        "total_tokens": 2396,
+        "cost": 0.005931,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.005931,
+          "upstream_inference_prompt_cost": 0.0007635,
+          "upstream_inference_completions_cost": 0.0051675
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1191,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256452-w29irhzM5svg5LKPNs2j",
+      "usage": {
+        "prompt_tokens": 1066,
+        "completion_tokens": 755,
+        "total_tokens": 1821,
+        "cost": 0.00363075,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00363075,
+          "upstream_inference_prompt_cost": 0.0007995,
+          "upstream_inference_completions_cost": 0.00283125
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 583,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1788256456-L4jzwHm7kHRyffesHtr6",
+      "usage": {
+        "prompt_tokens": 2189,
+        "completion_tokens": 522,
+        "total_tokens": 2711,
+        "cost": 0.0011735,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2186,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011735,
+          "upstream_inference_prompt_cost": 0.0005471,
+          "upstream_inference_completions_cost": 0.0006264
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 503,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  ]
+}

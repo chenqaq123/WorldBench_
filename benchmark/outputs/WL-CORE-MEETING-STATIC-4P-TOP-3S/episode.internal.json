@@ -1,0 +1,86 @@
+{
+  "id": "WL-CORE-MEETING-STATIC-4P-TOP-3S",
+  "task": "static_viewpoint_change",
+  "layout": "meeting_room_table_4_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "navy blazer",
+      "appearance": "a woman in a navy blazer",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "olive sweater",
+      "appearance": "a man in a olive sweater",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "burgundy cardigan",
+      "appearance": "a woman in a burgundy cardigan",
+      "seat": "walkway_screen",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "charcoal shirt",
+      "appearance": "a man in a charcoal shirt",
+      "seat": "walkway_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A outlines an operational error from the recent release.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A woman in a navy blazer sits in the screen-side window seat and outlines an operational error from the recent release. A man in an olive sweater sits in the door-side window seat, a woman in a burgundy cardigan sits in the screen-side walkway seat, and a man in a charcoal shirt sits in the door-side walkway seat.",
+        "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks for the outcome.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in an olive sweater asks the woman in a navy blazer for the outcome.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A replies that the patch resolved the issue.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The woman in a navy blazer tells the man in an olive sweater and the woman in a burgundy cardigan that the patch resolved the issue.",
+        "viewpoint": "Top-down wide shot from directly above the conference table, centered on the tabletop, with both window-side seats and both walkway-side seats in frame."
+      }
+    }
+  ]
+}

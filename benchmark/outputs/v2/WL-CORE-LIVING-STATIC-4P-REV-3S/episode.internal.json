@@ -1,0 +1,86 @@
+{
+  "id": "WL-CORE-LIVING-STATIC-4P-REV-3S",
+  "task": "static_viewpoint_change",
+  "layout": "living_room_seating_4_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "purple shirt",
+      "appearance": "a woman in a purple shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "doorway_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A recaps the list of dance partners from the evening ball.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in a purple shirt sits in the bookcase-side sofa seat recapping the list of dance partners from the ball, while a woman in a red shirt sits in the doorway-side sofa seat, a man in a green shirt sits in the bookcase-side armchair, and a man in an orange shirt sits in the doorway-side armchair.",
+        "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and both armchairs in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B protests the excessive detail about the dance partners, but Subject A insists on recounting every set.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a red shirt protests the excessive detail about the dance partners, but the woman in a purple shirt insists on recounting every set.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject C asks about the first dance partner, Subject A praises the newcomer, and Subject B asks to change the topic.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in a green shirt asks about the first dance partner, the woman in a purple shirt praises that partner, and the woman in a red shirt asks to change the topic.",
+        "viewpoint": "Reverse wide shot from the bookcase side, looking across the coffee table toward the doorway, with both sofa seats and both armchairs in frame."
+      }
+    }
+  ]
+}

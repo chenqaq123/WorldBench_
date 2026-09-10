@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-CAFE-SWAP-3P-TOP-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and listens to the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat.",
+      "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and the plant-end seat and the floor plant in frame."
+    },
+    {
+      "index": 2,
+      "content": "A woman in a green shirt and a man in an orange shirt exchange seats; she questions the impossible details in the story, and he dismisses the objection.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in the orange shirt insists that the story proceed without interruption.",
+      "viewpoint": "Close-up from the aisle side, centered on the person at the counter-side window seat."
+    },
+    {
+      "index": 4,
+      "content": "The woman in the green shirt questions another strange constraint in the story.",
+      "viewpoint": "Top-down wide shot directly above the rectangular table."
+    }
+  ]
+}

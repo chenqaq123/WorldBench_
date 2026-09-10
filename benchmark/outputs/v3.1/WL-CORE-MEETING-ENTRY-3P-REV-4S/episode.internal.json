@@ -1,0 +1,92 @@
+{
+  "id": "WL-CORE-MEETING-ENTRY-3P-REV-4S",
+  "task": "person_entry",
+  "layout": "meeting_room_table_3_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "purple shirt",
+      "appearance": "a woman in a purple shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "window_screen",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "screen_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A proposes spending the holiday at a quiet country retreat.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. There is one empty place. A woman in a purple shirt sits at the door-side window seat and proposes spending the holiday at a quiet country retreat, while a man in a green shirt sits at the screen-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and the screen-end seat and the presentation screen in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the empty place. Subject B proposes taking a sea trip instead.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in a red shirt enters and sits in the empty place. She proposes taking a sea trip instead to the woman in a purple shirt.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A argues that a boat journey would be exhausting rather than restful.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The woman in a purple shirt argues that a boat journey would be exhausting rather than restful.",
+        "viewpoint": "Close-up from the walkway side, centered on the person at the door-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks to reconsider the quiet retreat plan.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in a purple shirt asks to reconsider the quiet retreat plan.",
+        "viewpoint": "Reverse wide shot of the conference table."
+      }
+    }
+  ]
+}

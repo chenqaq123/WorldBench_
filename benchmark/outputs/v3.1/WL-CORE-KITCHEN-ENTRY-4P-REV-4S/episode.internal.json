@@ -1,0 +1,102 @@
+{
+  "id": "WL-CORE-KITCHEN-ENTRY-4P-REV-4S",
+  "task": "person_entry",
+  "layout": "kitchen_island_4_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "guest_sink",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "guest_fridge",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "cook_sink",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "cook_fridge",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A proposes a recipe for making stew from leftover ingredients.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a kitchen, a rectangular island stands between a sink counter and a refrigerator, with a window along one side and an aisle along the opposite side. A man in a green shirt sits on the sink-side window stool proposing a stew recipe, a woman in a white shirt sits on the sink-side aisle stool, and a woman in a blue shirt sits on the refrigerator-side aisle stool. There is one empty place.",
+        "viewpoint": "Wide establishing shot from just beside the refrigerator end, looking along the kitchen island toward the sink counter, with both window-side stools and both aisle-side stools and the sink counter in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the empty place. Subject B asks about the vegetable peeling technique for the stew, and Subject A argues for scraping instead.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in an orange shirt enters and sits in the empty place. She asks about the vegetable peeling technique for the stew, and a man in a green shirt argues for scraping instead.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side stools."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A explains why scraping the ingredients saves more of the vegetables.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "A man in a green shirt explains why scraping ingredients saves more of the vegetables.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the sink-side window stool."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D argues that scraping takes too much effort, and Subject A replies.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A woman in a blue shirt argues that scraping takes too much effort, and a man in a green shirt replies.",
+        "viewpoint": "Reverse wide shot of the kitchen island."
+      }
+    }
+  ]
+}

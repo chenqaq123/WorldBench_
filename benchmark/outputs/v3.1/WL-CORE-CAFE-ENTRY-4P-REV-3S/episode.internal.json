@@ -1,0 +1,89 @@
+{
+  "id": "WL-CORE-CAFE-ENTRY-4P-REV-3S",
+  "task": "person_entry",
+  "layout": "cafe_rect_table_4_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "window_right",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "window_left",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "aisle_left",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "yellow shirt",
+      "appearance": "a woman in a yellow shirt",
+      "seat": "aisle_right",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A poses a puzzling riddle.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. There is one empty place. A woman in an orange shirt sits in the counter-side window seat and poses a puzzling riddle. A woman in a blue shirt sits in the plant-side aisle seat. A woman in a yellow shirt sits in the counter-side aisle seat.",
+        "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and both aisle-side seats and the floor plant in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the empty place. Subject A asks for the answer to the riddle, and Subject B replies that guessing is not the same as knowing.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in a white shirt enters and sits in the empty place. A woman in an orange shirt asks for the answer to the riddle, and he replies that guessing is not the same as knowing.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject A asks about solving the riddle, and Subject D answers that the phrasing is contradictory.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A woman in an orange shirt asks about solving the riddle, and a woman in a yellow shirt answers that the phrasing is contradictory.",
+        "viewpoint": "Reverse wide shot of the rectangular table."
+      }
+    }
+  ]
+}

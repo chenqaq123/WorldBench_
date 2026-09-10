@@ -1,0 +1,89 @@
+{
+  "id": "WL-CORE-LIVING-STATIC-3P-TOP-4S",
+  "task": "static_viewpoint_change",
+  "layout": "living_room_seating_3_overhead_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A recounts the wonderful evening at the social ball.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing an armchair near the bookcase end. A woman in an orange shirt sits on the doorway-side sofa seat and recounts the wonderful evening at the social ball. A man in a white shirt sits on the bookcase-side sofa seat, and a woman in a blue shirt sits on the bookcase-side armchair.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair and the bookcase in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A describes each dance partner in detail, and Subject B questions why every dance must be cataloged.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in an orange shirt describes each dance partner in detail, and the man in a white shirt questions why every dance must be cataloged.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A details the subsequent dances from the evening.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The woman in an orange shirt details the subsequent dances from the evening.",
+        "viewpoint": "Close-up from the coffee-table side, centered on the person at the doorway-side sofa seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks to finish the recap, and Subject A summarizes the successful outcome of the ball.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in a white shirt asks to finish the recap, and the woman in an orange shirt summarizes the successful outcome of the ball.",
+        "viewpoint": "Top-down wide shot directly above the coffee table."
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "WL-CORE-CAFE-SWAP-3P-TOP-3S",
+  "task": "position_swap",
+  "layout": "cafe_rect_table_3_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "window_right",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "table_left_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A begins telling a story about a travel plan.",
+      "events": [],
+      "camera": "establish_counter_end",
+      "prompt": {
+        "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other. A woman in a green shirt in the plant-side window seat begins telling a story about a travel plan, while a man in an orange shirt sits in the counter-side window seat and a man in a white shirt sits in the plant-end seat.",
+        "viewpoint": "Wide establishing shot from the counter end, looking lengthwise along the rectangular table toward the floor plant, with the full table and all three seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B asks about the destination, and Subject A answers.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_window_pair",
+      "prompt": {
+        "content": "A woman in a green shirt and a man in an orange shirt exchange the plant-side window seat and the counter-side window seat; he asks about the destination, and she answers.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A resumes telling the story.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "A woman in a green shirt resumes telling the story.",
+        "viewpoint": "Top-down wide shot from directly above the rectangular table, centered on the tabletop, with the full table, the plant-end seat, and both window-side seats in frame."
+      }
+    }
+  ]
+}

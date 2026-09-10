@@ -1,0 +1,99 @@
+{
+  "id": "WL-CORE-GAME-STATIC-4P-TOP-4S",
+  "task": "static_viewpoint_change",
+  "layout": "board_game_table_4_overhead_r2_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "aisle_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "aisle_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "window_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "yellow shirt",
+      "appearance": "a woman in a yellow shirt",
+      "seat": "window_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A calls the club meeting to order.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A man in an orange shirt sits in the shelf-side aisle seat and calls the club meeting to order, while a woman in a white shirt occupies the doorway-side aisle seat, a man in a blue shirt occupies the shelf-side window seat, and a woman in a yellow shirt occupies the doorway-side window seat.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and both aisle-side seats and the shelving unit in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A asks Subject B to review the meeting agenda, and Subject B agrees.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in the orange shirt asks the woman in the white shirt to review the meeting agenda, and she agrees.",
+        "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A reads the club report.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The man in the orange shirt reads the club report.",
+        "viewpoint": "Close-up from the window side, centered on the person at the shelf-side aisle seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A asks about the next club project, Subject B suggests an article, and Subject C agrees.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in the orange shirt asks about the next club project, the woman in the white shirt suggests an article, and the man in the blue shirt agrees.",
+        "viewpoint": "Top-down wide shot directly above the game table."
+      }
+    }
+  ]
+}

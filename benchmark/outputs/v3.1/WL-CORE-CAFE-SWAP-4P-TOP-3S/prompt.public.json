@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-CAFE-SWAP-4P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A man in a yellow shirt sits in the counter-side aisle seat posing a riddle, a woman in a purple shirt sits in the plant-side aisle seat, a woman in a red shirt sits in the plant-side window seat, and a woman in a green shirt sits in the counter-side window seat.",
+      "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and both aisle-side seats and the floor plant in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in a yellow shirt and the woman in a purple shirt exchange seats; she claims to know the answer, and he questions the phrasing.",
+      "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in a yellow shirt asks for the solution to the riddle.",
+      "viewpoint": "Top-down wide shot directly above the rectangular table."
+    }
+  ]
+}

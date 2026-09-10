@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-SEMINAR-ENTRY-4P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side. A woman in a navy cardigan sits at the pinboard-side window seat and opens the discussion, a woman in an emerald blouse sits at the pinboard-side aisle seat, and a man in a burgundy polo sits at the entrance-side aisle seat.",
+      "viewpoint": "Wide establishing shot from the entrance end, looking lengthwise along the worktable toward the pinboard, with both window-side seats and both aisle-side seats in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in a mustard sweater enters, sits at the entrance-side window seat, and asks a question. The woman in a navy cardigan answers.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in a burgundy polo asks a question, and the woman in a navy cardigan replies.",
+      "viewpoint": "Top-down wide shot from directly above the worktable, centered on the tabletop, with both window-side seats and both aisle-side seats in frame."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-LIVING-ENTRY-4P-REV-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing two armchairs along the opposite side. There is one empty place. A woman in a blue shirt sits in the bookcase-side sofa seat and recounts the partner choices from the evening dance, while a woman in a purple shirt sits in the bookcase-side armchair and a woman in a red shirt sits in the doorway-side armchair.",
+      "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and both armchairs and the bookcase in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in a yellow shirt enters and sits in the empty place. A woman in a blue shirt tells about the first dance partner.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "A woman in a blue shirt describes the subsequent dance partners.",
+      "viewpoint": "Close-up from the coffee-table side, centered on the person at the bookcase-side sofa seat."
+    },
+    {
+      "index": 4,
+      "content": "A woman in a red shirt asks about the final dance partner, and a woman in a blue shirt answers.",
+      "viewpoint": "Reverse wide shot of the coffee table."
+    }
+  ]
+}

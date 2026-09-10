@@ -1,0 +1,138 @@
+{
+  "version": "3.1",
+  "episode_id": "WL-CORE-GAME-STATIC-4P-REV-4S",
+  "source_id": "women_club",
+  "layout": {
+    "id": "board_game_table_4_r2_v3_1",
+    "scene_type": "game room",
+    "archetype": "board-game conversation",
+    "story_venue": "a game room",
+    "scene": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+    "public_intro": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window.",
+    "seats": {
+      "aisle_shelf": "the shelf-side aisle seat",
+      "aisle_door": "the doorway-side aisle seat",
+      "window_shelf": "the shelf-side window seat",
+      "window_door": "the doorway-side window seat"
+    },
+    "seat_order": [
+      "aisle_shelf",
+      "aisle_door",
+      "window_shelf",
+      "window_door"
+    ],
+    "cameras": {
+      "establish": {
+        "framing": "wide",
+        "view_direction": "doorway_to_shelf",
+        "public_view": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and both aisle-side seats and the shelving unit in frame.",
+        "visible_seats": [
+          "window_shelf",
+          "window_door",
+          "aisle_shelf",
+          "aisle_door"
+        ]
+      },
+      "partial_pair": {
+        "framing": "two_shot",
+        "public_view": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats.",
+        "visible_seats": [
+          "aisle_shelf",
+          "aisle_door"
+        ]
+      },
+      "partial_first": {
+        "framing": "close_up",
+        "public_view": "Close-up from the window side, centered on the person at the shelf-side aisle seat.",
+        "visible_seats": [
+          "aisle_shelf"
+        ]
+      },
+      "partial_second": {
+        "framing": "close_up",
+        "public_view": "Close-up from the window side, centered on the person at the doorway-side aisle seat.",
+        "visible_seats": [
+          "aisle_door"
+        ]
+      },
+      "probe_reverse": {
+        "framing": "wide",
+        "view_direction": "shelf_to_doorway",
+        "public_view": "Reverse wide shot of the game table.",
+        "visible_seats": [
+          "window_shelf",
+          "window_door",
+          "aisle_shelf",
+          "aisle_door"
+        ]
+      },
+      "probe_overhead": {
+        "framing": "wide",
+        "view_direction": "overhead",
+        "public_view": "Top-down wide shot directly above the game table.",
+        "visible_seats": [
+          "window_shelf",
+          "window_door",
+          "aisle_shelf",
+          "aisle_door"
+        ]
+      }
+    },
+    "grammar": {
+      "opening_camera": "establish",
+      "partial_cameras": [
+        "partial_pair",
+        "partial_first",
+        "partial_second"
+      ],
+      "probe_camera": "probe_reverse",
+      "probe_focus_seats": [
+        "aisle_shelf",
+        "aisle_door"
+      ]
+    },
+    "version": "3.1"
+  },
+  "layout_sha256": "3e2b8f0a5738dc3e891e36d450582952a769e68d7e925ee57773258f43c9debf",
+  "identity_anchor_shots": {
+    "A": 1,
+    "B": 1,
+    "C": 1,
+    "D": 1
+  },
+  "observations": [
+    {
+      "shot": 1,
+      "scored": false,
+      "camera": "establish",
+      "expected_count": 4,
+      "expected_occupants": {
+        "window_shelf": "C",
+        "window_door": "D",
+        "aisle_shelf": "A",
+        "aisle_door": "B"
+      },
+      "unmentioned_probes": []
+    },
+    {
+      "shot": 4,
+      "scored": true,
+      "camera": "probe_reverse",
+      "expected_count": 4,
+      "expected_occupants": {
+        "window_shelf": "C",
+        "window_door": "D",
+        "aisle_shelf": "A",
+        "aisle_door": "B"
+      },
+      "unmentioned_probes": [
+        {
+          "subject": "D",
+          "present": true,
+          "seat": "window_door"
+        }
+      ]
+    }
+  ],
+  "evaluation_reference": "observed_opening_plus_requested_updates"
+}

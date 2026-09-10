@@ -1,0 +1,81 @@
+{
+  "id": "WL-CORE-LIVING-SWAP-3P-REV-3S",
+  "task": "position_swap",
+  "layout": "living_room_seating_3_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "yellow shirt",
+      "appearance": "a man in a yellow shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A asks about the promised dinner menu for the visit.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing an armchair near the bookcase end. A woman in a white shirt sits in the bookcase-side sofa seat and asks about the dinner menu, while a woman in a blue shirt sits in the doorway-side sofa seat, and a man in a yellow shirt sits in the bookcase-side armchair.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair and the bookcase in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B explains that a key dish is unavailable, and Subject A asks about an alternative.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in a white shirt and a woman in a blue shirt exchange seats and discuss an unavailable dish and an alternative.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks about news of their mutual acquaintance.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A woman in a white shirt asks about news of an acquaintance.",
+        "viewpoint": "Reverse wide shot of the coffee table."
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "WL-CORE-MEETING-SWAP-3P-TOP-3S",
+  "task": "position_swap",
+  "layout": "meeting_room_table_3_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "navy blazer",
+      "appearance": "a woman in a navy blazer",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "mustard sweater",
+      "appearance": "a man in a mustard sweater",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "emerald blouse",
+      "appearance": "a woman in a emerald blouse",
+      "seat": "screen_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A introduces the agenda.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A woman in a navy blazer sits at the screen-side window seat and introduces the agenda, while a man in a mustard sweater sits at the door-side window seat and a woman in an emerald blouse sits at the screen-end seat.",
+        "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and the screen-end seat in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject A asks for clarification, and Subject B answers.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a navy blazer at the screen-side window seat exchanges seats with the man in a mustard sweater at the door-side window seat, asking for clarification as he answers.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "C"
+      ],
+      "beat": "Subject C summarizes the next steps.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The woman in an emerald blouse summarizes the next steps.",
+        "viewpoint": "Top-down wide shot from directly above the conference table, centered on the tabletop, with both window-side seats and the screen-end seat in frame."
+      }
+    }
+  ]
+}

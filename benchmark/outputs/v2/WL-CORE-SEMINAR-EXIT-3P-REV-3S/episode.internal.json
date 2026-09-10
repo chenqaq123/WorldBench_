@@ -1,0 +1,80 @@
+{
+  "id": "WL-CORE-SEMINAR-EXIT-3P-REV-3S",
+  "task": "person_exit",
+  "layout": "seminar_room_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "window_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "pinboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A argues that true accomplishment demands mastering several difficult skills.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side. A man in a red shirt sits at the pinboard-side window seat and argues that true accomplishment requires multiple skills. A man in a green shirt sits at the entrance-side window seat, and a woman in an orange shirt sits at the pinboard-end seat.",
+        "viewpoint": "Wide establishing shot from the entrance end, looking lengthwise along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves the established seat and exits the scene. Subject A asks if such a demanding standard is realistic.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a green shirt leaves the entrance-side window seat and exits the seminar room. The man in a red shirt asks if such a demanding standard is realistic.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A remarks that genuine qualification under those terms is exceedingly rare.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in a red shirt remarks that genuine qualification is exceedingly rare.",
+        "viewpoint": "Reverse wide shot from the pinboard end, looking lengthwise along the worktable toward the entrance, with both window-side seats and the pinboard-end seat in frame."
+      }
+    }
+  ]
+}

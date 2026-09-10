@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-KITCHEN-STATIC-4P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a kitchen, a long rectangular island stands between the refrigerator wall and the sink area, with stools arranged along its sides. A woman in a white shirt sits on the sink-side guest stool and proposes making a vegetable stew from leftover ingredients, while a woman in a blue shirt sits on the refrigerator-side guest stool, a man in a yellow shirt sits on the sink-side cook stool, and a man in a purple shirt sits on the refrigerator-side cook stool.",
+      "viewpoint": "Wide establishing shot from the refrigerator end, looking lengthwise along the kitchen island toward the sink area, with both guest-side stools and both cook-side stools in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in a white shirt explains the recipe steps, and the woman in a blue shirt asks for a quicker peeling method.",
+      "viewpoint": "Medium two-shot from the cook side, centered on the two adjacent guest-side stools."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a white shirt insists on the standard technique, the woman in a blue shirt complains about the tedious labor, and the man in a yellow shirt refuses to continue.",
+      "viewpoint": "Reverse wide shot from the sink end, looking lengthwise along the kitchen island toward the refrigerator wall, with both guest-side stools and both cook-side stools in frame."
+    }
+  ]
+}

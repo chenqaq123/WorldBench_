@@ -1,0 +1,76 @@
+{
+  "id": "WL-CORE-SEMINAR-STATIC-3P-TOP-3S",
+  "task": "static_viewpoint_change",
+  "layout": "seminar_room_table_3_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "burgundy cardigan",
+      "appearance": "a woman in a burgundy cardigan",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "olive polo",
+      "appearance": "a man in a olive polo",
+      "seat": "window_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "navy blazer",
+      "appearance": "a woman in a navy blazer",
+      "seat": "pinboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A shares an opening thought.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side. A woman in a burgundy cardigan sits at the pinboard-side window seat and shares an opening thought, a man in an olive polo sits at the entrance-side window seat, and a woman in a navy blazer sits at the pinboard-end seat.",
+        "viewpoint": "Wide establishing shot from the entrance end, looking lengthwise along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks a follow-up question.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in an olive polo asks a follow-up question to a woman in a burgundy cardigan.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A clarifies the outcome.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "A woman in a burgundy cardigan clarifies the outcome to a man in an olive polo.",
+        "viewpoint": "Top-down wide shot from directly above the worktable, centered on the tabletop, with both window-side seats and the pinboard-end seat in frame."
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "WL-CORE-SEMINAR-STATIC-4P-REV-4S",
+  "task": "static_viewpoint_change",
+  "layout": "seminar_room_table_4_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "window_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "aisle_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "aisle_entrance",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks to restart the account of the situation from the beginning.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A woman in a green shirt sits at the pinboard-side window seat and asks to restart the account from the beginning, while a man in an orange shirt occupies the entrance-side window seat, a man in a white shirt sits at the pinboard-side aisle seat, and a man in a blue shirt is at the entrance-side aisle seat.",
+        "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and both aisle-side seats and the pinboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B agrees to retell the account, and Subject A asks to highlight every detail.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in the orange shirt agrees to retell the account, and the woman in the green shirt asks to highlight every detail.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks to review each piece of evidence carefully.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The woman in the green shirt asks to review each piece of evidence carefully.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the pinboard-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject B presents the details of the account, Subject C asks about the evidence, and Subject A clarifies the timeline.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in the orange shirt presents the details of the account, the man in the white shirt asks about the evidence, and the woman in the green shirt clarifies the timeline.",
+        "viewpoint": "Reverse wide shot of the worktable."
+      }
+    }
+  ]
+}

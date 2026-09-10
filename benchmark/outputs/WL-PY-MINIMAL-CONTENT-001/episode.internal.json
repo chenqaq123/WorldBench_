@@ -1,0 +1,76 @@
+{
+  "id": "WL-PY-MINIMAL-CONTENT-001",
+  "task": "static_viewpoint_change",
+  "layout": "cafe_rect_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "emerald-green cardigan",
+      "appearance": "a woman in a emerald-green cardigan",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "navy-blue sweater",
+      "appearance": "a man in a navy-blue sweater",
+      "seat": "window_right",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "rust-orange blouse",
+      "appearance": "a woman in a rust-orange blouse",
+      "seat": "table_left_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "A recounts a personal mishap to B and C.",
+      "events": [],
+      "camera": "establish_front",
+      "prompt": {
+        "content": "In a café seating area, a woman in an emerald-green cardigan is in the window-side seat nearest the tall floor plant, a man in a navy-blue sweater is in the window-side seat nearest the café counter, and a woman in a rust-orange blouse is in the short-end seat directly in front of the tall floor plant as the woman in an emerald-green cardigan recounts a personal mishap to the man in a navy-blue sweater and the woman in a rust-orange blouse.",
+        "viewpoint": "Wide view from the aisle-side corner, looking diagonally across the rectangular table. The full table and all three seats are visible."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "B asks A for the conclusion of the story.",
+      "events": [],
+      "camera": "partial_window_pair",
+      "prompt": {
+        "content": "The man in a navy-blue sweater asks the woman in an emerald-green cardigan for the conclusion of the story.",
+        "viewpoint": "Medium close view of the two people in the window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "A answers B and explains the final outcome.",
+      "events": [],
+      "camera": "probe_right_end",
+      "prompt": {
+        "content": "The woman in an emerald-green cardigan answers the man in a navy-blue sweater and explains the final outcome.",
+        "viewpoint": "Wide view from the counter end, looking along the full table toward the floor plant. Both window-side seats and the plant-end seat are visible."
+      }
+    }
+  ]
+}

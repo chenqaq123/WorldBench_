@@ -1,0 +1,80 @@
+{
+  "id": "WL-CORE-SEMINAR-EXIT-3P-TOP-3S",
+  "task": "person_exit",
+  "layout": "seminar_room_table_3_overhead_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "window_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "orange shirt",
+      "appearance": "a woman in an orange shirt",
+      "seat": "pinboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A remarks that basic accomplishments are common and easily attained.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A man in a red shirt at the pinboard-side window seat remarks that basic accomplishments are common and easily attained, a man in a green shirt sits at the entrance-side window seat, and a woman in an orange shirt sits at the pinboard-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves the established seat and exits the scene. Subject A asks if requiring extensive artistic and intellectual mastery sets an impossible standard.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a green shirt leaves his seat and exits the venue, while the man in a red shirt asks if requiring extensive artistic and intellectual mastery sets an impossible standard.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A observes that such an extreme standard explains why so few individuals are considered truly accomplished.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in a red shirt observes that such an extreme standard explains why so few individuals are considered truly accomplished.",
+        "viewpoint": "Top-down wide shot directly above the worktable."
+      }
+    }
+  ]
+}

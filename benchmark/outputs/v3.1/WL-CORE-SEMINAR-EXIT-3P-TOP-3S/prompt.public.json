@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-SEMINAR-EXIT-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A man in a red shirt at the pinboard-side window seat remarks that basic accomplishments are common and easily attained, a man in a green shirt sits at the entrance-side window seat, and a woman in an orange shirt sits at the pinboard-end seat.",
+      "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in a green shirt leaves his seat and exits the venue, while the man in a red shirt asks if requiring extensive artistic and intellectual mastery sets an impossible standard.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in a red shirt observes that such an extreme standard explains why so few individuals are considered truly accomplished.",
+      "viewpoint": "Top-down wide shot directly above the worktable."
+    }
+  ]
+}

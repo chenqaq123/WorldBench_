@@ -1,0 +1,94 @@
+{
+  "id": "WL-CORE-SEMINAR-SWAP-3P-REV-4S",
+  "task": "position_swap",
+  "layout": "seminar_room_table_3_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "yellow shirt",
+      "appearance": "a woman in a yellow shirt",
+      "seat": "window_entrance",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "purple shirt",
+      "appearance": "a man in a purple shirt",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "pinboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A asks to hear the account of the unusual case from the beginning.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side; a clear aisle runs opposite the window. A woman in a yellow shirt sits at the entrance-side window seat and asks to hear the account of the case, a man in a purple shirt sits at the pinboard-side window seat, and a man in a red shirt sits at the pinboard-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the entrance end, looking along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat and the pinboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B agrees to retell every detail of the case.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a yellow shirt and the man in a purple shirt exchange seats, and he agrees to retell every detail of the case.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "B"
+      ],
+      "beat": "Subject B describes the preliminary evidence.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The man in a purple shirt describes the preliminary evidence.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the entrance-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks about the subsequent events.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in a yellow shirt asks about the subsequent events.",
+        "viewpoint": "Reverse wide shot of the worktable."
+      }
+    }
+  ]
+}

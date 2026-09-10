@@ -1,0 +1,79 @@
+{
+  "id": "WL-CORE-LIVING-ENTRY-3P-TOP-3S",
+  "task": "person_entry",
+  "layout": "living_room_seating_3_overhead_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "sofa_doorway",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A asks about the dinner invitation.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a rectangular coffee table stands between a bookcase and the doorway. A two-seat sofa runs along one long side, facing an armchair near the bookcase end. There is one empty place. A woman in a red shirt sits in the bookcase-side sofa seat and asks about the dinner invitation, while a man in an orange shirt sits in the bookcase-side armchair.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair and the bookcase in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the empty place. Subject A asks about the refreshments, and Subject B replies that the market lacked the ingredients.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in a green shirt enters and sits in the empty place. A woman in a red shirt asks about the refreshments, and she replies that the market lacked the ingredients.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A offers an apology for the missing food.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "A woman in a red shirt offers an apology for the missing food.",
+        "viewpoint": "Top-down wide shot directly above the coffee table."
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-CAFE-EXIT-3P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A man in a white shirt sits in the plant-side window seat and poses a riddle, a man in a blue shirt sits in the counter-side window seat, and a woman in a yellow shirt sits in the plant-end seat.",
+      "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and the plant-end seat and the floor plant in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in a blue shirt leaves his seat and exits the café, while a man in a white shirt asks for the answer.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A man in a white shirt explains the riddle's answer.",
+      "viewpoint": "Reverse wide shot of the rectangular table."
+    }
+  ]
+}

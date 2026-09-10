@@ -1,0 +1,142 @@
+{
+  "id": "WL-CORE-KITCHEN-EXIT-4P-TOP-7S",
+  "task": "person_exit",
+  "layout": "kitchen_island_4_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "mustard sweater",
+      "appearance": "a woman in a mustard sweater",
+      "seat": "guest_sink",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "navy polo",
+      "appearance": "a man in a navy polo",
+      "seat": "guest_fridge",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "emerald blouse",
+      "appearance": "a woman in a emerald blouse",
+      "seat": "cook_sink",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "charcoal hoodie",
+      "appearance": "a man in a charcoal hoodie",
+      "seat": "cook_fridge",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks a question.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a kitchen, a long rectangular island stands between the refrigerator wall and the sink area, with stools arranged along its sides. A woman in a mustard sweater sits at the sink-side guest stool and asks a question, a man in a navy polo sits at the refrigerator-side guest stool, a woman in an emerald blouse sits at the sink-side cook stool, and a man in a charcoal hoodie sits at the refrigerator-side cook stool.",
+        "viewpoint": "Wide establishing shot from the refrigerator end, looking lengthwise along the kitchen island toward the sink area, with both guest-side stools and both cook-side stools in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves his seat and exits. Subject A speaks.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a navy polo leaves the refrigerator-side guest stool and exits the venue. The woman in a mustard sweater speaks.",
+        "viewpoint": "Medium two-shot from the cook side, centered on the two adjacent guest-side stools."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A speaks.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The woman in a mustard sweater speaks.",
+        "viewpoint": "Close-up from the cook side, centered on the person at the sink-side guest stool."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A answers.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a mustard sweater answers.",
+        "viewpoint": "Medium two-shot from the cook side, centered on the two adjacent guest-side stools."
+      }
+    },
+    {
+      "index": 5,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A speaks.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a mustard sweater speaks.",
+        "viewpoint": "Medium two-shot from the cook side, centered on the two adjacent guest-side stools."
+      }
+    },
+    {
+      "index": 6,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A replies.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The woman in a mustard sweater replies.",
+        "viewpoint": "Close-up from the cook side, centered on the person at the sink-side guest stool."
+      }
+    },
+    {
+      "index": 7,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject A asks a question. Subject D answers.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The woman in a mustard sweater asks a question. The man in a charcoal hoodie answers.",
+        "viewpoint": "Top-down wide shot from directly above the kitchen island, centered on the worktop, with both guest-side stools and both cook-side stools in frame."
+      }
+    }
+  ]
+}

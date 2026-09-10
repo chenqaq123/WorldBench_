@@ -1,0 +1,81 @@
+{
+  "id": "WL-CORE-MEETING-SWAP-3P-REV-3S",
+  "task": "position_swap",
+  "layout": "meeting_room_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "screen_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A opens the case consultation.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A man in an orange shirt sits at the screen-side window seat and opens the case consultation, a woman in a white shirt sits at the door-side window seat, and a man in a blue shirt sits at the screen-end seat.",
+        "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and the screen-end seat in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A and Subject B exchange their established seats. Subject B asks about the case details.",
+      "events": [
+        {
+          "subject": "A",
+          "action": "swap",
+          "with_subject": "B"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in an orange shirt and the woman in a white shirt swap the screen-side window seat and the door-side window seat, and she asks about the case details.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A answers the question.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in an orange shirt answers the question.",
+        "viewpoint": "Reverse wide shot from the presentation-screen end, looking lengthwise along the conference table toward the glass door, with both window-side seats and the screen-end seat in frame."
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "WL-CORE-SEMINAR-ENTRY-3P-REV-3S",
+  "task": "person_entry",
+  "layout": "seminar_room_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "window_pinboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "window_entrance",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "blue shirt",
+      "appearance": "a man in a blue shirt",
+      "seat": "pinboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A asks to review the account from the beginning so every detail is clear.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side. A man in an orange shirt sits in the pinboard-side window seat and asks to review the account from the beginning so every detail is clear. A man in a blue shirt sits in the pinboard-end seat.",
+        "viewpoint": "Wide establishing shot from the entrance end, looking lengthwise along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the established seat. Subject A asks Subject B to present the evidence, and Subject B agrees to explain the account.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in a white shirt enters and sits in the entrance-side window seat. A man in an orange shirt asks her to present the evidence, and she agrees to explain the account.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A asks for clarification on the final detail.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A man in an orange shirt asks for clarification on the final detail.",
+        "viewpoint": "Reverse wide shot from the pinboard end, looking lengthwise along the worktable toward the entrance, with both window-side seats and the pinboard-end seat in frame."
+      }
+    }
+  ]
+}

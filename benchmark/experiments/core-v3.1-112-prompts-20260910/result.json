@@ -1,0 +1,403 @@
+{
+  "at": "2026-09-10T08:15:16.374346+00:00",
+  "status": "blocked_model_region_restriction",
+  "completed": 16,
+  "new_prompts": 0,
+  "failed_attempts": 96,
+  "all_failures_are_region_denials": true,
+  "existing_prompts_unchanged": true,
+  "existing_evaluation_scores_unchanged": true,
+  "no_new_videos": true,
+  "account_after": {
+    "total_credits": 110,
+    "total_usage": 98.136904237
+  },
+  "account_usage_delta_usd": 0.0,
+  "remaining_usd": 11.863095763000004,
+  "failures": [
+    {
+      "id": "WL-CORE-CAFE-ENTRY-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-ENTRY-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-ENTRY-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-EXIT-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-EXIT-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-EXIT-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-EXIT-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-STATIC-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-STATIC-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-STATIC-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-STATIC-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-SWAP-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-SWAP-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-CAFE-SWAP-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-ENTRY-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-ENTRY-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-ENTRY-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-EXIT-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-EXIT-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-EXIT-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-STATIC-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-STATIC-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-STATIC-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-SWAP-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-SWAP-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-SWAP-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-DINING-SWAP-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-ENTRY-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-ENTRY-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-ENTRY-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-EXIT-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-EXIT-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-EXIT-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-EXIT-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-STATIC-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-STATIC-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-STATIC-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-STATIC-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-SWAP-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-SWAP-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-GAME-SWAP-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-ENTRY-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-ENTRY-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-ENTRY-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-EXIT-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-EXIT-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-EXIT-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-EXIT-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-STATIC-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-STATIC-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-STATIC-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-SWAP-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-SWAP-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-KITCHEN-SWAP-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-ENTRY-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-ENTRY-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-ENTRY-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-ENTRY-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-EXIT-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-EXIT-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-EXIT-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-STATIC-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-STATIC-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-STATIC-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-STATIC-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-SWAP-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-SWAP-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-LIVING-SWAP-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-ENTRY-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-ENTRY-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-ENTRY-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-ENTRY-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-EXIT-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-EXIT-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-EXIT-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-STATIC-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-STATIC-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-STATIC-4P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-SWAP-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-SWAP-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-SWAP-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-MEETING-SWAP-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-ENTRY-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-ENTRY-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-ENTRY-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-ENTRY-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-EXIT-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-EXIT-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-EXIT-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-STATIC-3P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-STATIC-3P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-STATIC-4P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-SWAP-3P-REV-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-SWAP-3P-TOP-4S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-SWAP-4P-REV-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    },
+    {
+      "id": "WL-CORE-SEMINAR-SWAP-4P-TOP-3S",
+      "error": "OpenRouter 403: {\"error\":{\"message\":\"This model is not available in your region.\",\"code\":403,\"metadata\":{\"routing_funnel\":[{\"step\":\"Initial Endpoints\",\"endpoint_count\":6}],\"failed_routing_step\":\"Gate Endpoints with Geo Restrictions\"}}}"
+    }
+  ]
+}

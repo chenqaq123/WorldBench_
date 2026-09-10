@@ -1,0 +1,76 @@
+{
+  "id": "WL-PY-MINIMAL-CONTENT-005",
+  "task": "static_viewpoint_change",
+  "layout": "cafe_rect_table_3_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "navy-blue cardigan",
+      "appearance": "a woman in a navy-blue cardigan",
+      "seat": "window_left",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "forest-green shirt",
+      "appearance": "a man in a forest-green shirt",
+      "seat": "window_right",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "burgundy sweater",
+      "appearance": "a woman in a burgundy sweater",
+      "seat": "table_left_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A tells a story.",
+      "events": [],
+      "camera": "establish_front",
+      "prompt": {
+        "content": "A woman in a navy-blue cardigan in the plant-side window seat tells a story, a man in a forest-green shirt is in the counter-side window seat, and a woman in a burgundy sweater is in the plant-end seat.",
+        "viewpoint": "Wide view from the aisle-side corner, looking diagonally across the rectangular table. The full table and all three seats are visible."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks a question.",
+      "events": [],
+      "camera": "partial_window_pair",
+      "prompt": {
+        "content": "The man in the forest-green shirt asks the woman in the navy-blue cardigan a question.",
+        "viewpoint": "Medium close view of the two people in the window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A replies.",
+      "events": [],
+      "camera": "probe_right_end",
+      "prompt": {
+        "content": "The woman in the navy-blue cardigan replies to the man in the forest-green shirt.",
+        "viewpoint": "Wide view from the counter end, looking along the full table toward the floor plant. Both window-side seats and the plant-end seat are visible."
+      }
+    }
+  ]
+}

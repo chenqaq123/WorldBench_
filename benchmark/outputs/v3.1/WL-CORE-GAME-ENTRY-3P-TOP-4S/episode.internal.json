@@ -1,0 +1,92 @@
+{
+  "id": "WL-CORE-GAME-ENTRY-3P-TOP-4S",
+  "task": "person_entry",
+  "layout": "board_game_table_3_overhead_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "white shirt",
+      "appearance": "a woman in a white shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "blue shirt",
+      "appearance": "a woman in a blue shirt",
+      "seat": "window_shelf",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "yellow shirt",
+      "appearance": "a man in a yellow shirt",
+      "seat": "shelf_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A calls the club meeting to order.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A woman in a white shirt sits at the doorway-side window seat and calls the club meeting to order, and a man in a yellow shirt sits at the shelf-end seat. There is one empty place.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and the shelf-end seat and the shelving unit in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the empty place. Subject A asks about the member contributions.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A woman in a blue shirt enters and sits in the empty place. A woman in a white shirt asks about the member contributions.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A reads the club writing submissions.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "A woman in a white shirt reads the club writing submissions.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the doorway-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A reviews the newsletter updates.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "A woman in a white shirt reviews the newsletter updates.",
+        "viewpoint": "Top-down wide shot directly above the game table."
+      }
+    }
+  ]
+}

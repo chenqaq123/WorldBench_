@@ -1,0 +1,90 @@
+{
+  "id": "WL-CORE-MEETING-EXIT-4P-REV-3S",
+  "task": "person_exit",
+  "layout": "meeting_room_table_4_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "navy blazer",
+      "appearance": "a woman in a navy blazer",
+      "seat": "window_screen",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "mustard sweater",
+      "appearance": "a man in a mustard sweater",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "olive blouse",
+      "appearance": "a woman in a olive blouse",
+      "seat": "walkway_screen",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "burgundy shirt",
+      "appearance": "a man in a burgundy shirt",
+      "seat": "walkway_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A introduces the project agenda.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A woman in a navy blazer sits in the screen-side window seat and introduces the project agenda, a man in a mustard sweater sits in the door-side window seat, a woman in an olive blouse sits in the screen-side walkway seat, and a man in a burgundy shirt sits in the door-side walkway seat.",
+        "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves the established seat and exits the scene. Subject A asks a question.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in the mustard sweater leaves the door-side window seat and exits the venue, while the woman in the navy blazer asks a question.",
+        "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D answers.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in the burgundy shirt answers the woman in the navy blazer.",
+        "viewpoint": "Reverse wide shot from the presentation-screen end, looking lengthwise along the conference table toward the glass door, with both window-side seats and both walkway-side seats in frame."
+      }
+    }
+  ]
+}

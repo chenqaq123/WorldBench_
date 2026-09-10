@@ -1,0 +1,89 @@
+{
+  "id": "WL-CORE-KITCHEN-STATIC-3P-REV-4S",
+  "task": "static_viewpoint_change",
+  "layout": "kitchen_island_3_r1_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "man",
+      "clothing": "purple shirt",
+      "appearance": "a man in a purple shirt",
+      "seat": "guest_fridge",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "guest_sink",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "sink_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject A proposes making a communal vegetable stew with the leftover ingredients.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a kitchen, a rectangular island stands between a sink counter and a refrigerator, with a window along one side and an aisle along the opposite side. A man in a purple shirt sits at the refrigerator-side window stool and proposes making a communal vegetable stew with the leftover ingredients, while a man in a red shirt sits at the sink-side window stool and a woman in a green shirt sits at the sink-end stool.",
+        "viewpoint": "Wide establishing shot from just beside the refrigerator end, looking along the kitchen island toward the sink counter, with both window-side stools and the sink-end stool and the sink counter in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject A explains the trimming technique for the vegetables, and Subject B questions if the method is too wasteful.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a purple shirt explains the trimming technique for the vegetables, and the man in a red shirt questions if the method is too wasteful.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side stools."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A insists on a stricter method for peeling the ingredients.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The man in a purple shirt insists on a stricter method for peeling the ingredients.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the refrigerator-side window stool."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B argues that the strict method is too tedious, and Subject A suggests simplifying the recipe plan.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The man in a red shirt argues that the strict method is too tedious, and the man in a purple shirt suggests simplifying the recipe plan.",
+        "viewpoint": "Reverse wide shot of the kitchen island."
+      }
+    }
+  ]
+}

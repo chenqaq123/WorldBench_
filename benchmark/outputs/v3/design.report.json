@@ -1,0 +1,208 @@
+{
+  "version": "3.0",
+  "case_count": 112,
+  "plan_sha256": "36656e8feec60df21ac8408421740b8fb7866ef7e54cac25f9566efe0cc88a37",
+  "errors": [],
+  "distributions": {
+    "task": {
+      "person_entry": 28,
+      "person_exit": 28,
+      "static_viewpoint_change": 28,
+      "position_swap": 28
+    },
+    "scene": {
+      "café": 16,
+      "dining room": 16,
+      "game room": 16,
+      "kitchen": 16,
+      "living room": 16,
+      "meeting room": 16,
+      "seminar room": 16
+    },
+    "subject_count": {
+      "3": 56,
+      "4": 56
+    },
+    "viewpoint_mode": {
+      "reverse_axis": 56,
+      "overhead": 56
+    },
+    "shot_count": {
+      "4": 56,
+      "3": 56
+    }
+  },
+  "sources_by_scene_task": {
+    "café/person_entry": {
+      "alice_seats": 2,
+      "alice_riddle": 2
+    },
+    "café/person_exit": {
+      "alice_riddle": 2,
+      "alice_seats": 2
+    },
+    "café/static_viewpoint_change": {
+      "alice_riddle": 2,
+      "alice_seats": 2
+    },
+    "café/position_swap": {
+      "alice_seats": 2,
+      "alice_riddle": 2
+    },
+    "dining room/person_entry": {
+      "women_breakfast": 2,
+      "earnest_tea": 2
+    },
+    "dining room/person_exit": {
+      "earnest_tea": 2,
+      "women_breakfast": 2
+    },
+    "dining room/static_viewpoint_change": {
+      "earnest_tea": 2,
+      "women_breakfast": 2
+    },
+    "dining room/position_swap": {
+      "women_breakfast": 2,
+      "earnest_tea": 2
+    },
+    "game room/person_entry": {
+      "women_club": 2,
+      "alice_rules": 2
+    },
+    "game room/person_exit": {
+      "alice_rules": 2,
+      "women_club": 2
+    },
+    "game room/static_viewpoint_change": {
+      "alice_rules": 2,
+      "women_club": 2
+    },
+    "game room/position_swap": {
+      "women_club": 2,
+      "alice_rules": 2
+    },
+    "kitchen/person_entry": {
+      "women_housekeeping": 2,
+      "boat_stew": 2
+    },
+    "kitchen/person_exit": {
+      "boat_stew": 2,
+      "women_housekeeping": 2
+    },
+    "kitchen/static_viewpoint_change": {
+      "boat_stew": 2,
+      "women_housekeeping": 2
+    },
+    "kitchen/position_swap": {
+      "women_housekeeping": 2,
+      "boat_stew": 2
+    },
+    "living room/person_entry": {
+      "earnest_visit": 2,
+      "pride_evening": 2
+    },
+    "living room/person_exit": {
+      "pride_evening": 2,
+      "earnest_visit": 2
+    },
+    "living room/static_viewpoint_change": {
+      "pride_evening": 2,
+      "earnest_visit": 2
+    },
+    "living room/position_swap": {
+      "earnest_visit": 2,
+      "pride_evening": 2
+    },
+    "meeting room/person_entry": {
+      "boat_holiday": 2,
+      "holmes_arrival": 2
+    },
+    "meeting room/person_exit": {
+      "holmes_arrival": 2,
+      "boat_holiday": 2
+    },
+    "meeting room/static_viewpoint_change": {
+      "holmes_arrival": 2,
+      "boat_holiday": 2
+    },
+    "meeting room/position_swap": {
+      "boat_holiday": 2,
+      "holmes_arrival": 2
+    },
+    "seminar room/person_entry": {
+      "holmes_account": 2,
+      "pride_skills": 2
+    },
+    "seminar room/person_exit": {
+      "pride_skills": 2,
+      "holmes_account": 2
+    },
+    "seminar room/static_viewpoint_change": {
+      "pride_skills": 2,
+      "holmes_account": 2
+    },
+    "seminar room/position_swap": {
+      "holmes_account": 2,
+      "pride_skills": 2
+    }
+  },
+  "event_seats_by_scene_count": {
+    "café/3": {
+      "window_left": 2,
+      "window_right": 2
+    },
+    "café/4": {
+      "window_left": 2,
+      "aisle_right": 2
+    },
+    "dining room/3": {
+      "window_patio": 2,
+      "window_sideboard": 2
+    },
+    "dining room/4": {
+      "aisle_patio": 2,
+      "window_sideboard": 2
+    },
+    "game room/3": {
+      "window_shelf": 2,
+      "window_door": 2
+    },
+    "game room/4": {
+      "aisle_shelf": 2,
+      "window_door": 2
+    },
+    "kitchen/3": {
+      "guest_fridge": 2,
+      "guest_sink": 2
+    },
+    "kitchen/4": {
+      "guest_fridge": 2,
+      "cook_sink": 2
+    },
+    "living room/3": {
+      "sofa_doorway": 2,
+      "sofa_bookcase": 2
+    },
+    "living room/4": {
+      "sofa_doorway": 2,
+      "bookcase_chair": 2
+    },
+    "meeting room/3": {
+      "window_screen": 2,
+      "window_door": 2
+    },
+    "meeting room/4": {
+      "walkway_screen": 2,
+      "window_door": 2
+    },
+    "seminar room/3": {
+      "window_pinboard": 2,
+      "window_entrance": 2
+    },
+    "seminar room/4": {
+      "window_pinboard": 2,
+      "aisle_entrance": 2
+    }
+  },
+  "geometry_validation": "declared coverage only; human and video validation pending"
+}

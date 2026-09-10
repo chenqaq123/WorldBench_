@@ -1,0 +1,79 @@
+{
+  "id": "WL-CORE-DINING-ENTRY-3P-REV-3S",
+  "task": "person_entry",
+  "layout": "dining_room_table_3_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "window_sideboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "window_patio",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "white shirt",
+      "appearance": "a man in a white shirt",
+      "seat": "sideboard_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A asks about sharing breakfast with the neighbor.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window. There is one empty place. A woman in a green shirt sits at the sideboard-side window seat and asks about sharing breakfast with the neighbor, while a man in a white shirt sits at the sideboard-end seat.",
+        "viewpoint": "Wide establishing shot from just beside the patio doors end, looking along the dining table toward the sideboard, with both window-side seats and the sideboard-end seat and the sideboard in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes the empty place. Subject B asks about the plan to share breakfast, and Subject A explains the request.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in an orange shirt enters and sits in the empty place. He asks about the plan to share breakfast, and a woman in a green shirt explains the request.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A discusses sharing breakfast with the neighbor.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "A woman in a green shirt discusses sharing breakfast with the neighbor.",
+        "viewpoint": "Reverse wide shot of the dining table."
+      }
+    }
+  ]
+}

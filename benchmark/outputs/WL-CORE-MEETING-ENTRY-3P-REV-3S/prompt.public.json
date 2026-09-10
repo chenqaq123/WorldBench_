@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-MEETING-ENTRY-3P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side. A woman in a navy blazer sits at the screen-side window seat and asks about the preliminary agenda, while a woman in a emerald blouse sits at the screen-end seat.",
+      "viewpoint": "Wide establishing shot from the glass-door end, looking lengthwise along the conference table toward the presentation screen, with both window-side seats and the screen-end seat in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in a mustard sweater enters, takes the door-side window seat, and asks for the revenue update, while a woman in a navy blazer sits at the screen-side window seat.",
+      "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A woman in a navy blazer answers.",
+      "viewpoint": "Reverse wide shot from the presentation-screen end, looking lengthwise along the conference table toward the glass door, with both window-side seats and the screen-end seat in frame."
+    }
+  ]
+}

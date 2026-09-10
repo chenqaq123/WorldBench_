@@ -1,0 +1,103 @@
+{
+  "id": "WL-CORE-GAME-EXIT-4P-REV-4S",
+  "task": "person_exit",
+  "layout": "board_game_table_4_r0_v3_1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "yellow shirt",
+      "appearance": "a woman in a yellow shirt",
+      "seat": "window_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "purple shirt",
+      "appearance": "a man in a purple shirt",
+      "seat": "window_door",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "red shirt",
+      "appearance": "a man in a red shirt",
+      "seat": "aisle_shelf",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "woman",
+      "clothing": "green shirt",
+      "appearance": "a woman in a green shirt",
+      "seat": "aisle_door",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A calls the club meeting to order.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A woman in a yellow shirt sits at the shelf-side window seat and calls the club meeting to order. A man in a purple shirt occupies the doorway-side window seat, a man in a red shirt sits at the shelf-side aisle seat, and a woman in a green shirt is seated at the doorway-side aisle seat.",
+        "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and both aisle-side seats and the shelving unit in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B leaves the established seat and exits the scene. Subject A asks about the anniversary agenda.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "exit"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The man in a purple shirt leaves his seat and exits the venue. The woman in a yellow shirt asks about the anniversary agenda.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A reviews the written contributions.",
+      "events": [],
+      "camera": "partial_first",
+      "prompt": {
+        "content": "The woman in a yellow shirt reviews the written contributions.",
+        "viewpoint": "Close-up from the aisle side, centered on the person at the shelf-side window seat."
+      }
+    },
+    {
+      "index": 4,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D asks about the group anniversary. Subject A explains the collective account.",
+      "events": [],
+      "camera": "probe_reverse",
+      "prompt": {
+        "content": "The woman in a green shirt asks about the group anniversary, and the woman in a yellow shirt explains the collective account.",
+        "viewpoint": "Reverse wide shot of the game table."
+      }
+    }
+  ]
+}

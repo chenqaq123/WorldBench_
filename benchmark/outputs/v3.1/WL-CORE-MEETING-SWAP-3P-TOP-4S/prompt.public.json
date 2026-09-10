@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-MEETING-SWAP-3P-TOP-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in an orange shirt sits in the door-side window seat and proposes taking a holiday to rest from overwork. A woman in a white shirt sits in the screen-side window seat, and a man in a blue shirt sits in the screen-end seat.",
+      "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and the screen-end seat and the presentation screen in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in an orange shirt and a woman in a white shirt exchange seats; she suggests taking a countryside retreat, but he calls the countryside dull.",
+      "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A woman in a white shirt proposes taking a sea voyage instead.",
+      "viewpoint": "Close-up from the walkway side, centered on the person at the door-side window seat."
+    },
+    {
+      "index": 4,
+      "content": "A man in an orange shirt objects to a sea voyage because of travel discomfort.",
+      "viewpoint": "Top-down wide shot directly above the conference table."
+    }
+  ]
+}

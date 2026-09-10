@@ -1,0 +1,306 @@
+{
+  "source": {
+    "archetype": "shared-meal conversation",
+    "material": "3 people begin a conversation in a dining room. The person at the patio-side window seat leaves that position and exits the venue. The person at the sideboard-end seat remains in the original position as the exchange continues."
+  },
+  "config": {
+    "task": "person_exit",
+    "scene": "dining room",
+    "layout": "dining_room_table_3_overhead_v1",
+    "viewpoint_mode": "overhead",
+    "subject_count": 3,
+    "shot_count": 3
+  },
+  "case_signature": {
+    "task_type": "person_exit",
+    "scene": "dining room",
+    "viewpoint_mode": "overhead",
+    "subject_count": 3,
+    "shot_count": 3
+  },
+  "models": {
+    "source_abstraction": "google/gemini-3.7-flash",
+    "subject_casting": "google/gemini-3.7-flash",
+    "story_planning": "google/gemini-3.7-flash",
+    "prompt_rendering": "google/gemini-3.7-flash",
+    "prompt_audit": "openai/gpt-5.6-luna"
+  },
+  "stage_outputs": {
+    "source_abstraction": {
+      "archetype": "shared-meal conversation",
+      "premise": "A seated discussion among three dining companions is altered when one participant leaves the gathering.",
+      "interaction_arc": "Three seated individuals converse together until one person stands up from the table and departs the room, after which the remaining companions continue their conversation."
+    },
+    "subject_casting": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "burgundy blouse"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "olive sweater"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "navy blazer"
+        }
+      ]
+    },
+    "story_planning": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A asks a question.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject B leaves his seat and exits. Subject A asks a question.",
+          "events": [
+            {
+              "subject": "B",
+              "action": "exit"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "beat": "Subject A speaks.",
+          "events": []
+        }
+      ]
+    },
+    "prompt_rendering": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side. A woman in a burgundy blouse sits at the sideboard-side window seat and asks a question, a man in an olive sweater sits at the patio-side window seat, and a woman in a navy blazer sits at the sideboard-end seat."
+        },
+        {
+          "index": 2,
+          "content": "The man in an olive sweater leaves the patio-side window seat and exits the venue, and the woman in a burgundy blouse asks a question."
+        },
+        {
+          "index": 3,
+          "content": "The woman in a burgundy blouse speaks."
+        }
+      ]
+    },
+    "prompt_audit": [
+      {
+        "round": 1,
+        "passed": true,
+        "issues": []
+      }
+    ]
+  },
+  "trace": [
+    {
+      "stage": "source_abstraction",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256391-f0BAroi4gQKlrsnq0HV8",
+      "usage": {
+        "prompt_tokens": 163,
+        "completion_tokens": 438,
+        "total_tokens": 601,
+        "cost": 0.00176475,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00176475,
+          "upstream_inference_prompt_cost": 0.00012225,
+          "upstream_inference_completions_cost": 0.0016425
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 365,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "subject_casting",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256396-cmvl2dquKkBGDMz3gikU",
+      "usage": {
+        "prompt_tokens": 342,
+        "completion_tokens": 444,
+        "total_tokens": 786,
+        "cost": 0.0019215,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0019215,
+          "upstream_inference_prompt_cost": 0.0002565,
+          "upstream_inference_completions_cost": 0.001665
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 400,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256399-WQ8qY2BMJ8PaFgBXFGX5",
+      "usage": {
+        "prompt_tokens": 753,
+        "completion_tokens": 1535,
+        "total_tokens": 2288,
+        "cost": 0.006321,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.006321,
+          "upstream_inference_prompt_cost": 0.00056475,
+          "upstream_inference_completions_cost": 0.00575625
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1473,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256405-prw3F66pB0FrXmDuZWL9",
+      "usage": {
+        "prompt_tokens": 795,
+        "completion_tokens": 1260,
+        "total_tokens": 2055,
+        "cost": 0.00532125,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00532125,
+          "upstream_inference_prompt_cost": 0.00059625,
+          "upstream_inference_completions_cost": 0.004725
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1192,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256411-BbosKxscdFkVoixP6Mhe",
+      "usage": {
+        "prompt_tokens": 928,
+        "completion_tokens": 679,
+        "total_tokens": 1607,
+        "cost": 0.00324225,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00324225,
+          "upstream_inference_prompt_cost": 0.000696,
+          "upstream_inference_completions_cost": 0.00254625
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 533,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788256415-IU8GWUdM9mnCFbM4gjlS",
+      "usage": {
+        "prompt_tokens": 976,
+        "completion_tokens": 1171,
+        "total_tokens": 2147,
+        "cost": 0.00512325,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00512325,
+          "upstream_inference_prompt_cost": 0.000732,
+          "upstream_inference_completions_cost": 0.00439125
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1038,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1788256421-KqU1W8JzwFcrQTZ24cJE",
+      "usage": {
+        "prompt_tokens": 2120,
+        "completion_tokens": 709,
+        "total_tokens": 2829,
+        "cost": 0.00138065,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2117,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00138065,
+          "upstream_inference_prompt_cost": 0.00052985,
+          "upstream_inference_completions_cost": 0.0008508
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 690,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  ]
+}

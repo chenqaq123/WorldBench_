@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-MEETING-STATIC-4P-TOP-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A woman in a yellow shirt sits in the screen-side walkway seat and proposes taking a holiday trip together, a man in a purple shirt sits in the door-side walkway seat, a man in a red shirt sits in the screen-side window seat, and a woman in a green shirt sits in the door-side window seat.",
+      "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and both walkway-side seats and the presentation screen in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in a purple shirt asks about booking a quiet countryside retreat, and the woman in a yellow shirt replies that a countryside stay would be too isolated.",
+      "viewpoint": "Medium two-shot from the window side, centered on the two adjacent walkway-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a yellow shirt suggests taking a boat trip along the river instead.",
+      "viewpoint": "Close-up from the window side, centered on the person at the screen-side walkway seat."
+    },
+    {
+      "index": 4,
+      "content": "The man in a red shirt argues against the boat trip due to travel discomfort, the man in a purple shirt asks about alternative routes, and the woman in a yellow shirt explains the river itinerary.",
+      "viewpoint": "Top-down wide shot directly above the conference table."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-GAME-ENTRY-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side. A man in a mustard sweater sits at the shelf-side window seat and asks a question, while a woman in a burgundy hoodie sits at the shelf-end seat.",
+      "viewpoint": "Wide establishing shot from the doorway end, looking lengthwise along the game table toward the shelving unit, with both window-side seats and the shelf-end seat in frame."
+    },
+    {
+      "index": 2,
+      "content": "A woman in a navy blazer enters and takes the doorway-side window seat. A man in a mustard sweater speaks, and she answers.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A man in a mustard sweater replies.",
+      "viewpoint": "Top-down wide shot from directly above the game table, centered on the tabletop, with both window-side seats and the shelf-end seat in frame."
+    }
+  ]
+}

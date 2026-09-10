@@ -1,0 +1,254 @@
+{
+  "source": {
+    "archetype": "kitchen conversation",
+    "material": "4 people begin a conversation in a kitchen. The people at the first two adjacent positions, the sink-side guest stool and the refrigerator-side guest stool, exchange their seats. The person at the sink-side cook stool does not move as the exchange continues."
+  },
+  "config": {
+    "task": "position_swap",
+    "scene": "kitchen",
+    "layout": "kitchen_island_4_v1",
+    "viewpoint_mode": "reverse_axis",
+    "subject_count": 4,
+    "shot_count": 3
+  },
+  "case_signature": {
+    "task_type": "position_swap",
+    "scene": "kitchen",
+    "viewpoint_mode": "reverse_axis",
+    "subject_count": 4,
+    "shot_count": 3
+  },
+  "models": {
+    "source_abstraction": "google/gemini-3.7-flash",
+    "subject_casting": "google/gemini-3.7-flash",
+    "story_planning": "google/gemini-3.7-flash",
+    "prompt_rendering": "google/gemini-3.7-flash",
+    "prompt_audit": "openai/gpt-5.6-luna"
+  },
+  "stage_outputs": {
+    "source_abstraction": {
+      "archetype": "kitchen conversation",
+      "premise": "A group gathers around counter seating where two participants trade places mid-discussion.",
+      "interaction_arc": "Several individuals converse across designated seats before two adjacent seated participants swap positions while the other members remain in place as the interaction continues."
+    },
+    "subject_casting": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "navy blazer"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "mustard sweater"
+        },
+        {
+          "id": "C",
+          "gender": "woman",
+          "clothing": "emerald blouse"
+        },
+        {
+          "id": "D",
+          "gender": "man",
+          "clothing": "charcoal hoodie"
+        }
+      ]
+    },
+    "story_planning": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A speaks about the dinner schedule.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject A and Subject B exchange their established seats. Subject A asks a question and Subject B answers.",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "beat": "Subject C asks for details and Subject D replies.",
+          "events": []
+        }
+      ]
+    },
+    "prompt_rendering": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a kitchen, a long rectangular island stands between the refrigerator wall and the sink area, with stools arranged along its sides. A woman in a navy blazer sits at the sink-side guest stool and speaks about the dinner schedule, while a man in a mustard sweater sits at the refrigerator-side guest stool, a woman in an emerald blouse sits at the sink-side cook stool, and a man in a charcoal hoodie sits at the refrigerator-side cook stool."
+        },
+        {
+          "index": 2,
+          "content": "A woman in a navy blazer at the sink-side guest stool exchanges seats with a man in a mustard sweater at the refrigerator-side guest stool, then she asks a question and he answers."
+        },
+        {
+          "index": 3,
+          "content": "A woman in an emerald blouse asks for details, and a man in a charcoal hoodie replies."
+        }
+      ]
+    },
+    "prompt_audit": [
+      {
+        "round": 1,
+        "passed": true,
+        "issues": []
+      }
+    ]
+  },
+  "trace": [
+    {
+      "stage": "source_abstraction",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788264762-hmBtNH0BrjjRZ7BtaqDR",
+      "usage": {
+        "prompt_tokens": 169,
+        "completion_tokens": 346,
+        "total_tokens": 515,
+        "cost": 0.00142425,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00142425,
+          "upstream_inference_prompt_cost": 0.00012675,
+          "upstream_inference_completions_cost": 0.0012975
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 278,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "subject_casting",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788264765-hASwukVz7LroqLNu4Crj",
+      "usage": {
+        "prompt_tokens": 343,
+        "completion_tokens": 286,
+        "total_tokens": 629,
+        "cost": 0.00132975,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00132975,
+          "upstream_inference_prompt_cost": 0.00025725,
+          "upstream_inference_completions_cost": 0.0010725
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 220,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788264769-bzO5gN4po64eiWFFxLni",
+      "usage": {
+        "prompt_tokens": 871,
+        "completion_tokens": 540,
+        "total_tokens": 1411,
+        "cost": 0.00267825,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00267825,
+          "upstream_inference_prompt_cost": 0.00065325,
+          "upstream_inference_completions_cost": 0.002025
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 377,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788264774-Ua8uIVphwi0X31HjmONi",
+      "usage": {
+        "prompt_tokens": 1065,
+        "completion_tokens": 1679,
+        "total_tokens": 2744,
+        "cost": 0.007095,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.007095,
+          "upstream_inference_prompt_cost": 0.00079875,
+          "upstream_inference_completions_cost": 0.00629625
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1536,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1788264780-GUAQtVqpNnbzjLlKlExb",
+      "usage": {
+        "prompt_tokens": 2252,
+        "completion_tokens": 502,
+        "total_tokens": 2754,
+        "cost": 0.00116525,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2249,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00116525,
+          "upstream_inference_prompt_cost": 0.00056285,
+          "upstream_inference_completions_cost": 0.0006024
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 483,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  ]
+}

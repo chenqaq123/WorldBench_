@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-DINING-EXIT-4P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side. A woman in a white shirt sits in the sideboard-side window seat and proposes sharing breakfast with a neighbor in need. A woman in a blue shirt sits in the patio-side window seat, a man in a yellow shirt sits in the sideboard-side aisle seat, and a woman in a purple shirt sits in the patio-side aisle seat.",
+      "viewpoint": "Wide establishing shot from the patio-door end, looking lengthwise along the dining table toward the sideboard, with both window-side seats and both aisle-side seats in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in a blue shirt leaves the patio-side window seat and exits the dining room. The woman in a white shirt asks to pack the morning food.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a purple shirt agrees to share the meal, and the woman in a white shirt offers to help carry it.",
+      "viewpoint": "Top-down wide shot from directly above the dining table, centered on the tabletop, with both window-side seats and both aisle-side seats in frame."
+    }
+  ]
+}

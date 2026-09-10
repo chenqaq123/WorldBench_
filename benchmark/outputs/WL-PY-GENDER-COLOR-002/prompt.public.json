@@ -1,0 +1,20 @@
+{
+  "id": "WL-PY-GENDER-COLOR-002",
+  "shots": [
+    {
+      "index": 1,
+      "content": "In a quiet café, a woman in an emerald-green cardigan sits at the window-side seat nearest the tall floor plant, gesturing animatedly with her hands while describing her morning mishap. A man in a navy-blue hoodie sits at the window-side seat nearest the café counter, leaning forward over his warm mug with an intrigued smile, as a woman in a crimson-red blouse sits at the short-end seat directly in front of the tall floor plant, listening quietly while resting her chin on her hand with an amused expression.",
+      "viewpoint": "Wide view from the aisle-side corner, looking diagonally across the rectangular table. The full table and all three seats are visible."
+    },
+    {
+      "index": 2,
+      "content": "The woman in the emerald-green cardigan shakes her head with an exaggerated sigh and taps her fingers lightly against the wooden table, while the man in the navy-blue hoodie chuckles softly and nods along in sympathetic agreement.",
+      "viewpoint": "Medium close view of the two people in the window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in the navy-blue hoodie offers an encouraging smile while gesturing toward his mug, prompting the woman in the emerald-green cardigan to break into relieved laughter as she relaxes in her seat.",
+      "viewpoint": "Wide view from the counter end, looking along the full table toward the floor plant. Both window-side seats and the plant-end seat are visible."
+    }
+  ]
+}

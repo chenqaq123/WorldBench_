@@ -1,0 +1,225 @@
+[
+  {
+    "stage": "source_abstraction",
+    "model": "gemini-3.7-flash",
+    "schema_name": "story_skeleton",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the real source ID exactly."
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the supplied archetype exactly."
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A faithful abstraction of the supplied excerpt's interaction."
+        },
+        "interaction_arc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A concise ordered narrative progression, not divided into shots."
+        }
+      },
+      "required": [
+        "source_id",
+        "archetype",
+        "premise",
+        "interaction_arc"
+      ],
+      "additionalProperties": false
+    },
+    "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 3 shots.",
+    "input_value": {
+      "source": {
+        "id": "women_breakfast",
+        "title": "Little Women",
+        "author": "Louisa May Alcott",
+        "year": 1868,
+        "url": "https://www.gutenberg.org/files/514/514-h/514-h.htm",
+        "locator": "Chapter II: A Merry Christmas",
+        "start_text": "Another bang of the street door",
+        "scenes": [
+          "dining room"
+        ],
+        "topic_terms": [
+          "breakfast",
+          "share",
+          "neighbor"
+        ],
+        "excerpt": "Another bang of the street door sent the basket under the sofa, and the girls to the table, eager for breakfast. “Merry Christmas, Marmee! Many of them! Thank you for our books. We read some, and mean to every day,” they all cried in chorus. “Merry Christmas, little daughters! I’m glad you began at once, and hope you will keep on. But I want to say one word before we sit down. Not far away from here lies a poor woman with a little newborn baby. Six children are huddled into one bed to keep from freezing, for they have no fire. There is nothing to eat over there, and the oldest boy came to tell me they were suffering hunger and cold. My girls, will you give them your breakfast as a Christmas present?” They were all unusually hungry, having waited nearly an hour, and for a minute no one spoke, only a minute, for Jo exclaimed impetuously, “I’m so glad you came before we began!” “May I go and help carry the things to the poor little children?” asked Beth eagerly. “I shall take the cream and the muffings,” added Amy, heroically giving up the article she most liked. Meg was already covering the buckwheats, and piling the bread into one big plate. “I thought you’d do it,” said Mrs. March, smiling as if satisfied. “You shall all go and help me, and when we come back we will have bread and milk for breakfast, and make it up at dinnertime.” They were soon ready, and the procession set out. Fortunately it was early, and they went through back streets, so few people saw them, and no one laughed at the queer party. A poor, bare, miserable room it was, with broken windows, no fire, ragged bedclothes, a",
+        "excerpt_sha256": "aef888bbe1131de44afb1d40a6ab6a47bd8112e65edb6225cf8f66f0f357d6d5",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "shared-meal conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      }
+    },
+    "temperature": 0.5,
+    "output": {
+      "source_id": "women_breakfast",
+      "archetype": "shared-meal conversation",
+      "premise": "A group gathered to eat breakfast is asked whether they are willing to share their meal with an impoverished neighbor family in need.",
+      "interaction_arc": "A speaker addresses the group before a meal begins, describing the dire conditions of a local family and asking if everyone will give up their food to assist them. The group members accept the proposal, prepare the meal items for transport, and depart together to deliver the aid."
+    },
+    "response_metadata": {
+      "stage": "source_abstraction",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-bdf36fa2ecde4a9e8c8c58f03ad28d5a",
+      "usage": {
+        "prompt_tokens": 1002,
+        "completion_tokens": 569,
+        "total_tokens": 1571,
+        "prompt_tokens_details": {
+          "text_tokens": 1002
+        },
+        "completion_tokens_details": {
+          "text_tokens": 119,
+          "reasoning_tokens": 450
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  },
+  {
+    "stage": "subject_casting",
+    "model": "gemini-3.7-flash",
+    "schema_name": "subject_casting",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "woman",
+                  "man"
+                ]
+              },
+              "clothing": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A clothing color and garment, without an article."
+              }
+            },
+            "required": [
+              "id",
+              "gender",
+              "clothing"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "subjects"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C, D in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "women_breakfast",
+        "archetype": "shared-meal conversation",
+        "premise": "A group gathered to eat breakfast is asked whether they are willing to share their meal with an impoverished neighbor family in need.",
+        "interaction_arc": "A speaker addresses the group before a meal begins, describing the dire conditions of a local family and asking if everyone will give up their food to assist them. The group members accept the proposal, prepare the meal items for transport, and depart together to deliver the aid."
+      },
+      "scene": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window.",
+      "subject_ids": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "casting_contract": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "white shirt"
+        },
+        {
+          "id": "B",
+          "gender": "woman",
+          "clothing": "blue shirt"
+        },
+        {
+          "id": "C",
+          "gender": "man",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "D",
+          "gender": "woman",
+          "clothing": "purple shirt"
+        }
+      ]
+    },
+    "temperature": 0.5,
+    "output": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "white shirt"
+        },
+        {
+          "id": "B",
+          "gender": "woman",
+          "clothing": "blue shirt"
+        },
+        {
+          "id": "C",
+          "gender": "man",
+          "clothing": "yellow shirt"
+        },
+        {
+          "id": "D",
+          "gender": "woman",
+          "clothing": "purple shirt"
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "subject_casting",
+      "request_model": "gemini-3.7-flash",
+      "response_model": "gemini-3.7-flash",
+      "response_id": "chatcmpl-50df819a58b54e31bd58c1cf3651a3d4",
+      "usage": {
+        "prompt_tokens": 763,
+        "completion_tokens": 464,
+        "total_tokens": 1227,
+        "prompt_tokens_details": {
+          "text_tokens": 763
+        },
+        "completion_tokens_details": {
+          "text_tokens": 32,
+          "reasoning_tokens": 432
+        }
+      },
+      "provider": "vapi",
+      "endpoint": "https://api.gpt.ge/v1/chat/completions"
+    }
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-SEMINAR-SWAP-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a seminar room, a rectangular worktable stands between a pinboard and the entrance, with windows along one side. A woman in an emerald cardigan sits at the pinboard-side window seat and asks a question, a man in a maroon hoodie sits at the entrance-side window seat, and a woman in a mustard blazer sits at the pinboard-end seat.",
+      "viewpoint": "Wide establishing shot from the entrance end, looking lengthwise along the worktable toward the pinboard, with both window-side seats and the pinboard-end seat in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in an emerald cardigan at the pinboard-side window seat swaps seats with the man in a maroon hoodie at the entrance-side window seat, who answers.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a mustard blazer replies.",
+      "viewpoint": "Top-down wide shot from directly above the worktable, centered on the tabletop, with both window-side seats and the pinboard-end seat in frame."
+    }
+  ]
+}

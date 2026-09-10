@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-09-10T08:30:36.714680+00:00",
+  "provider": "vapi",
+  "endpoint": "https://api.gpt.ge/v1/chat/completions",
+  "models": [
+    "gpt-5.6-sol",
+    "gpt-5.6-luna"
+  ],
+  "status": "failed",
+  "trace": [],
+  "results": [],
+  "video_generation": false,
+  "error": "The read operation timed out"
+}

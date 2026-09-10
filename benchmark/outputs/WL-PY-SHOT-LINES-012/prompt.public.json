@@ -1,0 +1,20 @@
+{
+  "id": "WL-PY-SHOT-LINES-012",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other. A woman in an emerald blouse sits in the plant-side window seat telling a travel story, a man in a navy sweater sits in the counter-side window seat, and a woman in a mustard cardigan sits in the plant-end seat.",
+      "viewpoint": "Wide establishing shot from the counter end, looking lengthwise along the rectangular table toward the floor plant, with the full table and all three seats in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in a navy sweater asks the woman in an emerald blouse a question.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in an emerald blouse answers the man in a navy sweater.",
+      "viewpoint": "Reverse wide shot from behind the plant-end seat, looking lengthwise along the table toward the café counter, with the entire table, the plant-end seat, and both window-side seats in frame."
+    }
+  ]
+}

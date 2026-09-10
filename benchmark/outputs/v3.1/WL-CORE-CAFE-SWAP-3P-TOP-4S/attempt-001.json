@@ -1,0 +1,2313 @@
+[
+  {
+    "stage": "source_abstraction",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "story_skeleton",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the real source ID exactly."
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Copy the supplied archetype exactly."
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A faithful abstraction of the supplied excerpt's interaction."
+        },
+        "interaction_arc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A concise ordered narrative progression, not divided into shots."
+        }
+      },
+      "required": [
+        "source_id",
+        "archetype",
+        "premise",
+        "interaction_arc"
+      ],
+      "additionalProperties": false
+    },
+    "system": "Read the supplied real literary excerpt and abstract its actual interaction. Copy source.id into source_id and the archetype exactly. Keep its concrete topic and question or disagreement in a compact premise and interaction_arc. Use at least one supplied topic term naturally. Do not invent a task event in the source: the next stage separately adapts it to the experimental trajectory. Do not include character names, quotations, dialogue, mood, performance details, props, scenic embellishment, source wording, shot divisions, camera instructions, or duration language. A later stage will map this skeleton to 4 shots.",
+    "input_value": {
+      "source": {
+        "id": "alice_seats",
+        "title": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
+        "year": 1865,
+        "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+        "locator": "Chapter VII: A Mad Tea-Party",
+        "start_text": "I want a clean cup",
+        "scenes": [
+          "café"
+        ],
+        "topic_terms": [
+          "story",
+          "interruption"
+        ],
+        "excerpt": "I want a clean cup,” interrupted the Hatter: “let’s all move one place on.” He moved on as he spoke, and the Dormouse followed him: the March Hare moved into the Dormouse’s place, and Alice rather unwillingly took the place of the March Hare. The Hatter was the only one who got any advantage from the change: and Alice was a good deal worse off than before, as the March Hare had just upset the milk-jug into his plate. Alice did not wish to offend the Dormouse again, so she began very cautiously: “But I don’t understand. Where did they draw the treacle from?” “You can draw water out of a water-well,” said the Hatter; “so I should think you could draw treacle out of a treacle-well—eh, stupid?” “But they were in the well,” Alice said to the Dormouse, not choosing to notice this last remark. “Of course they were,” said the Dormouse; “—well in.” This answer so confused poor Alice, that she let the Dormouse go on for some time without interrupting it. “They were learning to draw,” the Dormouse went on, yawning and rubbing its eyes, for it was getting very sleepy; “and they drew all manner of things—everything that begins with an M—” “Why with an M?” said Alice. “Why not?” said the March Hare. Alice was silent. The Dormouse had closed its eyes by this time, and was going off into a doze; but, on being pinched by the Hatter, it woke up again with a little shriek, and went on: “—that begins with an M, such as mouse-traps, and the moon, and memory, and muchness—you know you say things are “much of a muchness”—did you ever see such a thing as a drawing of a muchness?” “Really, now you ask me,” said Alice, very much",
+        "excerpt_sha256": "03864b20f160924c99acf3c61ff9b5082addcd9eecd79d079621b6495213f4a5",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "café conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      }
+    },
+    "temperature": 0.5,
+    "output": {
+      "source_id": "alice_seats",
+      "archetype": "café conversation",
+      "premise": "A table reshuffles seating before an attendee raises logical objections to an absurd story being narrated, facing collective dismissals and insistence that the tale proceed without further interruption.",
+      "interaction_arc": "The group shifts positions around the table, worsening the arrangement for one member. Once settled, the newcomer questions the physical possibility of drawing substances from an impossible source within a recounted story. A companion brushes aside the objection with a sharp retort, while the primary speaker continues describing the bizarre details. When the listener questions another arbitrary constraint in the story, the group dismisses the inquiry and prods the storyteller to resume despite drowsiness."
+    },
+    "response_metadata": {
+      "stage": "source_abstraction",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846405-OyaLAvZeseTgzTGGKp2A",
+      "usage": {
+        "prompt_tokens": 777,
+        "completion_tokens": 652,
+        "total_tokens": 1429,
+        "cost": 0.00302775,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00302775,
+          "upstream_inference_prompt_cost": 0.00058275,
+          "upstream_inference_completions_cost": 0.002445
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 495,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "subject_casting",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "subject_casting",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B",
+                  "C"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "woman",
+                  "man"
+                ]
+              },
+              "clothing": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A clothing color and garment, without an article."
+              }
+            },
+            "required": [
+              "id",
+              "gender",
+              "clothing"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "subjects"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You verify and render a balanced cast for a controlled world-state benchmark. Copy every id, gender and clothing from casting_contract exactly. It is balanced across the dataset; do not infer gender, colors or appearance from the original literary characters, participant roles or seat labels. Return only the requested structured object with subjects A, B, C in that order. For each subject, choose gender as exactly woman or man and choose one clothing phrase containing a controlled color and garment, such as mustard-yellow sweater. Use a simple garment from shirt, sweater, jacket, cardigan, blouse, hoodie, coat, turtleneck, vest, polo, pullover, blazer, sweatshirt, overshirt, tunic, top, tee, or t-shirt. The color must include at least one of: red, blue, green, yellow, orange, purple, pink, brown, black, white, gray, navy, teal, maroon, mustard, cobalt, emerald, olive, beige, cream, burgundy, or charcoal. Use a different clothing color for every subject. Do not include articles in the clothing field. Gender plus clothing color is the complete identity anchor. Do not add hair, facial features, age, glasses, accessories, names, personality, actions, seats, camera language, duration, timestamps, or generation settings.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "alice_seats",
+        "archetype": "café conversation",
+        "premise": "A table reshuffles seating before an attendee raises logical objections to an absurd story being narrated, facing collective dismissals and insistence that the tale proceed without further interruption.",
+        "interaction_arc": "The group shifts positions around the table, worsening the arrangement for one member. Once settled, the newcomer questions the physical possibility of drawing substances from an impossible source within a recounted story. A companion brushes aside the objection with a sharp retort, while the primary speaker continues describing the bizarre details. When the listener questions another arbitrary constraint in the story, the group dismisses the inquiry and prods the storyteller to resume despite drowsiness."
+      },
+      "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+      "subject_ids": [
+        "A",
+        "B",
+        "C"
+      ],
+      "casting_contract": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "green shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "orange shirt"
+        },
+        {
+          "id": "C",
+          "gender": "man",
+          "clothing": "white shirt"
+        }
+      ]
+    },
+    "temperature": 0.5,
+    "output": {
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "green shirt"
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "orange shirt"
+        },
+        {
+          "id": "C",
+          "gender": "man",
+          "clothing": "white shirt"
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "subject_casting",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846409-xJgMfaFG9zXDG1zHvLtI",
+      "usage": {
+        "prompt_tokens": 529,
+        "completion_tokens": 256,
+        "total_tokens": 785,
+        "cost": 0.00135675,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00135675,
+          "upstream_inference_prompt_cost": 0.00039675,
+          "upstream_inference_completions_cost": 0.00096
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 213,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "story_planning",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "story_beats",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4
+              },
+              "beat": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Story actions performed only by mentioned subjects."
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "subject": {
+                      "type": "string",
+                      "enum": [
+                        "A",
+                        "B",
+                        "C"
+                      ]
+                    },
+                    "action": {
+                      "type": "string",
+                      "enum": [
+                        "enter",
+                        "exit",
+                        "swap"
+                      ]
+                    },
+                    "with_subject": {
+                      "type": "string",
+                      "enum": [
+                        "A",
+                        "B",
+                        "C"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "subject",
+                    "action"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "index",
+              "beat",
+              "events"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You plan story-world beats for a controlled multi-shot world-state benchmark. Return exactly 4 ordered shots. The supplied casting, layout, seats, camera plan, and per-shot mention contracts are fixed and cannot be changed. Every beat may assign actions only to the subjects listed in that shot's mentioned array. Never refer to another subject, even indirectly as a third person, listener, group, or everyone. Copy every supplied events array exactly. Events are frozen: enter means the named subject enters and takes that subject's established seat; exit means the named subject leaves that seat and exits; swap means the two named subjects exchange their established seats. State each supplied event explicitly in that shot's beat and invent no other entry, exit, or seat change. When a shot has a non-empty events array, begin its beat with that event and explicitly name every event subject before adding any conversational action. Follow the supplied task_rules literally. When task_rules supplies required_event_prefix, copy that prefix verbatim at the beginning of Shot 2; do not paraphrase, shorten, or replace it. Use the supplied skeleton as the narrative basis. Preserve its concrete topic, disagreement or question; do not flatten everything into an unspecified conversation. Adapt the real interaction to the frozen task; remove original events not in the contracts. All additional actions must be conversational. Adapt cooking or food delivery in the source to discussion OF that plan, never starting the work, deciding to deliver food or asking to continue chopping. Prefer asks about the recipe / explains the plan / discusses sharing breakfast. Keep the PUBLIC story at the level of an ordinary topic such as a riddle, a dinner invitation, a holiday plan or breakfast chores. These are examples, not interchangeable topics: choose the closest ordinary equivalent of the supplied skeleton and keep it consistent across shots. A question about a puzzling story stays about that story's puzzle; do not turn it into an unrelated holiday trip. Preserve the concrete question or disagreement, not merely a generic keyword such as story or conversation. Do not retell fictional specifics, fantastical objects or distinctive comparisons. Do not use analysis jargon such as premise, narrative structure or physical logic. State changes added for the experiment are adaptations, not source facts. Each beat must contain only plot-relevant actions in plain verbs such as tells, asks, answers, or replies. Do not add posture, gaze, facial expressions, hand gestures, prop handling, or decorative adverbs. Do not list the other contracted subjects again merely as the audience or recipients of an action. In Shot 1, only Subject A performs a plot action; do not mention the other subjects in that beat, because the renderer will still establish their identities and seats from the mention contract. Keep the remaining exchange to a direct question, answer, or reply without explanatory qualifiers. Beats contain no appearance redesign, camera, framing, duration, timestamp, or generation language.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "alice_seats",
+        "archetype": "café conversation",
+        "premise": "A table reshuffles seating before an attendee raises logical objections to an absurd story being narrated, facing collective dismissals and insistence that the tale proceed without further interruption.",
+        "interaction_arc": "The group shifts positions around the table, worsening the arrangement for one member. Once settled, the newcomer questions the physical possibility of drawing substances from an impossible source within a recounted story. A companion brushes aside the objection with a sharp retort, while the primary speaker continues describing the bizarre details. When the listener questions another arbitrary constraint in the story, the group dismisses the inquiry and prods the storyteller to resume despite drowsiness."
+      },
+      "casting": {
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "woman",
+            "clothing": "green shirt"
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "orange shirt"
+          },
+          {
+            "id": "C",
+            "gender": "man",
+            "clothing": "white shirt"
+          }
+        ]
+      },
+      "source_topic_terms": [
+        "story",
+        "interruption"
+      ],
+      "layout": {
+        "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_right": "the counter-side window seat",
+          "window_left": "the plant-side window seat",
+          "table_left_end": "the plant-end seat"
+        }
+      },
+      "shot_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "camera": "establish",
+          "events": []
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "camera": "partial_pair",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "camera": "partial_first",
+          "events": []
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "camera": "probe_overhead",
+          "events": []
+        }
+      ],
+      "task_rules": {
+        "opening": "Shot 1 is one concise sentence beginning with 'Subject A'. It must not contain any of these tokens: Subject B, Subject C.",
+        "event_shot": "Shot 2 begins by expressing its supplied event and naming every event subject.",
+        "final": "The final beat names only subjects in its mentioned array and does not restate any probe subject or final state.",
+        "required_event_prefix": "Subject A and Subject B exchange their established seats."
+      }
+    },
+    "temperature": 0.2,
+    "output": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A questions the strange details of the puzzling story.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject A and Subject B exchange their established seats. Subject B dismisses the objection, and Subject A asks for clarification.",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "beat": "Subject B demands that the story continue without interruption.",
+          "events": []
+        },
+        {
+          "index": 4,
+          "beat": "Subject A asks about the odd explanation.",
+          "events": []
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "story_planning",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846412-tGifJ0yZensDxa7Hmp02",
+      "usage": {
+        "prompt_tokens": 1180,
+        "completion_tokens": 877,
+        "total_tokens": 2057,
+        "cost": 0.00417375,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00417375,
+          "upstream_inference_prompt_cost": 0.000885,
+          "upstream_inference_completions_cost": 0.00328875
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 697,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "prompt_rendering",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "content_prompt",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4
+              },
+              "content": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Only story-world content, with no camera or duration language."
+              }
+            },
+            "required": [
+              "index",
+              "content"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You write only the Content field for exactly 4 approved benchmark shots. Camera Viewpoint text is supplied deterministically elsewhere. For each shot, mention every subject in its mentioned array using that subject's gender and clothing color, and mention no other subject. Use the shortest natural wording that preserves the required facts, not cinematic prose. Keep the topic to a short familiar label such as a riddle or dinner invitation, not the original literary particulars. Do not retell a story within the story or add analysis jargon such as premise. State each contracted subject's identity anchor exactly once per shot. Begin Shot 1 with the supplied public_intro verbatim as a short standalone scene introduction. Only after that sentence, introduce the subjects. Then combine each identity, named seat, and any approved action within the same introduction; never repeat an identity to state that person's action. Subjects without an approved Shot 1 action receive only identity and seat; do not invent actions for them. Use the supplied compact seat labels without expanding them into landmarks. The scene introduction supplies only the venue; do not add any other background description or repeat geometry already expressed by the fixed Viewpoint. Later shots describe only the contracted subjects and their approved plot-relevant action. Never add posture, gaze, expressions, hand gestures, prop handling, or decorative adverbs. Never invent hair, stable facial features, age, or accessory details. Render each supplied event explicitly and concisely. When derived_contracts gives a non-null required_content_prefix, copy it verbatim at the beginning of that Content. This sentence establishes both entering and sitting; use pronouns if that subject has another action instead of repeating the anchor. For exit, state that the subject leaves their seat and exits the venue. For swap, name the two identities and say they exchange seats. Updates must NOT repeat any landmark or named-seat label: refer to the subjects' actual original places. Entry takes the unique empty place. Do not add people, state changes, seat changes, camera language, or facts not present in the plan. The final shot must not repeat any seat assignment or state answer, even for its mentioned subject. It deliberately omits every subject listed in probe, whether that subject is expected present or absent. Never name, describe, count, or indirectly refer to an omitted probe subject. Do not say everyone or all three remain present. Never include durations, timestamps, frame rate, resolution, or generation parameters.",
+    "input_value": {
+      "source_topic_terms": [
+        "story",
+        "interruption"
+      ],
+      "layout": {
+        "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_right": "the counter-side window seat",
+          "window_left": "the plant-side window seat",
+          "table_left_end": "the plant-end seat"
+        }
+      },
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "green shirt",
+          "appearance": "a woman in a green shirt",
+          "seat": "window_right",
+          "initially_present": true
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "orange shirt",
+          "appearance": "a man in an orange shirt",
+          "seat": "window_left",
+          "initially_present": true
+        },
+        {
+          "id": "C",
+          "gender": "man",
+          "clothing": "white shirt",
+          "appearance": "a man in a white shirt",
+          "seat": "table_left_end",
+          "initially_present": true
+        }
+      ],
+      "shots": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "beat": "Subject A questions the strange details of the puzzling story.",
+          "events": [],
+          "camera": "establish"
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "beat": "Subject A and Subject B exchange their established seats. Subject B dismisses the objection, and Subject A asks for clarification.",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ],
+          "camera": "partial_pair"
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "beat": "Subject B demands that the story continue without interruption.",
+          "events": [],
+          "camera": "partial_first"
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "beat": "Subject A asks about the odd explanation.",
+          "events": [],
+          "camera": "probe_overhead"
+        }
+      ],
+      "derived_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "establish",
+          "required_content_prefix": null
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_pair",
+          "required_content_prefix": null
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "expected_visible": [
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_first",
+          "required_content_prefix": null
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [
+            "B",
+            "C"
+          ],
+          "probe_expectations": [
+            {
+              "subject": "B",
+              "present": true,
+              "seat": "window_right"
+            },
+            {
+              "subject": "C",
+              "present": true,
+              "seat": "table_left_end"
+            }
+          ],
+          "camera": "probe_overhead",
+          "required_content_prefix": null
+        }
+      ]
+    },
+    "temperature": 0.3,
+    "output": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and questions the strange details of the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat."
+        },
+        {
+          "index": 2,
+          "content": "The woman in the green shirt and the man in the orange shirt exchange seats. The man in the orange shirt dismisses the objection, and the woman in the green shirt asks for clarification."
+        },
+        {
+          "index": 3,
+          "content": "The man in the orange shirt demands that the story continue without interruption."
+        },
+        {
+          "index": 4,
+          "content": "The woman in the green shirt asks about the odd explanation."
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846416-ahkJLJW4joEEVF5z1vlR",
+      "usage": {
+        "prompt_tokens": 1239,
+        "completion_tokens": 772,
+        "total_tokens": 2011,
+        "cost": 0.00382425,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00382425,
+          "upstream_inference_prompt_cost": 0.00092925,
+          "upstream_inference_completions_cost": 0.002895
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 551,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "prompt_rendering",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "content_prompt",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4
+              },
+              "content": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Only story-world content, with no camera or duration language."
+              }
+            },
+            "required": [
+              "index",
+              "content"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You write only the Content field for exactly 4 approved benchmark shots. Camera Viewpoint text is supplied deterministically elsewhere. For each shot, mention every subject in its mentioned array using that subject's gender and clothing color, and mention no other subject. Use the shortest natural wording that preserves the required facts, not cinematic prose. Keep the topic to a short familiar label such as a riddle or dinner invitation, not the original literary particulars. Do not retell a story within the story or add analysis jargon such as premise. State each contracted subject's identity anchor exactly once per shot. Begin Shot 1 with the supplied public_intro verbatim as a short standalone scene introduction. Only after that sentence, introduce the subjects. Then combine each identity, named seat, and any approved action within the same introduction; never repeat an identity to state that person's action. Subjects without an approved Shot 1 action receive only identity and seat; do not invent actions for them. Use the supplied compact seat labels without expanding them into landmarks. The scene introduction supplies only the venue; do not add any other background description or repeat geometry already expressed by the fixed Viewpoint. Later shots describe only the contracted subjects and their approved plot-relevant action. Never add posture, gaze, expressions, hand gestures, prop handling, or decorative adverbs. Never invent hair, stable facial features, age, or accessory details. Render each supplied event explicitly and concisely. When derived_contracts gives a non-null required_content_prefix, copy it verbatim at the beginning of that Content. This sentence establishes both entering and sitting; use pronouns if that subject has another action instead of repeating the anchor. For exit, state that the subject leaves their seat and exits the venue. For swap, name the two identities and say they exchange seats. Updates must NOT repeat any landmark or named-seat label: refer to the subjects' actual original places. Entry takes the unique empty place. Do not add people, state changes, seat changes, camera language, or facts not present in the plan. The final shot must not repeat any seat assignment or state answer, even for its mentioned subject. It deliberately omits every subject listed in probe, whether that subject is expected present or absent. Never name, describe, count, or indirectly refer to an omitted probe subject. Do not say everyone or all three remain present. Never include durations, timestamps, frame rate, resolution, or generation parameters.",
+    "input_value": {
+      "source_topic_terms": [
+        "story",
+        "interruption"
+      ],
+      "layout": {
+        "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_right": "the counter-side window seat",
+          "window_left": "the plant-side window seat",
+          "table_left_end": "the plant-end seat"
+        }
+      },
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "green shirt",
+          "appearance": "a woman in a green shirt",
+          "seat": "window_right",
+          "initially_present": true
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "orange shirt",
+          "appearance": "a man in an orange shirt",
+          "seat": "window_left",
+          "initially_present": true
+        },
+        {
+          "id": "C",
+          "gender": "man",
+          "clothing": "white shirt",
+          "appearance": "a man in a white shirt",
+          "seat": "table_left_end",
+          "initially_present": true
+        }
+      ],
+      "shots": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "beat": "Subject A questions the strange details of the puzzling story.",
+          "events": [],
+          "camera": "establish"
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "beat": "Subject A and Subject B exchange their established seats. Subject B dismisses the objection, and Subject A asks for clarification.",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ],
+          "camera": "partial_pair"
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "beat": "Subject B demands that the story continue without interruption.",
+          "events": [],
+          "camera": "partial_first"
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "beat": "Subject A asks about the odd explanation.",
+          "events": [],
+          "camera": "probe_overhead"
+        }
+      ],
+      "derived_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "establish",
+          "required_content_prefix": null
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_pair",
+          "required_content_prefix": null
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "expected_visible": [
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_first",
+          "required_content_prefix": null
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [
+            "B",
+            "C"
+          ],
+          "probe_expectations": [
+            {
+              "subject": "B",
+              "present": true,
+              "seat": "window_right"
+            },
+            {
+              "subject": "C",
+              "present": true,
+              "seat": "table_left_end"
+            }
+          ],
+          "camera": "probe_overhead",
+          "required_content_prefix": null
+        }
+      ],
+      "revision_required": [
+        "Shot 2 repeats subject A's identity anchor; state it once and combine it with the seat or action.",
+        "Shot 2 repeats subject B's identity anchor; state it once and combine it with the seat or action."
+      ],
+      "previous_invalid_output": {
+        "shots": [
+          {
+            "index": 1,
+            "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and questions the strange details of the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat."
+          },
+          {
+            "index": 2,
+            "content": "The woman in the green shirt and the man in the orange shirt exchange seats. The man in the orange shirt dismisses the objection, and the woman in the green shirt asks for clarification."
+          },
+          {
+            "index": 3,
+            "content": "The man in the orange shirt demands that the story continue without interruption."
+          },
+          {
+            "index": 4,
+            "content": "The woman in the green shirt asks about the odd explanation."
+          }
+        ]
+      }
+    },
+    "temperature": 0.3,
+    "output": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and questions the strange details of the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat."
+        },
+        {
+          "index": 2,
+          "content": "The woman in the green shirt and the man in the orange shirt exchange seats, after which he dismisses the objection and she asks for clarification."
+        },
+        {
+          "index": 3,
+          "content": "The man in the orange shirt demands that the story continue without interruption."
+        },
+        {
+          "index": 4,
+          "content": "The woman in the green shirt asks about the odd explanation."
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "prompt_rendering",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846419-2FdOK2hw1OZGsJOeVuYZ",
+      "usage": {
+        "prompt_tokens": 1497,
+        "completion_tokens": 1011,
+        "total_tokens": 2508,
+        "cost": 0.004914,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.004914,
+          "upstream_inference_prompt_cost": 0.00112275,
+          "upstream_inference_completions_cost": 0.00379125
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 799,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "prompt_audit",
+    "model": "openai/gpt-5.6-luna",
+    "schema_name": "prompt_audit",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "passed": {
+          "type": "boolean"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "story",
+                  "camera",
+                  "prompt"
+                ]
+              },
+              "message": {
+                "type": "string",
+                "minLength": 1,
+                "description": "One concise blocking issue."
+              }
+            },
+            "required": [
+              "stage",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "passed",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You are the strict final auditor for a controlled world-state benchmark. The supplied layout and camera presets are construction contracts, not proof of actual video compliance. For every shot, compare mentioned, expected_visible, probe, Content, and Viewpoint. Content must clearly describe exactly the subjects in mentioned and no others. Subject identity must use only the approved gender and clothing-color anchors; reject invented hair, stable facial features, age, or accessory details. Each identity anchor may appear only once per shot. Shot 1 must begin with layout.public_intro before any subject is introduced. This exact short scene sentence has already passed deterministic validation; do not remove or expand it. Shot 1 seat-label presence, exact wording, and compactness have already passed a deterministic validator. The public labels are the natural-language values in layout.seats, not internal keys such as window_left. Do not report an issue merely because these required seat labels appear. Report a seat issue only when Content clearly pairs a subject with a different subject's supplied seat. Every subject in Shot 1's mentioned array must be introduced once with an identity anchor and seat; these required introductions are not a redundant audience list and must never be rejected merely because only Subject A acts. In an opening introduction, sits/seated/is at a named seat ESTABLISHES a required location; it is not decorative posture and is allowed for EVERY initially present subject. Entry's enters-and-sits sentence is also a required state event, never decoration. Reject repeated anchors or actual audience lists added after those required introductions. Content must contain only plot-relevant actions; reject decorative posture, gaze, expressions, hand gestures, prop handling, and adverbs. Physical cooking, serving or cleaning must not be introduced; people may discuss these topics while seated. Do not accept final wording that initiates an unplanned physical task or implies the speaker is alone. Only the opening wide states its origin and layout. The final wide uses a standard reverse or top-down instruction without any seat inventory or required orientation landmarks. Naming the interaction area itself (table, coffee table, kitchen island) is explicitly allowed and necessary; it is NOT a forbidden landmark. For example, 'Reverse wide shot of the coffee table.' and 'Top-down wide shot directly above the kitchen island.' are allowed. Reject required shelf/window/seat-coverage lists, not the name of the filmed interaction area. Intermediate partial views need only a short focal framing phrase; do not demand lens, height, angle, or crop parameters. Compare the story to source.excerpt and skeleton: retain a recognizable topic or interaction, but allow the documented task adaptation and new human cast. Reject source-attribution claims invented by the writer. Every frozen event must be explicit. Updates use identities and their original places, never compact seat labels or landmarks. Entry takes the unique empty place established in Shot 1; Exit leaves the seat and venue; Swap exchanges the named subjects' seats. A subject in probe must not be named, described, counted, or indirectly mentioned in final Content. Read probe_expectations for its required final presence and seat. The score checks count and positions for ALL occupants in the final wide, not just unmentioned probes. Mentioned subjects may act without repeating their seat. An absent probe correctly does not appear in expected_visible; do not treat that as an inconsistency. The final Viewpoint must cover every probe subject's established or expected seat. This deliberate omission is the benchmark test, not an error. Reject duration, timestamp, frame-rate, resolution, or generation language. If passed is true, issues must be empty. Classify a broken story beat as story, an ambiguous or inconsistent template/view as camera, and public wording as prompt. Actual opening screenshots, not prescribed identity-to-seat assignments, will supply the evaluation reference. Check narrative continuity against the skeleton: ordinary adaptation is allowed, but changing its discussion into an unrelated topic is not. A shared generic keyword alone does not establish source fidelity.",
+    "input_value": {
+      "source": {
+        "id": "alice_seats",
+        "title": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
+        "year": 1865,
+        "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+        "locator": "Chapter VII: A Mad Tea-Party",
+        "start_text": "I want a clean cup",
+        "scenes": [
+          "café"
+        ],
+        "topic_terms": [
+          "story",
+          "interruption"
+        ],
+        "excerpt": "I want a clean cup,” interrupted the Hatter: “let’s all move one place on.” He moved on as he spoke, and the Dormouse followed him: the March Hare moved into the Dormouse’s place, and Alice rather unwillingly took the place of the March Hare. The Hatter was the only one who got any advantage from the change: and Alice was a good deal worse off than before, as the March Hare had just upset the milk-jug into his plate. Alice did not wish to offend the Dormouse again, so she began very cautiously: “But I don’t understand. Where did they draw the treacle from?” “You can draw water out of a water-well,” said the Hatter; “so I should think you could draw treacle out of a treacle-well—eh, stupid?” “But they were in the well,” Alice said to the Dormouse, not choosing to notice this last remark. “Of course they were,” said the Dormouse; “—well in.” This answer so confused poor Alice, that she let the Dormouse go on for some time without interrupting it. “They were learning to draw,” the Dormouse went on, yawning and rubbing its eyes, for it was getting very sleepy; “and they drew all manner of things—everything that begins with an M—” “Why with an M?” said Alice. “Why not?” said the March Hare. Alice was silent. The Dormouse had closed its eyes by this time, and was going off into a doze; but, on being pinched by the Hatter, it woke up again with a little shriek, and went on: “—that begins with an M, such as mouse-traps, and the moon, and memory, and muchness—you know you say things are “much of a muchness”—did you ever see such a thing as a drawing of a muchness?” “Really, now you ask me,” said Alice, very much",
+        "excerpt_sha256": "03864b20f160924c99acf3c61ff9b5082addcd9eecd79d079621b6495213f4a5",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "café conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      },
+      "skeleton": {
+        "source_id": "alice_seats",
+        "archetype": "café conversation",
+        "premise": "A table reshuffles seating before an attendee raises logical objections to an absurd story being narrated, facing collective dismissals and insistence that the tale proceed without further interruption.",
+        "interaction_arc": "The group shifts positions around the table, worsening the arrangement for one member. Once settled, the newcomer questions the physical possibility of drawing substances from an impossible source within a recounted story. A companion brushes aside the objection with a sharp retort, while the primary speaker continues describing the bizarre details. When the listener questions another arbitrary constraint in the story, the group dismisses the inquiry and prods the storyteller to resume despite drowsiness."
+      },
+      "layout": {
+        "id": "cafe_rect_table_3_overhead_r1_v3_1",
+        "scene_type": "café",
+        "archetype": "café conversation",
+        "story_venue": "a café seating area",
+        "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_right": "the counter-side window seat",
+          "window_left": "the plant-side window seat",
+          "table_left_end": "the plant-end seat"
+        },
+        "seat_order": [
+          "window_right",
+          "window_left",
+          "table_left_end"
+        ],
+        "cameras": {
+          "establish": {
+            "framing": "wide",
+            "view_direction": "counter_to_plant",
+            "public_view": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and the plant-end seat and the floor plant in frame.",
+            "visible_seats": [
+              "window_left",
+              "window_right",
+              "table_left_end"
+            ]
+          },
+          "partial_pair": {
+            "framing": "two_shot",
+            "public_view": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats.",
+            "visible_seats": [
+              "window_right",
+              "window_left"
+            ]
+          },
+          "partial_first": {
+            "framing": "close_up",
+            "public_view": "Close-up from the aisle side, centered on the person at the counter-side window seat.",
+            "visible_seats": [
+              "window_right"
+            ]
+          },
+          "partial_second": {
+            "framing": "close_up",
+            "public_view": "Close-up from the aisle side, centered on the person at the plant-side window seat.",
+            "visible_seats": [
+              "window_left"
+            ]
+          },
+          "probe_reverse": {
+            "framing": "wide",
+            "view_direction": "plant_to_counter",
+            "public_view": "Reverse wide shot of the rectangular table.",
+            "visible_seats": [
+              "window_left",
+              "window_right",
+              "table_left_end"
+            ]
+          },
+          "probe_overhead": {
+            "framing": "wide",
+            "view_direction": "overhead",
+            "public_view": "Top-down wide shot directly above the rectangular table.",
+            "visible_seats": [
+              "window_left",
+              "window_right",
+              "table_left_end"
+            ]
+          }
+        },
+        "grammar": {
+          "opening_camera": "establish",
+          "partial_cameras": [
+            "partial_pair",
+            "partial_first",
+            "partial_second"
+          ],
+          "probe_camera": "probe_overhead",
+          "probe_focus_seats": [
+            "window_right",
+            "window_left"
+          ]
+        },
+        "version": "3.1"
+      },
+      "episode": {
+        "id": "WL-CORE-CAFE-SWAP-3P-TOP-4S",
+        "task": "position_swap",
+        "layout": "cafe_rect_table_3_overhead_r1_v3_1",
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "woman",
+            "clothing": "green shirt",
+            "appearance": "a woman in a green shirt",
+            "seat": "window_right",
+            "initially_present": true
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "orange shirt",
+            "appearance": "a man in an orange shirt",
+            "seat": "window_left",
+            "initially_present": true
+          },
+          {
+            "id": "C",
+            "gender": "man",
+            "clothing": "white shirt",
+            "appearance": "a man in a white shirt",
+            "seat": "table_left_end",
+            "initially_present": true
+          }
+        ],
+        "shots": [
+          {
+            "index": 1,
+            "mentioned": [
+              "A",
+              "B",
+              "C"
+            ],
+            "beat": "Subject A questions the strange details of the puzzling story.",
+            "events": [],
+            "camera": "establish",
+            "prompt": {
+              "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and questions the strange details of the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat.",
+              "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and the plant-end seat and the floor plant in frame."
+            }
+          },
+          {
+            "index": 2,
+            "mentioned": [
+              "A",
+              "B"
+            ],
+            "beat": "Subject A and Subject B exchange their established seats. Subject B dismisses the objection, and Subject A asks for clarification.",
+            "events": [
+              {
+                "subject": "A",
+                "action": "swap",
+                "with_subject": "B"
+              }
+            ],
+            "camera": "partial_pair",
+            "prompt": {
+              "content": "The woman in the green shirt and the man in the orange shirt exchange seats, after which he dismisses the objection and she asks for clarification.",
+              "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+            }
+          },
+          {
+            "index": 3,
+            "mentioned": [
+              "B"
+            ],
+            "beat": "Subject B demands that the story continue without interruption.",
+            "events": [],
+            "camera": "partial_first",
+            "prompt": {
+              "content": "The man in the orange shirt demands that the story continue without interruption.",
+              "viewpoint": "Close-up from the aisle side, centered on the person at the counter-side window seat."
+            }
+          },
+          {
+            "index": 4,
+            "mentioned": [
+              "A"
+            ],
+            "beat": "Subject A asks about the odd explanation.",
+            "events": [],
+            "camera": "probe_overhead",
+            "prompt": {
+              "content": "The woman in the green shirt asks about the odd explanation.",
+              "viewpoint": "Top-down wide shot directly above the rectangular table."
+            }
+          }
+        ]
+      },
+      "derived_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "establish",
+          "required_content_prefix": null
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_pair",
+          "required_content_prefix": null
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "expected_visible": [
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_first",
+          "required_content_prefix": null
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [
+            "B",
+            "C"
+          ],
+          "probe_expectations": [
+            {
+              "subject": "B",
+              "present": true,
+              "seat": "window_right"
+            },
+            {
+              "subject": "C",
+              "present": true,
+              "seat": "table_left_end"
+            }
+          ],
+          "camera": "probe_overhead",
+          "required_content_prefix": null
+        }
+      ],
+      "public_prompt": {
+        "id": "WL-CORE-CAFE-SWAP-3P-TOP-4S",
+        "shots": [
+          {
+            "index": 1,
+            "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and questions the strange details of the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat.",
+            "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and the plant-end seat and the floor plant in frame."
+          },
+          {
+            "index": 2,
+            "content": "The woman in the green shirt and the man in the orange shirt exchange seats, after which he dismisses the objection and she asks for clarification.",
+            "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+          },
+          {
+            "index": 3,
+            "content": "The man in the orange shirt demands that the story continue without interruption.",
+            "viewpoint": "Close-up from the aisle side, centered on the person at the counter-side window seat."
+          },
+          {
+            "index": 4,
+            "content": "The woman in the green shirt asks about the odd explanation.",
+            "viewpoint": "Top-down wide shot directly above the rectangular table."
+          }
+        ]
+      }
+    },
+    "temperature": null,
+    "output": {
+      "passed": false,
+      "issues": [
+        {
+          "stage": "story",
+          "message": "Shot 1 has Subject A question the story before the seating reshuffle, but the skeleton requires the group to shift positions first and the newcomer to raise objections afterward."
+        },
+        {
+          "stage": "prompt",
+          "message": "Shot 2 says the subjects exchange seats without stating their original places; the update must identify the counter-side window seat and plant-side window seat associated with the two subjects."
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1788846423-sBBRgZXAJX5CZrGrqb6J",
+      "usage": {
+        "prompt_tokens": 3455,
+        "completion_tokens": 1653,
+        "total_tokens": 5108,
+        "cost": 0.0028472,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3452,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0028472,
+          "upstream_inference_prompt_cost": 0.0008636,
+          "upstream_inference_completions_cost": 0.0019836
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1552,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "story_repair",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "story_beats",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4
+              },
+              "beat": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Story actions performed only by mentioned subjects."
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "subject": {
+                      "type": "string",
+                      "enum": [
+                        "A",
+                        "B",
+                        "C"
+                      ]
+                    },
+                    "action": {
+                      "type": "string",
+                      "enum": [
+                        "enter",
+                        "exit",
+                        "swap"
+                      ]
+                    },
+                    "with_subject": {
+                      "type": "string",
+                      "enum": [
+                        "A",
+                        "B",
+                        "C"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "subject",
+                    "action"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "index",
+              "beat",
+              "events"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You plan story-world beats for a controlled multi-shot world-state benchmark. Return exactly 4 ordered shots. The supplied casting, layout, seats, camera plan, and per-shot mention contracts are fixed and cannot be changed. Every beat may assign actions only to the subjects listed in that shot's mentioned array. Never refer to another subject, even indirectly as a third person, listener, group, or everyone. Copy every supplied events array exactly. Events are frozen: enter means the named subject enters and takes that subject's established seat; exit means the named subject leaves that seat and exits; swap means the two named subjects exchange their established seats. State each supplied event explicitly in that shot's beat and invent no other entry, exit, or seat change. When a shot has a non-empty events array, begin its beat with that event and explicitly name every event subject before adding any conversational action. Follow the supplied task_rules literally. When task_rules supplies required_event_prefix, copy that prefix verbatim at the beginning of Shot 2; do not paraphrase, shorten, or replace it. Use the supplied skeleton as the narrative basis. Preserve its concrete topic, disagreement or question; do not flatten everything into an unspecified conversation. Adapt the real interaction to the frozen task; remove original events not in the contracts. All additional actions must be conversational. Adapt cooking or food delivery in the source to discussion OF that plan, never starting the work, deciding to deliver food or asking to continue chopping. Prefer asks about the recipe / explains the plan / discusses sharing breakfast. Keep the PUBLIC story at the level of an ordinary topic such as a riddle, a dinner invitation, a holiday plan or breakfast chores. These are examples, not interchangeable topics: choose the closest ordinary equivalent of the supplied skeleton and keep it consistent across shots. A question about a puzzling story stays about that story's puzzle; do not turn it into an unrelated holiday trip. Preserve the concrete question or disagreement, not merely a generic keyword such as story or conversation. Do not retell fictional specifics, fantastical objects or distinctive comparisons. Do not use analysis jargon such as premise, narrative structure or physical logic. State changes added for the experiment are adaptations, not source facts. Each beat must contain only plot-relevant actions in plain verbs such as tells, asks, answers, or replies. Do not add posture, gaze, facial expressions, hand gestures, prop handling, or decorative adverbs. Do not list the other contracted subjects again merely as the audience or recipients of an action. In Shot 1, only Subject A performs a plot action; do not mention the other subjects in that beat, because the renderer will still establish their identities and seats from the mention contract. Keep the remaining exchange to a direct question, answer, or reply without explanatory qualifiers. Beats contain no appearance redesign, camera, framing, duration, timestamp, or generation language.",
+    "input_value": {
+      "skeleton": {
+        "source_id": "alice_seats",
+        "archetype": "café conversation",
+        "premise": "A table reshuffles seating before an attendee raises logical objections to an absurd story being narrated, facing collective dismissals and insistence that the tale proceed without further interruption.",
+        "interaction_arc": "The group shifts positions around the table, worsening the arrangement for one member. Once settled, the newcomer questions the physical possibility of drawing substances from an impossible source within a recounted story. A companion brushes aside the objection with a sharp retort, while the primary speaker continues describing the bizarre details. When the listener questions another arbitrary constraint in the story, the group dismisses the inquiry and prods the storyteller to resume despite drowsiness."
+      },
+      "casting": {
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "woman",
+            "clothing": "green shirt"
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "orange shirt"
+          },
+          {
+            "id": "C",
+            "gender": "man",
+            "clothing": "white shirt"
+          }
+        ]
+      },
+      "source_topic_terms": [
+        "story",
+        "interruption"
+      ],
+      "layout": {
+        "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_right": "the counter-side window seat",
+          "window_left": "the plant-side window seat",
+          "table_left_end": "the plant-end seat"
+        }
+      },
+      "shot_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "camera": "establish",
+          "events": []
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "camera": "partial_pair",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "camera": "partial_first",
+          "events": []
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "camera": "probe_overhead",
+          "events": []
+        }
+      ],
+      "task_rules": {
+        "opening": "Shot 1 is one concise sentence beginning with 'Subject A'. It must not contain any of these tokens: Subject B, Subject C.",
+        "event_shot": "Shot 2 begins by expressing its supplied event and naming every event subject.",
+        "final": "The final beat names only subjects in its mentioned array and does not restate any probe subject or final state.",
+        "required_event_prefix": "Subject A and Subject B exchange their established seats."
+      },
+      "previous_beat_plan": {
+        "shots": [
+          {
+            "index": 1,
+            "beat": "Subject A questions the strange details of the puzzling story.",
+            "events": []
+          },
+          {
+            "index": 2,
+            "beat": "Subject A and Subject B exchange their established seats. Subject B dismisses the objection, and Subject A asks for clarification.",
+            "events": [
+              {
+                "subject": "A",
+                "action": "swap",
+                "with_subject": "B"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "beat": "Subject B demands that the story continue without interruption.",
+            "events": []
+          },
+          {
+            "index": 4,
+            "beat": "Subject A asks about the odd explanation.",
+            "events": []
+          }
+        ]
+      },
+      "revision_required": [
+        "Shot 1 has Subject A question the story before the seating reshuffle, but the skeleton requires the group to shift positions first and the newcomer to raise objections afterward."
+      ]
+    },
+    "temperature": 0.2,
+    "output": {
+      "shots": [
+        {
+          "index": 1,
+          "beat": "Subject A listens to the puzzling story.",
+          "events": []
+        },
+        {
+          "index": 2,
+          "beat": "Subject A and Subject B exchange their established seats. Subject A questions the impossible details in the story, and Subject B dismisses the objection.",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "beat": "Subject B insists that the story proceed without interruption.",
+          "events": []
+        },
+        {
+          "index": 4,
+          "beat": "Subject A questions another strange constraint in the story.",
+          "events": []
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "story_repair",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846445-HXCeJsuolyhOWBiAGbBx",
+      "usage": {
+        "prompt_tokens": 1320,
+        "completion_tokens": 1113,
+        "total_tokens": 2433,
+        "cost": 0.00516375,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00516375,
+          "upstream_inference_prompt_cost": 0.00099,
+          "upstream_inference_completions_cost": 0.00417375
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 907,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "prompt_repair",
+    "model": "google/gemini-3.7-flash",
+    "schema_name": "content_prompt",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4
+              },
+              "content": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Only story-world content, with no camera or duration language."
+              }
+            },
+            "required": [
+              "index",
+              "content"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You write only the Content field for exactly 4 approved benchmark shots. Camera Viewpoint text is supplied deterministically elsewhere. For each shot, mention every subject in its mentioned array using that subject's gender and clothing color, and mention no other subject. Use the shortest natural wording that preserves the required facts, not cinematic prose. Keep the topic to a short familiar label such as a riddle or dinner invitation, not the original literary particulars. Do not retell a story within the story or add analysis jargon such as premise. State each contracted subject's identity anchor exactly once per shot. Begin Shot 1 with the supplied public_intro verbatim as a short standalone scene introduction. Only after that sentence, introduce the subjects. Then combine each identity, named seat, and any approved action within the same introduction; never repeat an identity to state that person's action. Subjects without an approved Shot 1 action receive only identity and seat; do not invent actions for them. Use the supplied compact seat labels without expanding them into landmarks. The scene introduction supplies only the venue; do not add any other background description or repeat geometry already expressed by the fixed Viewpoint. Later shots describe only the contracted subjects and their approved plot-relevant action. Never add posture, gaze, expressions, hand gestures, prop handling, or decorative adverbs. Never invent hair, stable facial features, age, or accessory details. Render each supplied event explicitly and concisely. When derived_contracts gives a non-null required_content_prefix, copy it verbatim at the beginning of that Content. This sentence establishes both entering and sitting; use pronouns if that subject has another action instead of repeating the anchor. For exit, state that the subject leaves their seat and exits the venue. For swap, name the two identities and say they exchange seats. Updates must NOT repeat any landmark or named-seat label: refer to the subjects' actual original places. Entry takes the unique empty place. Do not add people, state changes, seat changes, camera language, or facts not present in the plan. The final shot must not repeat any seat assignment or state answer, even for its mentioned subject. It deliberately omits every subject listed in probe, whether that subject is expected present or absent. Never name, describe, count, or indirectly refer to an omitted probe subject. Do not say everyone or all three remain present. Never include durations, timestamps, frame rate, resolution, or generation parameters.",
+    "input_value": {
+      "source_topic_terms": [
+        "story",
+        "interruption"
+      ],
+      "layout": {
+        "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_right": "the counter-side window seat",
+          "window_left": "the plant-side window seat",
+          "table_left_end": "the plant-end seat"
+        }
+      },
+      "subjects": [
+        {
+          "id": "A",
+          "gender": "woman",
+          "clothing": "green shirt",
+          "appearance": "a woman in a green shirt",
+          "seat": "window_right",
+          "initially_present": true
+        },
+        {
+          "id": "B",
+          "gender": "man",
+          "clothing": "orange shirt",
+          "appearance": "a man in an orange shirt",
+          "seat": "window_left",
+          "initially_present": true
+        },
+        {
+          "id": "C",
+          "gender": "man",
+          "clothing": "white shirt",
+          "appearance": "a man in a white shirt",
+          "seat": "table_left_end",
+          "initially_present": true
+        }
+      ],
+      "shots": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "beat": "Subject A listens to the puzzling story.",
+          "events": [],
+          "camera": "establish"
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "beat": "Subject A and Subject B exchange their established seats. Subject A questions the impossible details in the story, and Subject B dismisses the objection.",
+          "events": [
+            {
+              "subject": "A",
+              "action": "swap",
+              "with_subject": "B"
+            }
+          ],
+          "camera": "partial_pair"
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "beat": "Subject B insists that the story proceed without interruption.",
+          "events": [],
+          "camera": "partial_first"
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "beat": "Subject A questions another strange constraint in the story.",
+          "events": [],
+          "camera": "probe_overhead"
+        }
+      ],
+      "derived_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "establish",
+          "required_content_prefix": null
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_pair",
+          "required_content_prefix": null
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "expected_visible": [
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_first",
+          "required_content_prefix": null
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [
+            "B",
+            "C"
+          ],
+          "probe_expectations": [
+            {
+              "subject": "B",
+              "present": true,
+              "seat": "window_right"
+            },
+            {
+              "subject": "C",
+              "present": true,
+              "seat": "table_left_end"
+            }
+          ],
+          "camera": "probe_overhead",
+          "required_content_prefix": null
+        }
+      ],
+      "previous_prompt": {
+        "shots": [
+          {
+            "index": 1,
+            "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and questions the strange details of the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat."
+          },
+          {
+            "index": 2,
+            "content": "The woman in the green shirt and the man in the orange shirt exchange seats, after which he dismisses the objection and she asks for clarification."
+          },
+          {
+            "index": 3,
+            "content": "The man in the orange shirt demands that the story continue without interruption."
+          },
+          {
+            "index": 4,
+            "content": "The woman in the green shirt asks about the odd explanation."
+          }
+        ]
+      },
+      "revision_required": [
+        "Shot 1 has Subject A question the story before the seating reshuffle, but the skeleton requires the group to shift positions first and the newcomer to raise objections afterward.",
+        "Shot 2 says the subjects exchange seats without stating their original places; the update must identify the counter-side window seat and plant-side window seat associated with the two subjects."
+      ]
+    },
+    "temperature": 0.1,
+    "output": {
+      "shots": [
+        {
+          "index": 1,
+          "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and listens to the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat."
+        },
+        {
+          "index": 2,
+          "content": "A woman in a green shirt and a man in an orange shirt exchange seats; she questions the impossible details in the story, and he dismisses the objection."
+        },
+        {
+          "index": 3,
+          "content": "The man in the orange shirt insists that the story proceed without interruption."
+        },
+        {
+          "index": 4,
+          "content": "The woman in the green shirt questions another strange constraint in the story."
+        }
+      ]
+    },
+    "response_metadata": {
+      "stage": "prompt_repair",
+      "request_model": "google/gemini-3.7-flash",
+      "response_model": "google/gemini-3.7-flash",
+      "response_id": "gen-1788846449-Rubm10xhrmFR1DGz8d7N",
+      "usage": {
+        "prompt_tokens": 1512,
+        "completion_tokens": 1684,
+        "total_tokens": 3196,
+        "cost": 0.007449,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.007449,
+          "upstream_inference_prompt_cost": 0.001134,
+          "upstream_inference_completions_cost": 0.006315
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1470,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "stage": "prompt_audit",
+    "model": "openai/gpt-5.6-luna",
+    "schema_name": "prompt_audit",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "passed": {
+          "type": "boolean"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "story",
+                  "camera",
+                  "prompt"
+                ]
+              },
+              "message": {
+                "type": "string",
+                "minLength": 1,
+                "description": "One concise blocking issue."
+              }
+            },
+            "required": [
+              "stage",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "passed",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "system": "You are the strict final auditor for a controlled world-state benchmark. The supplied layout and camera presets are construction contracts, not proof of actual video compliance. For every shot, compare mentioned, expected_visible, probe, Content, and Viewpoint. Content must clearly describe exactly the subjects in mentioned and no others. Subject identity must use only the approved gender and clothing-color anchors; reject invented hair, stable facial features, age, or accessory details. Each identity anchor may appear only once per shot. Shot 1 must begin with layout.public_intro before any subject is introduced. This exact short scene sentence has already passed deterministic validation; do not remove or expand it. Shot 1 seat-label presence, exact wording, and compactness have already passed a deterministic validator. The public labels are the natural-language values in layout.seats, not internal keys such as window_left. Do not report an issue merely because these required seat labels appear. Report a seat issue only when Content clearly pairs a subject with a different subject's supplied seat. Every subject in Shot 1's mentioned array must be introduced once with an identity anchor and seat; these required introductions are not a redundant audience list and must never be rejected merely because only Subject A acts. In an opening introduction, sits/seated/is at a named seat ESTABLISHES a required location; it is not decorative posture and is allowed for EVERY initially present subject. Entry's enters-and-sits sentence is also a required state event, never decoration. Reject repeated anchors or actual audience lists added after those required introductions. Content must contain only plot-relevant actions; reject decorative posture, gaze, expressions, hand gestures, prop handling, and adverbs. Physical cooking, serving or cleaning must not be introduced; people may discuss these topics while seated. Do not accept final wording that initiates an unplanned physical task or implies the speaker is alone. Only the opening wide states its origin and layout. The final wide uses a standard reverse or top-down instruction without any seat inventory or required orientation landmarks. Naming the interaction area itself (table, coffee table, kitchen island) is explicitly allowed and necessary; it is NOT a forbidden landmark. For example, 'Reverse wide shot of the coffee table.' and 'Top-down wide shot directly above the kitchen island.' are allowed. Reject required shelf/window/seat-coverage lists, not the name of the filmed interaction area. Intermediate partial views need only a short focal framing phrase; do not demand lens, height, angle, or crop parameters. Compare the story to source.excerpt and skeleton: retain a recognizable topic or interaction, but allow the documented task adaptation and new human cast. Reject source-attribution claims invented by the writer. Every frozen event must be explicit. Updates use identities and their original places, never compact seat labels or landmarks. Entry takes the unique empty place established in Shot 1; Exit leaves the seat and venue; Swap exchanges the named subjects' seats. A subject in probe must not be named, described, counted, or indirectly mentioned in final Content. Read probe_expectations for its required final presence and seat. The score checks count and positions for ALL occupants in the final wide, not just unmentioned probes. Mentioned subjects may act without repeating their seat. An absent probe correctly does not appear in expected_visible; do not treat that as an inconsistency. The final Viewpoint must cover every probe subject's established or expected seat. This deliberate omission is the benchmark test, not an error. Reject duration, timestamp, frame-rate, resolution, or generation language. If passed is true, issues must be empty. Classify a broken story beat as story, an ambiguous or inconsistent template/view as camera, and public wording as prompt. Actual opening screenshots, not prescribed identity-to-seat assignments, will supply the evaluation reference. Check narrative continuity against the skeleton: ordinary adaptation is allowed, but changing its discussion into an unrelated topic is not. A shared generic keyword alone does not establish source fidelity.",
+    "input_value": {
+      "source": {
+        "id": "alice_seats",
+        "title": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
+        "year": 1865,
+        "url": "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+        "locator": "Chapter VII: A Mad Tea-Party",
+        "start_text": "I want a clean cup",
+        "scenes": [
+          "café"
+        ],
+        "topic_terms": [
+          "story",
+          "interruption"
+        ],
+        "excerpt": "I want a clean cup,” interrupted the Hatter: “let’s all move one place on.” He moved on as he spoke, and the Dormouse followed him: the March Hare moved into the Dormouse’s place, and Alice rather unwillingly took the place of the March Hare. The Hatter was the only one who got any advantage from the change: and Alice was a good deal worse off than before, as the March Hare had just upset the milk-jug into his plate. Alice did not wish to offend the Dormouse again, so she began very cautiously: “But I don’t understand. Where did they draw the treacle from?” “You can draw water out of a water-well,” said the Hatter; “so I should think you could draw treacle out of a treacle-well—eh, stupid?” “But they were in the well,” Alice said to the Dormouse, not choosing to notice this last remark. “Of course they were,” said the Dormouse; “—well in.” This answer so confused poor Alice, that she let the Dormouse go on for some time without interrupting it. “They were learning to draw,” the Dormouse went on, yawning and rubbing its eyes, for it was getting very sleepy; “and they drew all manner of things—everything that begins with an M—” “Why with an M?” said Alice. “Why not?” said the March Hare. Alice was silent. The Dormouse had closed its eyes by this time, and was going off into a doze; but, on being pinched by the Hatter, it woke up again with a little shriek, and went on: “—that begins with an M, such as mouse-traps, and the moon, and memory, and muchness—you know you say things are “much of a muchness”—did you ever see such a thing as a drawing of a muchness?” “Really, now you ask me,” said Alice, very much",
+        "excerpt_sha256": "03864b20f160924c99acf3c61ff9b5082addcd9eecd79d079621b6495213f4a5",
+        "rights": "Public-domain original text; Project Gutenberg edition. No film adaptation used.",
+        "archetype": "café conversation",
+        "adaptation": "The excerpt supplies the topic and interaction. Human cast, venue, seats and task-specific entry/exit/swap are controlled experimental adaptations, not claims about the original."
+      },
+      "skeleton": {
+        "source_id": "alice_seats",
+        "archetype": "café conversation",
+        "premise": "A table reshuffles seating before an attendee raises logical objections to an absurd story being narrated, facing collective dismissals and insistence that the tale proceed without further interruption.",
+        "interaction_arc": "The group shifts positions around the table, worsening the arrangement for one member. Once settled, the newcomer questions the physical possibility of drawing substances from an impossible source within a recounted story. A companion brushes aside the objection with a sharp retort, while the primary speaker continues describing the bizarre details. When the listener questions another arbitrary constraint in the story, the group dismisses the inquiry and prods the storyteller to resume despite drowsiness."
+      },
+      "layout": {
+        "id": "cafe_rect_table_3_overhead_r1_v3_1",
+        "scene_type": "café",
+        "archetype": "café conversation",
+        "story_venue": "a café seating area",
+        "scene": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "public_intro": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window.",
+        "seats": {
+          "window_right": "the counter-side window seat",
+          "window_left": "the plant-side window seat",
+          "table_left_end": "the plant-end seat"
+        },
+        "seat_order": [
+          "window_right",
+          "window_left",
+          "table_left_end"
+        ],
+        "cameras": {
+          "establish": {
+            "framing": "wide",
+            "view_direction": "counter_to_plant",
+            "public_view": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and the plant-end seat and the floor plant in frame.",
+            "visible_seats": [
+              "window_left",
+              "window_right",
+              "table_left_end"
+            ]
+          },
+          "partial_pair": {
+            "framing": "two_shot",
+            "public_view": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats.",
+            "visible_seats": [
+              "window_right",
+              "window_left"
+            ]
+          },
+          "partial_first": {
+            "framing": "close_up",
+            "public_view": "Close-up from the aisle side, centered on the person at the counter-side window seat.",
+            "visible_seats": [
+              "window_right"
+            ]
+          },
+          "partial_second": {
+            "framing": "close_up",
+            "public_view": "Close-up from the aisle side, centered on the person at the plant-side window seat.",
+            "visible_seats": [
+              "window_left"
+            ]
+          },
+          "probe_reverse": {
+            "framing": "wide",
+            "view_direction": "plant_to_counter",
+            "public_view": "Reverse wide shot of the rectangular table.",
+            "visible_seats": [
+              "window_left",
+              "window_right",
+              "table_left_end"
+            ]
+          },
+          "probe_overhead": {
+            "framing": "wide",
+            "view_direction": "overhead",
+            "public_view": "Top-down wide shot directly above the rectangular table.",
+            "visible_seats": [
+              "window_left",
+              "window_right",
+              "table_left_end"
+            ]
+          }
+        },
+        "grammar": {
+          "opening_camera": "establish",
+          "partial_cameras": [
+            "partial_pair",
+            "partial_first",
+            "partial_second"
+          ],
+          "probe_camera": "probe_overhead",
+          "probe_focus_seats": [
+            "window_right",
+            "window_left"
+          ]
+        },
+        "version": "3.1"
+      },
+      "episode": {
+        "id": "WL-CORE-CAFE-SWAP-3P-TOP-4S",
+        "task": "position_swap",
+        "layout": "cafe_rect_table_3_overhead_r1_v3_1",
+        "subjects": [
+          {
+            "id": "A",
+            "gender": "woman",
+            "clothing": "green shirt",
+            "appearance": "a woman in a green shirt",
+            "seat": "window_right",
+            "initially_present": true
+          },
+          {
+            "id": "B",
+            "gender": "man",
+            "clothing": "orange shirt",
+            "appearance": "a man in an orange shirt",
+            "seat": "window_left",
+            "initially_present": true
+          },
+          {
+            "id": "C",
+            "gender": "man",
+            "clothing": "white shirt",
+            "appearance": "a man in a white shirt",
+            "seat": "table_left_end",
+            "initially_present": true
+          }
+        ],
+        "shots": [
+          {
+            "index": 1,
+            "mentioned": [
+              "A",
+              "B",
+              "C"
+            ],
+            "beat": "Subject A listens to the puzzling story.",
+            "events": [],
+            "camera": "establish",
+            "prompt": {
+              "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and listens to the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat.",
+              "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and the plant-end seat and the floor plant in frame."
+            }
+          },
+          {
+            "index": 2,
+            "mentioned": [
+              "A",
+              "B"
+            ],
+            "beat": "Subject A and Subject B exchange their established seats. Subject A questions the impossible details in the story, and Subject B dismisses the objection.",
+            "events": [
+              {
+                "subject": "A",
+                "action": "swap",
+                "with_subject": "B"
+              }
+            ],
+            "camera": "partial_pair",
+            "prompt": {
+              "content": "A woman in a green shirt and a man in an orange shirt exchange seats; she questions the impossible details in the story, and he dismisses the objection.",
+              "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+            }
+          },
+          {
+            "index": 3,
+            "mentioned": [
+              "B"
+            ],
+            "beat": "Subject B insists that the story proceed without interruption.",
+            "events": [],
+            "camera": "partial_first",
+            "prompt": {
+              "content": "The man in the orange shirt insists that the story proceed without interruption.",
+              "viewpoint": "Close-up from the aisle side, centered on the person at the counter-side window seat."
+            }
+          },
+          {
+            "index": 4,
+            "mentioned": [
+              "A"
+            ],
+            "beat": "Subject A questions another strange constraint in the story.",
+            "events": [],
+            "camera": "probe_overhead",
+            "prompt": {
+              "content": "The woman in the green shirt questions another strange constraint in the story.",
+              "viewpoint": "Top-down wide shot directly above the rectangular table."
+            }
+          }
+        ]
+      },
+      "derived_contracts": [
+        {
+          "index": 1,
+          "mentioned": [
+            "A",
+            "B",
+            "C"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "establish",
+          "required_content_prefix": null
+        },
+        {
+          "index": 2,
+          "mentioned": [
+            "A",
+            "B"
+          ],
+          "expected_visible": [
+            "A",
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_pair",
+          "required_content_prefix": null
+        },
+        {
+          "index": 3,
+          "mentioned": [
+            "B"
+          ],
+          "expected_visible": [
+            "B"
+          ],
+          "probe": [],
+          "probe_expectations": [],
+          "camera": "partial_first",
+          "required_content_prefix": null
+        },
+        {
+          "index": 4,
+          "mentioned": [
+            "A"
+          ],
+          "expected_visible": [
+            "A",
+            "B",
+            "C"
+          ],
+          "probe": [
+            "B",
+            "C"
+          ],
+          "probe_expectations": [
+            {
+              "subject": "B",
+              "present": true,
+              "seat": "window_right"
+            },
+            {
+              "subject": "C",
+              "present": true,
+              "seat": "table_left_end"
+            }
+          ],
+          "camera": "probe_overhead",
+          "required_content_prefix": null
+        }
+      ],
+      "public_prompt": {
+        "id": "WL-CORE-CAFE-SWAP-3P-TOP-4S",
+        "shots": [
+          {
+            "index": 1,
+            "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A woman in a green shirt sits at the counter-side window seat and listens to the puzzling story, while a man in an orange shirt sits at the plant-side window seat and a man in a white shirt sits at the plant-end seat.",
+            "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and the plant-end seat and the floor plant in frame."
+          },
+          {
+            "index": 2,
+            "content": "A woman in a green shirt and a man in an orange shirt exchange seats; she questions the impossible details in the story, and he dismisses the objection.",
+            "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+          },
+          {
+            "index": 3,
+            "content": "The man in the orange shirt insists that the story proceed without interruption.",
+            "viewpoint": "Close-up from the aisle side, centered on the person at the counter-side window seat."
+          },
+          {
+            "index": 4,
+            "content": "The woman in the green shirt questions another strange constraint in the story.",
+            "viewpoint": "Top-down wide shot directly above the rectangular table."
+          }
+        ]
+      }
+    },
+    "temperature": null,
+    "output": {
+      "passed": true,
+      "issues": []
+    },
+    "response_metadata": {
+      "stage": "prompt_audit",
+      "request_model": "openai/gpt-5.6-luna",
+      "response_model": "openai/gpt-5.6-luna",
+      "response_id": "gen-1788846455-jCZ33drF3IL1zZPEijyc",
+      "usage": {
+        "prompt_tokens": 3462,
+        "completion_tokens": 535,
+        "total_tokens": 3997,
+        "cost": 0.00150735,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3459,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00150735,
+          "upstream_inference_prompt_cost": 0.00086535,
+          "upstream_inference_completions_cost": 0.000642
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 516,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    }
+  }
+]

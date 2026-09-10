@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-MEETING-STATIC-3P-REV-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a meeting room, a rectangular conference table stands between a presentation screen and a glass door, with windows along one side; a clear walkway runs opposite the window. A man in a green shirt sits in the screen-side window seat and asks whether to leave the consultation, a woman in an orange shirt sits in the door-side window seat, and a woman in a white shirt sits in the screen-end seat.",
+      "viewpoint": "Wide establishing shot from just beside the glass door end, looking along the conference table toward the presentation screen, with both window-side seats and the screen-end seat and the presentation screen in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in the orange shirt replies to the man in the green shirt that staying will assist with the case.",
+      "viewpoint": "Medium two-shot from the walkway side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in the green shirt asks the woman in the orange shirt to hear the account of the case.",
+      "viewpoint": "Reverse wide shot of the conference table."
+    }
+  ]
+}

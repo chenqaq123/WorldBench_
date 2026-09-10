@@ -1,0 +1,25 @@
+{
+  "id": "WL-CORE-DINING-ENTRY-4P-TOP-4S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side; a clear aisle runs opposite the window. A man in a yellow shirt sits at the sideboard-side aisle seat and asks whether city life is better than country life. A woman in a red shirt sits at the sideboard-side window seat. A man in a green shirt sits at the patio-side window seat. There is one empty place.",
+      "viewpoint": "Wide establishing shot from just beside the patio doors end, looking along the dining table toward the sideboard, with both window-side seats and both aisle-side seats and the sideboard in frame."
+    },
+    {
+      "index": 2,
+      "content": "A woman in a purple shirt enters and sits in the empty place. A man in a yellow shirt asks about personal preferences, and she defends country living.",
+      "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A man in a yellow shirt explains the advantages of city life.",
+      "viewpoint": "Close-up from the window side, centered on the person at the sideboard-side aisle seat."
+    },
+    {
+      "index": 4,
+      "content": "A man in a yellow shirt asks about rural customs, and a man in a green shirt replies.",
+      "viewpoint": "Top-down wide shot directly above the dining table."
+    }
+  ]
+}

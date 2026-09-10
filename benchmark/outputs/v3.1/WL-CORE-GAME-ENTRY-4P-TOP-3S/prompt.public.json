@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-GAME-ENTRY-4P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a game room, a rectangular board-game table stands between a shelving unit and the doorway, with a window along one side; a clear aisle runs opposite the window. A man in a red shirt sits in the doorway-side aisle seat and explains the rule for solving the riddle, a woman in an orange shirt sits in the shelf-side window seat, and a man in a white shirt sits in the doorway-side window seat. There is one empty place.",
+      "viewpoint": "Wide establishing shot from just beside the doorway end, looking along the game table toward the shelving unit, with both window-side seats and both aisle-side seats and the shelving unit in frame."
+    },
+    {
+      "index": 2,
+      "content": "A man in a green shirt enters and sits in the empty place. He asks about the meaning of the riddle, and a man in a red shirt replies.",
+      "viewpoint": "Medium two-shot from the window side, centered on the two adjacent aisle-side seats."
+    },
+    {
+      "index": 3,
+      "content": "A man in a white shirt asks whether phrase reversal changes the meaning of the riddle, and a man in a red shirt answers.",
+      "viewpoint": "Top-down wide shot directly above the game table."
+    }
+  ]
+}

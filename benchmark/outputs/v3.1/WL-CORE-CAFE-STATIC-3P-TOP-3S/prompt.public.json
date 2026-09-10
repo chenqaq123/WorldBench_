@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-CAFE-STATIC-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a café, a rectangular table stands beside the window, with a tall floor plant near one end and the counter beyond the other; a clear aisle runs opposite the window. A man in a red shirt sits in the plant-side window seat and poses a riddle, a man in a green shirt sits in the counter-side window seat, and a woman in an orange shirt sits in the plant-end seat.",
+      "viewpoint": "Wide establishing shot from just beside the café counter end, looking along the rectangular table toward the floor plant, with both window-side seats and the plant-end seat and the floor plant in frame."
+    },
+    {
+      "index": 2,
+      "content": "The man in a green shirt replies that he can find the answer. The man in a red shirt asks whether saying what one means is the same as meaning what one says.",
+      "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+    },
+    {
+      "index": 3,
+      "content": "The man in a red shirt asks what day of the month it is. The man in a green shirt answers with the date.",
+      "viewpoint": "Top-down wide shot directly above the rectangular table."
+    }
+  ]
+}

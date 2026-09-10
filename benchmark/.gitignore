@@ -1,0 +1,10 @@
+# Keep versioned prompt datasets and their provenance in Git.
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+
+# Generated video evaluations and human annotation workspaces.
+/evaluations/
+/calibration/

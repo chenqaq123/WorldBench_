@@ -1,0 +1,20 @@
+{
+  "id": "WL-CORE-LIVING-SWAP-3P-TOP-3S",
+  "shots": [
+    {
+      "index": 1,
+      "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in a white shirt sits in the bookcase-side sofa seat and offers refreshments for the dinner visit, a woman in a blue shirt sits in the doorway-side sofa seat, and a man in a yellow shirt sits in the bookcase-side armchair.",
+      "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and the bookcase-side armchair in frame."
+    },
+    {
+      "index": 2,
+      "content": "The woman in a white shirt explains that the refreshments are missing and swaps the bookcase-side sofa seat with the woman in a blue shirt in the doorway-side sofa seat, who asks about the dinner invitation.",
+      "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+    },
+    {
+      "index": 3,
+      "content": "The woman in a white shirt confirms the dinner invitation.",
+      "viewpoint": "Top-down wide shot from directly above the coffee table, centered on the seating arrangement, with both sofa seats and the bookcase-side armchair in frame."
+    }
+  ]
+}

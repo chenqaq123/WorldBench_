@@ -1,0 +1,86 @@
+{
+  "id": "WL-CORE-LIVING-STATIC-4P-TOP-3S",
+  "task": "static_viewpoint_change",
+  "layout": "living_room_seating_4_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "purple shirt",
+      "appearance": "a woman in a purple shirt",
+      "seat": "sofa_bookcase",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "woman",
+      "clothing": "red shirt",
+      "appearance": "a woman in a red shirt",
+      "seat": "sofa_doorway",
+      "initially_present": true
+    },
+    {
+      "id": "C",
+      "gender": "man",
+      "clothing": "green shirt",
+      "appearance": "a man in a green shirt",
+      "seat": "bookcase_chair",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "orange shirt",
+      "appearance": "a man in an orange shirt",
+      "seat": "doorway_chair",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A recounts the sequence of partners from the evening dance.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a living room, a sofa and armchairs surround a low coffee table between a bookcase and the doorway. A woman in a purple shirt sits in the bookcase-side sofa seat and recounts the sequence of partners from the evening dance, while a woman in a red shirt sits in the doorway-side sofa seat, a man in a green shirt sits in the bookcase-side armchair, and a man in an orange shirt sits in the doorway-side armchair.",
+        "viewpoint": "Wide establishing shot from the doorway side, looking across the coffee table toward the bookcase, with both sofa seats and both armchairs in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B asks Subject A to stop recounting the partners, but Subject A tells Subject B about the success of the ball.",
+      "events": [],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "The woman in a red shirt asks to stop recounting the partners, but the woman in a purple shirt tells her about the success of the ball.",
+        "viewpoint": "Medium two-shot from the coffee-table side, centered on the two adjacent sofa seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "B",
+        "C"
+      ],
+      "beat": "Subject C asks about the ball, Subject A answers, and Subject B replies.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The man in a green shirt asks about the ball, the woman in a purple shirt answers, and the woman in a red shirt replies.",
+        "viewpoint": "Top-down wide shot from directly above the coffee table, centered on the seating arrangement, with both sofa seats and both armchairs in frame."
+      }
+    }
+  ]
+}

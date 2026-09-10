@@ -1,0 +1,89 @@
+{
+  "id": "WL-CORE-DINING-ENTRY-4P-TOP-3S",
+  "task": "person_entry",
+  "layout": "dining_room_table_4_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "navy cardigan",
+      "appearance": "a woman in a navy cardigan",
+      "seat": "window_sideboard",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "olive sweater",
+      "appearance": "a man in a olive sweater",
+      "seat": "window_patio",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "burgundy blouse",
+      "appearance": "a woman in a burgundy blouse",
+      "seat": "aisle_sideboard",
+      "initially_present": true
+    },
+    {
+      "id": "D",
+      "gender": "man",
+      "clothing": "mustard shirt",
+      "appearance": "a man in a mustard shirt",
+      "seat": "aisle_patio",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C",
+        "D"
+      ],
+      "beat": "Subject A asks a question.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a dining room, a rectangular table stands between a sideboard and patio doors, with a window along one side. A woman in a navy cardigan sits in the sideboard-side window seat and asks a question, a woman in a burgundy blouse sits in the sideboard-side aisle seat, and a man in a mustard shirt sits in the patio-side aisle seat.",
+        "viewpoint": "Wide establishing shot from the patio-door end, looking lengthwise along the dining table toward the sideboard, with both window-side seats and both aisle-side seats in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters and takes his seat. Subject A speaks. Subject B answers.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in an olive sweater enters, sits in the patio-side window seat, and answers when a woman in a navy cardigan speaks.",
+        "viewpoint": "Medium two-shot from the aisle side, centered on the two adjacent window-side seats."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A",
+        "D"
+      ],
+      "beat": "Subject D asks a question. Subject A replies.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "A man in a mustard shirt asks a question, and a woman in a navy cardigan replies.",
+        "viewpoint": "Top-down wide shot from directly above the dining table, centered on the tabletop, with both window-side seats and both aisle-side seats in frame."
+      }
+    }
+  ]
+}

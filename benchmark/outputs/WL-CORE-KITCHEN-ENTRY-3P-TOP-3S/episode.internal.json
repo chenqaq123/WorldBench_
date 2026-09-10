@@ -1,0 +1,79 @@
+{
+  "id": "WL-CORE-KITCHEN-ENTRY-3P-TOP-3S",
+  "task": "person_entry",
+  "layout": "kitchen_island_3_overhead_v1",
+  "subjects": [
+    {
+      "id": "A",
+      "gender": "woman",
+      "clothing": "emerald blouse",
+      "appearance": "a woman in a emerald blouse",
+      "seat": "guest_sink",
+      "initially_present": true
+    },
+    {
+      "id": "B",
+      "gender": "man",
+      "clothing": "charcoal sweater",
+      "appearance": "a man in a charcoal sweater",
+      "seat": "guest_fridge",
+      "initially_present": false
+    },
+    {
+      "id": "C",
+      "gender": "woman",
+      "clothing": "mustard cardigan",
+      "appearance": "a woman in a mustard cardigan",
+      "seat": "sink_end",
+      "initially_present": true
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "mentioned": [
+        "A",
+        "C"
+      ],
+      "beat": "Subject A asks a question.",
+      "events": [],
+      "camera": "establish",
+      "prompt": {
+        "content": "Inside a kitchen, a long rectangular island stands between the refrigerator wall and the sink area, with stools arranged along its sides. A woman in an emerald blouse sits at the sink-side guest stool and asks a question, and a woman in a mustard cardigan sits at the sink-end stool.",
+        "viewpoint": "Wide establishing shot from the refrigerator end, looking lengthwise along the kitchen island toward the sink area, with both guest-side stools and the sink-end stool in frame."
+      }
+    },
+    {
+      "index": 2,
+      "mentioned": [
+        "A",
+        "B"
+      ],
+      "beat": "Subject B enters. Subject B answers.",
+      "events": [
+        {
+          "subject": "B",
+          "action": "enter"
+        }
+      ],
+      "camera": "partial_pair",
+      "prompt": {
+        "content": "A man in a charcoal sweater enters to the refrigerator-side guest stool and answers the woman in an emerald blouse.",
+        "viewpoint": "Medium two-shot from the cook side, centered on the two adjacent guest-side stools."
+      }
+    },
+    {
+      "index": 3,
+      "mentioned": [
+        "A"
+      ],
+      "beat": "Subject A replies.",
+      "events": [],
+      "camera": "probe_overhead",
+      "prompt": {
+        "content": "The woman in an emerald blouse replies.",
+        "viewpoint": "Top-down wide shot from directly above the kitchen island, centered on the worktop, with both guest-side stools and the sink-end stool in frame."
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "cases": 9,
+  "results": [
+    {
+      "id": "WL-CORE-GAME-SWAP-3P-TOP-4S",
+      "status": "passed",
+      "model": "gemini-3.7-flash"
+    },
+    {
+      "id": "WL-CORE-GAME-ENTRY-4P-REV-3S",
+      "status": "passed",
+      "model": "gemini-3.7-flash"
+    },
+    {
+      "id": "WL-CORE-GAME-ENTRY-3P-REV-4S",
+      "status": "passed",
+      "model": "gemini-3.7-flash"
+    },
+    {
+      "id": "WL-CORE-LIVING-ENTRY-3P-REV-3S",
+      "status": "passed",
+      "model": "gemini-3.7-flash"
+    },
+    {
+      "id": "WL-CORE-MEETING-ENTRY-4P-REV-3S",
+      "status": "passed",
+      "model": "gemini-3.7-flash"
+    },
+    {
+      "id": "WL-CORE-MEETING-ENTRY-4P-TOP-3S",
+      "status": "passed",
+      "model": "gemini-3.7-flash"
+    },
+    {
+      "id": "WL-CORE-LIVING-ENTRY-3P-TOP-3S",
+      "status": "passed",
+      "model": "gemini-3.7-flash"
+    },
+    {
+      "id": "WL-CORE-MEETING-SWAP-4P-REV-3S",
+      "status": "passed",
+      "model": "gemini-3.7-flash"
+    },
+    {
+      "id": "WL-CORE-MEETING-SWAP-4P-TOP-3S",
+      "status": "passed",
+      "model": "gemini-3.7-flash"
+    }
+  ]
+}
