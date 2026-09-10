@@ -1,73 +1,76 @@
-# 评测协议：初始场景 + 指定 Update + 最终全景
+# Scoring protocol
 
-数据构造版本为 3.1，评测协议为 **worldline-llm-judge-v5.1**。目标根据实际开场和指定事件推导，在最终两帧评估人数与位置。Valid 表示证据足以判断；无需精确复制预设摄影或座位布局。
+Protocol: `worldline-llm-judge-v5.1`. Dataset: Core v3.1.
 
-## 输入与处理
+WorldLine derives the target state by applying the requested event to the observed opening state, then evaluates people and positions in the final wide shot.
 
-一次 GPT-5.6 Sol 主观察调用同时接收：
+## Evidence
 
-1. 初始全景的两张截图，取实际镜头区间的 25% / 75%，用于身份与空间参照；两帧应显示稳定的同一初始状态。
-2. 中间镜头要求的 Content 与确定性事件记录。事件取自原始请求，不从实际生成动作反推。
-3. 最终全景的两张截图，同样取该镜头实际区间的 25% / 75%，逐张独立记录人数和位置。
-4. 开场建立要求、人物颜色与性别描述、最终 Viewpoint。Entry 另外提供进入镜头的两张身份参照，不把该镜头作为人数/位置评分点或更新成功证明。
+A single judge receives:
 
-目标为：Update（实际建立的初始状态，要求的事件）。例如 A/B 交换，就交换两人在开场实际占据的位置，C 保持原位。模型未执行交换不能被改写成“没有更新”。最终两帧不参与代码的目标推导。
+- Two opening frames sampled at 25% and 75% of the opening shot.
+- The requested intermediate content and deterministic event specification.
+- Two final frames sampled at 25% and 75% of the final shot.
+- Opening requirements, character descriptions, and the final viewpoint instruction.
 
-镜头边界仍按固定切镜检测确定；片段数量不匹配时，同一模型可额外进行图片序列对齐。不能简单把视频等分为每镜三秒。协议只要求开场、最终观察及需要的 Entry 身份参照区间可靠；某个不参与取证的 partial 边界不确定，不阻断整个 case。没有第二裁判、复核或仲裁；新协议不默认运行旧版的独立轨迹诊断，不宣称检查了所有中间动作。
+Entry samples also provide two frames from the entry shot for identity reference. These frames are not scoring points or proof that the requested event succeeded.
 
-## 位置参照与 Valid
+Shot intervals come from cut detection. When detected segments do not match the requested sequence, the same judge may perform image-based alignment. The opening, final, and required entry intervals must be reliable; uncertainty in an unused intermediate boundary does not invalidate a sample. Evaluation does not assess every intermediate action.
 
-### 计数范围：目标互动群体，不是整个画面
+## Target state
 
-开场两帧、最终两帧及身份参照采用同一边界。先依据实际场景确定故事中的目标桌子、岛台或座位群，再清点其中的人，不能为了符合预期人数反向选择一个更小的人群，也不要求生成的布局精确符合预设。
+The opening must establish the required characters with reliable identities and physical positions. Entry samples must establish a unique empty place. Missing or additional opening participants, unstable opening states, or uncertain identities can prevent a usable reference.
 
-- **计入**：坐在目标桌旁、占据该组位置或实际参与该组互动的人，包括站立参与者、同桌多出的人、重复人物和无法匹配身份的人。坐在目标桌旁的人不需要正在说话或做动作才算参与者；直接服务该组的人也计入。
-- **忽略**：其他桌顾客、无关路人、仅经过过道的人，以及在别处工作且不参与这组互动的工作人员。处于同一房间、离目标较近、在画面前景或穿着同色衣服，都不足以判定其属于目标群体。
-- 背景人物不影响 opening.count、最终 count、初始角色是否多出或身份可靠性，不占用 P1…PN。不能借同色背景人物补齐缺失角色；也不能因为某个既有角色本应退出，就把仍可见的他归为无关背景。
-- 有背景人物时，在已有 evidence 中简述排除了谁及视觉依据即可，不增加字段。若归属确实无法确定且影响完整总数，count=null，并在 evidence / uncertainties 说明，不猜测、不为了降低错误率排除同桌额外人物。
+The judge labels opening positions `P1`, `P2`, and so on, ordered left to right in the first opening frame, with nearer positions first for ties. Labels remain attached to physical positions when the camera changes. The generated layout need not exactly reproduce the prompt's prescribed arrangement.
 
-例如，目标桌旁三人、隔壁桌两人、过道一名无关路人，目标人数应记为 3；若第四人实际坐在目标桌旁，则应记为 4，不能因其不在角色名单中改记为 3。开场目标互动群体仍需满足下述身份与人数要求。
+The target follows the requested event: entry fills the empty place, exit removes the specified character, a swap exchanges two characters' positions, and a static task preserves the state. Failure to perform an event does not change the target. Final frames are not inputs to the target derivation code.
 
-### 参照与评分
+## Participant scope
 
-开场只需建立稳定、可辨认的实际空间参照，不要求复制文字规定的桌边/桌端分布或摄影角度。目标由实际开场而不是预设座位图推导，所以开场布局与文字不同本身不导致 Invalid。
+Count the target interaction group consistently in opening, entry-reference, and final frames.
 
-保留既有的初始角色建立规则：开场应包含要求的初始人物，身份可靠，能定位其物理位置；Entry 能确定唯一空位。开场漏人、多出人或身份无法建立仍可能使参照无效，这是初始目标是否可定义的限制，不是最终世界状态正确性过滤。最终漏人、多出人、换错座位或空间结构改变，均不据此排除样本。
+- Include everyone seated at, occupying, participating in, or directly serving the target table, island, or seating group. This includes additional, standing, duplicated, and unidentified participants.
+- Exclude unrelated customers, passersby, and staff working elsewhere. Proximity, matching clothing, or presence in the same room is insufficient for membership.
+- Do not replace a missing character with a similar background person, or exclude a visible character because the requested event should have removed them.
 
-裁判将开场观察到的物理位置临时标为 P1、P2 等，并保存简短视觉描述。这些标签不进入公开 prompt，不对应预填的书架侧/窗口侧答案表。以第一张开场截图的从左到右顺序编号，同横坐标按近到远编号；之后标签始终绑定同一物理位置，不随反打后的画面左右重排。自然背景可辅助对应，但不要求某个书架、窗台等物体一定入镜。只有相邻/对面而无法区分交换前后时，不能声称完整位置关系正确。
+Identify the group from the scene before counting; do not narrow its boundary to match the expected total. If membership is uncertain enough to affect the full count, record `count=null` and explain the uncertainty.
 
-最终帧不再以 View Compliance 为门槛。未完成反打、俯拍变成高角度斜拍等情况，只要证据足以判断人数和位置，仍可评分。严重裁切、遮挡或模糊使完整人数/位置正确性确实无法判断时，才算证据不足；“人数”不能只是当前可见人头数的下界。
+## Observability and position
 
-可见但无法匹配身份使用 unknown，属于位置错误；可见空位使用 null；某个原始物理位置确实不能对应使用 unobservable。**存在 unobservable 不必然 Invalid**：若另一位置已明确错误，或物理空间结构已明确改变，就足以判 Position 失败；只有既没有可确认的错误、也无法确认全部位置正确时，Position 才不可判断。
+Valid means that the evidence is sufficient to decide whether count and position are correct. Exact camera compliance is not required. Cropping, occlusion, or blur invalidates a sample only when it prevents a decision. A visible lower bound on people is insufficient to establish a complete count.
 
-裁判使用布局观察字段 layout_changed（true / false / null）。它比较实际开场与当前帧的物理位置结构，不检查是否符合预设座位图，也不把透视变化或指定的人物入场/离场/换位当作布局错误。true 必须提供具体视觉依据。这个字段不进入公开 prompt。
+Position observations distinguish:
 
-|主指标|通过条件|汇总分母|
-|---|---|---|
-|Valid|开场参照可用，且最终两帧证据均足以判定 Count 和 Position 的对错|全部 case|
-|Count|最终两帧目标互动群体的同时在场人数均正确；包括组内额外站立、重复和无法匹配的人物，忽略无关背景人物|Valid case|
-|Position|最终两帧的物理空间结构与全部位置占用均符合实际开场 + 指定 Update 的目标|Valid case|
-|SR|Valid、Count、Position 同时通过|全部 case|
+| Value | Meaning |
+| --- | --- |
+| Character ID | A person matched to an established identity |
+| `unknown` | A visible person whose identity cannot be matched; a position error |
+| `null` | A visible empty position |
+| `unobservable` | A position that cannot be reliably observed or matched |
 
-每个 case 保持两帧严格合取，不取平均或挑更好的一帧。无效 case 的 Count / Position 为 N/A、SR 为失败；无有效 case 时条件准确率为 N/A。技术执行未完成另标 pending/error，不冒充模型状态错误；未完成批次汇总仅为临时结果，保留完整计划分母。
+`unobservable` does not automatically make a sample invalid: another confirmed position error or clear layout change can establish failure. Position is undecidable only when neither correctness nor an error can be established.
 
-例如：目标三人但完整画面有四人，且位置可判断 → Valid 通过、Count 失败。人数正确但两人坐错位置 → Valid 通过、Position 失败。全部椅子被重新排到同一侧，有明确证据但旧位置无法逐一对应 → Valid 通过、Position 失败。只能看见局部，既不能确定完整人数也不能排除画外人物 → Invalid。各例均以开场参照可靠为前提。
+`layout_changed` records whether the physical position structure differs from the opening. Perspective changes and requested character movements are not layout changes. A positive judgment requires visual evidence.
 
-## 生成提示词要求
+## Metrics
 
-初始 Content 仍先介绍场景，再建立人物身份与位置。中间 Update 不再重复地标座位标签：Exit 写身份离开其位置并退出场景；Swap 写两名人物交换座位。Entry 开场建立唯一空位，随后新人物进入并坐到该空位。
+Both final frames must satisfy each applicable condition; scores do not average frames or select the better one.
 
-最终 Viewpoint 只保留标准摄影要求，例如：
+| Metric | Passing condition | Denominator |
+| --- | --- | --- |
+| Valid | Usable opening reference; count and position correctness are decidable in both final frames | All samples |
+| Count | Correct participant count in both final frames | Valid samples |
+| Position | Correct physical layout and all position occupants in both final frames | Valid samples |
+| SR | Valid, Count, and Position all pass | All samples |
 
-    Reverse wide shot of the rectangular table.
-    Top-down wide shot directly above the kitchen island.
+Invalid samples receive N/A for Count and Position and fail SR. Conditional accuracy is N/A when no sample is valid. Incomplete runs report pending/error states and provisional summaries rather than treating execution failures as evaluated model outcomes.
 
-不列出座位，不指定书架/窗台必须入镜，不提示人数、人物位置或持续存在。最终 Content 仍只描述本镜头焦点的简短情节动作。所有公开 shot 每镜一行，不写时长。反打仍要求相反观察方向，俯拍仍要求直接向下；不是取消视角控制。
+## Prompt contract
 
-构造仍保留五次独立 LLM 阶段、真实素材来源、均衡人物属性和全部中间产物。内部布局和预期轨迹用于设计合法性检查；3.1 annotations 中的构造预期座位不再作为最终位置评分答案，evaluation_reference 明确注明使用实际开场。
+The opening describes the scene, identities, and initial positions. Intermediate updates identify the entering, exiting, or swapping characters. The final viewpoint specifies a reverse or overhead wide shot without revealing the target count, occupants, or required landmark coverage. Public prompts contain one line per shot and omit duration settings.
 
-## 使用与适用范围
+Internal layouts and annotations support construction checks. Final position targets come from the observed opening and requested event, not from prescribed seat coordinates.
 
-运行、结果验证与人工校准命令见[评测运行方法](EVALUATION.md)。不同评测协议应使用独立目录；旧版结果不能直接改名作为当前协议的分数。
+## Calibration
 
-目标推导代码不读取最终帧，但一次联合模型调用不能保证开场观察完全不受最终图片影响。裁判的计数、身份匹配和反打位置对应仍需独立人工校准。当前 prompt 数据为候选集，不以文本审校通过代替人工复核或视频实验。
+Although target derivation excludes final frames, the joint judge call may allow final evidence to influence opening observations. Counting, identity matching, and position correspondence require human calibration. See the [evaluation guide](EVALUATION.md) for execution and labeling commands.

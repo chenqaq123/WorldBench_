@@ -1,53 +1,53 @@
-# 视频生成与评测
+# Evaluation guide
 
-当前数据为 Core v3.1，默认协议为 `worldline-llm-judge-v5.1`，报告 Valid、Count、Position、SR。评分定义见[评测协议](REFERENCE_EVALUATION.md)。
+WorldLine scores the final two observation frames against the observed opening state and the requested event. See the [scoring protocol](REFERENCE_EVALUATION.md) for Valid, Count, Position, and SR.
 
-## 环境
+## Setup
 
-Python 3.9+、FFmpeg 和 ffprobe。在 `benchmark/.env` 中设置 `OPENROUTER_API_KEY`。视频生成默认使用 `bytedance/seedance-2.0-fast`，裁判默认使用 `openai/gpt-5.6-sol`，可分别通过 `--model` 与 `--judge` 指定。
+Use Python 3.9+, FFmpeg, and ffprobe. Set `OPENROUTER_API_KEY` in `benchmark/.env`. All commands below run from `benchmark/`.
 
-总时长按实际镜头数 × 3 秒预算，默认分辨率为 480p；提交前检查模型是否支持参数。该预算不保证实际切镜间隔，评测使用检测和对齐后的镜头边界。生成参数不进入公开 prompt。
+The implementation defaults to `bytedance/seedance-2.0-fast` for video generation and `openai/gpt-5.6-sol` for judging. Override them with `--model` and `--judge`. Generation budgets three seconds per requested shot at 480p and checks model support before submission. Evaluation uses detected shot boundaries rather than assuming equal shot lengths.
 
-## 运行
+## Run
 
-以下命令均在 `benchmark/` 内执行。先离线规划完整数据集：
+Plan the full dataset without making API calls:
 
 ```bash
 python3 run_evaluation.py --phase plan --all-cases \
   --protocol worldline-llm-judge-v5.1 \
-  --dataset outputs/v3.1 --output evaluations/core-v5.1
+  --dataset outputs/v3.1 --output evaluations/core
 ```
 
-小批次可将 `--all-cases` 替换为一个或多个 `--case-id CASE_ID`。样本集合、协议、模型与生成参数在批次目录中固定；改变配置时使用新目录。
+Replace `--all-cases` with one or more `--case-id CASE_ID` arguments to evaluate a subset. Use a separate output directory when changing the sample selection, protocol, or model settings.
 
-确认配置后，执行视频生成与评测：
+Generate videos and evaluate them using the same configuration:
 
 ```bash
 python3 run_evaluation.py --phase all --all-cases \
   --protocol worldline-llm-judge-v5.1 \
-  --dataset outputs/v3.1 --output evaluations/core-v5.1
+  --dataset outputs/v3.1 --output evaluations/core
 ```
 
-`all`、`generate` 和 `evaluate` 会调用相应付费服务。也可分别运行 `generate` 与 `evaluate`；评测阶段不会重新提交视频生成任务。`media` 只处理本地视频，`report` 只重新生成报告。
+`all`, `generate`, and `evaluate` make paid API calls. Generation and evaluation can also run as separate phases. The `media` and `report` phases process local artifacts only.
 
-检查完成情况：
+Check the completed batch:
 
 ```bash
-python3 validate_evaluation.py --output evaluations/core-v5.1
+python3 validate_evaluation.py --output evaluations/core
 ```
 
-## 结果与人工校准
+The output directory contains inputs, videos, sampled frames, observations, derived targets, per-sample scores, and summary reports. Pending samples and technical errors are reported separately from evaluated outcomes.
 
-输出目录保存原始输入、视频、截图、观察结果、目标状态、逐例评分和汇总报告。技术失败或尚未完成的样本单独记录，不当作已完成评测。
+## Human calibration
 
-准备与导入独立人工标注：
+Create a labeling packet from an evaluation batch, import completed labels, and compare observations:
 
 ```bash
 python3 calibrate_reference.py --phase prepare \
-  --source-run evaluations/core-v5.1 --output calibration/core-v5.1
+  --source-run evaluations/core --output calibration/core
 python3 calibrate_reference.py --phase import \
-  --output calibration/core-v5.1 --human-file /path/to/item-001.human.json
-python3 calibrate_reference.py --phase compare --output calibration/core-v5.1
+  --output calibration/core --human-file /path/to/item-001.human.json
+python3 calibrate_reference.py --phase compare --output calibration/core
 ```
 
-人工标签必须与同批次证据和协议匹配。未导入真实标注时不计算一致性通过率，程序检查不能代替裁判准确性校准。
+Labels must match the packet's evidence and protocol. Agreement is calculated only after completed human labels are imported.

@@ -1,25 +1,21 @@
 # WorldLine Benchmark
 
-WorldLine 评测视频模型在视角切换与人物进入、离开、换位后，对人数和空间关系的保持能力。
+WorldLine evaluates whether video models preserve people and spatial relationships across viewpoint changes, person entry, person exit, and seat swaps.
 
-当前 Core v3.1 包含 **112 条多镜头 prompt**：7 个场景、4 类任务、3 / 4 人物、反打 / 俯拍，三镜头与四镜头各 56 条。数据仍为候选集，人工复核与裁判校准尚待完成。
+The dataset contains **112 prompts** across 7 scenes, with 3 or 4 people, 3 or 4 shots, and reverse or overhead final views.
 
-- [Prompt 总览](benchmark/outputs/v3.1/prompts.md) · [JSON 数据](benchmark/outputs/v3.1/public_prompts.json) · [样本清单](benchmark/outputs/v3.1/core_matrix.manifest.json)
-- [构造与数据说明](benchmark/README.md)
-- [评测协议](benchmark/REFERENCE_EVALUATION.md) · [评测运行方法](benchmark/EVALUATION.md)
-- [论文仓库](https://github.com/chenqaq123/WorldBench)
+[Browse prompts](benchmark/outputs/v3.1/prompts.md) · [Download JSON](benchmark/outputs/v3.1/public_prompts.json) · [Paper repository](https://github.com/chenqaq123/WorldBench)
 
-## 快速使用
+## Quick start
 
-Python 3.9+，仅使用标准库；视频处理另需 FFmpeg / ffprobe。
+Requires Python 3.9+. Video evaluation also requires FFmpeg and ffprobe.
 
 ```bash
 git clone https://github.com/chenqaq123/WorldBench_.git
 cd WorldBench_/benchmark
-python3 -m unittest discover -s tests -q
 python3 validate_matrix.py
 ```
 
-以上检查完全离线，无需 API key。直接使用数据时，读取 `outputs/v3.1/public_prompts.json` 的 `cases`，或逐例读取 `prompt.txt`。
+Read `cases` in `benchmark/outputs/v3.1/public_prompts.json` to load the dataset, or use each sample's `prompt.txt` as the video model input. Dataset validation runs offline without API credentials.
 
-需要重新构造 prompt 或生成、评测视频时，在 `benchmark/.env` 中配置自己的 API key，具体命令见上述文档。
+See the [dataset guide](benchmark/README.md) for file formats and prompt construction, and the [evaluation guide](benchmark/EVALUATION.md) for running the benchmark.
