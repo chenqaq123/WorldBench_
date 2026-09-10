@@ -1,10 +1,25 @@
-# Keep versioned prompt datasets and their provenance in Git.
+# Local credentials and generated workspaces.
 .env
 .env.*
 !.env.example
 __pycache__/
 *.py[cod]
-
-# Generated video evaluations and human annotation workspaces.
 /evaluations/
 /calibration/
+/experiments/
+
+# Publish only the current dataset and the files required to use/validate it.
+/outputs/*
+!/outputs/v3.1/
+/outputs/v3.1/*
+!/outputs/v3.1/core_matrix.manifest.json
+!/outputs/v3.1/public_prompts.json
+!/outputs/v3.1/prompts.md
+!/outputs/v3.1/validation.report.json
+!/outputs/v3.1/WL-*/
+/outputs/v3.1/WL-*/*
+!/outputs/v3.1/WL-*/prompt.txt
+!/outputs/v3.1/WL-*/prompt.public.json
+!/outputs/v3.1/WL-*/episode.internal.json
+!/outputs/v3.1/WL-*/annotations.hidden.json
+!/outputs/v3.1/WL-*/run.json

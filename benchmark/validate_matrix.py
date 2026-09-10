@@ -207,9 +207,9 @@ def parse_args():
     parser.add_argument(
         "--manifest",
         type=Path,
-        default=Path(__file__).resolve().parent / "outputs/v2/core_matrix.manifest.json",
+        default=Path(__file__).resolve().parent / "outputs/v3.1/core_matrix.manifest.json",
     )
-    parser.add_argument("--outputs", type=Path, default=Path(__file__).resolve().parent / "outputs/v2")
+    parser.add_argument("--outputs", type=Path, default=Path(__file__).resolve().parent / "outputs/v3.1")
     parser.add_argument("--report", type=Path, help="Save the full validation report")
     return parser.parse_args()
 

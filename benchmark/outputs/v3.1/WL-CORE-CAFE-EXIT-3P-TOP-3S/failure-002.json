@@ -1,3 +1,0 @@
-{
-  "error": "VAPI 400: {\"error\":{\"message\":\"Invalid JSON payload received. Unknown name \\\"additionalProperties\\\" at 'generation_config.response_schema.properties[0].***.***.properties[1].***.items.any_of[0]': Cannot find field.\\nInvalid JSON payload received. Unknown name \\\"additionalProperties\\\" at 'generation_config.response_schema.properties[0].***.***.properties[1].***.items.any_of[1]': Cannot find field. (request id: 2026091018193552772027198571700)\",\"type\":\"upstream_error\",\"param\":\"\",\"code\":400}}"
-}

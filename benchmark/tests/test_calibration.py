@@ -19,9 +19,9 @@ class CalibrationTest(unittest.TestCase):
         source = root / "source"
         case_id = "PRIVATE-TASK-EXIT"
         folder = source / case_id
-        old = BASE / "outputs/v2/WL-CORE-KITCHEN-EXIT-3P-TOP-3S"
+        fixture = BASE / "tests/fixtures/calibration"
         for name in ("episode.internal.json", "annotations.hidden.json"):
-            write_json(folder / "input" / name, read_json(old / name))
+            write_json(folder / "input" / name, read_json(fixture / name))
         (folder / "video.mp4").write_bytes(b"offline video fixture")
         write_json(folder / "alignment.json", {"uncertain": False, "shots": [
             {"index": i + 1, "start": 3.0 * i, "end": 3.0 * (i + 1)} for i in range(3)]})
