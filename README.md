@@ -4,7 +4,7 @@ WorldLine evaluates whether video models preserve people and spatial relationshi
 
 The dataset contains **112 prompts** across 7 scenes, with 3 or 4 people, 3 or 4 shots, and reverse or overhead final views.
 
-[Browse prompts](benchmark/outputs/v3.1/prompts.md) · [Download JSON](benchmark/outputs/v3.1/public_prompts.json) · [Paper repository](https://github.com/chenqaq123/WorldBench)
+[Browse prompts](benchmark/outputs/v3.1/prompts.md) · [Download JSON](benchmark/outputs/v3.1/public_prompts.json)
 
 ## Quick start
 
