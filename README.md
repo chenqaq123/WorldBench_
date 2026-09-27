@@ -1,6 +1,6 @@
-# worldbench
+# Worldbench
 
-worldbench evaluates whether video models preserve people and spatial relationships across viewpoint changes, person entry, person exit, and seat swaps.
+Worldbench evaluates whether video models preserve people and spatial relationships across viewpoint changes, person entry, person exit, and seat swaps.
 
 The dataset contains **112 prompts** across 7 scenes, with 3 or 4 people, 3 or 4 shots, and reverse or overhead final views.
 
