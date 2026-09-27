@@ -8,7 +8,7 @@ The dataset contains **112 prompts** across 7 scenes, with 3 or 4 people, 3 or 4
 
 ![worldbench: a seat swap introduces two unexpected participants in the final shot](assets/figure1.png)
 
-*Figure 1 from the paper. In this Seedance 2.0 Fast example, the prompt asks two of four participants to exchange seats. The final wide shot introduces two additional people despite no entry event.*
+*Figure 1 from the paper. In this Seedance 2.0 example, the prompt asks two of four participants to exchange seats. The final wide shot introduces two additional people despite no entry event.*
 
 ## Quick start
 
