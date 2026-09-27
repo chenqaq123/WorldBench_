@@ -1,18 +1,23 @@
-# WorldLine Benchmark
+# worldbench
 
-WorldLine evaluates whether video models preserve people and spatial relationships across viewpoint changes, person entry, person exit, and seat swaps.
+worldbench evaluates whether video models preserve people and spatial relationships across viewpoint changes, person entry, person exit, and seat swaps.
 
 The dataset contains **112 prompts** across 7 scenes, with 3 or 4 people, 3 or 4 shots, and reverse or overhead final views.
 
 [Browse prompts](benchmark/outputs/v3.1/prompts.md) · [Download JSON](benchmark/outputs/v3.1/public_prompts.json)
 
+![worldbench: a seat swap introduces two unexpected participants in the final shot](assets/figure1.png)
+
+*Figure 1 from the paper. In this Seedance 2.0 Fast example, the prompt asks two of four participants to exchange seats. The final wide shot introduces two additional people despite no entry event.*
+
 ## Quick start
 
 Requires Python 3.9+. Video evaluation also requires FFmpeg and ffprobe.
 
+Download and extract the repository, then run from its root directory:
+
 ```bash
-git clone https://github.com/chenqaq123/WorldBench_.git
-cd WorldBench_/benchmark
+cd benchmark
 python3 validate_matrix.py
 ```
 
